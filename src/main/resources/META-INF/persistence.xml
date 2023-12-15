@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+
+    <persistence-unit name="lightweightEmailApp" transaction-type="RESOURCE_LOCAL">
+
+        <!--           Mapping of entities-->
+
+        <properties>
+
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/EmailAppAdmin"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="hibernate.connection.username" value="emailApp"/>
+            <property name="hibernate.connection.password" value="Valisoare_191987+"/>
+            <property name="hibernate.connection.pool_size" value="3"/>
+
+            <!--       Echo all executed SQLs-->
+            <property name="hibernate.show_sql" value = "false" />
+            <property name="hibernate.format_sql" value = "false" />
+
+            <!--        SQL dialect-->
+            <property name="hibernate.dialect" value = "org.hibernate.dialect.MySQLDialect" />
+
+            <!--        JDBC transaction isolation level 1: READ UNCOMMITTED, 2: READ COMMITTED, 4: REPEATABLE READ (MySQL) 8: SERIALIZABLE-->
+            <property name="hibernate.connection.isolation" value="8"/>
+
+            <!--        Hibernate Statistics-->
+            <property name="generate_statistics" value = "false"/>
+
+            <!--        Create/update database tables automatically using mapping metadata-->
+            <property name="hibernate.hbm2ddl.auto" value = "update"/>
+
+            <!--        Reset identifier value from long to null after removal of an entity instance-->
+            <property name="hibernate.use_identifier_rollback" value="true"/>
+
+            <!--        Time zone setup for timestamps in mysql tables-->
+            <property name="hibernate.jdbc.time_zone" value="UTC"/>
+
+        </properties>
+    </persistence-unit>
+</persistence>
