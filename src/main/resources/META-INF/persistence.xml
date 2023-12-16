@@ -17,8 +17,8 @@
             <property name="hibernate.connection.pool_size" value="3"/>
 
             <!--       Echo all executed SQLs-->
-            <property name="hibernate.show_sql" value = "false" />
-            <property name="hibernate.format_sql" value = "false" />
+            <property name="hibernate.show_sql" value = "true" />
+            <property name="hibernate.format_sql" value = "true" />
 
             <!--        SQL dialect-->
             <property name="hibernate.dialect" value = "org.hibernate.dialect.MySQLDialect" />

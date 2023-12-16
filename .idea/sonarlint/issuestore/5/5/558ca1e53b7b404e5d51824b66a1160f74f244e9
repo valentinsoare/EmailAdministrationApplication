@@ -1,0 +1,11 @@
+
+M
+java:S2160"+Override the "equals" method in this class.(ρÒΆύÿÿÿÿ8€™Φ‹Η1
+|
+java:S14500"_Remove the "lastReturnedNode" field and declare it as a local variable in the relevant methods.(ιλÿ®8ΚΰƒΗ1
+K
+java:S1659σ".Declare "nodeFromTheIndex" on a separate line.(Ύ“Ο8ΞΰƒΗ1
+I
+java:S1659¦"&Declare "tempNode" on a separate line.(ΤªΦϊÿÿÿÿ8ΠΰƒΗ1
+I
+java:S1659½"&Declare "tempNode" on a separate line.(ΤªΦϊÿÿÿÿ8ΡΰƒΗ1

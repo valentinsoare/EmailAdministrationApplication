@@ -1,0 +1,18 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(≥ÂÁò¯ˇˇˇˇ8‹ıﬁÓ∆1
+w
+java:S1450"ZRemove the "nameOfTheDB" field and declare it as a local variable in the relevant methods.(ÇöΩ°8ﬂıﬁÓ∆1
+{
+java:S1450"^Remove the "numberOfRecords" field and declare it as a local variable in the relevant methods.(”îë‚8ﬂıﬁÓ∆1
+z
+java:S1450"]Remove the "numberOfTables" field and declare it as a local variable in the relevant methods.(§ïπÌ8ﬂıﬁÓ∆1
+A
+java:S1168""$Return an empty map instead of null.(•πÔç8·ıﬁÓ∆1
+A
+java:S1168/"$Return an empty map instead of null.(•πÔç8·ıﬁÓ∆1
+L
+java:S1068"/Remove this unused "nameOfTheDB" private field.(ÇöΩ°8·ıﬁÓ∆1
+O
+java:S1068"2Remove this unused "numberOfTables" private field.(§ïπÌ8‚ıﬁÓ∆1
+P
+java:S1068"3Remove this unused "numberOfRecords" private field.(”îë‚8‚ıﬁÓ∆1
