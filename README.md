@@ -5,6 +5,7 @@
 
 [![final-Small.png](https://i.postimg.cc/DfLpz7ky/final-Small.png)](https://moviesondemand.io)
 
+
 <br>
 
 > [!NOTE]
@@ -13,7 +14,7 @@
 <br>
 
 ## Completed Tasks
-1. [X] Initiate DBconnection with JPA/Hibernate using Singleton Design Pattern. 
+1. [X] Initiate DBConnection with JPA/Hibernate using Singleton Design Pattern. 
 2. [X] Building Business Entities hierarchies with JPA/Hibernate and then implement mapping between these entities;
 3. [X] Auxiliary classes with helper methods;  
 4. [X] To continue
@@ -23,7 +24,6 @@
 ✅ Business Entities from DB point of view.
 
 <br>
-
 [![Screenshot-from-2023-12-16-12-24-51.png](https://i.postimg.cc/jdQznMhm/Screenshot-from-2023-12-16-12-24-51.png)](https://postimg.cc/vcT1pLkt)
 
 
@@ -39,7 +39,7 @@
 
 _Statistics_
 
-[![HitCount](https://hits.dwyl.com/valentinsoare//EmailAdministrationApplication.svg?style=flat-square&show=unique)](http://hits.dwyl.com/valentinsoare//EmailAdministrationApplication)
+[![HitCount](https://hits.dwyl.com/valentinsoare/EmailAdministrationApplication.svg?style=flat-square&show=unique)](http://hits.dwyl.com/valentinsoare/EmailAdministrationApplication)
 
 _Social buttons_
 
@@ -49,9 +49,10 @@ _Social buttons_
 
 _Repo metadata_
 
-[![GitHub tag](https://img.shields.io/github/tag/valentinsoare/EmailAdministrationApplication?include_prereleases=&sort=semver&color=green)](https://github.com/valentinsoare/EmailAdministrationApplication/releases/)
-[![License](https://img.shields.io/badge/License-Apache-green)](#license)
+[![GitHub tag](https://img.shields.io/github/tag/valentinsoare/EmailAdministrationApplication?include_prereleases=&sort=semver&color=blue)](https://github.com/valentinsoare/EmailAdministrationApplication/releases/)
+[![License](https://img.shields.io/badge/License-Apache-blue)](#license)
 [![issues - EmailAdministrationApplication](https://img.shields.io/github/issues/valentinsoare/EmailAdministrationApplication)](https://github.com/valentinsoare/EmailAdministrationApplication/issues)
+
 
 ## License
 

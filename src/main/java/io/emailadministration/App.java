@@ -5,9 +5,6 @@ import io.emailadministration.DButils.EntityManagerScope;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class App {
     public static void main( String[] args ) {
 //        Logger.getLogger("org.hibernate").setLevel(Level.INFO);
