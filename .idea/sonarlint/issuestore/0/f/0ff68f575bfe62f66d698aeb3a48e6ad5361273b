@@ -1,6 +1,0 @@
-
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³åç˜øÿÿÿÿ
-v
-java:S1450"[Remove the "entityManger" field and declare it as a local variable in the relevant methods.(¶°ğóùÿÿÿÿ
-¯
-java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(Ù†Ì

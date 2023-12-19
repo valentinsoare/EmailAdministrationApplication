@@ -23,7 +23,7 @@ import java.util.Map;
         discriminatorType = DiscriminatorType.STRING,
         name = "employee_type"
 )
-@DiscriminatorValue("null")
+@DiscriminatorValue("none")
 public abstract class Employee implements Comparable<Employee> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -104,7 +104,6 @@ public abstract class Employee implements Comparable<Employee> {
     @Override
     public String toString() {
         Map<String, ?> characteristics = OperationsOnMap.putObjectAttributes(this);
-
         return CustomPrinting.of(characteristics, "Employee [");
     }
 }

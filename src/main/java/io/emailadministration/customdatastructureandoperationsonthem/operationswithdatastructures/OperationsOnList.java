@@ -1,9 +1,8 @@
 package io.emailadministration.customdatastructureandoperationsonthem.operationswithdatastructures;
 
+
 import java.lang.reflect.Field;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class OperationsOnList {
 
@@ -24,5 +23,23 @@ public class OperationsOnList {
         }
 
         return result;
+    }
+
+    public static <T extends Comparable<T>> int binarySearch(T searchElement, List<T> givenList) {
+        int start = 0, end = givenList.size();
+
+        while (start < end) {
+            int midPoint = (start + end) / 2;
+
+            if (givenList.get(midPoint).equals(searchElement)) {
+                return midPoint;
+            } else if (searchElement.compareTo(givenList.get(midPoint)) > 0) {
+                end = midPoint;
+            } else {
+                start = midPoint + 1;
+            }
+        }
+
+        return -1;
     }
 }

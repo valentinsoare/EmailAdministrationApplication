@@ -66,7 +66,6 @@ public class User implements Comparable<User> {
         return result;
     }
 
-
     @Override
     public int compareTo(@NotNull User o) {
         int valueAfterComparison = o.userName.compareTo(this.userName);

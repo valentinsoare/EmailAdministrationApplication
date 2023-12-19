@@ -24,14 +24,12 @@
 ✅ Business Entities from DB point of view.
 
 <br>
-[![Screenshot-from-2023-12-16-12-24-51.png](https://i.postimg.cc/jdQznMhm/Screenshot-from-2023-12-16-12-24-51.png)](https://postimg.cc/vcT1pLkt)
 
+[![Screenshot-from-2023-12-19-13-44-48.png](https://i.postimg.cc/Yqxmspyc/Screenshot-from-2023-12-19-13-44-48.png)](https://postimg.cc/XppJZ0bx)
 
-<br>
 
 ✅ A view of these entities but from Java Object-Oriented perspective.
 
-<br>
 
 [![Screenshot-from-2023-12-16-12-26-41.png](https://i.postimg.cc/JnWCs7xb/Screenshot-from-2023-12-16-12-26-41.png)](https://postimg.cc/JyK2gL9n)
 

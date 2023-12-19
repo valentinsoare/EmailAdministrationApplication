@@ -15,6 +15,7 @@ import java.util.function.Consumer;
 @NoArgsConstructor
 public class EnhancedDoubleLinkedLinkedList<E extends Comparable<E>> extends AbstractList<E>
         implements Iterable<E> {
+
     private int size;
 
     private Node<E> head;

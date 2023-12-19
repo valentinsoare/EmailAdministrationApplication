@@ -23,7 +23,7 @@ import java.util.Map;
         discriminatorType = DiscriminatorType.STRING,
         name = "department_type"
 )
-@DiscriminatorValue("null")
+@DiscriminatorValue("none")
 public abstract class Department implements Comparable<Department> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
