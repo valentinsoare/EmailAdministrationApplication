@@ -15,21 +15,16 @@ import org.hibernate.annotations.LazyGroup;
 @DiscriminatorValue("Accountant")
 @Entity(name = "Accountant")
 public class Accountant extends Employee {
-    @LazyGroup("ACCOUNTANT_INFO")
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH})
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "department_id")
     private Accounting department;
 
-    @LazyGroup("ACCOUNTANT_TEAM_LEADER")
     @Column(name = "is_team_leader")
-    @Basic(fetch = FetchType.LAZY)
     private boolean isTeamLeader;
 
-    @LazyGroup("ACCOUNTANT_TEAM_LEADER")
     @OneToOne(mappedBy = "teamLeaderOfDepartment")
     private Accounting departmentWhereIsHiredAsTeamLeader;
 
-    @LazyGroup("ACCOUNTANT_USER")
     @OneToOne(mappedBy = "employeeProfile")
     private User user;
 

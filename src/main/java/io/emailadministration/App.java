@@ -5,11 +5,13 @@ import io.emailadministration.DButils.EntityManagerScope;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
-public class App {
+import java.util.Map;
+
+public class App extends DBConnection {
     public static void main( String[] args ) {
 //        Logger.getLogger("org.hibernate").setLevel(Level.INFO);
 
-        DBConnection instanceOfDB = DBConnection.getInstance();
+        DBConnection instanceOfDB = getInstance();
 
         EntityManager em = instanceOfDB.generateEntityManager(
                 EntityManagerScope.EMAIL_GENERATE
@@ -21,7 +23,7 @@ public class App {
             transaction = em.getTransaction();
             transaction.begin();
 
-            transaction.rollback();
+            transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();

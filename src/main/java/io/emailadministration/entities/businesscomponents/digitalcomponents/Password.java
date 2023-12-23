@@ -19,32 +19,20 @@ public class Password implements Comparable<Password> {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @LazyGroup("PASSWORD_USER_INFO")
     @OneToOne(mappedBy = "password")
     private User user;
 
-
-    @LazyGroup("PASSWORD_USER_INFO")
-    @Basic(fetch = FetchType.LAZY)
     @Column(name = "mandatory_password_length_for_user")
     Pair<Integer, Integer> mandatoryPasswordLengthForUser;
 
-    @LazyGroup("PASSWORD_USER_INFO")
-    @Basic(fetch = FetchType.LAZY)
     @Column(name = "hashed_password_for_user")
     private String hashedPasswordForUser;
 
-
-    @LazyGroup("PASSWORD_EMAIL_INFO")
-    @Basic(fetch = FetchType.LAZY)
     @Column(name = "mandatory_password_length_for_email")
     Pair<Integer, Integer> mandatoryPasswordLengthForEmail;
 
-    @LazyGroup("PASSWORD_EMAIL_INFO")
-    @Basic(fetch = FetchType.LAZY)
     @Column(name = "hashed_password_for_email")
     private String hashedPasswordForEmail;
-
 
     @Version
     @Column(name = "version", nullable = false)

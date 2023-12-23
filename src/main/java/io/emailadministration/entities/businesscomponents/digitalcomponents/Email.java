@@ -20,26 +20,18 @@ public class Email implements Comparable<Email> {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @LazyGroup("EMAIL_INFO_FIRST_WAVE")
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.REFRESH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", unique = true)
     private User user;
 
-    @LazyGroup("EMAIL_INFO_FIRST_WAVE")
     @Column(name = "primary_email_address")
-    @Basic(fetch = FetchType.LAZY)
     private String primaryEmailAddress;
 
-    @LazyGroup("EMAIL_INFO_FIRST_WAVE")
     @Column(name = "secondary_email_address")
-    @Basic(fetch = FetchType.LAZY)
     private String secondaryEmailAddress;
 
-    @LazyGroup("EMAIL_INFO_FIRST_WAVE")
     @Column(name = "mail_box_capacity")
-    @Basic(fetch = FetchType.LAZY)
     private BigDecimal mailBoxCapacity;
-
 
     @Version
     @Column(name = "version", nullable = false)

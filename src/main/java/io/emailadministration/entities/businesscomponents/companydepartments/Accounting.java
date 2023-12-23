@@ -19,17 +19,14 @@ import java.util.Set;
 public class Accounting extends Department {
 
     @LazyGroup("ACCOUNTING_DEPARTMENT_INFO")
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "team_leader_accountanting_id", unique = true)
     private Accountant teamLeaderOfDepartment;
 
-    @LazyGroup("ACCOUNTING_DEPARTMENT_INFO")
     @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
     private Set<Accountant> listOfEmployeesInTheDepartment = new LinkedHashSet<>();
 
-    @LazyGroup("ACCOUNTING_DEPARTMENT_INFO")
     @Column(name = "numbers_of_employees_per_department")
-    @Basic(fetch = FetchType.LAZY)
     private int numberOfEmployeesPerDepartment;
 
     public Accounting() {

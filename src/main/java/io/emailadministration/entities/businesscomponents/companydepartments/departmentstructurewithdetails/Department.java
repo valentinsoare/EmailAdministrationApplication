@@ -7,7 +7,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.BatchSize;
-import org.hibernate.annotations.LazyGroup;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
@@ -30,20 +29,14 @@ public abstract class Department implements Comparable<Department> {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @LazyGroup("DEPARTMENT_INFO")
     @Column(name = "department_business_id")
-    @Basic(fetch = FetchType.LAZY)
     private String departmentBusinessID;
 
     @Enumerated(EnumType.STRING)
-    @LazyGroup("DEPARTMENT_INFO")
     @Column(name = "whichDepartmentIsThis")
-    @Basic(fetch = FetchType.LAZY)
     private DepartmentType whichDepartmentIsThis;
 
-    @LazyGroup("DEPARTMENT_INFO")
     @Column(name = "last_year_evaluation_of_the_department")
-    @Basic(fetch = FetchType.LAZY)
     private int lastYearEvaluationOfTheDepartment;
 
     @Version

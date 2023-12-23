@@ -14,35 +14,23 @@ import java.util.Map;
 @Setter
 @Embeddable
 public class Address implements Comparable<Address> {
-
-    @LazyGroup("ADDRESS_SPECIFIC")
-    @Basic(fetch = FetchType.LAZY)
-    @Column(name = "street")
+    @Column(name = "street", nullable = false)
     private String street;
 
-    @LazyGroup("ADDRESS_SPECIFIC")
-    @Basic(fetch = FetchType.LAZY)
-    @Column(name = "number")
+
+    @Column(name = "number", nullable = false)
     private int number;
 
-    @LazyGroup("ADDRESS_SPECIFIC")
-    @Basic(fetch = FetchType.LAZY)
     @Column(name = "apartment")
     private int apartment;
 
-    @LazyGroup("ADDRESS_WIDE")
-    @Basic(fetch = FetchType.LAZY)
-    @Column(name = "city")
+    @Column(name = "city", nullable = false)
     private String city;
 
-    @LazyGroup("ADDRESS_WIDE")
-    @Basic(fetch = FetchType.LAZY)
-    @Column(name = "country")
+    @Column(name = "country", nullable = false)
     private String country;
 
-    @LazyGroup("ADDRESS_SPECIFIC")
-    @Basic(fetch = FetchType.LAZY)
-    @Column(name = "zipcode")
+    @Column(name = "zipcode", nullable = false)
     private int zipcode;
 
     public Address() {}

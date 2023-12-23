@@ -2,7 +2,7 @@ package io.emailadministration.DButils;
 
 import java.util.Map;
 
-public class DBInfo implements Database {
+public class DBInfo implements DatabaseMetaData {
     private String nameOfTheDB;
     private int numberOfTables;
     private int numberOfRecords;

@@ -15,20 +15,14 @@ import java.util.Map;
 @Setter
 @Embeddable
 public class WorkDetails implements Comparable<WorkDetails> {
-    @LazyGroup("WORK_DETAILS")
     @Enumerated(EnumType.STRING)
     @Column(name = "type_of_work_contract")
-    @Basic(fetch = FetchType.LAZY)
     private TypeOfWorkContract typeOfWorkContract;
 
-    @LazyGroup("WORK_DETAILS")
     @Column(name = "seniority_level")
-    @Basic(fetch = FetchType.LAZY)
     private SeniorityLevel seniorityLevel;
 
-    @LazyGroup("WORK_DETAILS")
     @Column(name = "current_salary")
-    @Basic(fetch = FetchType.LAZY)
     private BigDecimal currentSalary;
 
     public WorkDetails() {}

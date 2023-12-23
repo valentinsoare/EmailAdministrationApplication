@@ -6,10 +6,6 @@ java:S1450"ZRemove the "nameOfTheDB" field and declare it as a local variable 
 java:S1450"^Remove the "numberOfRecords" field and declare it as a local variable in the relevant methods.(”îë‚8ﬂıﬁÓ∆1
 z
 java:S1450"]Remove the "numberOfTables" field and declare it as a local variable in the relevant methods.(§ïπÌ8ﬂıﬁÓ∆1
-A
-java:S1168""$Return an empty map instead of null.(•πÔç8·ıﬁÓ∆1
-A
-java:S1168/"$Return an empty map instead of null.(•πÔç8·ıﬁÓ∆1
 L
 java:S1068"/Remove this unused "nameOfTheDB" private field.(ÇöΩ°8·ıﬁÓ∆1
 O

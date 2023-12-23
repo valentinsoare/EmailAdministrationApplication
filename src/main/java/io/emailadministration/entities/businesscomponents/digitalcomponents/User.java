@@ -23,22 +23,17 @@ public class User implements Comparable<User> {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @LazyGroup("USER_INFO")
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "employee_profile", unique = true)
     private Employee employeeProfile;
 
-    @LazyGroup("USER_INFO")
     @Column(name = "user_name")
-    @Basic(fetch = FetchType.LAZY)
     private String userName;
 
-    @LazyGroup("USER_INFO")
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "user_password", unique = true)
     private Password password;
 
-    @LazyGroup("USER_INFO")
     @OneToOne(mappedBy = "user")
     private Email email;
 

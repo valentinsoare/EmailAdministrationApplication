@@ -4,6 +4,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
+import javax.xml.crypto.Data;
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.Optional;
@@ -11,7 +12,7 @@ import java.util.Optional;
 public class DBConnection {
     private EntityManager entityManger;
 
-    private DBConnection() {}
+    public DBConnection() {}
 
     static class Inner {
         private Inner() {}

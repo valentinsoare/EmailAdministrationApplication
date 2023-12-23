@@ -1,6 +1,8 @@
 
 {	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³åç˜øÿÿÿÿ8ë½±”Ç1
+ž
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Öí‚Ä8óÌ¼²È1
 }
-java:S1450"[Remove the "entityManger" field and declare it as a local variable in the relevant methods.(¶°ðóùÿÿÿÿ8ð½±”Ç1
-¶
-java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(® ©þ8ñ½±”Ç1
+java:S1450"[Remove the "entityManger" field and declare it as a local variable in the relevant methods.(¶°ðóùÿÿÿÿ8ÎÒæ°É1
+T
+java:S1128"2Remove this unused import 'javax.xml.crypto.Data'.(¦¿çˆýÿÿÿÿ8ÐÒæ°É1

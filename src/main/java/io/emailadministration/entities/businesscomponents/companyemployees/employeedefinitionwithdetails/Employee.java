@@ -30,39 +30,26 @@ public abstract class Employee implements Comparable<Employee> {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @LazyGroup("PERSONAL_INFORMATION")
     @Column(name = "first_name")
-    @Basic(fetch = FetchType.LAZY)
     private String firstName;
 
-    @LazyGroup("PERSONAL_INFORMATION")
     @Column(name = "last_name")
-    @Basic(fetch = FetchType.LAZY)
     private String lastName;
 
-    @LazyGroup("PERSONAL_INFORMATION")
     @Column(name = "date_of_birth")
-    @Basic(fetch = FetchType.LAZY)
     private LocalDate dateOfBirth;
 
-    @LazyGroup("PERSONAL_INFORMATION")
     @Column(name = "phone_number")
-    @Basic(fetch = FetchType.LAZY)
     private int phoneNumber;
 
     @Embedded
     private Address address;
 
-
-    @LazyGroup("WORK_DETAILS")
     @Column(name = "employee_id")
-    @Basic(fetch = FetchType.LAZY)
     private String employeeId;
 
     @Enumerated(EnumType.STRING)
-    @LazyGroup("WORK_DETAILS")
     @Column(name = "department_where_i_am_working")
-    @Basic(fetch = FetchType.LAZY)
     private DepartmentType departmentWhereIamWorking;
 
     @Embedded

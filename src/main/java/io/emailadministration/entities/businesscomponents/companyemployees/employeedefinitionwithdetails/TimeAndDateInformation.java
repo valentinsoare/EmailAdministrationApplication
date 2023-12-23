@@ -16,41 +16,25 @@ import java.util.Map;
 @Setter
 @Embeddable
 public class TimeAndDateInformation {
-    @LazyGroup("FIRST_WAVE_TIME_AND_DATE")
     @Column(name = "hire_date")
-    @Basic(fetch = FetchType.LAZY)
     private LocalDate hireDate;
 
-    @LazyGroup("FIRST_WAVE_TIME_AND_DATE")
     @Column(name = "creation_profile_date")
-    @Basic(fetch = FetchType.LAZY)
     private LocalDate creationProfileDate;
 
-    @LazyGroup("FIRST_WAVE_TIME_AND_DATE")
     @Column(name = "last_modification_on_profile_date")
-    @Basic(fetch = FetchType.LAZY)
     private LocalDate lastModificationOnProfileDate;
 
-
-    @LazyGroup("SECOND_WAVE_TIME_AND_DATE")
     @Column(name = "creation_profile_time")
-    @Basic(fetch = FetchType.LAZY)
     private LocalTime creationProfileTime;
 
-    @LazyGroup("SECOND_WAVE_TIME_AND_DATE")
     @Column(name = "last_modification_on_profile_time")
-    @Basic(fetch = FetchType.LAZY)
     private LocalTime lastModificationOnProfileTime;
 
-
     @Transient
-    @LazyGroup("THIRD_WAVE_TIME_AND_DATE")
-    @Basic(fetch = FetchType.LAZY)
     private BigDecimal numberOfDaysFromHiring;
 
     @Transient
-    @LazyGroup("THIRD_WAVE_TIME_AND_DATE")
-    @Basic(fetch = FetchType.LAZY)
     private BigDecimal numberOfDaysFromLastModification;
 
 

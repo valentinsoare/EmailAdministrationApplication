@@ -3,7 +3,8 @@ package io.emailadministration.DButils;
 public enum EntityManagerScope {
     EMAIL_SET("email_set"),
     EMAIL_GET("email_get"),
-    EMAIL_GENERATE("email_generate");
+    EMAIL_GENERATE("email_generate"),
+    RUN("run_the_app");
 
     private final String textContent;
 
