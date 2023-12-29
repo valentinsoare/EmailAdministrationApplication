@@ -1,8 +1,12 @@
 
-]	java:S125"<This block of commented-out lines of code should be removed.(ÐûœÀûÿÿÿÿ8âÖ‡·Ë1
-]	java:S125"<This block of commented-out lines of code should be removed.(·‡”ãúÿÿÿÿ8ÕÁ„·Ë1
-]	java:S125R"<This block of commented-out lines of code should be removed.(Òô¾ˆÿÿÿÿÿ8×Á„·Ë1
-]	java:S125T"<This block of commented-out lines of code should be removed.(—Ž¨šúÿÿÿÿ8×Á„·Ë1
-W	java:S125\"<This block of commented-out lines of code should be removed.(ÎŽÁq8×Á„·Ë1
-X	java:S125n"<This block of commented-out lines of code should be removed.(Ž„Ð8×Á„·Ë1
-]	java:S125x"<This block of commented-out lines of code should be removed.(êÌôÕùÿÿÿÿ8×Á„·Ë1
+]	java:S125G"<This block of commented-out lines of code should be removed.(Òô¾ˆÿÿÿÿÿ8š“¯¹Ë1
+k
+java:S1128"NRemove this unused import 'io.emailadministration.dbutils.EntityManagerScope'.(ÛÀÎ8›“¯¹Ë1
+`
+java:S1128">Remove this unused import 'jakarta.persistence.EntityManager'.(·ïŸéúÿÿÿÿ8›“¯¹Ë1
+d
+java:S1128"BRemove this unused import 'jakarta.persistence.EntityTransaction'.(¡«Ä×üÿÿÿÿ8›“¯¹Ë1
+Q
+java:S1128"4Remove this unused import 'java.util.logging.Level'.(…µÛ¶8›“¯¹Ë1
+R
+java:S1128"5Remove this unused import 'java.util.logging.Logger'.(ƒ¥óš8›“¯¹Ë1

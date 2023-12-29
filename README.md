@@ -38,7 +38,7 @@
 ✅ A view of these entities but from Java Object-Oriented perspective.
 
 
-[![Screenshot-from-2023-12-16-12-26-41.png](https://i.postimg.cc/JnWCs7xb/Screenshot-from-2023-12-16-12-26-41.png)](https://postimg.cc/JyK2gL9n)
+[![Screenshot-from-2023-12-29-22-37-02.png](https://i.postimg.cc/nVjqS164/Screenshot-from-2023-12-29-22-37-02.png)](https://postimg.cc/0rv6b75j)
 
 
 ✅ Logo and loading effect when the application is started.

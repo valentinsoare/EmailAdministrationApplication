@@ -1,0 +1,13 @@
+
+6
+java:S2129 " Remove this "String" constructor(ùšªÐ
+?
+java:S1659Q")Declare "timeToSleep" on a separate line.(ÐŸ‰†
+i
+java:S1659i"LDeclare "customCharsSize" and all following declarations on a separate line.(ÉÄø„8ðµèÍÊ1
+e
+java:S1659…"IDeclare "numberOfReps" and all following declarations on a separate line.(®Ñ…Åþÿÿÿÿ
+L
+java:S1144&"1Remove this unused private "setCharToUse" method.(ùÑ¬¬üÿÿÿÿ
+M
+java:S1144."7Remove this unused private "setMessageToBeUsed" method.(á¬ë…

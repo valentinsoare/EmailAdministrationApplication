@@ -1,46 +1,34 @@
 package io.emailadministration;
 
 import io.emailadministration.dbutils.DBConnection;
-import io.emailadministration.devcomponents.auxiliary.position.PositionBuilder;
+import io.emailadministration.dbutils.EntityManagerScope;
+import io.emailadministration.devcomponents.auxiliary.position.CPosition;
 import io.emailadministration.devcomponents.header.HeaderBuilder;
 import io.emailadministration.devcomponents.header.IHeader;
 import io.emailadministration.devcomponents.header.frame.HFrameWithContent;
 import io.emailadministration.devcomponents.header.message.IStylizedMessage;
 import io.emailadministration.devcomponents.header.message.MessageBuilder;
 import io.emailadministration.devcomponents.header.message.MessageStyle;
+import io.emailadministration.devcomponents.menu.auxmessage.AuxiliaryMessage;
+import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
+import io.emailadministration.devcomponents.menu.usingmenu.MenuBuilder;
+import io.emailadministration.devcomponents.startingtheappeffect.LoadStartingTheAppEffect;
+import io.emailadministration.printing.PrintMenu;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityTransaction;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class App extends DBConnection {
     public static void main( String[] args ) {
-//        LoadStartingTheAppEffect.start();
+        LoadStartingTheAppEffect.start();
 
         System.out.print("\033[H\033[2J");
         System.out.flush();
 
-//        Optional<IStylizedMessage> mainMessage = new HMessage("Using My Email", true, MessageStyle.MODERN,
-//                new CPosition(0, 0, 25, 2))
-//                .stylizeIt(true, true);
-//
-//        Optional<IStylizedMessage> secondaryMessage = new HMessage("loving sending email", false, MessageStyle.CLASSIC,
-//                new CPosition(0, 2, 0, 2))
-//                .stylizeIt(true, true);
-//
-//        HFrameWithContent hFrameWithContent = HFrameWithContent.addClassicFrameWithCharsOnAllSides('-', '|', 40,
-//                mainMessage.get(), new CPosition(2, 0, 5, 2),
-//                true, secondaryMessage.get());
-//
-//
-//        Header h = new Header(true, hFrameWithContent);
-//
-//        System.out.printf("%s", h);
-
         IStylizedMessage usingMyEmail = new MessageBuilder()
-                .setupPosition(
-                    new PositionBuilder().setupWhiteSpaceUp(0)
-                            .setupWhiteSpaceDown(0)
-                            .setupWhiteSpaceLeft(5)
-                            .setupWhiteSpaceRight(5)
-                            .build()
-                    )
+                .setupPosition(new CPosition(0, 0,5, 5))
                 .setupHeaderMessage("using my email")
                 .setupIsMainMessage(true)
                 .setupMessageStyle(MessageStyle.MODERN)
@@ -48,39 +36,40 @@ public class App extends DBConnection {
                 .build();
 
         IStylizedMessage lovingSendingEmail = new MessageBuilder()
-                .setupPosition(
-                        new PositionBuilder().setupWhiteSpaceUp(0)
-                                .setupWhiteSpaceDown(0)
-                                .setupWhiteSpaceRight(2)
-                                .setupWhiteSpaceLeft(0)
-                                .build()
-                        )
+                .setupPosition(new CPosition(0, 0, 0, 0))
                 .setupHeaderMessage("loving sending email")
                 .setupIsMainMessage(false)
                 .setupMessageStyle(MessageStyle.CLASSIC)
                 .addStyleToTheMessage(true, true)
                 .build();
 
-
         HFrameWithContent hFrameWithContent = HFrameWithContent.addClassicFrameWithCharsOnAllSides(
                 '-', '|', 40,usingMyEmail,
-                new PositionBuilder().setupWhiteSpaceUp(0)
-                        .setupWhiteSpaceDown(2)
-                        .setupWhiteSpaceLeft(10)
-                        .setupWhiteSpaceRight(2)
-                        .build(),
+                new CPosition(0, 2, 16, 2),
                 true, lovingSendingEmail);
 
         IHeader h = new HeaderBuilder().setupFrameWithMessage(hFrameWithContent)
                 .setupAllBorders(true)
                 .build();
 
-        System.out.printf("%n%s", h);
+        IMenu m = new MenuBuilder().setupHeader(h)
+                .setupPosition(new CPosition(2, 10, 16, 1))
+                .setupNumberOfEntriesInTheCurrentMenu(13)
+                .setupEntries("add employee, change employee, add user, change user, get employees, get users, " +
+                        "remove employee, remove user, change password, " +
+                        "change email, set user mailbox capacity, set alternate email address, quit")
+                .setupAuxiliaryMessage(
+                            new AuxiliaryMessage("please choose an option:",
+                                new CPosition(0, 0, 1, 1)
+                            )
+                    )
+                .build();
 
+        PrintMenu.of(m);
 
         //------------------------------------------------------------
 //        Logger.getLogger("org.hibernate").setLevel(Level.INFO);
-
+//
 //        DBConnection instanceOfDB = getInstance();
 //
 //        EntityManager em = instanceOfDB.generateEntityManager(
@@ -88,15 +77,10 @@ public class App extends DBConnection {
 //        );
 //
 //        EntityTransaction transaction = null;
-
+//
 //        try (em) {
 //            transaction = em.getTransaction();
 //            transaction.begin();
-//
-//            HMessage msg = new HMessage("Go Go Go", true,MessageStyle.ASCII,
-//                    new CPosition<>(2, 4, 2, 2));
-//
-//            System.out.printf("%n%s", msg.createAsciiStyleMessage(200, 10));
 //
 //
 //            transaction.commit();
@@ -105,21 +89,5 @@ public class App extends DBConnection {
 //                transaction.rollback();
 //            }
 //        }
-
-//        IStylizedMessage nameOfTheApp = new HMessage("My Email", true,MessageStyle.ASCII,
-//                new CPosition<>(1, 10, 10, 5));
-//
-//        nameOfTheApp.stylizeIt(true, true);
-//
-//        String s = HFrameWithContent.addingFrame('-', 80,nameOfTheApp,
-//                new CPosition<>(2, 2, 2, 2));
-//
-//        System.out.printf("%n%s", s);
-
-//
-//        System.out.printf("%n%s", nameOfTheApp);
-
-
-
     }
 }
