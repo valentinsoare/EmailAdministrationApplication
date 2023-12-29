@@ -1,4 +1,4 @@
-package io.emailadministration.devcomponents.header.Frame;
+package io.emailadministration.devcomponents.header.frame;
 
 public class HFrameWithContentNullObject extends HFrameWithContent {
     @Override
@@ -7,7 +7,7 @@ public class HFrameWithContentNullObject extends HFrameWithContent {
     }
 
     @Override
-    public HFrameWithContent getHFrameWithContent() {
+    public HFrameWithContent frameWithContentAttributes() {
         return this;
     }
 }

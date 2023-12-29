@@ -8,6 +8,9 @@ import java.util.List;
 
 @Getter
 public enum StructuralErrors implements ICustomError {
+    NO_VALID_AUXILIARY_MENU_MESSAGE("no_valid_auxiliary_message_for_menu", 1,
+            String.format("STRUCT_ERROR, SEV: %s - No valid auxiliary nessage for menu", Severities.ONE)),
+
     NO_SECONDARY_MESSAGE_FOR_HEADER("no_secondary_message_for_header", 2,
             String.format("STRUCT_ERROR, SEV: %s - No valid secondary message for header", Severities.TWO)),
 

@@ -1,4 +1,4 @@
-package io.emailadministration.Printing;
+package io.emailadministration.printing;
 
 import io.emailadministration.devcomponents.errorsclasification.ICustomError;
 import io.emailadministration.devcomponents.loading.Loading;

@@ -1,8 +1,10 @@
-package io.emailadministration.devcomponents.header.Message;
+package io.emailadministration.devcomponents.header.message;
 
-import io.emailadministration.devcomponents.auxiliary.Position.CPosition;
+import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
+import io.emailadministration.devcomponents.auxiliary.position.CPosition;
+import io.emailadministration.devcomponents.auxiliary.position.CPositionNullObject;
+import io.emailadministration.devcomponents.errorsclasification.StructuralErrors;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -13,7 +15,6 @@ import java.util.stream.Stream;
 import static java.util.Map.entry;
 
 @Getter
-@Setter
 public class HMessage implements IStylizedMessage {
     private String headerMessage;
     private boolean isMainMessage;
@@ -23,7 +24,14 @@ public class HMessage implements IStylizedMessage {
     private Map<MessageStyle, String> messagesAfterProcessing;
     private String completeProcessing;
 
-    public HMessage() {}
+    public HMessage() {
+        this.headerMessage = "none";
+        this.isMainMessage = true;
+        this.style = MessageStyle.CLASSIC;
+        this.position = new CPositionNullObject();
+        this.messagesAfterProcessing = new EnumMap<>(MessageStyle.class);
+        this.completeProcessing = "none";
+    }
 
     public HMessage(String headerMessage, boolean isMainMessage,
                     MessageStyle style, CPosition position) {
@@ -36,13 +44,13 @@ public class HMessage implements IStylizedMessage {
         this.headerMessage = headerMessage;
     }
 
-    public HMessage(HMessage message) {
-        this.style = message.getStyle();
-        this.isMainMessage = message.isMainMessage();
-        this.position = new CPosition(message.getPosition());
-        this.messagesAfterProcessing = new EnumMap<>(message.getMessagesAfterProcessing());
-
-        this.headerMessage = new String(message.getHeaderMessage());
+    public HMessage(IStylizedMessage message) {
+        this.style = message.stylizedMessageAttributes().getStyle();
+        this.isMainMessage = message.stylizedMessageAttributes().isMainMessage();
+        this.position = new CPosition(message.stylizedMessageAttributes().getPosition());
+        this.messagesAfterProcessing = new EnumMap<>(message.stylizedMessageAttributes().getMessagesAfterProcessing());
+        this.headerMessage = new String(message.stylizedMessageAttributes().getHeaderMessage());
+        this.completeProcessing = new String(message.stylizedMessageAttributes().getCompleteProcessing());
     }
 
     private String createClassicStyleMessage() {
@@ -167,8 +175,34 @@ public class HMessage implements IStylizedMessage {
         return Optional.of(this);
     }
 
+    public static IStylizedMessage getNewInstance(IStylizedMessage message) {
+        return new HMessage(message);
+    }
+
+    public void setHeaderMessage(String headerMessage) {
+        this.headerMessage = SanityChecks.checkMessage(headerMessage, false, true,
+                position.getWhiteSpaceLeft(), false,
+                true, StructuralErrors.NO_VALID_MESSAGE_HEADER);
+    }
+
+    public void setMainMessage(boolean mainMessage) {
+        isMainMessage = mainMessage;
+    }
+
+    public void setStyle(MessageStyle style) {
+        this.style = style;
+    }
+
+    public void setPosition(CPosition position) {
+        this.position = position;
+    }
+
+    public void setCompleteProcessing(String completeProcessing) {
+        this.completeProcessing = completeProcessing;
+    }
+
     @Override
-    public HMessage getCustomizedMessage() {
+    public HMessage stylizedMessageAttributes() {
         return this;
     }
 

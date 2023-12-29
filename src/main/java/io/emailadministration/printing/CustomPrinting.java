@@ -1,4 +1,4 @@
-package io.emailadministration.Printing;
+package io.emailadministration.printing;
 
 
 import java.util.Map;

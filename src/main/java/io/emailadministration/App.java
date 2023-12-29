@@ -1,39 +1,81 @@
 package io.emailadministration;
 
-import io.emailadministration.DButils.DBConnection;
-import io.emailadministration.devcomponents.auxiliary.Position.CPosition;
-import io.emailadministration.devcomponents.header.Frame.HFrameWithContent;
-import io.emailadministration.devcomponents.header.Header;
-import io.emailadministration.devcomponents.header.Message.HMessage;
-import io.emailadministration.devcomponents.header.Message.IStylizedMessage;
-import io.emailadministration.devcomponents.header.Message.MessageStyle;
-import io.emailadministration.devcomponents.startingtheappeffect.LoadStartingTheAppEffect;
-
-import java.util.Optional;
+import io.emailadministration.dbutils.DBConnection;
+import io.emailadministration.devcomponents.auxiliary.position.PositionBuilder;
+import io.emailadministration.devcomponents.header.HeaderBuilder;
+import io.emailadministration.devcomponents.header.IHeader;
+import io.emailadministration.devcomponents.header.frame.HFrameWithContent;
+import io.emailadministration.devcomponents.header.message.IStylizedMessage;
+import io.emailadministration.devcomponents.header.message.MessageBuilder;
+import io.emailadministration.devcomponents.header.message.MessageStyle;
 
 public class App extends DBConnection {
     public static void main( String[] args ) {
-        LoadStartingTheAppEffect.start();
+//        LoadStartingTheAppEffect.start();
 
         System.out.print("\033[H\033[2J");
         System.out.flush();
 
-        Optional<IStylizedMessage> mainMessage = new HMessage("Using My Email", true, MessageStyle.MODERN,
-                new CPosition(0, 0, 25, 2))
-                .stylizeIt(true, true);
+//        Optional<IStylizedMessage> mainMessage = new HMessage("Using My Email", true, MessageStyle.MODERN,
+//                new CPosition(0, 0, 25, 2))
+//                .stylizeIt(true, true);
+//
+//        Optional<IStylizedMessage> secondaryMessage = new HMessage("loving sending email", false, MessageStyle.CLASSIC,
+//                new CPosition(0, 2, 0, 2))
+//                .stylizeIt(true, true);
+//
+//        HFrameWithContent hFrameWithContent = HFrameWithContent.addClassicFrameWithCharsOnAllSides('-', '|', 40,
+//                mainMessage.get(), new CPosition(2, 0, 5, 2),
+//                true, secondaryMessage.get());
+//
+//
+//        Header h = new Header(true, hFrameWithContent);
+//
+//        System.out.printf("%s", h);
 
-        Optional<IStylizedMessage> secondaryMessage = new HMessage("main menu", false, MessageStyle.CLASSIC,
-                new CPosition(0, 2, 6, 2))
-                .stylizeIt(false, true);
+        IStylizedMessage usingMyEmail = new MessageBuilder()
+                .setupPosition(
+                    new PositionBuilder().setupWhiteSpaceUp(0)
+                            .setupWhiteSpaceDown(0)
+                            .setupWhiteSpaceLeft(5)
+                            .setupWhiteSpaceRight(5)
+                            .build()
+                    )
+                .setupHeaderMessage("using my email")
+                .setupIsMainMessage(true)
+                .setupMessageStyle(MessageStyle.MODERN)
+                .addStyleToTheMessage(true, true)
+                .build();
 
-        HFrameWithContent hFrameWithContent = HFrameWithContent.addClassicFrameWithCharsOnAllSides('-', '|', 60,
-                mainMessage.get(), new CPosition(2, 0, 5, 2),
-                true, secondaryMessage.get());
+        IStylizedMessage lovingSendingEmail = new MessageBuilder()
+                .setupPosition(
+                        new PositionBuilder().setupWhiteSpaceUp(0)
+                                .setupWhiteSpaceDown(0)
+                                .setupWhiteSpaceRight(2)
+                                .setupWhiteSpaceLeft(0)
+                                .build()
+                        )
+                .setupHeaderMessage("loving sending email")
+                .setupIsMainMessage(false)
+                .setupMessageStyle(MessageStyle.CLASSIC)
+                .addStyleToTheMessage(true, true)
+                .build();
 
 
-        Header h = new Header(true, hFrameWithContent);
+        HFrameWithContent hFrameWithContent = HFrameWithContent.addClassicFrameWithCharsOnAllSides(
+                '-', '|', 40,usingMyEmail,
+                new PositionBuilder().setupWhiteSpaceUp(0)
+                        .setupWhiteSpaceDown(2)
+                        .setupWhiteSpaceLeft(10)
+                        .setupWhiteSpaceRight(2)
+                        .build(),
+                true, lovingSendingEmail);
 
-        System.out.printf("%s", h);
+        IHeader h = new HeaderBuilder().setupFrameWithMessage(hFrameWithContent)
+                .setupAllBorders(true)
+                .build();
+
+        System.out.printf("%n%s", h);
 
 
         //------------------------------------------------------------

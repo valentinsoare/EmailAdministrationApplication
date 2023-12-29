@@ -1,4 +1,4 @@
-package io.emailadministration.devcomponents.header.Message;
+package io.emailadministration.devcomponents.header.message;
 
 import java.util.Optional;
 

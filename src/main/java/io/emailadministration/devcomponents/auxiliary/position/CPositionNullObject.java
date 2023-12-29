@@ -1,4 +1,4 @@
-package io.emailadministration.devcomponents.auxiliary.Position;
+package io.emailadministration.devcomponents.auxiliary.position;
 
 public class CPositionNullObject extends CPosition {
     @Override

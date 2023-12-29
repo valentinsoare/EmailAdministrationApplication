@@ -1,7 +1,6 @@
 package io.emailadministration.devcomponents.loading;
 
 public final class ProgressLinesWithPipe extends LoadingEffect {
-
     private final Loading loading;
 
     public ProgressLinesWithPipe(Loading loading) {

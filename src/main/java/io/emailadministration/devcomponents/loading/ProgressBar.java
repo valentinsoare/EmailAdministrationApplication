@@ -1,7 +1,6 @@
 package io.emailadministration.devcomponents.loading;
 
 public final class ProgressBar extends LoadingEffect {
-
     private final Loading loading;
 
     public ProgressBar(Loading loading) {

@@ -7,7 +7,7 @@ public class AuxiliaryMessageNullObject extends AuxiliaryMessage {
     }
 
     @Override
-    public AuxiliaryMessage getAuxiliaryMessage() {
+    public AuxiliaryMessage auxiliaryMessageAttributes() {
         return this;
     }
 }

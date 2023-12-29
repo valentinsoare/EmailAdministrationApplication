@@ -1,6 +1,6 @@
 package io.emailadministration.entities.businesscomponents.companydepartments.departmentstructurewithdetails;
 
-import io.emailadministration.Printing.CustomPrinting;
+import io.emailadministration.printing.CustomPrinting;
 import io.emailadministration.customdatastructureandoperationsonthem.operationswithdatastructures.OperationsOnMap;
 import io.emailadministration.entities.businesscomponents.companyemployees.DepartmentType;
 import jakarta.persistence.*;

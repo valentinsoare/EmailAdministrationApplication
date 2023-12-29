@@ -1,4 +1,4 @@
-package io.emailadministration.devcomponents.auxiliary.Position;
+package io.emailadministration.devcomponents.auxiliary.position;
 
 import io.emailadministration.devcomponents.auxiliary.checks.AppliedToArea;
 import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;

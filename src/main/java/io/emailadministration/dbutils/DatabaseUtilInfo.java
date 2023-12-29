@@ -1,4 +1,4 @@
-package io.emailadministration.DButils;
+package io.emailadministration.dbutils;
 
 import lombok.Getter;
 

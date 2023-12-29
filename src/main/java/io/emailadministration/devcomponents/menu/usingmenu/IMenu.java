@@ -7,6 +7,6 @@ public interface IMenu {
     IMenu withHeader(Header header);
     IMenu withAuxiliaryMessage(IAuxMessage message);
     IMenu onlyMenu();
-    Menu getMenu();
+    Menu menuAttributes();
     String getTypeOfObject();
 }

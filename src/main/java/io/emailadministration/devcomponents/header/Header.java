@@ -1,9 +1,10 @@
 package io.emailadministration.devcomponents.header;
 
-import io.emailadministration.Printing.PrintError;
+import io.emailadministration.devcomponents.header.frame.HFrameWithContentNullObject;
+import io.emailadministration.printing.PrintError;
 import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
 import io.emailadministration.devcomponents.errorsclasification.StructuralErrors;
-import io.emailadministration.devcomponents.header.Frame.HFrameWithContent;
+import io.emailadministration.devcomponents.header.frame.HFrameWithContent;
 import lombok.Getter;
 
 @Getter
@@ -12,7 +13,11 @@ public class Header implements IHeader {
     private boolean allBorders;
     private String frameWithMessageAsString;
 
-    public Header() {}
+    public Header() {
+        this.frameWithMessage = new HFrameWithContentNullObject();
+        this.allBorders = true;
+        this.frameWithMessageAsString = "none";
+    }
 
     public Header(boolean allBorders, HFrameWithContent frameWithMessage) {
         this.allBorders = allBorders;
@@ -27,7 +32,8 @@ public class Header implements IHeader {
     }
 
     public Header(IHeader header) {
-        this(header.getHeader().isAllBorders(), new HFrameWithContent(header.getHeader().getFrameWithMessage()));
+        this(header.headerAttributes().isAllBorders(),
+                new HFrameWithContent(header.headerAttributes().getFrameWithMessage()));
 
     }
 
@@ -46,7 +52,11 @@ public class Header implements IHeader {
         }
     }
 
-    public static Header generateHeader(boolean allBorders, HFrameWithContent frameWithMessage) {
+    public static IHeader generateHeader(boolean allBorders, HFrameWithContent frameWithMessage) {
+        return new Header(allBorders, frameWithMessage);
+    }
+
+    public IHeader headerWithAllTrimmings() {
         return new Header(allBorders, frameWithMessage);
     }
 
@@ -61,7 +71,11 @@ public class Header implements IHeader {
     }
 
     @Override
-    public Header getHeader() {
+    public Header headerAttributes() {
         return this;
+    }
+
+    public void setAllBorders(boolean allBorders) {
+        this.allBorders = allBorders;
     }
 }

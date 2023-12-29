@@ -7,7 +7,7 @@ public class HeaderNullObject extends Header {
     }
 
     @Override
-    public Header getHeader() {
+    public Header headerAttributes() {
         return this;
     }
 }

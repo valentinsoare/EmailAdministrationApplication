@@ -1,4 +1,4 @@
-package io.emailadministration.DButils;
+package io.emailadministration.dbutils;
 
 public enum EntityManagerScope {
     EMAIL_SET("email_set"),

@@ -1,7 +1,8 @@
 package io.emailadministration.devcomponents.menu.auxmessage;
 
-import io.emailadministration.devcomponents.auxiliary.Position.CPosition;
+import io.emailadministration.devcomponents.auxiliary.position.CPosition;
 import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
+import io.emailadministration.devcomponents.auxiliary.position.CPositionNullObject;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,7 +15,9 @@ public class AuxiliaryMessage implements IAuxMessage {
     private String processedAuxiliaryMessage;
 
     public AuxiliaryMessage() {
-        this.processedAuxiliaryMessage = messageTheTheBottom;
+        this.messageTheTheBottom = "none";
+        this.position = new CPositionNullObject();
+        this.processedAuxiliaryMessage = "none";
     }
 
     public AuxiliaryMessage(String messageTheTheBottom, CPosition position) {
@@ -22,19 +25,21 @@ public class AuxiliaryMessage implements IAuxMessage {
 
         this.messageTheTheBottom = SanityChecks.formattingTheMessage(messageTheTheBottom, false, false);
         this.position = SanityChecks.checkPosition(position);
+
+        processTheAuxMessageWithPosition();
     }
 
     public AuxiliaryMessage(IAuxMessage auxiliaryMessage) {
-        this.messageTheTheBottom = new String(auxiliaryMessage.getAuxiliaryMessage().getMessageTheTheBottom());
-        this.position = new CPosition(auxiliaryMessage.getAuxiliaryMessage().getPosition());
-        this.processedAuxiliaryMessage = new String(auxiliaryMessage.getAuxiliaryMessage().getProcessedAuxiliaryMessage());
+        this.messageTheTheBottom = new String(auxiliaryMessage.auxiliaryMessageAttributes().getMessageTheTheBottom());
+        this.position = new CPosition(auxiliaryMessage.auxiliaryMessageAttributes().getPosition());
+        this.processedAuxiliaryMessage = new String(auxiliaryMessage.auxiliaryMessageAttributes().getProcessedAuxiliaryMessage());
     }
 
     public static AuxiliaryMessage getNewInstance(IAuxMessage auxiliaryMessage) {
         return new AuxiliaryMessage(auxiliaryMessage);
     }
 
-    public AuxiliaryMessage processTheAuxMessageWithPosition() {
+    private AuxiliaryMessage processTheAuxMessageWithPosition() {
         StringBuilder sb = new StringBuilder();
 
         this.processedAuxiliaryMessage = sb.append("\n".repeat(position.getWhiteSpaceUp()))
@@ -52,8 +57,18 @@ public class AuxiliaryMessage implements IAuxMessage {
     }
 
     @Override
-    public AuxiliaryMessage getAuxiliaryMessage() {
+    public AuxiliaryMessage auxiliaryMessageAttributes() {
         return this;
+    }
+
+    @Override
+    public String getProcessedAuxiliaryMessage() {
+        return processedAuxiliaryMessage;
+    }
+
+    @Override
+    public CPosition getPosition() {
+        return position;
     }
 
     @Override

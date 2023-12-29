@@ -1,10 +1,9 @@
-package io.emailadministration.DButils;
+package io.emailadministration.dbutils;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-import javax.xml.crypto.Data;
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.Optional;

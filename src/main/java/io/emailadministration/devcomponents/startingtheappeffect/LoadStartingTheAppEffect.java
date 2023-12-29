@@ -1,18 +1,20 @@
 package io.emailadministration.devcomponents.startingtheappeffect;
 
-import io.emailadministration.devcomponents.auxiliary.Position.CPosition;
-import io.emailadministration.devcomponents.header.Frame.HFrameWithContent;
-import io.emailadministration.devcomponents.header.Message.HMessage;
-import io.emailadministration.devcomponents.header.Message.HMessageNullObject;
-import io.emailadministration.devcomponents.header.Message.IStylizedMessage;
-import io.emailadministration.devcomponents.header.Message.MessageStyle;
+import io.emailadministration.devcomponents.auxiliary.position.CPosition;
+import io.emailadministration.devcomponents.header.frame.HFrameWithContent;
+import io.emailadministration.devcomponents.header.message.HMessage;
+import io.emailadministration.devcomponents.header.message.HMessageNullObject;
+import io.emailadministration.devcomponents.header.message.IStylizedMessage;
+import io.emailadministration.devcomponents.header.message.MessageStyle;
 import io.emailadministration.devcomponents.loading.LoadingEffect;
 import io.emailadministration.devcomponents.loading.LoadingFactory;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Optional;
 
 @Getter
+@Setter
 public class LoadStartingTheAppEffect {
     private HMessage message;
     private LoadingEffect progressBar;
@@ -40,7 +42,7 @@ public class LoadStartingTheAppEffect {
                 .stylizeIt(true, true);
 
          if (nameOfTheApp.isPresent()) {
-             this.message = nameOfTheApp.get().getCustomizedMessage();
+             this.message = nameOfTheApp.get().stylizedMessageAttributes();
          } else {
              this.message = new HMessageNullObject();
          }

@@ -1,11 +1,12 @@
-package io.emailadministration.devcomponents.header.Frame;
+package io.emailadministration.devcomponents.header.frame;
 
-import io.emailadministration.devcomponents.auxiliary.Position.CPosition;
+import io.emailadministration.devcomponents.auxiliary.position.CPosition;
 import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
+import io.emailadministration.devcomponents.auxiliary.position.CPositionNullObject;
 import io.emailadministration.devcomponents.errorsclasification.StructuralErrors;
-import io.emailadministration.devcomponents.header.Message.HMessage;
-import io.emailadministration.devcomponents.header.Message.HMessageNullObject;
-import io.emailadministration.devcomponents.header.Message.IStylizedMessage;
+import io.emailadministration.devcomponents.header.message.HMessage;
+import io.emailadministration.devcomponents.header.message.HMessageNullObject;
+import io.emailadministration.devcomponents.header.message.IStylizedMessage;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,7 +26,16 @@ public class HFrameWithContent implements IFrame {
 
     private String finalMessageWithFrame;
 
-    public HFrameWithContent() {}
+    public HFrameWithContent() {
+        this.upAndDownFrameChar = '-';
+        this.leftRightFrameChar = '|';
+        this.numberOfChars = 40;
+        this.mainMessage = new HMessageNullObject();
+        this.withSecondaryMessage = true;
+        this.secondaryMessage = new HMessageNullObject();
+        this.position = new CPositionNullObject();
+        this.finalMessageWithFrame = "none";
+    }
 
     public HFrameWithContent(Character upAndDownFrameChar, int numberOfChars, CPosition position) {
         this.upAndDownFrameChar = SanityChecks.validateCharToUse(upAndDownFrameChar, '-');
@@ -66,34 +76,28 @@ public class HFrameWithContent implements IFrame {
     }
 
     public void setHFrameWithMainMessage(IStylizedMessage msg, boolean isSecondary) {
-        try {
-            String outputAfterChecking = SanityChecks.checkMessage(
-                    msg.getCustomizedMessage().getCompleteProcessing(),
-                    false, true, position.getWhiteSpaceLeft(),
-                    false, true, StructuralErrors.NO_VALID_MESSAGE_HEADER
-            );
+        String outputAfterChecking = SanityChecks.checkMessage(
+                msg.stylizedMessageAttributes().getCompleteProcessing(),
+                false, true, position.getWhiteSpaceLeft(),
+                false, true, StructuralErrors.NO_VALID_MESSAGE_HEADER
+        );
 
-            if (!isSecondary) {
-                if ("none".equals(outputAfterChecking)) {
-                    this.mainMessage = new HMessageNullObject();
-                } else {
-                    this.mainMessage = msg;
-                }
-
-                return;
-            }
-
+        if (!isSecondary) {
             if ("none".equals(outputAfterChecking)) {
-                this.secondaryMessage = new HMessageNullObject();
+                this.mainMessage = new HMessageNullObject();
             } else {
-                this.secondaryMessage = msg;
+                this.mainMessage = msg;
             }
-        } catch (InterruptedException e) {
-            System.out.printf("%nERROR - [setMessageForHFrame] - %s", e.getMessage());
+
+            return;
+        }
+
+        if ("none".equals(outputAfterChecking)) {
+            this.secondaryMessage = new HMessageNullObject();
+        } else {
+            this.secondaryMessage = msg;
         }
     }
-
-
 
     public void setPosition(CPosition position) {
         CPosition headerCPosition = SanityChecks.checkPosition(position);
@@ -118,7 +122,7 @@ public class HFrameWithContent implements IFrame {
                 .append("\n".repeat(position.getWhiteSpaceDown()));
 
         if (withSecondaryMessage) {
-            int secondaryLength = secondaryMessage.getCustomizedMessage().getCompleteProcessing().length();
+            int secondaryLength = secondaryMessage.stylizedMessageAttributes().getCompleteProcessing().length();
 
             int whiteSpacesForSecondaryMessageFromTheLeft = ((numberOfChars / 2) - (secondaryLength / 2));
 
@@ -132,7 +136,7 @@ public class HFrameWithContent implements IFrame {
 
     public String generateFrameWithMessageAndCharsAllAround() {
         StringBuilder sb = new StringBuilder();
-        HMessage mainMessageFinalWithPosition = mainMessage.getCustomizedMessage();
+        HMessage mainMessageFinalWithPosition = mainMessage.stylizedMessageAttributes();
 
         int numberOfRowsBetweenUpDownBorders = (mainMessageFinalWithPosition.getPosition().getWhiteSpaceUp() +
                 mainMessageFinalWithPosition.getPosition().getWhiteSpaceDown());
@@ -145,7 +149,7 @@ public class HFrameWithContent implements IFrame {
 
         int numberOfLeftSpacesOnFrame = position.getWhiteSpaceLeft(),
 
-            lengthOfTheMainMessage = (mainMessageFinalWithPosition.getCustomizedMessage()
+            lengthOfTheMainMessage = (mainMessageFinalWithPosition.stylizedMessageAttributes()
                 .getCompleteProcessing().trim().length()),
 
             whereTextBegins = (numberOfChars / 2) - (lengthOfTheMainMessage / 2);
@@ -175,13 +179,13 @@ public class HFrameWithContent implements IFrame {
                 .append(String.valueOf(upAndDownFrameChar).repeat(numberOfChars));
 
         if (withSecondaryMessage) {
-            int lengthOfTheSecondaryMsg = secondaryMessage.getCustomizedMessage().getHeaderMessage().trim().length(),
-                    whereToPutSecondaryMsg = ((numberOfChars / 2) - (lengthOfTheSecondaryMsg / 2) - 1);
+            int lengthOfTheSecondaryMsg = secondaryMessage.stylizedMessageAttributes().getHeaderMessage().length(),
+                    whereToPutSecondaryMsg = ((numberOfChars / 2) - (lengthOfTheSecondaryMsg / 2));
 
             sb.append("\n")
                     .append(" ".repeat(position.getWhiteSpaceLeft()))
                     .append(" ".repeat(whereToPutSecondaryMsg))
-                    .append(secondaryMessage.toString().trim())
+                    .append(secondaryMessage.toString())
                     .append(" ".repeat(whereToPutSecondaryMsg));
         }
 
@@ -209,7 +213,7 @@ public class HFrameWithContent implements IFrame {
     }
 
     @Override
-    public HFrameWithContent getHFrameWithContent() {
+    public HFrameWithContent frameWithContentAttributes() {
         return this;
     }
 

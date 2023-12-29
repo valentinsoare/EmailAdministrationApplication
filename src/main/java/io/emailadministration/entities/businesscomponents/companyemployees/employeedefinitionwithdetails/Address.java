@@ -1,6 +1,6 @@
 package io.emailadministration.entities.businesscomponents.companyemployees.employeedefinitionwithdetails;
 
-import io.emailadministration.Printing.CustomPrinting;
+import io.emailadministration.printing.CustomPrinting;
 import io.emailadministration.customdatastructureandoperationsonthem.operationswithdatastructures.OperationsOnMap;
 import jakarta.persistence.*;
 import lombok.Getter;
