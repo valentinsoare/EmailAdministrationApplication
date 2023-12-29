@@ -64,7 +64,7 @@
 ✅ Main menu page.
 
 
-[![Screenshot-from-2023-12-30-01-10-47.png](https://i.postimg.cc/T1V71d8v/Screenshot-from-2023-12-30-01-10-47.png)](https://postimg.cc/7JLMQyYK)
+[![Screenshot-from-2023-12-30-01-15-37.png](https://i.postimg.cc/ZYv0g9mM/Screenshot-from-2023-12-30-01-15-37.png)](https://postimg.cc/BtsqPnXT)
 
 
 
