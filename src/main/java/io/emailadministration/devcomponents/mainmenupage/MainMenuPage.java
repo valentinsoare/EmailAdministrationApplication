@@ -27,7 +27,7 @@ public class MainMenuPage implements MainMenuPageI {
 
         IStylizedMessage lovingSendingEmail = new MessageBuilder()
                 .setupPosition(new CPosition(0, 0, 0, 0))
-                .setupHeaderMessage("loving sending email")
+                .setupHeaderMessage("love sending email")
                 .setupIsMainMessage(false)
                 .setupMessageStyle(MessageStyle.CLASSIC)
                 .addStyleToTheMessage(true, true)

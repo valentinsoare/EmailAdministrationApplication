@@ -33,9 +33,7 @@ public class App extends DBConnection {
 
     public static void main( String[] args ) {
         startingTheAppWithLogoAndLoadingBar();
-
         loadingTheLogInSignUpPage();
-
         mainMenuPageLoader();
 
 
