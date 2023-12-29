@@ -35,7 +35,7 @@
 [![Screenshot-from-2023-12-19-13-44-48.png](https://i.postimg.cc/Yqxmspyc/Screenshot-from-2023-12-19-13-44-48.png)](https://postimg.cc/XppJZ0bx)
 
 
-✅ A view of these entities but from Java Object-Oriented perspective.
+✅ A view of these entities and all java classes from this project but from Java Object-Oriented perspective.
 
 
 [![Screenshot-from-2023-12-29-22-37-02.png](https://i.postimg.cc/nVjqS164/Screenshot-from-2023-12-29-22-37-02.png)](https://postimg.cc/0rv6b75j)
