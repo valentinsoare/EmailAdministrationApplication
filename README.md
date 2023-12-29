@@ -25,7 +25,8 @@
  9. [X] Custom printing of errors to console in a specific text frame;
 10. [X] Following SOLID, DRY, YAGNI and KISS design principles;
 11. [X] CPosition, HFrameWithContent, HMessage, Header Menu, AuxiliaryMessage and PrintMenu classes with associated methods along with builder and null object for each class;
-12. [X] To continue
+12. [X] Logo/Loading progress bar, Login Page and Main Menu page completed.
+13. [X] To continue
 
 <br>
 
