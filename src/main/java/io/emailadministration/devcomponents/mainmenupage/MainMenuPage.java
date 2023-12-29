@@ -1,4 +1,4 @@
-package io.emailadministration.devcomponents.loginpage;
+package io.emailadministration.devcomponents.mainmenupage;
 
 import io.emailadministration.devcomponents.auxiliary.position.CPosition;
 import io.emailadministration.devcomponents.header.HeaderBuilder;
@@ -10,57 +10,54 @@ import io.emailadministration.devcomponents.header.message.MessageStyle;
 import io.emailadministration.devcomponents.menu.auxmessage.AuxiliaryMessage;
 import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
 import io.emailadministration.devcomponents.menu.usingmenu.MenuBuilder;
-import io.emailadministration.devcomponents.menu.usingmenu.MenuNullObject;
 
-public class LoginOrSignUp implements LoginPageI {
-    private IMenu loginMenu;
+public class MainMenuPage implements MainMenuPageI {
+    private IMenu mainMenu;
     private IHeader header;
 
-    public LoginOrSignUp() {
-        this.loginMenu = new MenuNullObject();
-    }
-
     @Override
-    public IMenu generateLoginOrSignUpPage() {
+    public IMenu generateMainMenuPage() {
         IStylizedMessage usingMyEmail = new MessageBuilder()
-                .setupPosition(new CPosition(1, 10,11, 0))
-                .setupHeaderMessage("my email")
+                .setupPosition(new CPosition(0, 0,5, 5))
+                .setupHeaderMessage("using my email")
                 .setupIsMainMessage(true)
-                .setupMessageStyle(MessageStyle.ASCII)
+                .setupMessageStyle(MessageStyle.MODERN)
                 .addStyleToTheMessage(true, true)
                 .build();
 
-        IStylizedMessage signInSignUp = new MessageBuilder()
-                .setupPosition(new CPosition(1, 2, 34, 0))
-                .setupHeaderMessage("sign in/sign up")
+        IStylizedMessage lovingSendingEmail = new MessageBuilder()
+                .setupPosition(new CPosition(0, 0, 0, 0))
+                .setupHeaderMessage("loving sending email")
                 .setupIsMainMessage(false)
                 .setupMessageStyle(MessageStyle.CLASSIC)
                 .addStyleToTheMessage(true, true)
                 .build();
 
         HFrameWithContent hFrameWithContent = HFrameWithContent.addClassicFrameWithCharsOnAllSides(
-                '-', '|', 60,usingMyEmail,
-                new CPosition(0, 0, 12, 0),
-                true, signInSignUp);
+                '-', '|', 40,usingMyEmail,
+                new CPosition(2, 2, 12, 0),
+                true, lovingSendingEmail);
 
         IHeader h = new HeaderBuilder().setupFrameWithMessage(hFrameWithContent)
-                .setupAllBorders(false)
+                .setupAllBorders(true)
                 .build();
 
         this.header = h;
 
         IMenu m = new MenuBuilder().setupHeader(h)
-                .setupPosition(new CPosition(2, 10, 12, 12))
-                .setupNumberOfEntriesInTheCurrentMenu(3)
-                .setupEntries("sign in, sign up, quit")
+                .setupPosition(new CPosition(2, 10, 12, 0))
+                .setupNumberOfEntriesInTheCurrentMenu(13)
+                .setupEntries("add employee, change employee, add user, change user, get employees, get users, " +
+                        "remove employee, remove user, change password, " +
+                        "change email, set user mailbox capacity, set alternate email address, quit")
                 .setupAuxiliaryMessage(
-                        new AuxiliaryMessage("please choose an option:",
+                            new AuxiliaryMessage("please choose an option:",
                                 new CPosition(0, 0, 1, 1)
-                        )
-                )
+                            )
+                    )
                 .build();
 
-        this.loginMenu = m;
+        this.mainMenu = m;
         return m;
     }
 
@@ -69,7 +66,7 @@ public class LoginOrSignUp implements LoginPageI {
         return header;
     }
 
-    public IMenu getLoginMenu() {
-        return loginMenu;
+    public IMenu getMainMenu() {
+        return mainMenu;
     }
 }

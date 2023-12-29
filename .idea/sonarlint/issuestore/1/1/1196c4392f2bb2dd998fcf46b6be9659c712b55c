@@ -1,12 +1,4 @@
 
-]	java:S125G"<This block of commented-out lines of code should be removed.(Òô¾ˆÿÿÿÿÿ8š“¯¹Ë1
 k
-java:S1128"NRemove this unused import 'io.emailadministration.dbutils.EntityManagerScope'.(ÛÀÎ8›“¯¹Ë1
-`
-java:S1128">Remove this unused import 'jakarta.persistence.EntityManager'.(·ïŸéúÿÿÿÿ8›“¯¹Ë1
-d
-java:S1128"BRemove this unused import 'jakarta.persistence.EntityTransaction'.(¡«Ä×üÿÿÿÿ8›“¯¹Ë1
-Q
-java:S1128"4Remove this unused import 'java.util.logging.Level'.(…µÛ¶8›“¯¹Ë1
-R
-java:S1128"5Remove this unused import 'java.util.logging.Logger'.(ƒ¥óš8›“¯¹Ë1
+java:S1192"NDefine a constant instead of duplicating this literal "\033[H\033[2J" 3 times.(Îœò—8¼§Ç¾Ë1
+]	java:S125."<This block of commented-out lines of code should be removed.(Òô¾ˆÿÿÿÿÿ8À§Ç¾Ë1

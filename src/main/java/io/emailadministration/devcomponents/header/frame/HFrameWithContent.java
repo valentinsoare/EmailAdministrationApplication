@@ -27,14 +27,6 @@ public class HFrameWithContent implements IFrame {
     private String finalMessageWithFrame;
 
     public HFrameWithContent() {
-        this.upAndDownFrameChar = '-';
-        this.leftRightFrameChar = '|';
-        this.numberOfChars = 40;
-        this.mainMessage = new HMessageNullObject();
-        this.withSecondaryMessage = true;
-        this.secondaryMessage = new HMessageNullObject();
-        this.position = new CPositionNullObject();
-        this.finalMessageWithFrame = "none";
     }
 
     public HFrameWithContent(Character upAndDownFrameChar, int numberOfChars, CPosition position) {

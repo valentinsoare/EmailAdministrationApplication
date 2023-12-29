@@ -267,3 +267,7 @@ t
 Dsrc/main/java/io/emailadministration/dbutils/EntityManagerScope.java,1/b/1bab3615dce2fbe2dfafe7eaf38b91e767cdf55b
 h
 8src/main/java/io/emailadministration/dbutils/DBInfo.java,0/3/032705bc909fc549a72ad39ae0b5e91e23236741
+Ç
+Rsrc/main/java/io/emailadministration/devcomponents/mainmenupage/MainMenuPageI.java,9/b/9b6945a6ba75f51f784b4030afb125dca63453f9
+Å
+Qsrc/main/java/io/emailadministration/devcomponents/mainmenupage/MainMenuPage.java,2/4/24ed63142f781737e73622f93eb7f688b10aae4c

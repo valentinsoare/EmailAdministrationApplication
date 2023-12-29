@@ -1,7 +1,7 @@
 
 =
-java:S2129G" Remove this "String" constructor(Ìîø¹8ÔµË1
+java:S2129?" Remove this "String" constructor(Ìîø¹8àÅ½Ë1
 v
-java:S1659˜"SDeclare "lengthOfTheMainMessage" and all following declarations on a separate line.(ê‡“ıÿÿÿÿ8‘ÔµË1
+java:S1659"SDeclare "lengthOfTheMainMessage" and all following declarations on a separate line.(ê‡“ıÿÿÿÿ8ãÅ½Ë1
 R
-java:S1659·"4Declare "whereToPutSecondaryMsg" on a separate line.(À³“ê8’ÔµË1
+java:S1659¯"4Declare "whereToPutSecondaryMsg" on a separate line.(À³“ê8äÅ½Ë1

@@ -66,8 +66,6 @@ public class SanityChecks {
                 messageGiven.append(StringUtils.capitalize(message.substring(start,end)))
                         .append(" ");
             }
-
-            messageGiven.append("\n");
         }
 
         return messageGiven.toString();
