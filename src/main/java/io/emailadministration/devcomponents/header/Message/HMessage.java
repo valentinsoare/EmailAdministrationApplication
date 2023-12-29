@@ -128,7 +128,6 @@ public class HMessage implements IStylizedMessage {
         finalMessage.append("\n".repeat(position.getWhiteSpaceUp()));
 
         for (int y = 0; y < height; y++) {
-
             finalMessage.append(" ".repeat(position.getWhiteSpaceLeft()));
 
             for (int x = 0; x < width; x++) {

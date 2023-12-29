@@ -14,16 +14,17 @@
 <br>
 
 ## Completed Tasks
- 1. [X] Initiate DBConnection with JPA/Hibernate using Singleton Design Pattern. 
+ 1. [X] Initiate DBConnection with JPA/Hibernate using Singleton Design Pattern; 
  2. [X] Building Business Entities hierarchies with JPA/Hibernate and then implement mapping between these entities;
  3. [X] Auxiliary classes with helper methods;
- 4. [X] Class hierarchy for loading effect applied on starting the app and loading each menu/submenu, made with builder and factory design pattern.
+ 4. [X] Class hierarchy for loading effect applied on starting the app and loading each menu/submenu, made with builder, factory and null object design patterns.
  5. [X] Custom message for header/logo with several different message styles: CLASSIC, MODERN, HACKER, ASCII ART;
- 6. [X] Classes/interfaces that can deliver custom header with position, frame and styles designated for specific use.
- 7. [X] Error classification along with severity defined in a standalone class hierarchy.
- 8. [X] A separate class that deliver the loading bar and logo for when the app is started.
- 9. [X] Custom printing of errors to console in a specific text frame.
-10. [X] To continue
+ 6. [X] Classes/interfaces that can deliver custom header with position, frame and styles designated for specific use;
+ 7. [X] Error classification along with severity defined in a standalone class hierarchy;
+ 8. [X] A separate class that deliver the loading bar and logo for when the app is started;
+ 9. [X] Custom printing of errors to console in a specific text frame;
+10. [X] Following SOLID, DRY, YAGNI and KISS design principles;
+11. [X] To continue
 
 <br>
 

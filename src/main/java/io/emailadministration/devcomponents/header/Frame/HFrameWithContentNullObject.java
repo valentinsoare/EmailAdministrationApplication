@@ -5,4 +5,9 @@ public class HFrameWithContentNullObject extends HFrameWithContent {
     public String getTypeOfObject() {
         return this.getClass().getSimpleName();
     }
+
+    @Override
+    public HFrameWithContent getHFrameWithContent() {
+        return this;
+    }
 }

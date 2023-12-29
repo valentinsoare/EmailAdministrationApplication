@@ -4,9 +4,9 @@ import io.emailadministration.Printing.PrintError;
 import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
 import io.emailadministration.devcomponents.errorsclasification.StructuralErrors;
 import io.emailadministration.devcomponents.header.Frame.HFrameWithContent;
+import lombok.Getter;
 
-import java.util.Optional;
-
+@Getter
 public class Header implements IHeader {
     private HFrameWithContent frameWithMessage;
     private boolean allBorders;
@@ -48,18 +48,6 @@ public class Header implements IHeader {
 
     public static Header generateHeader(boolean allBorders, HFrameWithContent frameWithMessage) {
         return new Header(allBorders, frameWithMessage);
-    }
-
-    public HFrameWithContent getFrameWithMessage() {
-        return frameWithMessage;
-    }
-
-    public boolean isAllBorders() {
-        return allBorders;
-    }
-
-    public String getFrameWithMessageAsString() {
-        return frameWithMessageAsString;
     }
 
     @Override

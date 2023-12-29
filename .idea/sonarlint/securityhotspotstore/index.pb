@@ -211,3 +211,17 @@ Hsrc/main/java/io/emailadministration/devcomponents/menu/IAuxMessage.java,8/8/8
 Wsrc/main/java/io/emailadministration/devcomponents/menu/AuxiliaryMessageNullObject.java,0/f/0fc52dc9eb1426efc10b567f7f8f0932287ab849
 {
 Ksrc/main/java/io/emailadministration/devcomponents/menu/MenuNullObject.java,8/b/8bbdc9f7e76fc14265da90a0326bad7522696e40
+ˆ
+Xsrc/main/java/io/emailadministration/devcomponents/menu/auxmessage/AuxiliaryMessage.java,3/5/3509d2da8299aefdc243e277760852d0bb2d474c
+’
+bsrc/main/java/io/emailadministration/devcomponents/menu/auxmessage/AuxiliaryMessageNullObject.java,7/3/731c20db64e37e09210f1a241d5e3b86d8e0fb4e
+ƒ
+Ssrc/main/java/io/emailadministration/devcomponents/menu/auxmessage/IAuxMessage.java,1/5/158ba60fedaea253479a3fcaee53e3d13a61b417
+{
+Ksrc/main/java/io/emailadministration/devcomponents/menu/usingmenu/Menu.java,b/6/b61e0960fc104b718fdf61260e4204b9d55923b6
+|
+Lsrc/main/java/io/emailadministration/devcomponents/menu/usingmenu/IMenu.java,2/d/2d263fe1676e5e0e7c7dee99def4da588f96470a
+…
+Usrc/main/java/io/emailadministration/devcomponents/menu/usingmenu/MenuNullObject.java,2/b/2b97bd4e9c24b3243ee4f157b818501f846df809
+{
+Ksrc/main/java/io/emailadministration/devcomponents/header/Frame/IFrame.java,c/5/c5375a8a28ce00bbbbda018e43a6853855589ee2

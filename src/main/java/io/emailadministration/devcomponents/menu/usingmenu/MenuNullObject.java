@@ -1,4 +1,4 @@
-package io.emailadministration.devcomponents.menu;
+package io.emailadministration.devcomponents.menu.usingmenu;
 
 public class MenuNullObject extends Menu {
 

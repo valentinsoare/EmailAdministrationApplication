@@ -11,7 +11,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class HFrameWithContent {
+public class HFrameWithContent implements IFrame {
     private Character upAndDownFrameChar;
     private Character leftRightFrameChar;
     private int numberOfChars;
@@ -203,8 +203,14 @@ public class HFrameWithContent {
                 withSecondaryMessage, secondaryMessage);
     }
 
+    @Override
     public String getTypeOfObject() {
         return this.getClass().getSimpleName();
+    }
+
+    @Override
+    public HFrameWithContent getHFrameWithContent() {
+        return this;
     }
 
     @Override

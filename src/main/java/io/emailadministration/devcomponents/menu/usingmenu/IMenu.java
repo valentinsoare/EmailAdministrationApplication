@@ -1,6 +1,7 @@
-package io.emailadministration.devcomponents.menu;
+package io.emailadministration.devcomponents.menu.usingmenu;
 
 import io.emailadministration.devcomponents.header.Header;
+import io.emailadministration.devcomponents.menu.auxmessage.IAuxMessage;
 
 public interface IMenu {
     IMenu withHeader(Header header);

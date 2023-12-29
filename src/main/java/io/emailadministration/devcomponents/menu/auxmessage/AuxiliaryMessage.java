@@ -1,4 +1,4 @@
-package io.emailadministration.devcomponents.menu;
+package io.emailadministration.devcomponents.menu.auxmessage;
 
 import io.emailadministration.devcomponents.auxiliary.Position.CPosition;
 import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
@@ -24,6 +24,16 @@ public class AuxiliaryMessage implements IAuxMessage {
         this.position = SanityChecks.checkPosition(position);
     }
 
+    public AuxiliaryMessage(IAuxMessage auxiliaryMessage) {
+        this.messageTheTheBottom = new String(auxiliaryMessage.getAuxiliaryMessage().getMessageTheTheBottom());
+        this.position = new CPosition(auxiliaryMessage.getAuxiliaryMessage().getPosition());
+        this.processedAuxiliaryMessage = new String(auxiliaryMessage.getAuxiliaryMessage().getProcessedAuxiliaryMessage());
+    }
+
+    public static AuxiliaryMessage getNewInstance(IAuxMessage auxiliaryMessage) {
+        return new AuxiliaryMessage(auxiliaryMessage);
+    }
+
     public AuxiliaryMessage processTheAuxMessageWithPosition() {
         StringBuilder sb = new StringBuilder();
 
@@ -39,6 +49,11 @@ public class AuxiliaryMessage implements IAuxMessage {
     @Override
     public String getTypeOfObject() {
         return this.getClass().getSimpleName();
+    }
+
+    @Override
+    public AuxiliaryMessage getAuxiliaryMessage() {
+        return this;
     }
 
     @Override
