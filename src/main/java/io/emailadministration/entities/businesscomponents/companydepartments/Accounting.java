@@ -13,9 +13,8 @@ import java.util.Set;
 
 @Getter
 @Setter
-@BatchSize(size = 8)
-@DiscriminatorValue("Accounting")
-@Entity(name = "Accounting")
+@DiscriminatorValue("accounting")
+@Entity(name = "accounting")
 public class Accounting extends Department {
 
     @LazyGroup("ACCOUNTING_DEPARTMENT_INFO")

@@ -11,16 +11,17 @@ import java.math.BigDecimal;
 
 @Getter
 @Setter
-@BatchSize(size = 8)
-@Entity(name = "Email")
-@Table(name = "Email", schema = "Email")
+@BatchSize(size = 16)
+@Entity(name = "email")
+@Table(name = "email", schema = "email")
 public class Email implements Comparable<Email> {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.REFRESH})
     @JoinColumn(name = "user_id", unique = true)
     private User user;
 

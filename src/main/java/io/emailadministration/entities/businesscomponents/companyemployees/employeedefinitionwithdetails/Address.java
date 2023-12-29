@@ -5,7 +5,6 @@ import io.emailadministration.customdatastructureandoperationsonthem.operationsw
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.LazyGroup;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
@@ -16,7 +15,6 @@ import java.util.Map;
 public class Address implements Comparable<Address> {
     @Column(name = "street", nullable = false)
     private String street;
-
 
     @Column(name = "number", nullable = false)
     private int number;

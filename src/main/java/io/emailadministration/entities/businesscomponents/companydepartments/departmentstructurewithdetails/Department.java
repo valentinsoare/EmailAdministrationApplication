@@ -6,7 +6,6 @@ import io.emailadministration.entities.businesscomponents.companyemployees.Depar
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.BatchSize;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
@@ -14,9 +13,8 @@ import java.util.Map;
 
 @Getter
 @Setter
-@BatchSize(size = 8)
-@Entity(name = "Department")
-@Table(name = "Department", schema = "Department")
+@Entity(name = "department")
+@Table(name = "department", schema = "department")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(
         discriminatorType = DiscriminatorType.STRING,
@@ -25,7 +23,7 @@ import java.util.Map;
 @DiscriminatorValue("none")
 public abstract class Department implements Comparable<Department> {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
     private Long id;
 

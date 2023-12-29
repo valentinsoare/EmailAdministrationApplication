@@ -10,9 +10,9 @@ import org.hibernate.annotations.LazyGroup;
 
 @Getter
 @Setter
-@BatchSize(size = 8)
-@Entity(name = "Developer")
-@DiscriminatorValue("Developer")
+@BatchSize(size = 16)
+@Entity(name = "developer")
+@DiscriminatorValue("developer")
 public class Developer extends Employee {
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})

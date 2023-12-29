@@ -10,12 +10,12 @@ import org.jetbrains.annotations.NotNull;
 
 @Getter
 @Setter
-@BatchSize(size = 8)
-@Entity(name = "Password")
-@Table(name = "Password", schema = "Password")
+@BatchSize(size = 16)
+@Entity(name = "password")
+@Table(name = "password", schema = "password")
 public class Password implements Comparable<Password> {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
     private Long id;
 

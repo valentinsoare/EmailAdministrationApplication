@@ -5,8 +5,6 @@ import io.emailadministration.entities.businesscomponents.companyemployees.Sales
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.BatchSize;
-import org.hibernate.annotations.LazyGroup;
 
 import java.math.BigDecimal;
 import java.util.LinkedHashSet;
@@ -14,11 +12,11 @@ import java.util.Set;
 
 @Getter
 @Setter
-@BatchSize(size = 8)
-@DiscriminatorValue("Sales")
-@Entity(name = "Sales")
+@DiscriminatorValue("sales")
+@Entity(name = "sales")
 public class Sales extends Department {
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
     @JoinColumn(name = "team_leader_sales_id", unique = true, nullable = false)
     private SalesAgent teamLeaderOfDepartment;
 

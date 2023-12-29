@@ -1,8 +1,10 @@
 package io.emailadministration.Printing;
 
+
 import java.util.Map;
 
 public class CustomPrinting {
+
     private CustomPrinting() {}
 
     @SuppressWarnings("unchecked")

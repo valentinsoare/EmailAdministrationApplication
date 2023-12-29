@@ -15,9 +15,8 @@ import java.util.TreeSet;
 
 @Getter
 @Setter
-@BatchSize(size = 8)
-@DiscriminatorValue("Development")
-@Entity(name = "Development")
+@Entity(name = "development")
+@DiscriminatorValue("development")
 public class Development extends Department {
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "team_leader_development_id", unique = true)

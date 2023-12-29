@@ -12,11 +12,10 @@ import java.math.BigDecimal;
 
 @Getter
 @Setter
-@BatchSize(size = 8)
-@Entity(name = "Sales_agent")
-@DiscriminatorValue("Sales_agent")
+@BatchSize(size = 16)
+@Entity(name = "sales_agent")
+@DiscriminatorValue("sales_agent")
 public class SalesAgent extends Employee {
-
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "department_id")
     private Sales department;

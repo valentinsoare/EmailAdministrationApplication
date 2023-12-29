@@ -7,7 +7,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.BatchSize;
-import org.hibernate.annotations.LazyGroup;
 import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDate;
@@ -15,9 +14,9 @@ import java.util.Map;
 
 @Getter
 @Setter
-@BatchSize(size = 8)
-@Entity(name = "Employee")
-@Table(name = "Employee", schema = "Employee")
+@BatchSize(size = 16)
+@Entity(name = "employee")
+@Table(name = "employee", schema = "employee")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(
         discriminatorType = DiscriminatorType.STRING,
@@ -26,7 +25,7 @@ import java.util.Map;
 @DiscriminatorValue("none")
 public abstract class Employee implements Comparable<Employee> {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
     private Long id;
 

@@ -14,10 +14,16 @@
 <br>
 
 ## Completed Tasks
-1. [X] Initiate DBConnection with JPA/Hibernate using Singleton Design Pattern. 
-2. [X] Building Business Entities hierarchies with JPA/Hibernate and then implement mapping between these entities;
-3. [X] Auxiliary classes with helper methods;  
-4. [X] To continue
+ 1. [X] Initiate DBConnection with JPA/Hibernate using Singleton Design Pattern. 
+ 2. [X] Building Business Entities hierarchies with JPA/Hibernate and then implement mapping between these entities;
+ 3. [X] Auxiliary classes with helper methods;
+ 4. [X] Class hierarchy for loading effect applied on starting the app and loading each menu/submenu, made with builder and factory design pattern.
+ 5. [X] Custom message for header/logo with several different message styles: CLASSIC, MODERN, HACKER, ASCII ART;
+ 6. [X] Classes/interfaces that can deliver custom header with position, frame and styles designated for specific use.
+ 7. [X] Error classification along with severity defined in a standalone class hierarchy.
+ 8. [X] A separate class that deliver the loading bar and logo for when the app is started.
+ 9. [X] Custom printing of errors to console in a specific text frame.
+10. [X] To continue
 
 <br>
 
@@ -32,6 +38,29 @@
 
 
 [![Screenshot-from-2023-12-16-12-26-41.png](https://i.postimg.cc/JnWCs7xb/Screenshot-from-2023-12-16-12-26-41.png)](https://postimg.cc/JyK2gL9n)
+
+
+✅ Logo and loading effect when the application is started.
+
+
+[![good.jpg](https://i.postimg.cc/TPyjdt2k/good.jpg)](https://postimg.cc/d7YZnmyd)
+
+[![okone.jpg](https://i.postimg.cc/5NxwY4NQ/okone.jpg)](https://postimg.cc/XXzZt05n)
+
+
+✅ Completed loading effect.
+
+
+[![XXX.png](https://i.postimg.cc/rsnQPvZJ/XXX.png)](https://postimg.cc/JHXNydLD)
+
+
+✅ Header with secondary message down the frame.
+
+[![Screenshot-from-2023-12-29-03-27-24.png](https://i.postimg.cc/ydR902c5/Screenshot-from-2023-12-29-03-27-24.png)](https://postimg.cc/7GxfksBM)
+
+
+
+
 
 <br>
 
