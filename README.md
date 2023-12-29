@@ -30,7 +30,6 @@
 
 ✅ Business Entities from DB point of view.
 
-<br>
 
 [![Screenshot-from-2023-12-19-13-44-48.png](https://i.postimg.cc/Yqxmspyc/Screenshot-from-2023-12-19-13-44-48.png)](https://postimg.cc/XppJZ0bx)
 
