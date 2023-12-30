@@ -158,4 +158,25 @@ public class SanityChecks {
 
         return menuEntries.trim();
     }
+
+    public static String checkIfQuitOrBack(int spacesFromLeft, String inputFromUser, ICustomError error) throws InterruptedException {
+        String processedValue = "none";
+
+        if (inputFromUser.isBlank()) {
+            PrintError.toConsole(error, spacesFromLeft, 1000,
+                    false, false);
+        } else if ("back".equalsIgnoreCase(inputFromUser)) {
+            processedValue = "back";
+        } else if ("quit".equalsIgnoreCase(inputFromUser)) {
+            System.out.printf("%n");
+            Loading.square("quiting", 20, 100, false,
+                    "", spacesFromLeft);
+            System.out.printf("%n\u001B[?25h"); //show the cursor
+            System.exit(0);
+        } else {
+            processedValue = inputFromUser;
+        }
+
+        return processedValue;
+    }
 }

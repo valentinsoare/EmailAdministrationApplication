@@ -10,6 +10,7 @@ import io.emailadministration.devcomponents.header.HeaderNullObject;
 import io.emailadministration.devcomponents.header.IHeader;
 import io.emailadministration.devcomponents.menu.auxmessage.AuxiliaryMessageNullObject;
 import io.emailadministration.devcomponents.menu.auxmessage.IAuxMessage;
+import io.emailadministration.entities.businesscomponents.digitalcomponents.User;
 import io.emailadministration.printing.PrintError;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
@@ -24,6 +25,7 @@ public class Menu implements IMenu {
     private List<String> optionsForTheMenu;
     private CPosition position;
     private IAuxMessage auxiliaryMessage;
+    private User currentUser;
 
     public Menu() {
         this.header = new HeaderNullObject();
@@ -31,6 +33,7 @@ public class Menu implements IMenu {
         this.optionsForTheMenu = new ArrayList<>(List.of("no options available"));
         this.position = new CPositionNullObject();
         this.auxiliaryMessage = new AuxiliaryMessageNullObject();
+        this.currentUser = new User();
     }
 
     public Menu(IHeader header, int numberOfEntriesInTheCurrentMenu,
