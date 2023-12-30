@@ -2,6 +2,7 @@ package io.emailadministration.printing;
 
 import io.emailadministration.devcomponents.errorsclasification.StructuralErrors;
 import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
+import io.emailadministration.entities.businesscomponents.digitalcomponents.User;
 
 import java.util.List;
 
@@ -30,6 +31,9 @@ public class PrintMenu {
             System.out.printf(" %s[ %2d ] %s%n", " ".repeat(menu.menuAttributes().getPosition().getWhiteSpaceLeft()),
                     (i+1), options.get(i));
         }
+
+        System.out.printf("%n%s Current user: %s", " ".repeat(menu.menuAttributes().getPosition().getWhiteSpaceLeft()),
+                menu.menuAttributes().getCurrentUser().getUserName());
 
         System.out.printf("%n%s%s", " ".repeat(menu.menuAttributes().getPosition().getWhiteSpaceLeft()),
                 "-".repeat(menu.menuAttributes().getHeader().headerAttributes().getFrameWithMessage().getNumberOfChars()));

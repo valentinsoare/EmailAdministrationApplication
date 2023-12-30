@@ -11,6 +11,7 @@ import io.emailadministration.devcomponents.header.IHeader;
 import io.emailadministration.devcomponents.menu.auxmessage.AuxiliaryMessageNullObject;
 import io.emailadministration.devcomponents.menu.auxmessage.IAuxMessage;
 import io.emailadministration.entities.businesscomponents.digitalcomponents.User;
+import io.emailadministration.entities.businesscomponents.digitalcomponents.UserNullObject;
 import io.emailadministration.printing.PrintError;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
@@ -25,7 +26,7 @@ public class Menu implements IMenu {
     private List<String> optionsForTheMenu;
     private CPosition position;
     private IAuxMessage auxiliaryMessage;
-    private User currentUser;
+    private User currentUser = new UserNullObject();
 
     public Menu() {
         this.header = new HeaderNullObject();
@@ -33,7 +34,6 @@ public class Menu implements IMenu {
         this.optionsForTheMenu = new ArrayList<>(List.of("no options available"));
         this.position = new CPositionNullObject();
         this.auxiliaryMessage = new AuxiliaryMessageNullObject();
-        this.currentUser = new User();
     }
 
     public Menu(IHeader header, int numberOfEntriesInTheCurrentMenu,
@@ -53,6 +53,7 @@ public class Menu implements IMenu {
         this.optionsForTheMenu = new ArrayList<>(menu.menuAttributes().optionsForTheMenu);
         this.position = new CPosition(menu.menuAttributes().position);
         this.auxiliaryMessage = menu.menuAttributes().auxiliaryMessage;
+        this.currentUser = menu.menuAttributes().getCurrentUser();
     }
 
     public static IMenu getNewInstance(IMenu menu) {
@@ -171,6 +172,10 @@ public class Menu implements IMenu {
     public void setAuxiliaryMessage(IAuxMessage auxiliaryMessage) {
         this.auxiliaryMessage = SanityChecks.checkAuxiliaryMessage(auxiliaryMessage, position.getWhiteSpaceLeft(),
                 false, true, StructuralErrors.NO_VALID_AUXILIARY_MENU_MESSAGE);
+    }
+
+    public void setCurrentUser(User currentUser) {
+        this.currentUser = currentUser;
     }
 
     public static IMenu createMenuInstance() {

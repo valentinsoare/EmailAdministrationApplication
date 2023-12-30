@@ -2,22 +2,22 @@ package io.emailadministration.runningsessionsentireapp;
 
 import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
 import io.emailadministration.devcomponents.errorsclasification.InputErrors;
-import io.emailadministration.devcomponents.pages.loginsignuppage.LoginSignUpPage;
 import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
+import io.emailadministration.devcomponents.pages.loginsignuppage.signup.SignUpPage;
 
 import java.util.concurrent.TimeUnit;
 
-public class SessionWithLoginSignUp extends RunningSession implements Command {
-    public SessionWithLoginSignUp(IMenu menu) {
+public class SessionOnlyWithSingUp extends RunningSession implements Command {
+    public SessionOnlyWithSingUp(IMenu menu) {
         super(menu);
     }
 
-    public static SessionWithLoginSignUp getNewInstanceLoginSignUpSession() {
+    public static SessionOnlyWithSingUp getNewInstanceOfSignUpSession() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
 
-        IMenu loginSignup = new LoginSignUpPage().generatePage();
-        return new SessionWithLoginSignUp(loginSignup);
+        IMenu signUpMenu = new SignUpPage().generatePage();
+        return new SessionOnlyWithSingUp(signUpMenu);
     }
 
     @Override
@@ -28,7 +28,10 @@ public class SessionWithLoginSignUp extends RunningSession implements Command {
 //            case "1" ->;
 //            case "2" ->;
 //            case "3" ->;
-//            case "4" ->;
+            case "4" -> catchValueToReturn = SanityChecks.checkIfQuitOrBack(
+                    super.getMenu().menuAttributes().getPosition().getWhiteSpaceLeft(), "back",
+                    InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_BACK
+            );
             case "5" -> catchValueToReturn = SanityChecks.checkIfQuitOrBack(
                     super.getMenu().menuAttributes().getPosition().getWhiteSpaceLeft(), "quit",
                     InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT

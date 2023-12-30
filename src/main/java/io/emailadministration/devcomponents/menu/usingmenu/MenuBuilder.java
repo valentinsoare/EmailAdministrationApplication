@@ -4,6 +4,7 @@ import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
 import io.emailadministration.devcomponents.auxiliary.position.CPosition;
 import io.emailadministration.devcomponents.header.IHeader;
 import io.emailadministration.devcomponents.menu.auxmessage.IAuxMessage;
+import io.emailadministration.entities.businesscomponents.digitalcomponents.User;
 
 public class MenuBuilder {
     private IMenu menu;
@@ -49,6 +50,11 @@ public class MenuBuilder {
 
     public MenuBuilder clearMenuOptions() {
         menu.menuAttributes().clearOptionsForMenu();
+        return this;
+    }
+
+    public MenuBuilder setupCurrentUSer(User user) {
+        menu.menuAttributes().setCurrentUser(user);
         return this;
     }
 

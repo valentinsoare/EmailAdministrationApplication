@@ -73,6 +73,10 @@ public class User implements Comparable<User> {
         return valueAfterComparison;
     }
 
+    public String getTypeOfObject() {
+        return this.getClass().getSimpleName();
+    }
+
     @Override
     public String toString() {
         Map<String, ?> characteristics = OperationsOnMap.putObjectAttributes(this);

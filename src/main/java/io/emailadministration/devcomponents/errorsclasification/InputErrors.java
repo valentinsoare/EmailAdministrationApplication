@@ -8,11 +8,13 @@ import java.util.List;
 
 @Getter
 public enum InputErrors implements ICustomError {
+    IMPROPER_GIVEN_TEXT_SHOULD_BE_BACK("improper_given_text_should_be_back", 3,
+            String.format("INPUT_ERROR, SEV: %s - Improper input value from user. In this case should be back, please check!", Severities.THREE)),
 
     NON_VALID_OPTION_FROM_THOSE_ABOVE("non_valid_option_from_those_above", 3,
             String.format("INPUT_ERROR, SEV: %s - Please use an option from those mentioned above!", Severities.THREE)),
 
-    IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT("improper_given_text_SHOULD_BE_QUIT", 3,
+    IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT("improper_given_text_should_be_quit", 3,
             String.format("INPUT_ERROR, SEV: %s - Improper input value from user. In this case should be quit, please check!", Severities.THREE)),
 
     NULL_OR_EMPTY_TEXT("null_or_empty_text", 3,

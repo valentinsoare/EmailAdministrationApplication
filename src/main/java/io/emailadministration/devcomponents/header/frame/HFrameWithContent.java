@@ -142,7 +142,7 @@ public class HFrameWithContent implements IFrame {
         int numberOfLeftSpacesOnFrame = position.getWhiteSpaceLeft(),
 
             lengthOfTheMainMessage = (mainMessageFinalWithPosition.stylizedMessageAttributes()
-                .getCompleteProcessing().trim().length()),
+                .getCompleteProcessing().length()),
 
             whereTextBegins = (numberOfChars / 2) - (lengthOfTheMainMessage / 2);
 
@@ -158,7 +158,7 @@ public class HFrameWithContent implements IFrame {
 
             if (i == (numberOfRowsBetweenUpDownBorders / 2)) {
                         sb.append(" ".repeat(whereTextBegins - 1))
-                        .append(mainMessageFinalWithPosition.getCompleteProcessing().trim())
+                        .append(mainMessageFinalWithPosition.getCompleteProcessing())
                         .append(" ".repeat(whereTextBegins - 1));
             } else {
                     sb.append(" ".repeat(numberOfChars - 2));

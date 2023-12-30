@@ -1,17 +1,20 @@
 package io.emailadministration;
 
 import io.emailadministration.dbutils.DBConnection;
+import io.emailadministration.printing.PrintMenu;
+import io.emailadministration.runningsessionsentireapp.SessionOnlyWithSingUp;
+import io.emailadministration.runningsessionsentireapp.SessionStartingTheApp;
+import io.emailadministration.runningsessionsentireapp.SessionWithLoginSignUp;
 import io.emailadministration.runningsessionsentireapp.SessionWithMainMenu;
 
 public class App extends DBConnection {
 
     public static void main( String[] args ) {
-        SessionWithMainMenu sessionWithMainMenu = new SessionWithMainMenu();
+        SessionStartingTheApp.logoAndProgressBar();
 
-        sessionWithMainMenu.startingTheAppWithLogoAndLoadingBar();
-        sessionWithMainMenu.loadingTheLogInSignUpPage();
-        sessionWithMainMenu.mainMenuPageLoader();
-
+        PrintMenu.of(SessionWithLoginSignUp.getNewInstanceLoginSignUpSession().getMenu());
+        PrintMenu.of(SessionOnlyWithSingUp.getNewInstanceOfSignUpSession().getMenu());
+        PrintMenu.of(SessionWithMainMenu.getNewMainMenuSession().getMenu());
 
         //-----------------------------------------------------------
 
