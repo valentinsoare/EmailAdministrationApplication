@@ -18,6 +18,7 @@ public class SessionStartingTheApp extends RunningSession implements Command {
     @Override
     public String execute() {
         logoAndProgressBar();
-        return "starting";
+
+        return "startingTheApplication";
     }
 }

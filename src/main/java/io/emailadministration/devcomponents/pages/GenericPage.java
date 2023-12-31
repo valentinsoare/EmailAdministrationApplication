@@ -1,5 +1,6 @@
 package io.emailadministration.devcomponents.pages;
 
+import io.emailadministration.devcomponents.Component;
 import io.emailadministration.devcomponents.header.HeaderNullObject;
 import io.emailadministration.devcomponents.header.IHeader;
 import io.emailadministration.devcomponents.header.frame.HFrameWithContentNullObject;

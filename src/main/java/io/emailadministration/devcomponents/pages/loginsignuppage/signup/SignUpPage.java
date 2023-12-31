@@ -53,8 +53,8 @@ public class SignUpPage {
 
         IMenu m = new MenuBuilder().setupHeader(h)
                 .setupPosition(new CPosition(2, 10, 12, 12))
-                .setupNumberOfEntriesInTheCurrentMenu(5)
-                .setupEntries("provide user/Password, go to main menu, help, back, quit")
+                .setupNumberOfEntriesInTheCurrentMenu(4)
+                .setupEntries("provide user/Password, go to main menu, back, quit")
                 .setupAuxiliaryMessage(
                         new AuxiliaryMessage("please choose an option:",
                                 new CPosition(0, 0, 1, 1)
@@ -62,6 +62,7 @@ public class SignUpPage {
                 )
                 .build();
         this.genericPage.setMenu(m);
+
         return m;
     }
 }

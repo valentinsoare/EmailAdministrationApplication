@@ -60,7 +60,7 @@ public class HFrameWithContent implements IFrame {
         this.withSecondaryMessage = hFrameWithContent.isWithSecondaryMessage();
         this.secondaryMessage = new HMessage((HMessage) hFrameWithContent.getSecondaryMessage());
         this.position = new CPosition(hFrameWithContent.getPosition());
-        this.finalMessageWithFrame = new String(hFrameWithContent.getFinalMessageWithFrame());
+        this.finalMessageWithFrame = hFrameWithContent.getFinalMessageWithFrame();
     }
 
     public static HFrameWithContent getNewInstance(HFrameWithContent hFrameWithContent) {

@@ -1,6 +1,8 @@
 package io.emailadministration.devcomponents.header;
 
-public interface IHeader {
+import io.emailadministration.devcomponents.Component;
+
+public interface IHeader extends Component {
     String getTypeOfObject();
     Header headerAttributes();
 }

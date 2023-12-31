@@ -11,10 +11,14 @@ public class PrintMenu {
     private PrintMenu() {}
 
     public static void of(IMenu menu) {
+        of(menu, true);
+    }
+
+    public static void of(IMenu menu, boolean toCheckNumberOfOptions) {
         List<String> options = menu.menuAttributes().getOptionsForTheMenu();
 
         try {
-            if (options.size() <= 1) {
+            if (toCheckNumberOfOptions && options.size() <= 1) {
                 PrintError.toConsole(StructuralErrors.NO_MENU_OPTION_AVAILABLE,
                         menu.menuAttributes().getPosition().getWhiteSpaceLeft(), 200,
                         false, true);

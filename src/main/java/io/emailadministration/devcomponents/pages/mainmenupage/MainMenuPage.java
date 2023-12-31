@@ -21,7 +21,7 @@ public class MainMenuPage {
 
     public IMenu generatePage() {
         IStylizedMessage usingMyEmail = new MessageBuilder()
-                .setupPosition(new CPosition(0, 0,5, 5))
+                .setupPosition(new CPosition(0, 0,6, 4))
                 .setupHeaderMessage("using my email")
                 .setupIsMainMessage(true)
                 .setupMessageStyle(MessageStyle.MODERN)
@@ -31,7 +31,7 @@ public class MainMenuPage {
 
 
         IStylizedMessage lovingSendingEmail = new MessageBuilder()
-                .setupPosition(new CPosition(0, 0, 0, 0))
+                .setupPosition(new CPosition(0, 0, 1, 0))
                 .setupHeaderMessage("love sending email")
                 .setupIsMainMessage(false)
                 .setupMessageStyle(MessageStyle.CLASSIC)
@@ -41,7 +41,7 @@ public class MainMenuPage {
 
 
         HFrameWithContent hFrameWithContent = HFrameWithContent.addClassicFrameWithCharsOnAllSides(
-                '-', '|', 40,usingMyEmail,
+                '-', '|', 60,usingMyEmail,
                 new CPosition(2, 2, 12, 0),
                 true, lovingSendingEmail);
         this.genericPage.setHFrameWithContent(hFrameWithContent);
@@ -64,8 +64,8 @@ public class MainMenuPage {
                             )
                     )
                 .build();
-        this.genericPage.setMenu(m);
 
+        this.genericPage.setMenu(m);
         return m;
     }
 }

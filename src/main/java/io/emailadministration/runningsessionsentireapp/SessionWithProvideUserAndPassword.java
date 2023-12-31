@@ -4,32 +4,32 @@ import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
 import io.emailadministration.devcomponents.errorsclasification.InputErrors;
 import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
 import io.emailadministration.devcomponents.pages.GenericPage;
-import io.emailadministration.devcomponents.pages.loginsignuppage.signup.SignUpPage;
+import io.emailadministration.devcomponents.pages.loginsignuppage.signup.ProvideUserAndPasswordPage;
+import io.emailadministration.devcomponents.pages.mainmenupage.MainMenuPage;
 import io.emailadministration.printing.PrintMenu;
 
 import java.util.concurrent.TimeUnit;
 
-public class SessionOnlyWithSingUp extends RunningSession implements Command {
-    public SessionOnlyWithSingUp() {
+public class SessionWithProvideUserAndPassword extends RunningSession implements Command  {
+
+    public SessionWithProvideUserAndPassword() {
         super();
     }
 
-    public SessionOnlyWithSingUp(IMenu menu) {
+    public SessionWithProvideUserAndPassword(IMenu menu) {
         super(menu);
     }
 
-    public static SessionOnlyWithSingUp getNewInstanceOfSignUpSession() {
+    public static SessionWithMainMenu getNewMainMenuSession() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
 
-        IMenu iMenu = new SignUpPage().generatePage();
-        return new SessionOnlyWithSingUp(iMenu);
+        IMenu iMenu = new ProvideUserAndPasswordPage().generatePage();
+        return new SessionWithMainMenu(iMenu);
     }
 
     @Override
     public String execute() throws InterruptedException {
-        PrintMenu.of(getNewInstanceOfSignUpSession().getMenu());
-
         String catchValueToReturn = "";
 
         switch (super.getInputFromUser()) {

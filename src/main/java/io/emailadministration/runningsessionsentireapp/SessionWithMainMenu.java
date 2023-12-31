@@ -4,10 +4,15 @@ import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
 import io.emailadministration.devcomponents.errorsclasification.InputErrors;
 import io.emailadministration.devcomponents.pages.mainmenupage.MainMenuPage;
 import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
+import io.emailadministration.printing.PrintMenu;
 
 import java.util.concurrent.TimeUnit;
 
 public class SessionWithMainMenu extends RunningSession implements Command {
+    public SessionWithMainMenu() {
+        super();
+    }
+
     public SessionWithMainMenu(IMenu menu) {
         super(menu);
     }
@@ -16,8 +21,8 @@ public class SessionWithMainMenu extends RunningSession implements Command {
         System.out.print("\033[H\033[2J");
         System.out.flush();
 
-        IMenu mainMenu = new MainMenuPage().generatePage();
-        return new SessionWithMainMenu(mainMenu);
+        IMenu iMenu = new MainMenuPage().generatePage();
+        return new SessionWithMainMenu(iMenu);
     }
 
     @Override
@@ -50,5 +55,11 @@ public class SessionWithMainMenu extends RunningSession implements Command {
         }
 
         return catchValueToReturn;
+    }
+
+    @Override
+    public String toString() {
+        PrintMenu.of(super.getMenu());
+        return "";
     }
 }

@@ -33,7 +33,7 @@ public class LoginSignUpPage {
 
         IStylizedMessage signInSignUp = new MessageBuilder()
                 .setupPosition(new CPosition(1, 2, 34, 0))
-                .setupHeaderMessage("sign in/sign up")
+                .setupHeaderMessage("Sign In Sign Up")
                 .setupIsMainMessage(false)
                 .setupMessageStyle(MessageStyle.CLASSIC)
                 .addStyleToTheMessage(true, true)
@@ -61,8 +61,8 @@ public class LoginSignUpPage {
                         )
                 )
                 .build();
-        this.genericPage.setMenu(m);
 
+        this.genericPage.setMenu(m);
         return m;
     }
 }
