@@ -1,6 +1,7 @@
 package io.emailadministration;
 
 import io.emailadministration.dbutils.DBConnection;
+import io.emailadministration.printing.PrintMenu;
 import io.emailadministration.runningsessionsentireapp.*;
 
 public class App extends DBConnection {
@@ -8,11 +9,11 @@ public class App extends DBConnection {
     public static void main( String[] args ) {
         SessionStartingTheApp.logoAndProgressBar();
 
-        System.out.printf("%s", SessionWithLoginSignUp.getNewInstanceLoginSignUpSession());
-        System.out.printf("%s", SessionOnlyWithSingUp.getNewInstanceOfSignUpSession());
-        System.out.printf("%s", SessionOnlyWithSignIn.getNewInstanceOfSignInSession());
-        System.out.printf("%s", SessionWithProvideUserAndPassword.getNewMainMenuSession());
-        System.out.printf("%s", SessionWithMainMenu.getNewMainMenuSession());
+        PrintMenu.of(SessionWithLoginSignUp.getNewInstanceLoginSignUpSession().getMenu());
+        PrintMenu.of(SessionOnlyWithSingUp.getNewInstanceOfSignUpSession().getMenu());
+        PrintMenu.of(SessionWithProvideUserAndPassword.getNewSessionWithProvideUserAndPassword().getMenu());
+        PrintMenu.of(SessionOnlyWithSignIn.getNewInstanceOfSignInSession().getMenu());
+        PrintMenu.of(SessionWithMainMenu.getNewMainMenuSession().getMenu());
 
         //-----------------------------------------------------------
 

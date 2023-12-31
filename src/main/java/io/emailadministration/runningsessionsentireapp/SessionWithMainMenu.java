@@ -9,9 +9,6 @@ import io.emailadministration.printing.PrintMenu;
 import java.util.concurrent.TimeUnit;
 
 public class SessionWithMainMenu extends RunningSession implements Command {
-    public SessionWithMainMenu() {
-        super();
-    }
 
     public SessionWithMainMenu(IMenu menu) {
         super(menu);
@@ -55,11 +52,5 @@ public class SessionWithMainMenu extends RunningSession implements Command {
         }
 
         return catchValueToReturn;
-    }
-
-    @Override
-    public String toString() {
-        PrintMenu.of(super.getMenu());
-        return "";
     }
 }

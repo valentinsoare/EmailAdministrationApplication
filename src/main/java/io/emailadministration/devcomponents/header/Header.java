@@ -34,7 +34,6 @@ public class Header implements IHeader {
     public Header(IHeader header) {
         this(header.headerAttributes().isAllBorders(),
                 new HFrameWithContent(header.headerAttributes().getFrameWithMessage()));
-
     }
 
     public void setFrameWithMainMessage(HFrameWithContent frameWithMessage) {
@@ -54,6 +53,10 @@ public class Header implements IHeader {
 
     public static IHeader generateHeader(boolean allBorders, HFrameWithContent frameWithMessage) {
         return new Header(allBorders, frameWithMessage);
+    }
+
+    public static IHeader getNewInstance(IHeader header) {
+        return new Header(header);
     }
 
     public IHeader headerWithAllTrimmings() {

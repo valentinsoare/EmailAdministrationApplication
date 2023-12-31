@@ -2,7 +2,6 @@ package io.emailadministration.printing;
 
 import io.emailadministration.devcomponents.errorsclasification.StructuralErrors;
 import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
-import io.emailadministration.entities.businesscomponents.digitalcomponents.User;
 
 import java.util.List;
 
@@ -16,6 +15,7 @@ public class PrintMenu {
 
     public static void of(IMenu menu, boolean toCheckNumberOfOptions) {
         List<String> options = menu.menuAttributes().getOptionsForTheMenu();
+        StringBuilder sb = new StringBuilder();
 
         try {
             if (toCheckNumberOfOptions && options.size() <= 1) {

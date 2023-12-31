@@ -2,7 +2,7 @@ package io.emailadministration.runningsessionsentireapp;
 
 import io.emailadministration.devcomponents.startingtheappeffect.LoadStartingTheAppEffect;
 
-public class SessionStartingTheApp extends RunningSession implements Command {
+public class SessionStartingTheApp extends RunningSession {
 
     public SessionStartingTheApp() {
         super();
@@ -13,12 +13,5 @@ public class SessionStartingTheApp extends RunningSession implements Command {
         System.out.flush();
 
         LoadStartingTheAppEffect.start();
-    }
-
-    @Override
-    public String execute() {
-        logoAndProgressBar();
-
-        return "startingTheApplication";
     }
 }

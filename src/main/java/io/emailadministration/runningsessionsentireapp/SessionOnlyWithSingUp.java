@@ -3,16 +3,12 @@ package io.emailadministration.runningsessionsentireapp;
 import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
 import io.emailadministration.devcomponents.errorsclasification.InputErrors;
 import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
-import io.emailadministration.devcomponents.pages.GenericPage;
 import io.emailadministration.devcomponents.pages.loginsignuppage.signup.SignUpPage;
 import io.emailadministration.printing.PrintMenu;
 
 import java.util.concurrent.TimeUnit;
 
 public class SessionOnlyWithSingUp extends RunningSession implements Command {
-    public SessionOnlyWithSingUp() {
-        super();
-    }
 
     public SessionOnlyWithSingUp(IMenu menu) {
         super(menu);
@@ -51,11 +47,5 @@ public class SessionOnlyWithSingUp extends RunningSession implements Command {
         }
 
         return catchValueToReturn;
-    }
-
-    @Override
-    public String toString() {
-        PrintMenu.of(super.getMenu());
-        return "";
     }
 }

@@ -8,6 +8,7 @@ import io.emailadministration.devcomponents.errorsclasification.StructuralErrors
 import io.emailadministration.devcomponents.header.Header;
 import io.emailadministration.devcomponents.header.HeaderNullObject;
 import io.emailadministration.devcomponents.header.IHeader;
+import io.emailadministration.devcomponents.menu.auxmessage.AuxiliaryMessage;
 import io.emailadministration.devcomponents.menu.auxmessage.AuxiliaryMessageNullObject;
 import io.emailadministration.devcomponents.menu.auxmessage.IAuxMessage;
 import io.emailadministration.entities.businesscomponents.digitalcomponents.User;
@@ -52,7 +53,7 @@ public class Menu implements IMenu {
         this.numberOfEntriesInTheCurrentMenu = menu.menuAttributes().numberOfEntriesInTheCurrentMenu;
         this.optionsForTheMenu = new ArrayList<>(menu.menuAttributes().optionsForTheMenu);
         this.position = new CPosition(menu.menuAttributes().position);
-        this.auxiliaryMessage = menu.menuAttributes().auxiliaryMessage;
+        this.auxiliaryMessage = new AuxiliaryMessage(menu.menuAttributes().auxiliaryMessage);
         this.currentUser = menu.menuAttributes().getCurrentUser();
     }
 
@@ -135,21 +136,6 @@ public class Menu implements IMenu {
         optionsForTheMenu.add(resultAfterChecking);
 
         return true;
-    }
-
-    @Override
-    public IMenu withHeader(Header header) {
-        return null;
-    }
-
-    @Override
-    public IMenu withAuxiliaryMessage(IAuxMessage message) {
-        return null;
-    }
-
-    @Override
-    public IMenu onlyMenu() {
-        return null;
     }
 
     @Override

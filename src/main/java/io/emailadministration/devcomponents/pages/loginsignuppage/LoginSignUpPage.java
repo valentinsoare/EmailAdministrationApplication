@@ -1,5 +1,6 @@
 package io.emailadministration.devcomponents.pages.loginsignuppage;
 
+import io.emailadministration.cache.CachedObjects;
 import io.emailadministration.devcomponents.auxiliary.position.CPosition;
 import io.emailadministration.devcomponents.header.HeaderBuilder;
 import io.emailadministration.devcomponents.header.IHeader;
@@ -30,6 +31,7 @@ public class LoginSignUpPage {
                 .addStyleToTheMessage(true, true)
                 .build();
         this.genericPage.setMainMessage(usingMyEmail);
+        CachedObjects.addObjectInCache("defaultMainMsgLogo", usingMyEmail);
 
         IStylizedMessage signInSignUp = new MessageBuilder()
                 .setupPosition(new CPosition(1, 2, 34, 0))
@@ -39,17 +41,22 @@ public class LoginSignUpPage {
                 .addStyleToTheMessage(true, true)
                 .build();
         this.genericPage.setSecondaryMessage(signInSignUp);
+        CachedObjects.addObjectInCache("defaultSecondaryMsgLogo", signInSignUp);
+
 
         HFrameWithContent hFrame = HFrameWithContent.addClassicFrameWithCharsOnAllSides(
                 '-', '|', 60,usingMyEmail,
                 new CPosition(0, 0, 12, 0),
                 true, signInSignUp);
         this.genericPage.setHFrameWithContent(hFrame);
+        CachedObjects.addObjectInCache("defaultHFrameLogo", hFrame);
 
         IHeader h = new HeaderBuilder().setupFrameWithMessage(hFrame)
                 .setupAllBorders(false)
                 .build();
         this.genericPage.setHeader(h);
+        CachedObjects.addObjectInCache("headerWithoutAllBordersLogo", h);
+
 
         IMenu m = new MenuBuilder().setupHeader(h)
                 .setupPosition(new CPosition(2, 10, 12, 12))
@@ -61,6 +68,7 @@ public class LoginSignUpPage {
                         )
                 )
                 .build();
+        CachedObjects.addObjectInCache("menuWithHeaderLogo", m);
 
         this.genericPage.setMenu(m);
         return m;

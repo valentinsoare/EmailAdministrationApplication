@@ -14,7 +14,7 @@ public class LoadingCachedObjectsFactory {
     private static Map<String, Component> objects;
 
     static {
-        objects = new CachedObjects().loadCachedObjects();
+        objects = CachedObjects.loadCachedObjects();
     }
 
     public static IStylizedMessage loadMainMessageModern() {

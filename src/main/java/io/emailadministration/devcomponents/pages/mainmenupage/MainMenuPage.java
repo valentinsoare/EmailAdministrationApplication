@@ -29,7 +29,6 @@ public class MainMenuPage {
                 .build();
         this.genericPage.setMainMessage(usingMyEmail);
 
-
         IStylizedMessage lovingSendingEmail = new MessageBuilder()
                 .setupPosition(new CPosition(0, 0, 1, 0))
                 .setupHeaderMessage("love sending email")
@@ -39,13 +38,11 @@ public class MainMenuPage {
                 .build();
         this.genericPage.setSecondaryMessage(lovingSendingEmail);
 
-
         HFrameWithContent hFrameWithContent = HFrameWithContent.addClassicFrameWithCharsOnAllSides(
                 '-', '|', 60,usingMyEmail,
                 new CPosition(2, 2, 12, 0),
                 true, lovingSendingEmail);
         this.genericPage.setHFrameWithContent(hFrameWithContent);
-
 
         IHeader h = new HeaderBuilder().setupFrameWithMessage(hFrameWithContent)
                 .setupAllBorders(true)
