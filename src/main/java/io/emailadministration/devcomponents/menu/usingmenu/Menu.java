@@ -28,6 +28,8 @@ public class Menu implements IMenu {
     private CPosition position;
     private IAuxMessage auxiliaryMessage;
     private User currentUser = new UserNullObject();
+    private Map<String, Object> storingInputValuesFromUser;
+    private String additionalMessageAsANote;
 
     public Menu() {
         this.header = new HeaderNullObject();
@@ -35,6 +37,8 @@ public class Menu implements IMenu {
         this.optionsForTheMenu = new ArrayList<>(List.of("no options available"));
         this.position = new CPositionNullObject();
         this.auxiliaryMessage = new AuxiliaryMessageNullObject();
+        this.storingInputValuesFromUser = new HashMap<>();
+        this.additionalMessageAsANote = "none";
     }
 
     public Menu(IHeader header, int numberOfEntriesInTheCurrentMenu,
@@ -46,6 +50,9 @@ public class Menu implements IMenu {
 
         setPosition(position);
         setAuxiliaryMessage(auxiliaryMessage);
+
+        this.storingInputValuesFromUser = new HashMap<>();
+        this.additionalMessageAsANote = "none";
     }
 
     public Menu(IMenu menu) {
@@ -55,10 +62,16 @@ public class Menu implements IMenu {
         this.position = new CPosition(menu.menuAttributes().position);
         this.auxiliaryMessage = new AuxiliaryMessage(menu.menuAttributes().auxiliaryMessage);
         this.currentUser = menu.menuAttributes().getCurrentUser();
+        this.storingInputValuesFromUser = new HashMap<>(menu.menuAttributes().getStoringInputValuesFromUser());
+        this.additionalMessageAsANote = menu.menuAttributes().getAdditionalMessageAsANote();
     }
 
     public static IMenu getNewInstance(IMenu menu) {
         return new Menu(menu);
+    }
+
+    public boolean addInputValueFromUser(String key, Object value) {
+        return (storingInputValuesFromUser.computeIfAbsent(key, k -> value) != null);
     }
 
     public void creatingMenuEntries(String menuEntries) {
@@ -171,6 +184,15 @@ public class Menu implements IMenu {
     public static IMenu createNewMenuInstance(IHeader header, int numberOfEntriesInTheCurrentMenu,
                                               CPosition position, IAuxMessage auxiliaryMessage) {
         return new Menu(header, numberOfEntriesInTheCurrentMenu, position, auxiliaryMessage);
+    }
+
+    public void setStoringInputValuesFromUser(Map<String, Object> storingInputValuesFromUser) {
+        this.storingInputValuesFromUser = storingInputValuesFromUser;
+    }
+
+    public void setAdditionalMessageAsANote(String additionalMessageAsANote) {
+        this.additionalMessageAsANote = SanityChecks.checkMessage(additionalMessageAsANote, false, true,
+                position.getWhiteSpaceLeft(), false, true, InputErrors.NULL_OR_EMPTY_TEXT);
     }
 
     @Override

@@ -43,7 +43,6 @@ public class SanityChecks {
 
         if (classicWay) {
             Arrays.stream(message.split( " +"))
-                    .map(String::trim)
                     .forEach(e -> messageGiven.append(e).append(" "));
 
             return StringUtils.capitalize(messageGiven.toString().trim());
@@ -168,10 +167,9 @@ public class SanityChecks {
         } else if ("back".equalsIgnoreCase(inputFromUser)) {
             processedValue = "back";
         } else if ("quit".equalsIgnoreCase(inputFromUser)) {
-            System.out.printf("%n");
-            Loading.square("quiting", 20, 100, false,
-                    "", spacesFromLeft);
-            System.out.printf("%n\u001B[?25h"); //show the cursor
+            Loading.square("quiting", 20, 100, true,
+                    "Bye!", spacesFromLeft);
+            System.out.print(System.lineSeparator());
             System.exit(0);
         } else {
             processedValue = inputFromUser;

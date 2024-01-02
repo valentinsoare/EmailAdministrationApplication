@@ -75,7 +75,7 @@ public final class Loading {
         Map<ValidationKeys, String> processedValues = validateParametersLoadingEffects(messageToBeUsed, numberOfChars, timeToSleepBetweenChars,
                 ifDone, messageEnd, emptySpaceLeft, StructuralErrors.PROGRESS_DOTS_MESSAGE_INVALID);
 
-        System.out.printf("%s%s", " ".repeat(Integer.parseInt(processedValues.get(ValidationKeys.EMPTY_SPACES))), processedValues.get(ValidationKeys.MAIN_MESSAGE));
+        System.out.printf("%n%s %s", " ".repeat(Integer.parseInt(processedValues.get(ValidationKeys.EMPTY_SPACES))), processedValues.get(ValidationKeys.MAIN_MESSAGE));
 
         int numberOfReps = Integer.parseInt(processedValues.get(ValidationKeys.NUMBER_OF_REPS)),
             timeToSleep = Integer.parseInt(processedValues.get(ValidationKeys.TIME_SLEEP));
@@ -107,8 +107,9 @@ public final class Loading {
             sleepDuration = Integer.parseInt(processedValues.get(ValidationKeys.TIME_SLEEP)),
             emptySpacesLeft = Integer.parseInt(processedValues.get(ValidationKeys.EMPTY_SPACES));
 
+        System.out.print("\n");
         for (; i < numberOfReps; i++) {
-            System.out.printf("%s[  %s %s  ]\r", " ".repeat(emptySpacesLeft),
+            System.out.printf(" %s[  %s %s  ]\r", " ".repeat(emptySpacesLeft),
                     processedValues.get(ValidationKeys.MAIN_MESSAGE), customChars.get(i % customCharsSize));
             Thread.sleep(sleepDuration);
         }

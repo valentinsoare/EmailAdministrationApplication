@@ -1,5 +1,6 @@
 package io.emailadministration.devcomponents.pages.loginsignuppage.signin;
 
+import io.emailadministration.cache.CachedObjects;
 import io.emailadministration.devcomponents.auxiliary.position.CPosition;
 import io.emailadministration.devcomponents.header.HeaderBuilder;
 import io.emailadministration.devcomponents.header.IHeader;
@@ -11,57 +12,59 @@ import io.emailadministration.devcomponents.menu.auxmessage.AuxiliaryMessage;
 import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
 import io.emailadministration.devcomponents.menu.usingmenu.MenuBuilder;
 import io.emailadministration.devcomponents.pages.GenericPage;
-import lombok.Getter;
 
-@Getter
-public class SignInPage extends GenericPage {
-    private GenericPage genericPage;
+public class ProvideUserAndPasswordPage {
+    private final GenericPage page;
 
-    public SignInPage() {
-        this.genericPage = new GenericPage();
+    public ProvideUserAndPasswordPage() {
+        this.page = new GenericPage();
     }
 
     public IMenu generatePage() {
         IStylizedMessage withMyEmail = new MessageBuilder()
-                .setupPosition(new CPosition(0, 0,6, 3))
-                .setupHeaderMessage("# with my email #")
+                .setupPosition(new CPosition(0, 0,6, 2))
+                .setupHeaderMessage("use my email ")
                 .setupIsMainMessage(true)
                 .setupMessageStyle(MessageStyle.MODERN)
                 .addStyleToTheMessage(true, true)
                 .build();
-        this.genericPage.setMainMessage(withMyEmail);
+        this.page.setMainMessage(withMyEmail);
+        CachedObjects.addObjectInCache("mainMessageModern", withMyEmail);
 
         IStylizedMessage userSignIn = new MessageBuilder()
-                .setupPosition(new CPosition(0, 0, 1, 0))
+                .setupPosition(new CPosition(0, 0, 2, 0))
                 .setupHeaderMessage("user sign in")
                 .setupIsMainMessage(false)
                 .setupMessageStyle(MessageStyle.CLASSIC)
                 .addStyleToTheMessage(true, true)
                 .build();
-        this.genericPage.setSecondaryMessage(userSignIn);
+        this.page.setSecondaryMessage(userSignIn);
+        CachedObjects.addObjectInCache("secondaryMessageClassic", userSignIn);
 
         HFrameWithContent hFrame = HFrameWithContent.addClassicFrameWithCharsOnAllSides(
                 '-', '|', 60,withMyEmail,
                 new CPosition(2, 2, 12, 0),
                 true, userSignIn);
-        this.genericPage.setHFrameWithContent(hFrame);
+        this.page.setHFrameWithContent(hFrame);
+        CachedObjects.addObjectInCache("defaultFrame", hFrame);
 
         IHeader h = new HeaderBuilder().setupFrameWithMessage(hFrame)
                 .setupAllBorders(true)
                 .build();
-        this.genericPage.setHeader(h);
+        this.page.setHeader(h);
+        CachedObjects.addObjectInCache("headerClassicAllBorders", h);
 
         IMenu m = new MenuBuilder().setupHeader(h)
                 .setupPosition(new CPosition(2, 10, 12, 12))
-                .setupNumberOfEntriesInTheCurrentMenu(4)
-                .setupEntries("enter user and password, go to main menu, back, quit")
+                .setupAdditionalMessageAsANote("please provide the username and password for login separated by a comma!")
                 .setupAuxiliaryMessage(
-                        new AuxiliaryMessage("please choose an option:",
-                                new CPosition(0, 0, 1, 1)
+                        new AuxiliaryMessage("Username and password (back/quit):",
+                                new CPosition(0, 0, 1, 0)
                         )
                 )
                 .build();
-        this.genericPage.setMenu(m);
+        this.page.setMenu(m);
+        CachedObjects.addObjectInCache("menuWithClassicHeader", m);
 
         return m;
     }

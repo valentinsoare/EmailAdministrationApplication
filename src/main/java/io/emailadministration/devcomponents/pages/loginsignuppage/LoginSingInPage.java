@@ -1,4 +1,4 @@
-package io.emailadministration.devcomponents.pages.loginsignuppage.signup;
+package io.emailadministration.devcomponents.pages.loginsignuppage;
 
 import io.emailadministration.cache.CachedObjects;
 import io.emailadministration.devcomponents.auxiliary.position.CPosition;
@@ -15,60 +15,60 @@ import io.emailadministration.devcomponents.pages.GenericPage;
 import lombok.Getter;
 
 @Getter
-public class SignUpPage {
+public class LoginSingInPage {
     private GenericPage genericPage;
 
-    public SignUpPage() {
+    public LoginSingInPage() {
         this.genericPage = new GenericPage();
     }
 
     public IMenu generatePage() {
         IStylizedMessage usingMyEmail = new MessageBuilder()
-                .setupPosition(new CPosition(0, 0,6, 4))
-                .setupHeaderMessage("my email")
+                .setupPosition(new CPosition(1, 10,11, 0))
+                .setupHeaderMessage("My Email")
                 .setupIsMainMessage(true)
-                .setupMessageStyle(MessageStyle.MODERN)
+                .setupMessageStyle(MessageStyle.ASCII)
                 .addStyleToTheMessage(true, true)
                 .build();
         this.genericPage.setMainMessage(usingMyEmail);
-        CachedObjects.addObjectInCache("mainMessageModern", usingMyEmail);
+        CachedObjects.addObjectInCache("defaultMainMsgLogo", usingMyEmail);
 
-        IStylizedMessage signUp = new MessageBuilder()
-                .setupPosition(new CPosition(0, 0, 0, 0))
-                .setupHeaderMessage("sign up")
+        IStylizedMessage signInSignUp = new MessageBuilder()
+                .setupPosition(new CPosition(1, 2, 34, 0))
+                .setupHeaderMessage("starting the app")
                 .setupIsMainMessage(false)
                 .setupMessageStyle(MessageStyle.CLASSIC)
                 .addStyleToTheMessage(true, true)
                 .build();
-        this.genericPage.setSecondaryMessage(signUp);
-        CachedObjects.addObjectInCache("secondaryMessageClassic", signUp);
+        this.genericPage.setSecondaryMessage(signInSignUp);
+        CachedObjects.addObjectInCache("defaultSecondaryMsgLogo", signInSignUp);
 
         HFrameWithContent hFrame = HFrameWithContent.addClassicFrameWithCharsOnAllSides(
                 '-', '|', 60,usingMyEmail,
-                new CPosition(2, 2, 12, 0),
-                true, signUp);
+                new CPosition(0, 0, 12, 0),
+                true, signInSignUp);
         this.genericPage.setHFrameWithContent(hFrame);
-        CachedObjects.addObjectInCache("defaultFrame", hFrame);
+        CachedObjects.addObjectInCache("defaultHFrameLogo", hFrame);
 
         IHeader h = new HeaderBuilder().setupFrameWithMessage(hFrame)
-                .setupAllBorders(true)
+                .setupAllBorders(false)
                 .build();
         this.genericPage.setHeader(h);
-        CachedObjects.addObjectInCache("headerClassicAllBorders", h);
+        CachedObjects.addObjectInCache("headerWithoutAllBordersLogo", h);
 
         IMenu m = new MenuBuilder().setupHeader(h)
                 .setupPosition(new CPosition(2, 10, 12, 12))
                 .setupNumberOfEntriesInTheCurrentMenu(4)
-                .setupEntries("provide user/Password, go to main menu, back, quit")
+                .setupEntries("sign in, go to main menu, help, quit")
                 .setupAuxiliaryMessage(
                         new AuxiliaryMessage("please choose an option:",
-                                new CPosition(0, 0, 1, 1)
+                                new CPosition(0, 0, 1, 0)
                         )
                 )
                 .build();
-        this.genericPage.setMenu(m);
-        CachedObjects.addObjectInCache("menuWithClassicHeader", m);
+        CachedObjects.addObjectInCache("menuWithHeaderLogo", m);
 
+        this.genericPage.setMenu(m);
         return m;
     }
 }

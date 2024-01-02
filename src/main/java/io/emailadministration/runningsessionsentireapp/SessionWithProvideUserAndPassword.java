@@ -2,12 +2,20 @@ package io.emailadministration.runningsessionsentireapp;
 
 import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
 import io.emailadministration.devcomponents.errorsclasification.InputErrors;
+import io.emailadministration.devcomponents.loading.Loading;
 import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
-import io.emailadministration.devcomponents.pages.loginsignuppage.signup.ProvideUserAndPasswordPage;
+import io.emailadministration.devcomponents.pages.loginsignuppage.signin.ProvideUserAndPasswordPage;
+import io.emailadministration.printing.PrintError;
+import io.emailadministration.printing.PrintMenu;
 
+import java.sql.Time;
+import java.util.Timer;
 import java.util.concurrent.TimeUnit;
 
 public class SessionWithProvideUserAndPassword extends RunningSession implements Command  {
+    public SessionWithProvideUserAndPassword() {
+        super();
+    }
 
     public SessionWithProvideUserAndPassword(IMenu menu) {
         super(menu);
@@ -22,27 +30,36 @@ public class SessionWithProvideUserAndPassword extends RunningSession implements
     }
 
     @Override
-    public String execute() throws InterruptedException {
-        String catchValueToReturn = "";
+    public void execute() throws InterruptedException {
+        IMenu loginMenu = new ProvideUserAndPasswordPage().generatePage();
+        
+        while (!"quit".equals(getInputFromUser()) && !"back".equals(getInputFromUser())) {
+            PrintMenu.of(loginMenu, false, true,
+                    2, true);
+            catchInputFromUser(false);
 
-        switch (super.getInputFromUser()) {
-//            case "1" ->;
-//            case "2" ->;
-            case "3" -> catchValueToReturn = SanityChecks.checkIfQuitOrBack(
-                    super.getMenu().menuAttributes().getPosition().getWhiteSpaceLeft(), "back",
-                    InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_BACK
-            );
-            case "4" -> catchValueToReturn = SanityChecks.checkIfQuitOrBack(
-                    super.getMenu().menuAttributes().getPosition().getWhiteSpaceLeft(), "quit",
-                    InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT
-            );
-            default -> {
-                System.out.printf("%n%s%s%n", " ".repeat(super.getMenu().menuAttributes().getPosition().getWhiteSpaceLeft()),
-                        InputErrors.NON_VALID_OPTION_FROM_THOSE_ABOVE);
-                TimeUnit.SECONDS.sleep(1);
+            switch (getInputFromUser()) {
+                case "back" -> {
+                    Loading.square("back", 20,
+                            100, true,"DONE",
+                            loginMenu.menuAttributes().getPosition().getWhiteSpaceLeft()
+                    );
+
+                    Thread.sleep(500);
+
+                    setInputFromUser(SanityChecks.checkIfQuitOrBack(
+                            loginMenu.menuAttributes().getPosition().getWhiteSpaceLeft(), "back",
+                            InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_BACK
+                    ));
+                }
+                case "quit" -> setInputFromUser(SanityChecks.checkIfQuitOrBack(
+                        loginMenu.menuAttributes().getPosition().getWhiteSpaceLeft(), "quit",
+                        InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT
+                ));
+                default -> PrintError.toConsole(InputErrors.NON_VALID_OPTION_FROM_THOSE_ABOVE,
+                        loginMenu.menuAttributes().getPosition().getWhiteSpaceLeft(),
+                        1000, false, false);
             }
         }
-
-        return catchValueToReturn;
     }
 }

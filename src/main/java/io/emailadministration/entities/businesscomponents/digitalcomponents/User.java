@@ -56,9 +56,7 @@ public class User implements Comparable<User> {
     @Override
     public int hashCode() {
         int result = userName.hashCode();
-
         result = 31 * result + password.hashCode();
-
         return result;
     }
 

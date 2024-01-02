@@ -58,6 +58,11 @@ public class MenuBuilder {
         return this;
     }
 
+    public MenuBuilder setupAdditionalMessageAsANote(String additionalMessage) {
+        menu.menuAttributes().setAdditionalMessageAsANote(additionalMessage);
+        return this;
+    }
+
     public IMenu build() {
         return menu;
     }

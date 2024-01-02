@@ -23,7 +23,7 @@ public class SessionWithMainMenu extends RunningSession implements Command {
     }
 
     @Override
-    public String execute() throws InterruptedException {
+    public void execute() throws InterruptedException {
         String catchValueToReturn = "";
 
         switch (super.getInputFromUser()) {
@@ -50,7 +50,5 @@ public class SessionWithMainMenu extends RunningSession implements Command {
                 TimeUnit.SECONDS.sleep(1);
             }
         }
-
-        return catchValueToReturn;
     }
 }
