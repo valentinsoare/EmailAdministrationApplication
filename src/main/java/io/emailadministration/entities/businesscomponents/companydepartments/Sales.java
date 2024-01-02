@@ -15,10 +15,6 @@ import java.util.Set;
 @DiscriminatorValue("sales")
 @Entity(name = "sales")
 public class Sales extends Department {
-    @OneToOne(fetch = FetchType.LAZY,
-            cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
-    @JoinColumn(name = "team_leader_sales_id", unique = true, nullable = false)
-    private SalesAgent teamLeaderOfDepartment;
 
     @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
     private Set<SalesAgent> listOfEmployeesInTheDepartment = new LinkedHashSet<>();
@@ -41,9 +37,9 @@ public class Sales extends Department {
 
     @Override
     public String toString() {
-        return String.format("Sales [%s, teamLeaderIDOfTheDepartment: %s, numberOfEmployeesPerDepartment: %s, " +
+        return String.format("Sales [%s, numberOfEmployeesPerDepartment: %s, " +
                         "targetForSalesThisYear: %s, lastYearTargetWasReached: %s, targetForSalesLastYear: %s",
-                super.toString(), teamLeaderOfDepartment.getEmployeeId(), numberOfEmployeesPerDepartment,
+                super.toString(), numberOfEmployeesPerDepartment,
                 targetForSalesThisYear, lastYearTargetWasReached, targetForSalesLastYear);
     }
 }

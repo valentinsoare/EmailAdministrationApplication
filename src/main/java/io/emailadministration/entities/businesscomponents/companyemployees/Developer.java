@@ -22,9 +22,6 @@ public class Developer extends Employee {
     @Column(name = "is_team_leader")
     private boolean isTeamLeader;
 
-    @OneToOne(mappedBy = "teamLeaderOfDepartment")
-    private Development departmentWhereIsHiredAsTeamLeader;
-
     @Column(name = "last_project_with_the_company")
     private String lastProjectWithTheCompany;
 
@@ -40,6 +37,7 @@ public class Developer extends Employee {
         return String.format("Developer [%s, isTeamLeader: %s, " +
                         "lastProjectWithCompany: %s, evaluationForTheLastProject: %s",
                 super.toString(), isTeamLeader,
-                lastProjectWithTheCompany, evaluationForTheLastProject);
+                lastProjectWithTheCompany,
+                evaluationForTheLastProject);
     }
 }

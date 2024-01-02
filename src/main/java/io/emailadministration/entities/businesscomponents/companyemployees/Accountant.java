@@ -2,12 +2,10 @@ package io.emailadministration.entities.businesscomponents.companyemployees;
 
 import io.emailadministration.entities.businesscomponents.companydepartments.Accounting;
 import io.emailadministration.entities.businesscomponents.companyemployees.employeedefinitionwithdetails.Employee;
-import io.emailadministration.entities.businesscomponents.digitalcomponents.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.BatchSize;
-import org.hibernate.annotations.LazyGroup;
 
 @Getter
 @Setter
@@ -21,12 +19,6 @@ public class Accountant extends Employee {
 
     @Column(name = "is_team_leader")
     private boolean isTeamLeader;
-
-    @OneToOne(mappedBy = "teamLeaderOfDepartment")
-    private Accounting departmentWhereIsHiredAsTeamLeader;
-
-    @OneToOne(mappedBy = "employeeProfile")
-    private User user;
 
     public Accountant() {
         super();

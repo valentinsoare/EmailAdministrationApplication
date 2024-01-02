@@ -40,6 +40,20 @@ public class Password implements Comparable<Password> {
 
     public Password() {}
 
+    public String hashedPasswordForUser(String password) {
+        int result = 31 * password.hashCode();
+        this.hashedPasswordForUser = String.valueOf(result);
+
+        return hashedPasswordForUser;
+    }
+
+    public String hashedPasswordForEmail(String password) {
+        int result = 13 * password.hashCode();
+        this.hashedPasswordForEmail = String.valueOf(result);
+
+        return hashedPasswordForEmail;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -1,16 +1,21 @@
 package io.emailadministration;
 
 import io.emailadministration.dbutils.DBConnection;
-import io.emailadministration.runningsessionsentireapp.*;
+import io.emailadministration.dbutils.EntityManagerScope;
+import io.emailadministration.runningsessionsentireapp.SessionStartingTheApp;
+import io.emailadministration.runningsessionsentireapp.SessionWithLoginSignInStartingTheApp;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.FlushModeType;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class App extends DBConnection {
 
     public static void main( String[] args ) {
         SessionStartingTheApp.logoAndProgressBar();
         new SessionWithLoginSignInStartingTheApp().execute();
-
-
-//        PrintMenu.of(SessionWithMainMenu.getNewMainMenuSession().getMenu());
 
         //-----------------------------------------------------------
 
@@ -25,6 +30,8 @@ public class App extends DBConnection {
 //        );
 //
 //        EntityTransaction transaction = null;
+//
+//        em.setFlushMode(FlushModeType.COMMIT);
 //
 //        try (em) {
 //            transaction = em.getTransaction();

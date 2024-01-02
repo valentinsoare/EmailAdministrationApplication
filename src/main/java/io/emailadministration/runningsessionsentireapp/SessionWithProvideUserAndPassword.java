@@ -8,10 +8,6 @@ import io.emailadministration.devcomponents.pages.loginsignuppage.signin.Provide
 import io.emailadministration.printing.PrintError;
 import io.emailadministration.printing.PrintMenu;
 
-import java.sql.Time;
-import java.util.Timer;
-import java.util.concurrent.TimeUnit;
-
 public class SessionWithProvideUserAndPassword extends RunningSession implements Command  {
     public SessionWithProvideUserAndPassword() {
         super();
@@ -41,7 +37,7 @@ public class SessionWithProvideUserAndPassword extends RunningSession implements
             switch (getInputFromUser()) {
                 case "back" -> {
                     Loading.square("back", 20,
-                            100, true,"DONE",
+                            100, true,"Go back!",
                             loginMenu.menuAttributes().getPosition().getWhiteSpaceLeft()
                     );
 

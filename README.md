@@ -28,7 +28,8 @@
 12. [X] Logo/Loading progress bar, Login Page and Main Menu page completed;
 13. [X] Various loading effects for moving forward, go back and quit;
 14. [X] Using Command along with Builder design pattern to create the menu hierarchy and interactions with this menu;
-13. [X] To continue....interaction with the DB under development
+15. [X] Faceted builders were made for DB entities in order to clarify the construction of complex objects using fluent interfaces;
+16. [X] To continue....interaction with the DB under development
 
 <br>
 

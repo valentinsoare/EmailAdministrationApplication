@@ -1,5 +1,6 @@
 package io.emailadministration.entities.businesscomponents.companyemployees.employeedefinitionwithdetails;
 
+import io.emailadministration.entities.businesscomponents.digitalcomponents.User;
 import io.emailadministration.printing.CustomPrinting;
 import io.emailadministration.customdatastructureandoperationsonthem.operationswithdatastructures.OperationsOnMap;
 import io.emailadministration.entities.businesscomponents.companyemployees.DepartmentType;
@@ -56,6 +57,11 @@ public abstract class Employee implements Comparable<Employee> {
 
     @Embedded
     private TimeAndDateInformation timeAndDateInformation;
+
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
+    @JoinColumn(name = "user_id", unique = true)
+    private User user;
 
     @Version
     @Column(name = "version", nullable = false)

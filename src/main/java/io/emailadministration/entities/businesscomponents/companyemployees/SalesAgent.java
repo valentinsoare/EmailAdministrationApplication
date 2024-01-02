@@ -23,9 +23,6 @@ public class SalesAgent extends Employee {
     @Column(name = "is_team_leader")
     private boolean isTeamLeader;
 
-    @OneToOne(mappedBy = "teamLeaderOfDepartment")
-    private Sales departmentWhereIsHiredAsTeamLeader;
-
     @Column(name = "sales_volume_this_year")
     private BigDecimal salesVolumeThisYear;
 

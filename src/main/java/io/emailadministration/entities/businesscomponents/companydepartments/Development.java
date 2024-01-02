@@ -18,10 +18,6 @@ import java.util.TreeSet;
 @Entity(name = "development")
 @DiscriminatorValue("development")
 public class Development extends Department {
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, fetch = FetchType.LAZY)
-    @JoinColumn(name = "team_leader_development_id", unique = true)
-    private Developer teamLeaderOfDepartment;
-
     @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
     private Set<Developer> listOfEmployeesInTheDepartment = new LinkedHashSet<>();
 
@@ -37,14 +33,16 @@ public class Development extends Department {
     @Column(name = "number_of_projects_in_working")
     private int numberOfProjectsInWorking;
 
-    public Development() {}
+    public Development() {
+        super();
+    }
 
     @Override
     public String toString() {
-        return String.format("Developer [%s, teamLeaderEmployeeID: %s, numberOfEmployeesInTheDepartment: %s, " +
+        return String.format("Developer [%s, numberOfEmployeesInTheDepartment: %s, " +
                         "numberOfProjectsCompletedThisYear: %s, numberOfProjectsCompletedLastYear: %s, " +
                         "numberOfProjectsInWorking: %s",
-                super.toString(), teamLeaderOfDepartment.getEmployeeId(), numberOfEmployeesPerDepartment,
-                numberOfProjectsCompletedThisYear, numberOfProjectsCompletedLastYear, numberOfProjectsInWorking);
+                super.toString(), numberOfEmployeesPerDepartment, numberOfProjectsCompletedThisYear,
+                numberOfProjectsCompletedLastYear, numberOfProjectsInWorking);
     }
 }

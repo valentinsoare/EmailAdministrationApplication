@@ -19,9 +19,7 @@ public class Email implements Comparable<Email> {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @OneToOne(fetch = FetchType.LAZY,
-            cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.REFRESH})
-    @JoinColumn(name = "user_id", unique = true)
+    @OneToOne(mappedBy = "email")
     private User user;
 
     @Column(name = "primary_email_address")

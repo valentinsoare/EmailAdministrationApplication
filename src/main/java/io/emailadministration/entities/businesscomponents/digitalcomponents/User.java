@@ -22,9 +22,7 @@ public class User implements Comparable<User> {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @OneToOne(fetch = FetchType.LAZY,
-            cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
-    @JoinColumn(name = "employee_profile", unique = true)
+    @OneToOne(mappedBy = "user")
     private Employee employeeProfile;
 
     @Column(name = "user_name")
@@ -35,7 +33,9 @@ public class User implements Comparable<User> {
     @JoinColumn(name = "user_password", unique = true)
     private Password password;
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.REFRESH})
+    @JoinColumn(name = "user_email", unique = true)
     private Email email;
 
     @Version
