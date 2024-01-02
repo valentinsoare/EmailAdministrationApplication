@@ -26,7 +26,9 @@
 10. [X] Following SOLID, DRY, YAGNI and KISS design principles;
 11. [X] CPosition, HFrameWithContent, HMessage, Header Menu, AuxiliaryMessage and PrintMenu classes with associated methods along with builder and null object for each class;
 12. [X] Logo/Loading progress bar, Login Page and Main Menu page completed;
-13. [X] To continue
+13. [X] Various loading effects for moving forward, go back and quit;
+14. [X] Using Command along with Builder design pattern to create the menu hierarchy and interactions with this menu;
+13. [X] To continue....interaction with the DB under development
 
 <br>
 
@@ -39,7 +41,7 @@
 ✅ A view of these entities and all java classes from this project but from Java Object-Oriented perspective.
 
 
-[![Screenshot-from-2023-12-29-22-37-02.png](https://i.postimg.cc/nVjqS164/Screenshot-from-2023-12-29-22-37-02.png)](https://postimg.cc/0rv6b75j)
+[![Screenshot-from-2024-01-02-02-49-04.png](https://i.postimg.cc/Sx2bjKmZ/Screenshot-from-2024-01-02-02-49-04.png)](https://postimg.cc/VJ8VVmrM)
 
 
 ✅ Logo and loading effect when the application is started.
@@ -56,10 +58,16 @@
 [![XXX.png](https://i.postimg.cc/rsnQPvZJ/XXX.png)](https://postimg.cc/JHXNydLD)
 
 
-✅ Login/SignUp page.
+✅ Starting page.
 
 
-[![Screenshot-from-2023-12-30-01-10-20.png](https://i.postimg.cc/rw8bdrFn/Screenshot-from-2023-12-30-01-10-20.png)](https://postimg.cc/SJvV3j9C)
+[![Screenshot-from-2024-01-02-02-53-03.png](https://i.postimg.cc/QC9vC43F/Screenshot-from-2024-01-02-02-53-03.png)](https://postimg.cc/N2tdPxLt)
+
+
+✅ Login page.
+
+
+[![Screenshot-from-2024-01-02-02-54-11.png](https://i.postimg.cc/PrM0xwGz/Screenshot-from-2024-01-02-02-54-11.png)](https://postimg.cc/bssmVdws)
 
 
 ✅ Main menu page.
