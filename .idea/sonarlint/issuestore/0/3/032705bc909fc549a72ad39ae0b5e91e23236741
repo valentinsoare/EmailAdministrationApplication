@@ -1,17 +1,5 @@
 
-p
-java:S1450"ZRemove the "nameOfTheDB" field and declare it as a local variable in the relevant methods.(‚š½¡
-t
-java:S1450"^Remove the "numberOfRecords" field and declare it as a local variable in the relevant methods.(Ó”‘â
-s
-java:S1450"]Remove the "numberOfTables" field and declare it as a local variable in the relevant methods.(¤•¹í
-:
-java:S1168""$Return an empty map instead of null.(¥¹ï
-:
-java:S1168/"$Return an empty map instead of null.(¥¹ï
-E
-java:S1068"/Remove this unused "nameOfTheDB" private field.(‚š½¡
-H
-java:S1068"2Remove this unused "numberOfTables" private field.(¤•¹í
-I
-java:S1068"3Remove this unused "numberOfRecords" private field.(Ó”‘â
+r
+java:S1192#"UDefine a constant instead of duplicating this literal "name_of_the_database" 3 times.(¦ŞÉ8ƒ˜ÙëÌ1
+k
+java:S1192#"NDefine a constant instead of duplicating this literal "EmailAppAdmin" 3 times.(¦ŞÉ8ƒ˜ÙëÌ1

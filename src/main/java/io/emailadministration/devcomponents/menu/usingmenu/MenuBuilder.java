@@ -4,7 +4,7 @@ import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
 import io.emailadministration.devcomponents.auxiliary.position.CPosition;
 import io.emailadministration.devcomponents.header.IHeader;
 import io.emailadministration.devcomponents.menu.auxmessage.IAuxMessage;
-import io.emailadministration.entities.businesscomponents.digitalcomponents.User;
+import io.emailadministration.entities.digitalcomponents.User;
 
 public class MenuBuilder {
     private IMenu menu;

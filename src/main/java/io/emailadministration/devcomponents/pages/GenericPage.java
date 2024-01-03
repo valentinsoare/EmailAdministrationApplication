@@ -1,6 +1,5 @@
 package io.emailadministration.devcomponents.pages;
 
-import io.emailadministration.devcomponents.Component;
 import io.emailadministration.devcomponents.header.HeaderNullObject;
 import io.emailadministration.devcomponents.header.IHeader;
 import io.emailadministration.devcomponents.header.frame.HFrameWithContentNullObject;
@@ -9,8 +8,8 @@ import io.emailadministration.devcomponents.header.message.HMessageNullObject;
 import io.emailadministration.devcomponents.header.message.IStylizedMessage;
 import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
 import io.emailadministration.devcomponents.menu.usingmenu.MenuNullObject;
-import io.emailadministration.entities.businesscomponents.digitalcomponents.User;
-import io.emailadministration.entities.businesscomponents.digitalcomponents.UserNullObject;
+import io.emailadministration.entities.digitalcomponents.User;
+import io.emailadministration.entities.digitalcomponents.UserNullObject;
 import lombok.Getter;
 import lombok.Setter;
 

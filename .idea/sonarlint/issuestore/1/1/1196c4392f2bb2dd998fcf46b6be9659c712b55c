@@ -1,14 +1,6 @@
 
-]	java:S125"<This block of commented-out lines of code should be removed.(Òô¾ˆÿÿÿÿÿ8‚ªÏÆÌ1
-k
-java:S1128"NRemove this unused import 'io.emailadministration.dbutils.EntityManagerScope'.(ÛÀÎ8ƒªÏÆÌ1
-`
-java:S1128">Remove this unused import 'jakarta.persistence.EntityManager'.(·ïŸéúÿÿÿÿ8ƒªÏÆÌ1
-d
-java:S1128"BRemove this unused import 'jakarta.persistence.EntityTransaction'.(¡«Ä×üÿÿÿÿ8ƒªÏÆÌ1
-`
-java:S1128	">Remove this unused import 'jakarta.persistence.FlushModeType'.(»Ô „üÿÿÿÿ8ƒªÏÆÌ1
-Q
-java:S1128"4Remove this unused import 'java.util.logging.Level'.(…µÛ¶8ƒªÏÆÌ1
-R
-java:S1128"5Remove this unused import 'java.util.logging.Logger'.(ƒ¥óš8ƒªÏÆÌ1
+]	java:S125"<This block of commented-out lines of code should be removed.(èåë°úÿÿÿÿ8­³ òÌ1
+„
+java:S1128"bRemove this unused import 'io.emailadministration.runningsessionsentireapp.SessionStartingTheApp'.(¼ºÎ·øÿÿÿÿ8®³ òÌ1
+Ž
+java:S1128"qRemove this unused import 'io.emailadministration.runningsessionsentireapp.SessionWithLoginSignInStartingTheApp'.(´œèž8®³ òÌ1

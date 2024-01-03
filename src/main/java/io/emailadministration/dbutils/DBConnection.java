@@ -7,11 +7,16 @@ import jakarta.persistence.Persistence;
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DBConnection {
+
     private EntityManager entityManger;
 
-    public DBConnection() {}
+    public DBConnection() {
+        Logger.getLogger("org.hibernate").setLevel(Level.INFO);
+    }
 
     static class Inner {
         private Inner() {}

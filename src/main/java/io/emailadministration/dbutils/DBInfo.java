@@ -1,49 +1,120 @@
 package io.emailadministration.dbutils;
 
-import java.util.Map;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
-public class DBInfo implements DatabaseMetaData {
+import java.util.*;
+
+@Getter
+@Setter
+public class DBInfo extends DBConnection implements DatabaseMetaData {
     private String nameOfTheDB;
     private int numberOfTables;
     private int numberOfRecords;
 
+    private final EntityManager em;
+    private EntityTransaction transaction;
+
     public DBInfo() {
-        getNameOfTheDatabase();
-        getNumberOfTables();
-        getNumberOfRecords();
+        this.em = generateEntityManager(EntityManagerScope.GET_STATS);
+        this.em.setFlushMode(FlushModeType.COMMIT);
     }
 
     @Override
     public int getNumberOfRecords() {
-        int recordsInDB = 0;
-        this.numberOfRecords = recordsInDB;
+        int howManyRecords = -1;
 
-        return recordsInDB;
+        try (em) {
+            transaction = em.getTransaction();
+            transaction.begin();
+
+            StoredProcedureQuery storedProcedureQuery = em.createStoredProcedureQuery("CountNumberOfRecords")
+                    .registerStoredProcedureParameter("name_of_the_databsase", String.class, ParameterMode.IN)
+                    .registerStoredProcedureParameter("number_of_records", Integer.class, ParameterMode.OUT)
+                    .setParameter("name_of_the_database", "EmailAppAdmin");
+
+            storedProcedureQuery.execute();
+
+            howManyRecords = (int) storedProcedureQuery.getOutputParameterValue("number_of_records");
+
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
+
+        this.numberOfRecords = howManyRecords;
+        return numberOfRecords;
     }
 
     @Override
     public String getNameOfTheDatabase() {
-        String dbName = "";
-        this.nameOfTheDB = dbName;
-
-        return dbName;
-    }
-
-    @Override
-    public Map<String, String> getDescriptionPerTable() {
-        return null;
+        this.nameOfTheDB = "EmailAppAdmin";
+        return nameOfTheDB;
     }
 
     @Override
     public int getNumberOfTables() {
-        int howManyTablesInDB = 0;
+        int howManyTablesInDB = -1;
+
+        try (em) {
+            transaction = em.getTransaction();
+            transaction.begin();
+
+            StoredProcedureQuery storedProcedureQueryForNumberOfTables =
+                    em.createStoredProcedureQuery("CountTables")
+                            .registerStoredProcedureParameter("name_of_the_database", String.class, ParameterMode.IN)
+                            .registerStoredProcedureParameter("number_tables", Integer.class, ParameterMode.OUT)
+                            .setParameter("name_of_the_database", "EmailAppAdmin");
+
+            storedProcedureQueryForNumberOfTables.execute();
+
+            howManyTablesInDB = (int) storedProcedureQueryForNumberOfTables.getOutputParameterValue("number_tables");
+
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
 
         this.numberOfTables = howManyTablesInDB;
         return howManyTablesInDB;
     }
 
     @Override
-    public Map<String, Integer> getNumberOfRecordsPerTable() {
-        return null;
+    public List<NumberOfRecordsPerEachTable> getNumberOfRecordsPerTable() {
+        List<NumberOfRecordsPerEachTable> records = new ArrayList<>();
+
+         try (em) {
+             transaction = em.getTransaction();
+             transaction.begin();
+
+             StoredProcedureQuery c = em.createStoredProcedureQuery("CountRecordsPerEachTable");
+             List<Object[]> results = c.getResultList();
+
+             for (Object[] e : results) {
+                 records.add(
+                         new NumberOfRecordsPerEachTable(
+                                 (String) e[0],
+                                 (Long) e[1]
+                         )
+                 );
+             }
+
+             transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
+
+        return records;
+    }
+
+    public static DBInfo getNewInstanceOfDBInfo() {
+        return new DBInfo();
     }
 }

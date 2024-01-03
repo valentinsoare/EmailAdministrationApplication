@@ -2,8 +2,8 @@ package io.emailadministration.runningsessionsentireapp;
 
 import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
 import io.emailadministration.devcomponents.menu.usingmenu.MenuNullObject;
-import io.emailadministration.entities.businesscomponents.digitalcomponents.User;
-import io.emailadministration.entities.businesscomponents.digitalcomponents.UserNullObject;
+import io.emailadministration.entities.digitalcomponents.User;
+import io.emailadministration.entities.digitalcomponents.UserNullObject;
 import lombok.Getter;
 import lombok.Setter;
 
