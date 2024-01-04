@@ -1,25 +1,24 @@
 package io.emailadministration;
 
-import io.emailadministration.dbutils.DBConnection;
-import io.emailadministration.dbutils.DBInfo;
-import io.emailadministration.dbutils.NumberOfRecordsPerEachTable;
 import io.emailadministration.runningsessionsentireapp.SessionStartingTheApp;
 import io.emailadministration.runningsessionsentireapp.SessionWithLoginSignInStartingTheApp;
 
-import java.util.List;
-
-public class App extends DBConnection {
-
-    public static void main( String[] args ) {
-//        SessionStartingTheApp.logoAndProgressBar();
-//        new SessionWithLoginSignInStartingTheApp().execute();
+public class App { public static void main( String[] args ) {
+        SessionStartingTheApp.logoAndProgressBar();
+        new SessionWithLoginSignInStartingTheApp().execute();
 
         //-----------------------------------------------------------
-
-        List<NumberOfRecordsPerEachTable> numberOfRecordsPerTable =
-                new DBInfo().getNumberOfRecordsPerTable();
-
-        System.out.printf("%n%s", numberOfRecordsPerTable);
+//        DBInfo dbInfo = new DBInfo();
+//
+//        List<NumberOfRecordsPerEachTable> numberOfRecordsPerTable =
+//                dbInfo.getNumberOfRecordsPerTable();
+//        System.out.printf("%n%s", numberOfRecordsPerTable);
+//
+//        int numberOfRecords = dbInfo.getNumberOfRecords();
+//        System.out.printf("%n%s", numberOfRecords);
+//
+//        int numberOfTables = dbInfo.getNumberOfTables();
+//        System.out.printf("%n%s", numberOfTables);
 
         //------------------------------------------------------------
     }

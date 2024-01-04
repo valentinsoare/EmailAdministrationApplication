@@ -1,20 +1,19 @@
 package io.emailadministration.operationsWithDB;
 
 import io.emailadministration.dbutils.EntityManagerScope;
+import io.emailadministration.entities.companyemployees.Accountant;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Collection;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @Getter
 @Setter
-public class WithAccountantEmployee implements DataAccessObject {
+public class WithAccountantEmployee implements DataAccessObject<Accountant> {
     private LinkToDb link;
 
     public WithAccountantEmployee() {
-        this.link = new LinkToDb(EntityManagerScope.OPERATIONS_WITH_EMPLOYEE);
+        this.link = LinkToDb.getNewInstance();
     }
 
     public static WithAccountantEmployee getNewInstance() {
@@ -22,38 +21,38 @@ public class WithAccountantEmployee implements DataAccessObject {
     }
 
     @Override
-    public Optional get(long id) {
+    public Optional<Accountant> get(long id) {
         return Optional.empty();
     }
 
     @Override
-    public Set getAll() {
+    public Set<Accountant> getAll() {
         return null;
     }
 
     @Override
-    public Set getAll(long startId, long endId) {
+    public Set<Accountant> getAll(long startId, long endId) {
         return null;
     }
 
     @Override
-    public boolean create(Object o) {
+    public boolean create(Accountant accountant) {
         return false;
     }
 
     @Override
-    public int[] createAll(Collection c) {
-        return new int[0];
+    public List<Long> createAll(Collection<? extends Accountant> c) {
+        return Collections.emptyList();
     }
 
     @Override
-    public boolean update(long id, Object o) {
+    public boolean update(long id, Accountant accountant) {
         return false;
     }
 
     @Override
-    public int[] updateAll(Collection c) {
-        return new int[0];
+    public List<Long> updateAll(Collection<? extends Accountant> c) {
+        return Collections.emptyList();
     }
 
     @Override
@@ -62,17 +61,17 @@ public class WithAccountantEmployee implements DataAccessObject {
     }
 
     @Override
+    public List<Long> deleteAll(Collection<Long> c) {
+        return Collections.emptyList();
+    }
+
+    @Override
     public boolean checkIfElementExists(long id) {
         return false;
     }
 
     @Override
-    public boolean checkIfElementExists(Object o) {
+    public boolean checkIfElementExists(Accountant accountant) {
         return false;
-    }
-
-    @Override
-    public int[] deleteAll(Collection c) {
-        return new int[0];
     }
 }

@@ -41,7 +41,7 @@ public class NumberOfRecordsPerEachTable {
 
     @Override
     public String toString() {
-        return String.format("[ tableName: %s, numberOfRecords: %s ]",
+        return String.format("{ tableName: %s, numberOfRecords: %s }",
                 name, number);
     }
 }

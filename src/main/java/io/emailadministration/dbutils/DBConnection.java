@@ -4,9 +4,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-import java.util.EnumMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,16 +13,13 @@ public class DBConnection {
     private EntityManager entityManger;
 
     public DBConnection() {
-        Logger.getLogger("org.hibernate").setLevel(Level.INFO);
+        Logger.getLogger("org.hibernate").setLevel(Level.FINEST);
     }
 
     static class Inner {
         private Inner() {}
 
         private static final EntityManagerFactory entityManagerFactory = generateEntityManagerFactory();
-
-        private static final Map<EntityManagerScope, EntityManager> entityManagerInstances
-                = new EnumMap<>(EntityManagerScope.class);
 
         private static DBConnection connToDb = new DBConnection();
 
@@ -35,14 +30,8 @@ public class DBConnection {
         }
     }
 
-    public EntityManager generateEntityManager(EntityManagerScope scope) {
-        if (Inner.entityManagerInstances.containsKey(scope)) {
-            return Inner.entityManagerInstances.get(scope);
-        }
-
+    public EntityManager generateEntityManager() {
         this.entityManger = Inner.entityManagerFactory.createEntityManager();
-
-        Inner.entityManagerInstances.put(scope, entityManger);
         return entityManger;
     }
 
@@ -52,14 +41,6 @@ public class DBConnection {
 
     public static DBConnection getInstance() {
         return Inner.connToDb;
-    }
-
-    public Optional<EntityManager> getEntityManagerInstance(EntityManagerScope scope) {
-        return Optional.ofNullable(Inner.entityManagerInstances.get(scope));
-    }
-
-    public Map<EntityManagerScope, EntityManager> getAllEntityManagers() {
-        return Inner.entityManagerInstances;
     }
 }
 

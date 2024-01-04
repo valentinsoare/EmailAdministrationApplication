@@ -1,6 +1,7 @@
 package io.emailadministration.operationsWithDB;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -10,13 +11,13 @@ public interface DataAccessObject<T> {
     Set<T> getAll(long startId, long endId);
 
     boolean create(T t);
-    int[] createAll(Collection<? extends T> c);
+    List<Long> createAll(Collection<? extends T> c);
 
     boolean update(long id, T t);
-    int[] updateAll(Collection<? extends T> c);
+    List<Long> updateAll(Collection<? extends T> c);
 
     boolean delete(long id);
-    int[] deleteAll(Collection<Long> c);
+    List<Long> deleteAll(Collection<Long> c);
 
     boolean checkIfElementExists(long id);
     boolean checkIfElementExists(T t);

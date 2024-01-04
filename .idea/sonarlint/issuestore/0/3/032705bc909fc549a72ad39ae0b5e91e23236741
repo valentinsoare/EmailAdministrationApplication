@@ -1,5 +1,19 @@
 
 r
-java:S1192#"UDefine a constant instead of duplicating this literal "name_of_the_database" 3 times.(¦ŞÉ8ƒ˜ÙëÌ1
+java:S1192"UDefine a constant instead of duplicating this literal "name_of_the_database" 4 times.(Šò‰Ë8Ä‚“Í1
 k
-java:S1192#"NDefine a constant instead of duplicating this literal "EmailAppAdmin" 3 times.(¦ŞÉ8ƒ˜ÙëÌ1
+java:S1192"NDefine a constant instead of duplicating this literal "EmailAppAdmin" 3 times.(¦ŞÉ8Ä‚“Í1
+
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÜŠ˜8Ê‚“Í1
+w
+java:S1450	"ZRemove the "nameOfTheDB" field and declare it as a local variable in the relevant methods.(‚š½¡8Ê‚“Í1
+{
+java:S1450"^Remove the "numberOfRecords" field and declare it as a local variable in the relevant methods.(Ó”‘â8Ê‚“Í1
+z
+java:S1450
+"]Remove the "numberOfTables" field and declare it as a local variable in the relevant methods.(¤•¹í8Ê‚“Í1
+O
+java:S1068
+"2Remove this unused "numberOfTables" private field.(¤•¹í8Î‚“Í1
+P
+java:S1068"3Remove this unused "numberOfRecords" private field.(Ó”‘â8Î‚“Í1

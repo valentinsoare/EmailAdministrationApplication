@@ -1,41 +1,34 @@
 package io.emailadministration.dbutils;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import org.hibernate.procedure.ProcedureOutputs;
 
 import java.util.*;
 
-@Getter
-@Setter
 public class DBInfo extends DBConnection implements DatabaseMetaData {
     private String nameOfTheDB;
     private int numberOfTables;
     private int numberOfRecords;
 
-    private final EntityManager em;
-    private EntityTransaction transaction;
-
-    public DBInfo() {
-        this.em = generateEntityManager(EntityManagerScope.GET_STATS);
-        this.em.setFlushMode(FlushModeType.COMMIT);
-    }
+    public DBInfo() {}
 
     @Override
     public int getNumberOfRecords() {
-        int howManyRecords = -1;
+        int howManyRecords = 0;
+        EntityTransaction transaction = null;
+
+        EntityManager em = generateEntityManager();
+
+        StoredProcedureQuery storedProcedureQuery = em.createStoredProcedureQuery("CountNumberOfRecords")
+                .registerStoredProcedureParameter("name_of_the_database", String.class, ParameterMode.IN)
+                .registerStoredProcedureParameter("number_of_records", Integer.class, ParameterMode.OUT)
+                .setParameter("name_of_the_database", "EmailAppAdmin");
 
         try (em) {
             transaction = em.getTransaction();
             transaction.begin();
 
-            StoredProcedureQuery storedProcedureQuery = em.createStoredProcedureQuery("CountNumberOfRecords")
-                    .registerStoredProcedureParameter("name_of_the_databsase", String.class, ParameterMode.IN)
-                    .registerStoredProcedureParameter("number_of_records", Integer.class, ParameterMode.OUT)
-                    .setParameter("name_of_the_database", "EmailAppAdmin");
-
             storedProcedureQuery.execute();
-
             howManyRecords = (int) storedProcedureQuery.getOutputParameterValue("number_of_records");
 
             transaction.commit();
@@ -43,10 +36,12 @@ public class DBInfo extends DBConnection implements DatabaseMetaData {
             if (transaction != null) {
                 transaction.rollback();
             }
+        } finally {
+            storedProcedureQuery.unwrap(ProcedureOutputs.class).release();
         }
 
         this.numberOfRecords = howManyRecords;
-        return numberOfRecords;
+        return howManyRecords;
     }
 
     @Override
@@ -58,19 +53,21 @@ public class DBInfo extends DBConnection implements DatabaseMetaData {
     @Override
     public int getNumberOfTables() {
         int howManyTablesInDB = -1;
+        EntityTransaction transaction = null;
+
+        EntityManager em = generateEntityManager();
+
+        StoredProcedureQuery storedProcedureQueryForNumberOfTables =
+                em.createStoredProcedureQuery("CountTables")
+                        .registerStoredProcedureParameter("name_of_the_database", String.class, ParameterMode.IN)
+                        .registerStoredProcedureParameter("number_tables", Integer.class, ParameterMode.OUT)
+                        .setParameter("name_of_the_database", "EmailAppAdmin");
 
         try (em) {
             transaction = em.getTransaction();
             transaction.begin();
 
-            StoredProcedureQuery storedProcedureQueryForNumberOfTables =
-                    em.createStoredProcedureQuery("CountTables")
-                            .registerStoredProcedureParameter("name_of_the_database", String.class, ParameterMode.IN)
-                            .registerStoredProcedureParameter("number_tables", Integer.class, ParameterMode.OUT)
-                            .setParameter("name_of_the_database", "EmailAppAdmin");
-
             storedProcedureQueryForNumberOfTables.execute();
-
             howManyTablesInDB = (int) storedProcedureQueryForNumberOfTables.getOutputParameterValue("number_tables");
 
             transaction.commit();
@@ -78,6 +75,8 @@ public class DBInfo extends DBConnection implements DatabaseMetaData {
             if (transaction != null) {
                 transaction.rollback();
             }
+        } finally {
+            storedProcedureQueryForNumberOfTables.unwrap(ProcedureOutputs.class).release();
         }
 
         this.numberOfTables = howManyTablesInDB;
@@ -88,11 +87,15 @@ public class DBInfo extends DBConnection implements DatabaseMetaData {
     public List<NumberOfRecordsPerEachTable> getNumberOfRecordsPerTable() {
         List<NumberOfRecordsPerEachTable> records = new ArrayList<>();
 
+        EntityTransaction transaction = null;
+        EntityManager em = generateEntityManager();
+
+        StoredProcedureQuery c = em.createStoredProcedureQuery("CountRecordsPerEachTable");
+
          try (em) {
              transaction = em.getTransaction();
              transaction.begin();
 
-             StoredProcedureQuery c = em.createStoredProcedureQuery("CountRecordsPerEachTable");
              List<Object[]> results = c.getResultList();
 
              for (Object[] e : results) {
@@ -109,6 +112,8 @@ public class DBInfo extends DBConnection implements DatabaseMetaData {
             if (transaction != null) {
                 transaction.rollback();
             }
+        } finally {
+             c.unwrap(ProcedureOutputs.class).release();
         }
 
         return records;
