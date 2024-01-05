@@ -1,6 +1,6 @@
 package io.emailadministration.entities.companydepartments;
 
-import io.emailadministration.entities.companydepartments.departmentstructurewithdetails.DepartmentBuilder;
+import io.emailadministration.entities.companyemployees.DepartmentType;
 
 import java.math.BigDecimal;
 
@@ -11,8 +11,19 @@ public class SalesBuilder {
         this.sales = new Sales();
     }
 
-    public DepartmentBuilder setupDepartment() {
-        return new DepartmentBuilder(sales);
+    public SalesBuilder setupDepartmentBusinessId(String departmentBusinessId) {
+        sales.setDepartmentBusinessID(departmentBusinessId);
+        return this;
+    }
+
+    public SalesBuilder setupDepartmentType(DepartmentType type) {
+        sales.setWhichDepartmentIsThis(type);
+        return this;
+    }
+
+    public SalesBuilder setupLastYearEvaluation(int lastYearEvaluation) {
+        sales.setLastYearEvaluationOfTheDepartment(lastYearEvaluation);
+        return this;
     }
 
     public SalesBuilder setupNumberOfEmployeesPerDepartment(int numberOfEmployees) {

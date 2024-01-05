@@ -1,6 +1,6 @@
 package io.emailadministration.entities.companydepartments;
 
-import io.emailadministration.entities.companydepartments.departmentstructurewithdetails.DepartmentBuilder;
+import io.emailadministration.entities.companyemployees.DepartmentType;
 
 public class AccountingBuilder {
 
@@ -10,8 +10,19 @@ public class AccountingBuilder {
         this.accounting = new Accounting();
     }
 
-    public DepartmentBuilder setupDepartment() {
-        return new DepartmentBuilder(accounting);
+    public AccountingBuilder setupDepartmentBusinessId(String businessIdOfTheDepartment) {
+        this.accounting.setDepartmentBusinessID(businessIdOfTheDepartment);
+        return this;
+    }
+
+    public AccountingBuilder setupDepartmentType(DepartmentType type) {
+        this.accounting.setWhichDepartmentIsThis(type);
+        return this;
+    }
+
+    public AccountingBuilder setupLastYearEvaluation(int lastYearEvaluation) {
+        this.accounting.setLastYearEvaluationOfTheDepartment(lastYearEvaluation);
+        return this;
     }
 
     public AccountingBuilder setupNumberOfEmployeesPerDepartment(int numberOfEmployees) {

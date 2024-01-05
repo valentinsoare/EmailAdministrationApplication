@@ -18,6 +18,7 @@ public class OperationsOnMap {
     public static <K, T> Map<K, T> putObjectAttributes(T object) {
         Map<K, T> attributes = new LinkedHashMap<>();
         Field[] fields = object.getClass().getDeclaredFields();
+
         try {
             for (Field field : fields) {
                 field.setAccessible(true);

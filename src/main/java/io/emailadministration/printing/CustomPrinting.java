@@ -20,7 +20,6 @@ public class CustomPrinting {
             }
         }
 
-        output.append("]");
         return output.toString();
     }
 }

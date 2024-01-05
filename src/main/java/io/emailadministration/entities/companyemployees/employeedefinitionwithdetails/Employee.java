@@ -15,7 +15,6 @@ import java.util.Map;
 
 @Getter
 @Setter
-@BatchSize(size = 16)
 @Entity(name = "employee")
 @Table(name = "employee", schema = "employee")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)

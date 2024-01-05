@@ -1,24 +1,18 @@
 package io.emailadministration.operationsWithDB;
 
-import io.emailadministration.dbutils.EntityManagerScope;
 import io.emailadministration.entities.companyemployees.Developer;
 
 import java.util.*;
 
-public class WithDeveloperEmployee implements DataAccessObject<Developer> {
-    private LinkToDb link;
-
-    public WithDeveloperEmployee() {
-        this.link = new LinkToDb();
-    }
+public class WithDeveloperEmployee implements GeneralDataAccessObject<Developer> {
 
     public WithDeveloperEmployee getNewInstance() {
         return new WithDeveloperEmployee();
     }
 
     @Override
-    public Optional<Developer> get(long id) {
-        return Optional.empty();
+    public Developer get(long id) {
+        return null;
     }
 
     @Override

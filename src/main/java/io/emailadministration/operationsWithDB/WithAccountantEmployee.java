@@ -1,6 +1,6 @@
 package io.emailadministration.operationsWithDB;
 
-import io.emailadministration.dbutils.EntityManagerScope;
+import io.emailadministration.dbutils.DBConnection;
 import io.emailadministration.entities.companyemployees.Accountant;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,11 +9,11 @@ import java.util.*;
 
 @Getter
 @Setter
-public class WithAccountantEmployee implements DataAccessObject<Accountant> {
-    private LinkToDb link;
+public class WithAccountantEmployee implements GeneralDataAccessObject<Accountant> {
+    private DBConnection connection;
 
     public WithAccountantEmployee() {
-        this.link = LinkToDb.getNewInstance();
+        this.connection = DBConnection.getInstance();
     }
 
     public static WithAccountantEmployee getNewInstance() {
@@ -21,8 +21,8 @@ public class WithAccountantEmployee implements DataAccessObject<Accountant> {
     }
 
     @Override
-    public Optional<Accountant> get(long id) {
-        return Optional.empty();
+    public Accountant get(long id) {
+        return null;
     }
 
     @Override

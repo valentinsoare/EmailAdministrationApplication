@@ -2,11 +2,10 @@ package io.emailadministration.operationsWithDB;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
-public interface DataAccessObject<T> {
-    Optional<T> get(long id);
+public interface GeneralDataAccessObject<T> {
+    T get(long id);
     Set<T> getAll();
     Set<T> getAll(long startId, long endId);
 

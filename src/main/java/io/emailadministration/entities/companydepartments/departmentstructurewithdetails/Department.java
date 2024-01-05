@@ -21,27 +21,41 @@ import java.util.Map;
         name = "department_type"
 )
 @DiscriminatorValue("none")
-public abstract class Department implements Comparable<Department> {
+public class Department implements Comparable<Department> {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "department_business_id")
+    @Column(name = "department_business_id", columnDefinition = "varchar(100) default 'none'", unique = true)
     private String departmentBusinessID;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "whichDepartmentIsThis")
+    @Column(name = "whichDepartmentIsThis", unique = true)
     private DepartmentType whichDepartmentIsThis;
 
-    @Column(name = "last_year_evaluation_of_the_department")
+    @Column(name = "last_year_evaluation_of_the_department", columnDefinition = "int default -1")
     private int lastYearEvaluationOfTheDepartment;
 
     @Version
     @Column(name = "version", nullable = false)
     private Long version;
 
-    protected Department() {}
+    protected Department() {
+        this.lastYearEvaluationOfTheDepartment = -1;
+        this.version = -1L;
+        this.id = -1L;
+        this.departmentBusinessID = "none";
+        this.whichDepartmentIsThis = DepartmentType.ACCOUNTING;
+    }
+
+    protected Department(Department department) {
+        this.id = department.getId();
+        this.departmentBusinessID = department.getDepartmentBusinessID();
+        this.whichDepartmentIsThis = department.getWhichDepartmentIsThis();
+        this.lastYearEvaluationOfTheDepartment = department.getLastYearEvaluationOfTheDepartment();
+        this.version = department.getVersion();
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -77,7 +91,9 @@ public abstract class Department implements Comparable<Department> {
 
     @Override
     public String toString() {
-        Map<String, ?> characteristics = OperationsOnMap.putObjectAttributes(this);
-        return CustomPrinting.of(characteristics, "Department [");
+        Department d = new Department(this);
+
+        Map<String, ?> characteristics = OperationsOnMap.putObjectAttributes(d);
+        return CustomPrinting.of(characteristics, "");
     }
 }

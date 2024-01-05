@@ -4,20 +4,15 @@ import io.emailadministration.entities.companyemployees.SalesAgent;
 
 import java.util.*;
 
-public class WithSalesAgentEmployee implements DataAccessObject<SalesAgent> {
-    private LinkToDb link;
-
-    public WithSalesAgentEmployee() {
-        this.link = new LinkToDb();
-    }
+public class WithSalesAgentEmployee implements GeneralDataAccessObject<SalesAgent> {
 
     public WithSalesAgentEmployee getNewInstance() {
         return new WithSalesAgentEmployee();
     }
 
     @Override
-    public Optional<SalesAgent> get(long id) {
-        return Optional.empty();
+    public SalesAgent get(long id) {
+        return null;
     }
 
     @Override
