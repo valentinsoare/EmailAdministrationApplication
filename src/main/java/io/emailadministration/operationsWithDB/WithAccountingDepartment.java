@@ -38,7 +38,9 @@ public class WithAccountingDepartment implements DepartmentDataAccessObject<Acco
 
     @Override
     public boolean create(Accounting accounting) {
-        if (accounting == null) return false;
+        if (accounting == null) {
+            return false;
+        }
 
         EntityManager em = connection.generateEntityManager();
         return ExecQuery.ofInsert(em, accounting);

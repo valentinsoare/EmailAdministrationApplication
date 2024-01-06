@@ -43,7 +43,7 @@ public class Accounting extends Department {
     }
 
     public Accounting(Accounting accounting) {
-        this.setEmployeesInTheDepartment = new HashSet<>(accounting.getSetOfEmployeesInTheDepartment());
+        this.setEmployeesInTheDepartment = new HashSet<>(accounting.setEmployeesInTheDepartment);
         this.numberOfEmployeesPerDepartment = accounting.getNumberOfEmployeesPerDepartment();
 
         this.setWhichDepartmentIsThis(accounting.getWhichDepartmentIsThis());
@@ -57,18 +57,18 @@ public class Accounting extends Department {
         return new Accounting(accounting);
     }
 
-    public Accounting updateElement(Accounting accounting) {
-        this.setEmployeesInTheDepartment = new HashSet<>(accounting.getSetOfEmployeesInTheDepartment());
+    public void updateElement(Accounting accounting) {
+        this.setEmployeesInTheDepartment = new HashSet<>(accounting.setEmployeesInTheDepartment);
         this.numberOfEmployeesPerDepartment = accounting.getNumberOfEmployeesPerDepartment();
         this.setDepartmentBusinessID(accounting.getDepartmentBusinessID());
         this.setWhichDepartmentIsThis(accounting.getWhichDepartmentIsThis());
         this.setLastYearEvaluationOfTheDepartment(accounting.getLastYearEvaluationOfTheDepartment());
-
-        return this;
     }
 
     public Set<Accountant> getSetOfEmployeesInTheDepartment() {
         EntityManager em = DBConnection.getInstance().generateEntityManager();
+
+
 
         TypedQuery<Accountant> query = em.createQuery("SELECT a.setEmployeesInTheDepartment FROM accounting a",
                 Accountant.class);

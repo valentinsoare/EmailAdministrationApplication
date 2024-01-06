@@ -48,7 +48,6 @@ public class Email implements Comparable<Email> {
     @Override
     public int hashCode() {
         int result = primaryEmailAddress.hashCode();
-
         result = 31 * result + secondaryEmailAddress.hashCode();
         result = 31 * result + mailBoxCapacity.hashCode();
 

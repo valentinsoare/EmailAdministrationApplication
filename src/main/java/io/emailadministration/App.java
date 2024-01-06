@@ -26,20 +26,20 @@ public class App {
         //------------------------------------------------------------
          WithAccountingDepartment withAccountingDepartment = new WithAccountingDepartment();
 
-//        boolean acc001 = withAccountingDepartment.create(
-//            new AccountingBuilder().setupDepartmentBusinessId("ACC001")
-//                    .setupDepartmentType(DepartmentType.ACCOUNTING)
-//                    .setupLastYearEvaluation(89)
-//
-//                    .setupNumberOfEmployeesPerDepartment(23)
-//                    .build()
-//        );
-//
-//        System.out.printf("%nResult of creating: %s", acc001);
+        boolean acc001 = withAccountingDepartment.create(
+            new AccountingBuilder().setupDepartmentBusinessId("ACC001")
+                    .setupDepartmentType(DepartmentType.ACCOUNTING)
+                    .setupLastYearEvaluation(89)
+
+                    .setupNumberOfEmployeesPerDepartment(23)
+                    .build()
+        );
+
+        System.out.printf("%nResult of creating: %s", acc001);
         //--------------------------------------------------------
 
-//        Accounting accounting1 = withAccountingDepartment.get(1);
-//        System.out.printf("%n%s", accounting1);
+        Accounting accounting1 = withAccountingDepartment.get();
+        System.out.printf("%n%s", accounting1);
 
         //--------------------------------------------------------
 
@@ -48,7 +48,7 @@ public class App {
         System.out.printf("%n%s", accounting);
 
         withAccountingDepartment.update(1,
-                new AccountingBuilder().setupDepartmentBusinessId("ACCOUNTING005")
+                new AccountingBuilder().setupDepartmentBusinessId("ceva")
                         .setupDepartmentType(DepartmentType.ACCOUNTING)
                         .setupLastYearEvaluation(12)
                         .setupNumberOfEmployeesPerDepartment(0)
