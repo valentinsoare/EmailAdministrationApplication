@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="EmailAppAdmin@localhost" uuid="a8f8da5b-76d2-446e-b35c-8ca9e65319be">
+    <data-source source="LOCAL" name="EmailAppAdmin@localhost" uuid="f6a18e27-51c9-4cf3-a041-323c8acd643f">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
-      <remarks>EmailAppAdminDB</remarks>
+      <remarks>EmailApp</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/EmailAppAdmin</jdbc-url>
       <jdbc-additional-properties>
         <property name="com.intellij.clouds.kubernetes.db.host.port" />
         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
-        <property name="com.intellij.clouds.kubernetes.db.resource.type" value="Deployment" />
         <property name="com.intellij.clouds.kubernetes.db.container.port" />
       </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
-      <auto-close enable="true" />
     </data-source>
-    <data-source source="LOCAL" name="lightweightEmailApp/Hibernate" uuid="3c67c5e6-806b-4817-88e9-8088f436de5f">
+    <data-source source="LOCAL" name="lightweightEmailApp/Hibernate" uuid="8db5ec7f-2f86-4a3b-98e0-818d0f16415d">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>

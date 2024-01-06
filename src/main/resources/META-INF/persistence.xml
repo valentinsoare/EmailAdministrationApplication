@@ -7,6 +7,9 @@
     <persistence-unit name="lightweightEmailApp" transaction-type="RESOURCE_LOCAL">
 
         <!--           Mapping of entities-->
+        <class> io.emailadministration.entities.companydepartments.departmentstructurewithdetails.Department </class>
+        <class> io.emailadministration.entities.companydepartments.Accounting </class>
+
 
         <properties>
 
@@ -37,6 +40,8 @@
 
             <!--        Time zone setup for timestamps in mysql tables-->
             <property name="hibernate.jdbc.time_zone" value="UTC"/>
+
+
 
         </properties>
     </persistence-unit>

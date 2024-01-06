@@ -14,7 +14,7 @@ import java.util.Map;
 @Getter
 @Setter
 @Entity(name = "department")
-@Table(name = "department", schema = "department")
+@Table(schema = "department")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(
         discriminatorType = DiscriminatorType.STRING,
