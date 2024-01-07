@@ -15,15 +15,14 @@ public class SessionWithMainMenu extends RunningSession implements Command {
     }
 
     public static SessionWithMainMenu getNewMainMenuSession() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-
         IMenu iMenu = new MainMenuPage().generatePage();
         return new SessionWithMainMenu(iMenu);
     }
 
     @Override
     public void execute() throws InterruptedException {
+        SanityChecks.clearTheArea();
+
         String catchValueToReturn = "";
 
         switch (super.getInputFromUser()) {

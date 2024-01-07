@@ -135,7 +135,7 @@
             <archive>
               <manifest>
                 <addClasspath>true</addClasspath>
-                <mainClass>org.clibankinjava.App</mainClass>
+                <mainClass>io.emailadministration.App</mainClass>
               </manifest>
             </archive>
             <descriptorRefs>
@@ -172,7 +172,6 @@
         </plugin>
 
         <!--_________________________________________________________________________________________________________-->
-
       </plugins>
     </pluginManagement>
   </build>

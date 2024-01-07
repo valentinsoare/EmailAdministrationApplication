@@ -19,9 +19,6 @@ public class SessionWithLoginSignInStartingTheApp extends RunningSession impleme
     }
 
     public static SessionWithLoginSignInStartingTheApp getNewInstanceLoginSignUpSession() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-
         IMenu iMenu = new LoginSingInPage().generatePage();
         return new SessionWithLoginSignInStartingTheApp(iMenu);
     }
@@ -29,8 +26,10 @@ public class SessionWithLoginSignInStartingTheApp extends RunningSession impleme
     @Override
     public void execute() {
         IMenu startingTheApp = new LoginSingInPage().generatePage();
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
 
-        while (!"quit".equals(getInputFromUser())) {
+        while (true) {
             PrintMenu.of(startingTheApp);
             catchInputFromUser(false);
 
@@ -41,15 +40,20 @@ public class SessionWithLoginSignInStartingTheApp extends RunningSession impleme
                                 200,true, "DONE",
                                 startingTheApp.menuAttributes().getPosition().getWhiteSpaceLeft()
                         );
+
                         Thread.sleep(200);
+                        SanityChecks.clearTheArea();
+
                         new SessionWithProvideUserAndPassword().execute();
                     }
-////            case "2" ->;
-////            case "3" ->;
-                    case "4" -> SanityChecks.checkIfQuitOrBack(
-                            startingTheApp.menuAttributes().getPosition().getWhiteSpaceLeft(), "quit",
-                            InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT
-                    );
+//            case "2" ->;
+//            case "3" ->;
+                    case "4" -> {
+                        SanityChecks.checkIfQuitOrBack(
+                                startingTheApp.menuAttributes().getPosition().getWhiteSpaceLeft(), "quit",
+                                InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT
+                        );
+                    }
                     default -> PrintError.toConsole(
                             InputErrors.NON_VALID_OPTION_FROM_THOSE_ABOVE,
                             startingTheApp.menuAttributes().getPosition().getWhiteSpaceLeft(),

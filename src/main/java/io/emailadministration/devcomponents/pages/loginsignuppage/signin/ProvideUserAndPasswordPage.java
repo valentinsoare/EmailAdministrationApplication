@@ -43,7 +43,7 @@ public class ProvideUserAndPasswordPage {
 
         HFrameWithContent hFrame = HFrameWithContent.addClassicFrameWithCharsOnAllSides(
                 '-', '|', 60,withMyEmail,
-                new CPosition(2, 2, 12, 0),
+                new CPosition(0, 2, 12, 0),
                 true, userSignIn);
         this.page.setHFrameWithContent(hFrame);
         CachedObjects.addObjectInCache("defaultFrame", hFrame);

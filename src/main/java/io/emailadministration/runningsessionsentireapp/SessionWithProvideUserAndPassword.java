@@ -18,9 +18,6 @@ public class SessionWithProvideUserAndPassword extends RunningSession implements
     }
 
     public static SessionWithProvideUserAndPassword getNewSessionWithProvideUserAndPassword() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-
         IMenu iMenu = new ProvideUserAndPasswordPage().generatePage();
         return new SessionWithProvideUserAndPassword(iMenu);
     }
@@ -28,6 +25,7 @@ public class SessionWithProvideUserAndPassword extends RunningSession implements
     @Override
     public void execute() throws InterruptedException {
         IMenu loginMenu = new ProvideUserAndPasswordPage().generatePage();
+        SanityChecks.clearTheArea();
         
         while (!"quit".equals(getInputFromUser()) && !"back".equals(getInputFromUser())) {
             PrintMenu.of(loginMenu, false, true,

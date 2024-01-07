@@ -1,5 +1,6 @@
 package io.emailadministration.printing;
 
+import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
 import io.emailadministration.devcomponents.errorsclasification.ICustomError;
 import io.emailadministration.devcomponents.loading.Loading;
 import org.apache.commons.lang3.StringUtils;
@@ -24,11 +25,15 @@ public class PrintError {
 
             Loading.dots("going back", 6, 100,
                     true, "DONE", emptySpaceOnTheLeft);
+
+            SanityChecks.clearTheArea();
         } else if (quiting) {
             messageToReturn.append("quiting");
 
             Loading.dots("exiting", 6, 100,
                     true, "DONE", emptySpaceOnTheLeft);
+        } else {
+            SanityChecks.clearTheArea();
         }
 
         return messageToReturn.toString();

@@ -164,17 +164,27 @@ public class SanityChecks {
         if (inputFromUser.isBlank()) {
             PrintError.toConsole(error, spacesFromLeft, 1000,
                     false, false);
+
+            SanityChecks.clearTheArea();
+
         } else if ("back".equalsIgnoreCase(inputFromUser)) {
             processedValue = "back";
+
+            SanityChecks.clearTheArea();
         } else if ("quit".equalsIgnoreCase(inputFromUser)) {
             Loading.square("quiting", 20, 100, true,
                     "Bye!", spacesFromLeft);
-            System.out.print(System.lineSeparator());
+            System.out.print("\n\n");
             System.exit(0);
         } else {
             processedValue = inputFromUser;
         }
 
         return processedValue;
+    }
+
+    public static void clearTheArea() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 }

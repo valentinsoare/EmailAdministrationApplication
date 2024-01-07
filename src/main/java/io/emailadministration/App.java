@@ -3,15 +3,17 @@ package io.emailadministration;
 import io.emailadministration.dbutils.DBConnection;
 import io.emailadministration.entities.companydepartments.Accounting;
 import io.emailadministration.operationsWithDB.WithAccountingDepartment;
+import io.emailadministration.runningsessionsentireapp.SessionStartingTheApp;
+import io.emailadministration.runningsessionsentireapp.SessionWithLoginSignInStartingTheApp;
 
 import java.util.logging.Level;
 
 public class App {
     public static void main( String[] args ) {
-        DBConnection.setLoggingLevel(Level.INFO);
+        DBConnection.setLoggingLevel(Level.OFF);
 
-//        SessionStartingTheApp.logoAndProgressBar();
-//        new SessionWithLoginSignInStartingTheApp().execute();
+        SessionStartingTheApp.logoAndProgressBar();
+        new SessionWithLoginSignInStartingTheApp().execute();
 
         //-----------------------------------------------------------
 //        DBInfo dbInfo = new DBInfo();
@@ -59,9 +61,7 @@ public class App {
 //                        .build()
 //        );
 
-
-
-        Accounting acc = withAccountingDepartment.get();
-        System.out.printf("%n%s", acc);
+//        Accounting acc = withAccountingDepartment.get();
+//        System.out.printf("%n%s", acc);
     }
 }
