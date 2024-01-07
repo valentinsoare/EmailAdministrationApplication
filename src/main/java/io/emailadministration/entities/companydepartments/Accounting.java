@@ -68,13 +68,13 @@ public class Accounting extends Department {
     public Set<Accountant> getSetOfEmployeesInTheDepartment() {
         EntityManager em = DBConnection.getInstance().generateEntityManager();
 
-
-
         TypedQuery<Accountant> query = em.createQuery("SELECT a.setEmployeesInTheDepartment FROM accounting a",
                 Accountant.class);
 
         try (em) {
             this.setEmployeesInTheDepartment = new HashSet<>(query.getResultList());
+            this.numberOfEmployeesPerDepartment = setEmployeesInTheDepartment.size();
+
             return setEmployeesInTheDepartment;
         } catch (Exception e) {
             System.out.printf("ERROR - [Accounting.getSetOfEmployees] - %s", e.getMessage());

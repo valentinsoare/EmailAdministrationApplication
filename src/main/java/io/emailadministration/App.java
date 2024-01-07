@@ -1,12 +1,15 @@
 package io.emailadministration;
 
+import io.emailadministration.dbutils.DBConnection;
 import io.emailadministration.entities.companydepartments.Accounting;
-import io.emailadministration.entities.companydepartments.AccountingBuilder;
-import io.emailadministration.entities.companyemployees.DepartmentType;
 import io.emailadministration.operationsWithDB.WithAccountingDepartment;
+
+import java.util.logging.Level;
 
 public class App {
     public static void main( String[] args ) {
+        DBConnection.setLoggingLevel(Level.INFO);
+
 //        SessionStartingTheApp.logoAndProgressBar();
 //        new SessionWithLoginSignInStartingTheApp().execute();
 
@@ -24,7 +27,8 @@ public class App {
 //        System.out.printf("%n%s", numberOfTables);
 
         //------------------------------------------------------------
-         WithAccountingDepartment withAccountingDepartment = new WithAccountingDepartment();
+
+        WithAccountingDepartment withAccountingDepartment = WithAccountingDepartment.getNewInstance();
 
 //        boolean acc001 = withAccountingDepartment.create(
 //            new AccountingBuilder().setupDepartmentBusinessId("ACC001")
@@ -57,9 +61,7 @@ public class App {
 
 
 
-//        Accounting acc = withAccountingDepartment.get();
-//
-//        System.out.printf("%n%s", acc);
-
+        Accounting acc = withAccountingDepartment.get();
+        System.out.printf("%n%s", acc);
     }
 }

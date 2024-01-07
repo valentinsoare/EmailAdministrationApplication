@@ -1,15 +1,7 @@
 
-]	java:S125
-"<This block of commented-out lines of code should be removed.(èåë°úÿÿÿÿ8èí¯òÍ1
-W	java:S125"<This block of commented-out lines of code should be removed.(Üàôq8ÎİıÇÍ1
-]	java:S125$"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8–Ê´ôÍ1
-]	java:S125&"<This block of commented-out lines of code should be removed.(Ğš÷ğÿÿÿÿÿ8–Ê´ôÍ1
-X	java:S125)"<This block of commented-out lines of code should be removed.(¨½ÆÇ8¶Ş´ôÍ1
-X	java:S125."<This block of commented-out lines of code should be removed.(µ´¬8Õò´ôÍ1
-X	java:S125<"<This block of commented-out lines of code should be removed.(ÑÎÂ¶8¹Ç‹÷Í1
-|
-java:S1128"ZRemove this unused import 'io.emailadministration.entities.companydepartments.Accounting'.(İé»¦şÿÿÿÿ8ºÇ‹÷Í1
-ƒ
-java:S1128"aRemove this unused import 'io.emailadministration.entities.companydepartments.AccountingBuilder'.(˜ì—ûşÿÿÿÿ8Úò´ôÍ1
-~
-java:S1128"\Remove this unused import 'io.emailadministration.entities.companyemployees.DepartmentType'.(ï¯éşÿÿÿÿ8Ûò´ôÍ1
+]	java:S125"<This block of commented-out lines of code should be removed.(èåë°úÿÿÿÿ8¿ùæ›Î1
+W	java:S125"<This block of commented-out lines of code should be removed.(Üàôq8÷ŞÒ›Î1
+]	java:S125("<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8øŞÒ›Î1
+]	java:S125*"<This block of commented-out lines of code should be removed.(Ğš÷ğÿÿÿÿÿ8øŞÒ›Î1
+X	java:S125-"<This block of commented-out lines of code should be removed.(¨½ÆÇ8ùŞÒ›Î1
+X	java:S1252"<This block of commented-out lines of code should be removed.(µ´¬8ùŞÒ›Î1

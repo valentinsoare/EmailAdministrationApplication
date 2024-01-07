@@ -12,9 +12,7 @@ public class DBConnection {
 
     private EntityManager entityManger;
 
-    public DBConnection() {
-        Logger.getLogger("org.hibernate").setLevel(Level.FINEST);
-    }
+    public DBConnection() {}
 
     static class Inner {
         private Inner() {}
@@ -41,6 +39,10 @@ public class DBConnection {
 
     public static DBConnection getInstance() {
         return Inner.connToDb;
+    }
+
+    public static void setLoggingLevel(Level loggingLevel) {
+        Logger.getLogger("org.hibernate").setLevel(loggingLevel);
     }
 }
 

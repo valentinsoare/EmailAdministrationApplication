@@ -7,7 +7,6 @@ import io.emailadministration.customdatastructureandoperationsonthem.operationsw
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.BatchSize;
 import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDate;
@@ -16,8 +15,8 @@ import java.util.Map;
 @Getter
 @Setter
 @Entity(name = "employee")
-@Table(name = "employee", schema = "employee")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Table(name = "employee", schema = "employee")
 @DiscriminatorColumn(
         discriminatorType = DiscriminatorType.STRING,
         name = "employee_type"
