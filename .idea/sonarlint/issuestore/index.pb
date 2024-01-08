@@ -489,3 +489,7 @@ w
 G.idea/sonarlint/issuestore/0/b/0b1ef6d505fbc3830490c78139cfbfd151f4f07f,1/c/1c673b5484706682d02a430ad272882ba746aaef
 w
 G.idea/sonarlint/issuestore/e/5/e5c2d4733065e8358053783b2d1c47e71eb3e9c1,7/4/74aa7dd76479a3008c490c2972b0165ffb74a4a1
+O
+.devcontainer/devcontainer.json,b/3/b34062a34eb177d6796c9ce334de4930d86f38c1
+J
+devcontainer-template.json,b/3/b396d79a0705625bcc0c03ee9a558614289ddae6
