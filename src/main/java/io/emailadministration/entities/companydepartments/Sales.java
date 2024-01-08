@@ -3,6 +3,7 @@ package io.emailadministration.entities.companydepartments;
 import io.emailadministration.entities.companydepartments.departmentstructurewithdetails.Department;
 import io.emailadministration.entities.companyemployees.SalesAgent;
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.BatchSize;

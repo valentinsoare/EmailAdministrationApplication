@@ -5,10 +5,13 @@ import io.emailadministration.entities.companydepartments.departmentstructurewit
 import io.emailadministration.entities.companydepartments.listeners.AccountingDepartmentListener;
 import io.emailadministration.entities.companyemployees.Accountant;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 import java.util.*;
+
 
 @DiscriminatorValue("accounting")
 @Entity(name = "accounting")

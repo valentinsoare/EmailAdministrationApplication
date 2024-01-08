@@ -3,8 +3,10 @@ package io.emailadministration.entities.companydepartments;
 import io.emailadministration.entities.companydepartments.departmentstructurewithdetails.Department;
 import io.emailadministration.entities.companyemployees.Developer;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.BatchSize;
 
 import java.util.LinkedHashSet;

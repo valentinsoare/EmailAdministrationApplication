@@ -4,6 +4,8 @@ import io.emailadministration.entities.companyemployees.DepartmentType;
 import io.emailadministration.printing.CustomPrinting;
 import io.emailadministration.customdatastructureandoperationsonthem.operationswithdatastructures.OperationsOnMap;
 import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
