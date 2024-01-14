@@ -26,8 +26,7 @@ public class SessionWithLoginSignInStartingTheApp extends RunningSession impleme
     @Override
     public void execute() {
         IMenu startingTheApp = new LoginSingInPage().generatePage();
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        SanityChecks.clearTheArea();
 
         while (true) {
             PrintMenu.of(startingTheApp);
@@ -46,16 +45,10 @@ public class SessionWithLoginSignInStartingTheApp extends RunningSession impleme
 
                         new SessionWithProvideUserAndPassword().execute();
                     }
-//            case "2" ->;
-//            case "3" ->;
-                    case "4" -> {
-                        SanityChecks.checkIfQuitOrBack(
-                                startingTheApp.menuAttributes().getPosition().getWhiteSpaceLeft(), "quit",
-                                InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT
-                        );
-                    }
-                    default -> PrintError.toConsole(
-                            InputErrors.NON_VALID_OPTION_FROM_THOSE_ABOVE,
+                    case "4" -> SanityChecks.checkIfQuitOrBack(startingTheApp.menuAttributes().getPosition().getWhiteSpaceLeft(),
+                            "quit",InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT
+                    );
+                    default -> PrintError.toConsole(InputErrors.NON_VALID_OPTION_FROM_THOSE_ABOVE,
                             startingTheApp.menuAttributes().getPosition().getWhiteSpaceLeft(),
                             1000, false, false
                     );

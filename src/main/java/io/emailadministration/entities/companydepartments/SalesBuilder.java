@@ -49,4 +49,8 @@ public class SalesBuilder {
     public Sales build() {
         return sales;
     }
+
+    public void setSales(Sales sales) {
+        this.sales = sales;
+    }
 }

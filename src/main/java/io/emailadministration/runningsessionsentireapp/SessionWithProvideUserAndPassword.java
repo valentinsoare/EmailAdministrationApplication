@@ -26,32 +26,35 @@ public class SessionWithProvideUserAndPassword extends RunningSession implements
     public void execute() throws InterruptedException {
         IMenu loginMenu = new ProvideUserAndPasswordPage().generatePage();
         SanityChecks.clearTheArea();
-        
+        String inputFromUser = "";
+
         while (!"quit".equals(getInputFromUser()) && !"back".equals(getInputFromUser())) {
             PrintMenu.of(loginMenu, false, true,
-                    2, true);
+                         2, true);
             catchInputFromUser(false);
 
-            switch (getInputFromUser()) {
-                case "back" -> {
-                    Loading.square("back", 20,
-                            100, true,"Go back!",
-                            loginMenu.menuAttributes().getPosition().getWhiteSpaceLeft()
-                    );
+            inputFromUser = getInputFromUser();
 
-                    Thread.sleep(500);
+            if ("back".equals(inputFromUser)) {
+                Loading.square("back", 20,
+                        100, true,"Go back!",
+                        loginMenu.menuAttributes().getPosition().getWhiteSpaceLeft()
+                );
 
-                    setInputFromUser(SanityChecks.checkIfQuitOrBack(
-                            loginMenu.menuAttributes().getPosition().getWhiteSpaceLeft(), "back",
-                            InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_BACK
-                    ));
-                }
-                case "quit" -> setInputFromUser(SanityChecks.checkIfQuitOrBack(
+                Thread.sleep(500);
+
+                setInputFromUser(SanityChecks.checkIfQuitOrBack(
+                        loginMenu.menuAttributes().getPosition().getWhiteSpaceLeft(), "back",
+                        InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_BACK
+                ));
+            } else if ("quit".equals(inputFromUser)) {
+                setInputFromUser(SanityChecks.checkIfQuitOrBack(
                         loginMenu.menuAttributes().getPosition().getWhiteSpaceLeft(), "quit",
                         InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT
                 ));
-                default -> PrintError.toConsole(InputErrors.NON_VALID_OPTION_FROM_THOSE_ABOVE,
-                        loginMenu.menuAttributes().getPosition().getWhiteSpaceLeft(),
+            } else {
+                PrintError.toConsole(InputErrors.NON_VALID_OPTION_FROM_THOSE_ABOVE,
+                        (loginMenu.menuAttributes().getPosition().getWhiteSpaceLeft() / 2),
                         1000, false, false);
             }
         }

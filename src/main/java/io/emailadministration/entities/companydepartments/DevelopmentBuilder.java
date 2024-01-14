@@ -1,6 +1,5 @@
 package io.emailadministration.entities.companydepartments;
 
-import io.emailadministration.entities.companydepartments.departmentstructurewithdetails.DepartmentBuilder;
 import io.emailadministration.entities.companyemployees.DepartmentType;
 
 public class DevelopmentBuilder {

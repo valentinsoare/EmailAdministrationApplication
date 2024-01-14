@@ -128,21 +128,22 @@ public final class Loading {
         Map<ValidationKeys, String> processedValues = validateParametersLoadingEffects(messageToUse, numberOfRepetitions,
                 timeBetweenChars, ifDone, messageEnd, spacesLeft, StructuralErrors.PROGRESS_SQUARE_MESSAGE_INVALID);
 
-        List<Character> squareChars = new ArrayList<>(Arrays.asList('/', '-', '\\', '|'));
+        List<Character> squareChars = new ArrayList<>(Arrays.asList('-', '\\', '|', '/'));
 
         int i = 0,
             numberOfReps = Integer.parseInt(processedValues.get(ValidationKeys.NUMBER_OF_REPS)),
             emptySpaces = Integer.parseInt(processedValues.get(ValidationKeys.EMPTY_SPACES)),
             timeToSleep = Integer.parseInt(processedValues.get(ValidationKeys.TIME_SLEEP));
 
+        System.out.println();
         for (; i < numberOfReps; i++) {
-            System.out.printf("%s%s < %s >\r", " ".repeat(emptySpaces), processedValues.get(ValidationKeys.MAIN_MESSAGE),
+            System.out.printf(" %s%s [ %s ]\r", " ".repeat(emptySpaces), processedValues.get(ValidationKeys.MAIN_MESSAGE),
                     squareChars.get(i % squareChars.size()));
             Thread.sleep(timeToSleep);
         }
 
         if (ifDone) {
-            System.out.printf("%s%s < %s > %s", " ".repeat(emptySpaces),
+            System.out.printf(" %s%s [ %s ] %s", " ".repeat(emptySpaces),
                     processedValues.get(ValidationKeys.MAIN_MESSAGE), squareChars.get(i % squareChars.size()), processedValues.get(ValidationKeys.END_MESSAGE));
         } else {
             System.out.println();

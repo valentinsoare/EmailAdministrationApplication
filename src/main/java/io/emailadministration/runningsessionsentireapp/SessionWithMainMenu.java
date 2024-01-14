@@ -44,7 +44,7 @@ public class SessionWithMainMenu extends RunningSession implements Command {
                     InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT
             );
             default -> {
-                System.out.printf("%n%s%s%n", " ".repeat(super.getMenu().menuAttributes().getPosition().getWhiteSpaceLeft()),
+                System.out.printf("%n%s%s%n", " ".repeat(super.getMenu().menuAttributes().getPosition().getWhiteSpaceLeft() / 2),
                         InputErrors.NON_VALID_OPTION_FROM_THOSE_ABOVE);
                 TimeUnit.SECONDS.sleep(1);
             }

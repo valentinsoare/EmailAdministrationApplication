@@ -9,6 +9,7 @@ import lombok.Setter;
 import org.hibernate.annotations.BatchSize;
 
 import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -36,6 +37,63 @@ public class Sales extends Department {
 
     public Sales() {
         super();
+
+        this.numberOfEmployeesPerDepartment = -1;
+    }
+
+    public Sales(Sales sales) {
+        this.listOfEmployeesInTheDepartment = new HashSet<>(sales.getListOfEmployeesInTheDepartment());
+        this.numberOfEmployeesPerDepartment = sales.getNumberOfEmployeesPerDepartment();
+        this.lastYearTargetWasReached = sales.isLastYearTargetWasReached();
+        this.targetForSalesThisYear = sales.getTargetForSalesThisYear();
+        this.targetForSalesLastYear = sales.getTargetForSalesLastYear();
+
+        this.setDepartmentBusinessID(sales.getDepartmentBusinessID());
+        this.setWhichDepartmentIsThis(sales.getWhichDepartmentIsThis());
+        this.setLastYearEvaluationOfTheDepartment(sales.getLastYearEvaluationOfTheDepartment());
+    }
+
+    public Sales updateElement(Sales sales) {
+        return new Sales(sales);
+    }
+
+    public Sales getCopyInstance(Sales sales) {
+        Sales s =  new Sales(sales);
+
+        s.setId(sales.getId());
+        s.setVersion(sales.getVersion());
+
+        return s;
+    }
+
+    public String getTypeOfObject() {
+        return this.getClass().getSimpleName();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if ((!(o instanceof Sales sales)) || (!super.equals(o)))  return false;
+
+        if ((numberOfEmployeesPerDepartment != sales.numberOfEmployeesPerDepartment) ||
+                (lastYearTargetWasReached != sales.lastYearTargetWasReached) ||
+                (!targetForSalesThisYear.equals(sales.targetForSalesThisYear))) {
+            return false;
+        }
+
+        return targetForSalesLastYear.equals(sales.targetForSalesLastYear);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+
+        result = 31 * result + numberOfEmployeesPerDepartment;
+        result = 31 * result + targetForSalesThisYear.hashCode();
+        result = 31 * result + (lastYearTargetWasReached ? 1 : 0);
+        result = 31 * result + targetForSalesLastYear.hashCode();
+
+        return result;
     }
 
     @Override

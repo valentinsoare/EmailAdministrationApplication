@@ -5,10 +5,8 @@ import io.emailadministration.entities.companydepartments.departmentstructurewit
 import io.emailadministration.entities.companydepartments.listeners.AccountingDepartmentListener;
 import io.emailadministration.entities.companyemployees.Accountant;
 import jakarta.persistence.*;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.experimental.SuperBuilder;
 
 import java.util.*;
 
@@ -52,20 +50,19 @@ public class Accounting extends Department {
         this.setWhichDepartmentIsThis(accounting.getWhichDepartmentIsThis());
         this.setDepartmentBusinessID(accounting.getDepartmentBusinessID());
         this.setLastYearEvaluationOfTheDepartment(accounting.getLastYearEvaluationOfTheDepartment());
-        this.setId(accounting.getId());
-        this.setVersion(accounting.getVersion());
     }
 
     public Accounting getCopyInstance(Accounting accounting) {
-        return new Accounting(accounting);
+        Accounting dev = new Accounting(accounting);
+
+        dev.setId(accounting.getId());
+        dev.setVersion(accounting.getVersion());
+
+        return dev;
     }
 
-    public void updateElement(Accounting accounting) {
-        this.setEmployeesInTheDepartment = new HashSet<>(accounting.setEmployeesInTheDepartment);
-        this.numberOfEmployeesPerDepartment = accounting.getNumberOfEmployeesPerDepartment();
-        this.setDepartmentBusinessID(accounting.getDepartmentBusinessID());
-        this.setWhichDepartmentIsThis(accounting.getWhichDepartmentIsThis());
-        this.setLastYearEvaluationOfTheDepartment(accounting.getLastYearEvaluationOfTheDepartment());
+    public Accounting updateElement(Accounting accounting) {
+        return new Accounting(accounting);
     }
 
     public Set<Accountant> getSetOfEmployeesInTheDepartment() {
@@ -92,6 +89,8 @@ public class Accounting extends Department {
         result = 31 * result + numberOfEmployeesPerDepartment;
         return result;
     }
+
+
 
     @Override
     public String toString() {

@@ -162,18 +162,16 @@ public class SanityChecks {
         String processedValue = "none";
 
         if (inputFromUser.isBlank()) {
-            PrintError.toConsole(error, spacesFromLeft, 1000,
+            PrintError.toConsole(error, (spacesFromLeft / 2), 1000,
                     false, false);
-
             SanityChecks.clearTheArea();
-
         } else if ("back".equalsIgnoreCase(inputFromUser)) {
             processedValue = "back";
-
             SanityChecks.clearTheArea();
         } else if ("quit".equalsIgnoreCase(inputFromUser)) {
-            Loading.square("quiting", 20, 100, true,
+            Loading.hourGlass("quiting", 10, 150, true,
                     "Bye!", spacesFromLeft);
+
             System.out.print("\n\n");
             System.exit(0);
         } else {

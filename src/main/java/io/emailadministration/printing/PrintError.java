@@ -34,6 +34,7 @@ public class PrintError {
                     true, "DONE", emptySpaceOnTheLeft);
         } else {
             SanityChecks.clearTheArea();
+            messageToReturn.append("none");
         }
 
         return messageToReturn.toString();
