@@ -16,13 +16,17 @@ import java.util.*;
 @EntityListeners( {AccountingDepartmentListener.class} )
 public class Accounting extends Department {
 
-    @OneToMany(mappedBy = "department")
+    @OneToMany(orphanRemoval = true)
     private Set<Accountant> setEmployeesInTheDepartment = new LinkedHashSet<>();
 
     @Getter
     @Setter
     @Transient
     private int numberOfEmployeesPerDepartment;
+
+    public Set<Accountant> getSetEmployeesInTheDepartment() {
+        return setEmployeesInTheDepartment;
+    }
 
     public Accounting() {
         super();

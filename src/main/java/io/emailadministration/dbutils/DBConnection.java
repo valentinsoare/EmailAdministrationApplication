@@ -15,11 +15,13 @@ public class DBConnection {
     public DBConnection() {}
 
     static class Inner {
+
         private Inner() {}
 
-        private static final EntityManagerFactory entityManagerFactory = generateEntityManagerFactory();
+        private static final EntityManagerFactory entityManagerFactory =
+                generateEntityManagerFactory();
 
-        private static DBConnection connToDb = new DBConnection();
+        private static final DBConnection connToDb = new DBConnection();
 
         private static EntityManagerFactory generateEntityManagerFactory() {
             return Persistence.createEntityManagerFactory(

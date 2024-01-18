@@ -1,6 +1,7 @@
 package io.emailadministration;
 
 import io.emailadministration.dbutils.DBConnection;
+import io.emailadministration.entities.companydepartments.Accounting;
 import io.emailadministration.operationsWithDB.WithAccountingDepartment;
 import io.emailadministration.runningsessionsentireapp.SessionStartingTheApp;
 import io.emailadministration.runningsessionsentireapp.SessionWithLoginSignInStartingTheApp;
@@ -60,7 +61,7 @@ public class App {
 //                        .build()
 //        );
 
-//        Accounting acc = withAccountingDepartment.get();
-//        System.out.printf("%n%s", acc);
+        Accounting acc = withAccountingDepartment.get();
+        System.out.printf("%n%s", acc);
     }
 }

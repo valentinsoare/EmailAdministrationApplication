@@ -9,6 +9,7 @@ import io.emailadministration.printing.PrintError;
 import io.emailadministration.printing.PrintMenu;
 
 public class SessionWithProvideUserAndPassword extends RunningSession implements Command  {
+
     public SessionWithProvideUserAndPassword() {
         super();
     }

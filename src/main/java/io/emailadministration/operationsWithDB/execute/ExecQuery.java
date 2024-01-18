@@ -8,7 +8,6 @@ import java.util.Collections;
 import java.util.List;
 
 public class ExecQuery {
-
     private ExecQuery() {}
 
     public static <T> boolean ofInsert(EntityManager em, T element) {
@@ -39,12 +38,11 @@ public class ExecQuery {
             transaction.begin();
 
             List<T> resultList = query.getResultList();
+            transaction.commit();
 
             if (resultList.isEmpty()) {
                 return Collections.emptyList();
             }
-
-            transaction.commit();
 
             return resultList;
         } catch (Exception e) {
