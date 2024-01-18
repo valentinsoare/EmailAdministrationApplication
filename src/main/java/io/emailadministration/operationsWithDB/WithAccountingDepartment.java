@@ -2,6 +2,7 @@ package io.emailadministration.operationsWithDB;
 
 import io.emailadministration.dbutils.DBConnection;
 import io.emailadministration.entities.companydepartments.Accounting;
+import io.emailadministration.entities.companydepartments.Sales;
 import io.emailadministration.operationsWithDB.execute.ExecQuery;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
@@ -75,12 +76,18 @@ public class WithAccountingDepartment implements DepartmentDataAccessObject<Acco
     }
 
     @Override
-    public boolean delete(long id) {
-        return false;
+    public boolean delete() {
+        EntityManager em = connection.generateEntityManager();
+
+        StoredProcedureQuery deleteQuery = em.createStoredProcedureQuery("DeleteDepartment", Accounting.class)
+                .registerStoredProcedureParameter("name_of_the_department", String.class, ParameterMode.IN)
+                .setParameter("name_of_the_department", "accounting");
+
+        return ExecQuery.ofDelete(em, deleteQuery, Accounting.class);
     }
 
     @Override
-    public boolean checkIfElementExists(long id) {
-        return false;
+    public boolean checkIfElementExists() {
+        return this.get().getId() >= 0;
     }
 }
