@@ -10,10 +10,10 @@ import java.util.logging.Level;
 
 public class App {
     public static void main( String[] args ) {
-        DBConnection.setLoggingLevel(Level.OFF);
+        DBConnection.setLoggingLevel(Level.INFO);
 
-        SessionStartingTheApp.logoAndProgressBar();
-        new SessionWithLoginSignInStartingTheApp().execute();
+//        SessionStartingTheApp.logoAndProgressBar();
+//        new SessionWithLoginSignInStartingTheApp().execute();
 
         //-----------------------------------------------------------
 //        DBInfo dbInfo = new DBInfo();
@@ -61,7 +61,8 @@ public class App {
 //                        .build()
 //        );
 
-        Accounting acc = withAccountingDepartment.get();
-        System.out.printf("%n%s", acc);
+        System.out.printf("%n%s", withAccountingDepartment.get());
+
+        withAccountingDepartment.delete();
     }
 }

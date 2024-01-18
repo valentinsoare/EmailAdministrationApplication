@@ -8,23 +8,23 @@ import java.util.List;
 
 @Getter
 public enum InputErrors implements ICustomError {
-    IMPROPER_GIVEN_TEXT_SHOULD_BE_BACK("improper_given_text_should_be_back", 3,
-            String.format("INPUT_ERROR, SEV: %s - Improper input value from user. In this case should be back, please check!", Severities.THREE)),
+    IMPROPER_GIVEN_TEXT_SHOULD_BE_BACK("improper_given_text_should_be_back", 4,
+            String.format("INPUT_ERROR, SEV: %s - Improper input value from user. In this case should be back, please check!", Severities.FOUR)),
 
-    NON_VALID_OPTION_FROM_THOSE_ABOVE("non_valid_option_from_those_above", 3,
-            String.format("INPUT_ERROR, SEV: %s - Please use an option from those mentioned above!", Severities.THREE)),
+    NON_VALID_OPTION_FROM_THOSE_ABOVE("non_valid_option_from_those_above", 4,
+            String.format("INPUT_ERROR, SEV: %s - Please use an option from those mentioned above!", Severities.FOUR)),
 
-    IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT("improper_given_text_should_be_quit", 3,
-            String.format("INPUT_ERROR, SEV: %s - Improper input value from user. In this case should be quit, please check!", Severities.THREE)),
+    IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT("improper_given_text_should_be_quit", 4,
+            String.format("INPUT_ERROR, SEV: %s - Improper input value from user. In this case should be quit, please check!", Severities.FOUR)),
 
-    NULL_OR_EMPTY_TEXT("null_or_empty_text", 3,
-            String.format("INPUT_ERROR, SEV: %s - Input value is null or empty. Please provide a proper value!", Severities.THREE)),
+    NULL_OR_EMPTY_TEXT("null_or_empty_text", 4,
+            String.format("INPUT_ERROR, SEV: %s - Input value is null or empty. Please provide a proper value!", Severities.FOUR)),
 
-    INCORRECT_NUMERICAL_VALUE("incorrect_numerical_value", 3,
-            String.format("INPUT_ERROR, SEV: %s - Input numerical value is not ok. Please provide another one!", Severities.THREE)),
+    INCORRECT_NUMERICAL_VALUE("incorrect_numerical_value", 4,
+            String.format("INPUT_ERROR, SEV: %s - Input numerical value is not ok. Please provide another one!", Severities.FOUR)),
 
-    NULL_OR_BLANK_USERNAME("null_or_blank_username", 2,
-    String.format("INPUT_ERROR, SEV: %s - Blank or null value for username value is not accepted!", Severities.TWO)),
+    NULL_OR_BLANK_USERNAME("null_or_blank_username", 3,
+    String.format("INPUT_ERROR, SEV: %s - Blank or null value for username value is not accepted!", Severities.THREE)),
 
     NULL_OR_BLANK_MENU_OPTION_GIVEN("null_or_blank_menu_option_to_be_added", 3,
             String.format("INPUT_ERROR, SEV: %s - Blank or null value for menu option to be added is not accepted", Severities.THREE)),

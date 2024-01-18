@@ -1,4 +1,4 @@
 
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ç¨œ±øÿÿÿÿ
-d
-java:S2094"BRemove this empty class, write its code or make it an "interface".(Œå³Äøÿÿÿÿ8›ÂòòÌ1
+t
+java:S1192"WDefine a constant instead of duplicating this literal "name_of_the_department" 4 times.(ÿ¼¸˜8í™ÙÖÑ1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ç¨œ±øÿÿÿÿ8ë¿·ÖÑ1

@@ -1,3 +1,7 @@
 
 m
-java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(ÜÈ—†ıÿÿÿÿ8Š­¯ÁĞ1
+java:S1301#"KReplace this "switch" statement by "if" statements to increase readability.(ÜÈ—†ıÿÿÿÿ8¯ßáÒÑ1
+{
+java:S2142/"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8½ßáÒÑ1
+9
+java:S6205("Remove this redundant block.(üØô8””“ÓÑ1

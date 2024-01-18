@@ -44,14 +44,26 @@ public class SessionWithLoginSignInStartingTheApp extends RunningSession impleme
                         SanityChecks.clearTheArea();
 
                         new SessionWithProvideUserAndPassword().execute();
+                    } case "2" -> {
+                        Loading.dots("Loading the main menu page", 5,
+                                200,true, "DONE",
+                                startingTheApp.menuAttributes().getPosition().getWhiteSpaceLeft()
+                        );
+
+                        Thread.sleep(200);
+                        SanityChecks.clearTheArea();
+
+                        new SessionWithMainMenu().execute();
+                    } case "4" -> {
+                        SanityChecks.checkIfQuitOrBack(startingTheApp.menuAttributes().getPosition().getWhiteSpaceLeft(),
+                                "quit", InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT
+                        );
+                    } default -> {
+                        PrintError.toConsole(InputErrors.NON_VALID_OPTION_FROM_THOSE_ABOVE,
+                                startingTheApp.menuAttributes().getPosition().getWhiteSpaceLeft() / 2,
+                                1000, false, false
+                        );
                     }
-                    case "4" -> SanityChecks.checkIfQuitOrBack(startingTheApp.menuAttributes().getPosition().getWhiteSpaceLeft(),
-                            "quit",InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT
-                    );
-                    default -> PrintError.toConsole(InputErrors.NON_VALID_OPTION_FROM_THOSE_ABOVE,
-                            startingTheApp.menuAttributes().getPosition().getWhiteSpaceLeft(),
-                            1000, false, false
-                    );
                 }
             } catch (InterruptedException e) {
                 System.out.printf("ERROR - [SessionWithLoginSignInStartingTheApp.execute] - %s", e.getMessage());

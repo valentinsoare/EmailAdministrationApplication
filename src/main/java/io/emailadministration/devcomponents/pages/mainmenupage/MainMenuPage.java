@@ -40,7 +40,7 @@ public class MainMenuPage {
 
         HFrameWithContent hFrameWithContent = HFrameWithContent.addClassicFrameWithCharsOnAllSides(
                 '-', '|', 60,usingMyEmail,
-                new CPosition(2, 2, 12, 0),
+                new CPosition(0, 2, 12, 0),
                 true, lovingSendingEmail);
         this.genericPage.setHFrameWithContent(hFrameWithContent);
 

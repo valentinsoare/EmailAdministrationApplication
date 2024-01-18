@@ -38,12 +38,13 @@ public class ExecQuery {
             transaction.begin();
 
             List<T> resultList = query.getResultList();
-            transaction.commit();
 
             if (resultList.isEmpty()) {
+                transaction.rollback();
                 return Collections.emptyList();
             }
 
+            transaction.commit();
             return resultList;
         } catch (Exception e) {
             if (transaction != null) {
@@ -52,5 +53,25 @@ public class ExecQuery {
         }
 
         return Collections.emptyList();
+    }
+
+    public static <T> boolean ofDelete(EntityManager em, StoredProcedureQuery query, Class<T> typeOf) {
+        EntityTransaction transaction = null;
+
+        try (em) {
+            transaction = em.getTransaction();
+            transaction.begin();
+
+            boolean execute = query.execute();
+
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
+
+        return false;
     }
 }
