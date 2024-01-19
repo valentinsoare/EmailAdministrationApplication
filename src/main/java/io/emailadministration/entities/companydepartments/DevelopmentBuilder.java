@@ -42,12 +42,4 @@ public class DevelopmentBuilder {
     public Development build() {
         return this.development;
     }
-
-    public void setDevelopment(Development development) {
-        this.development = development;
-    }
-
-    public Development getDevelopment() {
-        return development;
-    }
 }

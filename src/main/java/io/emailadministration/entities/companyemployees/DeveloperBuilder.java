@@ -2,7 +2,6 @@ package io.emailadministration.entities.companyemployees;
 
 import io.emailadministration.entities.companydepartments.Development;
 import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.Employee;
-import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.EmployeeBuilder;
 
 public class DeveloperBuilder {
 
@@ -28,7 +27,7 @@ public class DeveloperBuilder {
     }
 
     public DeveloperBuilder setupEvaluationForTheLastProject(double evaluationForTheLastProject) {
-        this.developer.setEvaluationForTheLastProject(evaluationForTheLastProject);
+        this.developer.setEvaluationForTheLastProject(Math.max(evaluationForTheLastProject, 0.00));
         return this;
     }
 

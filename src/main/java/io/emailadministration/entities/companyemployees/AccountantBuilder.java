@@ -2,9 +2,6 @@ package io.emailadministration.entities.companyemployees;
 
 import io.emailadministration.entities.companydepartments.Accounting;
 import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.*;
-import io.emailadministration.entities.digitalcomponents.User;
-
-import java.time.LocalDate;
 
 public class AccountantBuilder {
 

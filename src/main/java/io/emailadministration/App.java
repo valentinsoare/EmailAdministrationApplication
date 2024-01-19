@@ -2,6 +2,7 @@ package io.emailadministration;
 
 import io.emailadministration.dbutils.DBConnection;
 import io.emailadministration.entities.companydepartments.*;
+import io.emailadministration.entities.companydepartments.departmentstructurewithdetails.DepartmentBuilder;
 import io.emailadministration.entities.companyemployees.DepartmentType;
 import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.EmployeeBuilder;
 import io.emailadministration.operationsWithDB.WithAccountingDepartment;
@@ -130,5 +131,17 @@ public class App {
 //        System.out.printf("%n%s", salesDepartment.get());
 
         //---------------------------------------------------------------------------
+
+        Development sales001 = new DepartmentBuilder().setupDepartmentBusinessId("SALES001")
+                .setupDepartmentType(DepartmentType.SALES)
+                .setupLastYearEvaluationOfTheDepartment(99)
+                .constructDevelopmentDepartment()
+                .setupNumberOfProjectsInWorking(2)
+                .setupNumberOfProjectsCompletedThisYear(5)
+                .setupNumberOfProjectsCompletedLastYear(10)
+                .setupNumberOfEmployeesPerDepartment(10)
+                .build();
+
+        System.out.printf("%n%s", sales001);
     }
 }

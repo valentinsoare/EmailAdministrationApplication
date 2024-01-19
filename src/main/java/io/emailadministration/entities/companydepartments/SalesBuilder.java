@@ -1,7 +1,6 @@
 package io.emailadministration.entities.companydepartments;
 
 import io.emailadministration.entities.companydepartments.departmentstructurewithdetails.Department;
-import io.emailadministration.entities.companyemployees.DepartmentType;
 
 import java.math.BigDecimal;
 
@@ -37,14 +36,6 @@ public class SalesBuilder {
     }
 
     public Sales build() {
-        return sales;
-    }
-
-    public void setSales(Sales sales) {
-        this.sales = sales;
-    }
-
-    public Sales getSales() {
         return sales;
     }
 }

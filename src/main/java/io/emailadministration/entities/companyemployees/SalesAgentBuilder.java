@@ -2,7 +2,6 @@ package io.emailadministration.entities.companyemployees;
 
 import io.emailadministration.entities.companydepartments.Sales;
 import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.Employee;
-import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.EmployeeBuilder;
 
 import java.math.BigDecimal;
 
@@ -24,17 +23,17 @@ public class SalesAgentBuilder {
     }
 
     public SalesAgentBuilder setupSalesVolumeThisYear(BigDecimal sales) {
-        this.salesAgent.setSalesVolumeThisYear(sales);
+        this.salesAgent.setSalesVolumeThisYear(sales.max(new BigDecimal("0")));
         return this;
     }
 
     public SalesAgentBuilder setupAverageSalesVolumeThisYear(BigDecimal avgThisYear) {
-        this.salesAgent.setAverageOfSalesVolumeThisYear(avgThisYear);
+        this.salesAgent.setAverageOfSalesVolumeThisYear(avgThisYear.max(new BigDecimal("0")));
         return this;
     }
 
     public SalesAgentBuilder setupNumberOfZonesCovered(int numberOfZones) {
-        this.salesAgent.setNumberOfZonesCovered(numberOfZones);
+        this.salesAgent.setNumberOfZonesCovered(Math.max(numberOfZones, 0));
         return this;
     }
 
