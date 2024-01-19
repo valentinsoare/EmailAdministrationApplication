@@ -37,6 +37,15 @@ public class Email implements Comparable<Email> {
 
     public Email() {}
 
+    public Email(Email email) {
+        this.id = email.getId();
+        this.user = email.getUser();
+        this.primaryEmailAddress = new String(email.getPrimaryEmailAddress());
+        this.secondaryEmailAddress = new String(email.getSecondaryEmailAddress());
+        this.mailBoxCapacity = new BigDecimal(String.valueOf(email.getMailBoxCapacity()));
+        this.version = email.getVersion();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

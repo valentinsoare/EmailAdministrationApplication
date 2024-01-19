@@ -1,40 +1,38 @@
 package io.emailadministration.entities.companyemployees.employeedefinitionwithdetails;
 
-public class AddressBuilder {
-
-    private Employee employee;
+public class AddressBuilder extends EmployeeBuilder {
 
     public AddressBuilder(Employee employee) {
-        this.employee = employee;
+        this.setEmployee(employee);
     }
 
     public AddressBuilder setupStreet(String street) {
-        employee.getAddress().setStreet(street);
+        this.getEmployee().getAddress().setStreet(street);
         return this;
     }
 
     public AddressBuilder setupNumber(int number) {
-        employee.getAddress().setNumber(number);
+        this.getEmployee().getAddress().setNumber(number);
         return this;
     }
 
     public AddressBuilder setupApartment(int apartment) {
-        employee.getAddress().setApartment(apartment);
+        this.getEmployee().getAddress().setApartment(apartment);
         return this;
     }
 
     public AddressBuilder setupCity(String city) {
-        employee.getAddress().setCity(city);
+        this.getEmployee().getAddress().setCity(city);
         return this;
     }
 
     public AddressBuilder setupCountry(String country) {
-        employee.getAddress().setCountry(country);
+        this.getEmployee().getAddress().setCountry(country);
         return this;
     }
 
     public AddressBuilder setupZipCode(int zipCode) {
-        employee.getAddress().setZipcode(zipCode);
+        this.getEmployee().getAddress().setZipcode(zipCode);
         return this;
     }
 }

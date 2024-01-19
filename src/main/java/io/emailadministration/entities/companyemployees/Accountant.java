@@ -13,15 +13,19 @@ import org.hibernate.annotations.BatchSize;
 @DiscriminatorValue("accountant")
 @Entity(name = "accountant")
 public class Accountant extends Employee {
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinColumn(name = "department_id")
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinColumn(name = "department_id", columnDefinition = "varchar(31) default 'none'")
     private Accounting department;
 
-    @Column(name = "is_team_leader")
+    @Column(name = "is_team_leader", columnDefinition = "boolean default false")
     private boolean isTeamLeader;
 
     public Accountant() {
         super();
+    }
+
+    public Accountant(Employee employee) {
+        super(employee);
     }
 
     @Override

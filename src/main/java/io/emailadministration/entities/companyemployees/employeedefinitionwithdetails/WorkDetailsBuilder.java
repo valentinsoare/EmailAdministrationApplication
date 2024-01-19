@@ -2,26 +2,28 @@ package io.emailadministration.entities.companyemployees.employeedefinitionwithd
 
 import java.math.BigDecimal;
 
-public class WorkDetailsBuilder {
-
-    private Employee employee;
+public class WorkDetailsBuilder extends EmployeeBuilder {
 
     public WorkDetailsBuilder(Employee employee) {
-        this.employee = employee;
+        this.setEmployee(employee);
     }
 
     public WorkDetailsBuilder setupTypeOfWorkContract(TypeOfWorkContract contract) {
-        employee.getWorkDetails().setTypeOfWorkContract(contract);
+        this.getEmployee().getWorkDetails().setTypeOfWorkContract(contract);
         return this;
     }
 
     public WorkDetailsBuilder setupSeniorityLevel(SeniorityLevel level) {
-        employee.getWorkDetails().setSeniorityLevel(level);
+        this.getEmployee().getWorkDetails().setSeniorityLevel(level);
         return this;
     }
 
     public WorkDetailsBuilder setupCurrentSalary(BigDecimal salary) {
-        employee.getWorkDetails().setCurrentSalary(salary);
+        if (salary.compareTo(new BigDecimal("0")) < 0) {
+            salary = new BigDecimal("0");
+        }
+
+        this.getEmployee().getWorkDetails().setCurrentSalary(salary);
         return this;
     }
 }

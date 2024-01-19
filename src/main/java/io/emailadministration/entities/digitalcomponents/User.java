@@ -44,6 +44,15 @@ public class User implements Comparable<User> {
 
     public User() {}
 
+    public User(User user) {
+        this.id = user.getId();
+        this.employeeProfile = user.getEmployeeProfile();
+        this.userName = new String(user.getUserName());
+        this.password = new Password(user.getPassword());
+        this.email = new Email(user.getEmail());
+        this.version = user.getVersion();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

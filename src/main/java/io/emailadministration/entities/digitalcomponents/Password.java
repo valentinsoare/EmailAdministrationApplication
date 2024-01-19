@@ -39,6 +39,16 @@ public class Password implements Comparable<Password> {
 
     public Password() {}
 
+    public Password(Password passwd) {
+        this.id = passwd.getId();
+        this.user = passwd.getUser();
+        this.mandatoryPasswordLengthForUser = Pair.of(passwd.getMandatoryPasswordLengthForUser());
+        this.hashedPasswordForUser = new String(passwd.getHashedPasswordForUser());
+        this.mandatoryPasswordLengthForEmail = Pair.of(passwd.getMandatoryPasswordLengthForEmail());
+        this.hashedPasswordForEmail = new String(passwd.getHashedPasswordForEmail());
+        this.version = passwd.getVersion();
+    }
+
     public String hashedPasswordForUser(String password) {
         int result = 31 * password.hashCode();
         this.hashedPasswordForUser = String.valueOf(result);

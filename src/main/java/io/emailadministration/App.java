@@ -1,11 +1,15 @@
 package io.emailadministration;
 
 import io.emailadministration.dbutils.DBConnection;
-import io.emailadministration.entities.companydepartments.Accounting;
+import io.emailadministration.entities.companydepartments.*;
+import io.emailadministration.entities.companyemployees.DepartmentType;
 import io.emailadministration.operationsWithDB.WithAccountingDepartment;
+import io.emailadministration.operationsWithDB.WithDevelopmentDepartment;
+import io.emailadministration.operationsWithDB.WithSalesDepartment;
 import io.emailadministration.runningsessionsentireapp.SessionStartingTheApp;
 import io.emailadministration.runningsessionsentireapp.SessionWithLoginSignInStartingTheApp;
 
+import java.math.BigDecimal;
 import java.util.logging.Level;
 
 public class App {
@@ -30,7 +34,7 @@ public class App {
 
         //------------------------------------------------------------
 
-        WithAccountingDepartment withAccountingDepartment = WithAccountingDepartment.getNewInstance();
+//        WithAccountingDepartment withAccountingDepartment = WithAccountingDepartment.getNewInstance();
 
 //        boolean acc001 = withAccountingDepartment.create(
 //            new AccountingBuilder().setupDepartmentBusinessId("ACC001")
@@ -61,8 +65,69 @@ public class App {
 //                        .build()
 //        );
 
-        System.out.printf("%n%s", withAccountingDepartment.get());
+//        System.out.printf("%n%s", withAccountingDepartment.get());
+//
+//        withAccountingDepartment.delete();
+        //------------------------------------------------------------
 
-        withAccountingDepartment.delete();
+//            boolean acc001 = withAccountingDepartment.create(
+//                    new AccountingBuilder().setupDepartmentBusinessId("ACC001")
+//                .setupDepartmentType(DepartmentType.ACCOUNTING)
+//                .setupLastYearEvaluation(89)
+//
+//                .setupNumberOfEmployeesPerDepartment(23)
+//                .build()
+//            );
+
+        //-----------------------------------------------------------
+//        WithAccountingDepartment withAccountingDepartment = WithAccountingDepartment.getNewInstance();
+
+//        boolean acc001 = withAccountingDepartment.create(
+//                    new AccountingBuilder().setupDepartmentBusinessId("ACC001")
+//                .setupDepartmentType(DepartmentType.ACCOUNTING)
+//                .setupLastYearEvaluation(89)
+//
+//                .setupNumberOfEmployeesPerDepartment(23)
+//                .build()
+//        );
+
+//        withAccountingDepartment.delete();
+//        System.out.printf("%n%s", withAccountingDepartment.get());
+
+
+//        WithDevelopmentDepartment devDepartment = WithDevelopmentDepartment.getNewInstance();
+
+//        boolean b = devDepartment.create(
+//                new DevelopmentBuilder().setupDepartmentBusinessId("DEV001")
+//                        .setupDepartmentType(DepartmentType.DEVELOPMENT)
+//                        .setupLastYearEvaluation(78)
+//                        .setupNumberOfProjectsCompletedLastYear(2)
+//                        .setupNumberOfProjectsCompletedThisYear(22)
+//                        .setupNumberOfProjectsInWorking(2)
+//                        .build()
+//        );
+
+//        devDepartment.delete();
+//        Development development = devDepartment.get();
+
+//        System.out.printf("%n%s", development);
+
+
+//        WithSalesDepartment salesDepartment = WithSalesDepartment.getNewInstance();
+
+//        salesDepartment.create(
+//                new SalesBuilder().setupDepartmentBusinessId("SALES001")
+//                        .setupDepartmentType(DepartmentType.SALES)
+//                        .setupLastYearEvaluation(23)
+//                        .setupLastYearTargetWasReached(false)
+//                        .setupTargetForSalesLastYear(new BigDecimal("44.000"))
+//                        .setupTargetForSalesThisYear(new BigDecimal("22.000"))
+//                        .build()
+//        );
+
+//        salesDepartment.delete();
+//        System.out.printf("%n%s", salesDepartment.get());
+
+        //---------------------------------------------------------------------------
     }
 }

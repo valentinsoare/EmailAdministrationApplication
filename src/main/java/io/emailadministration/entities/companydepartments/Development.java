@@ -1,12 +1,15 @@
 package io.emailadministration.entities.companydepartments;
 
+import io.emailadministration.dbutils.DBConnection;
 import io.emailadministration.entities.companydepartments.departmentstructurewithdetails.Department;
+import io.emailadministration.entities.companydepartments.listeners.DevelopmentDepartmentListener;
 import io.emailadministration.entities.companyemployees.Developer;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.BatchSize;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -16,9 +19,11 @@ import java.util.Set;
 @BatchSize(size = 16)
 @Entity(name = "development")
 @DiscriminatorValue("development")
+@EntityListeners( {DevelopmentDepartmentListener.class} )
 public class Development extends Department {
+
     @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
-    private Set<Developer> listOfEmployeesInTheDepartment = new LinkedHashSet<>();
+    private Set<Developer> setEmployeesInTheDepartment = new LinkedHashSet<>();
 
     @Getter
     @Setter
@@ -36,12 +41,10 @@ public class Development extends Department {
 
     public Development() {
         super();
-
-        this.numberOfEmployeesPerDepartment = -1;
     }
 
     public Development(Development development) {
-        this.listOfEmployeesInTheDepartment = new HashSet<>(development.getListOfEmployeesInTheDepartment());
+        this.setEmployeesInTheDepartment = new HashSet<>(development.setEmployeesInTheDepartment);
         this.numberOfProjectsCompletedLastYear = development.getNumberOfProjectsCompletedLastYear();
         this.numberOfProjectsCompletedThisYear = development.getNumberOfProjectsCompletedThisYear();
         this.numberOfEmployeesPerDepartment = development.getNumberOfEmployeesPerDepartment();
@@ -59,6 +62,23 @@ public class Development extends Department {
         dev.setVersion(development.getVersion());
 
         return dev;
+    }
+
+    public Set<Developer> getSetOfEmployeesInTheDepartment() {
+        EntityManager em = DBConnection.getInstance().generateEntityManager();
+
+        TypedQuery<Developer> query = em.createQuery("SELECT d.setEmployeesInTheDepartment FROM development d",Developer.class);
+
+        try (em) {
+            this.setEmployeesInTheDepartment = new HashSet<>(query.getResultList());
+            this.numberOfEmployeesPerDepartment = setEmployeesInTheDepartment.size();
+
+            return setEmployeesInTheDepartment;
+        } catch (Exception e) {
+            System.out.printf("ERROR - [Development.getSetOfEmployees] - %s", e.getMessage());
+        }
+
+        return Collections.emptySet();
     }
 
     public Development updateElement(Development development) {
@@ -98,9 +118,9 @@ public class Development extends Department {
 
     @Override
     public String toString() {
-        return String.format("Developer [%s, numberOfEmployeesInTheDepartment: %s, " +
+        return String.format("Developer [ %s, numberOfEmployeesInTheDepartment: %s, " +
                         "numberOfProjectsCompletedThisYear: %s, numberOfProjectsCompletedLastYear: %s, " +
-                        "numberOfProjectsInWorking: %s",
+                        "numberOfProjectsInWorking: %s ]",
                 super.toString(), numberOfEmployeesPerDepartment, numberOfProjectsCompletedThisYear,
                 numberOfProjectsCompletedLastYear, numberOfProjectsInWorking);
     }

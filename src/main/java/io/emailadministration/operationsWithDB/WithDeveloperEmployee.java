@@ -1,10 +1,17 @@
 package io.emailadministration.operationsWithDB;
 
+import io.emailadministration.dbutils.DBConnection;
 import io.emailadministration.entities.companyemployees.Developer;
 
 import java.util.*;
 
 public class WithDeveloperEmployee implements GeneralDataAccessObject<Developer> {
+
+    private DBConnection connection;
+
+    public WithDeveloperEmployee() {
+        this.connection = DBConnection.getInstance();
+    }
 
     public WithDeveloperEmployee getNewInstance() {
         return new WithDeveloperEmployee();

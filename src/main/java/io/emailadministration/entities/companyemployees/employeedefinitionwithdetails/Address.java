@@ -13,25 +13,34 @@ import java.util.Map;
 @Setter
 @Embeddable
 public class Address implements Comparable<Address> {
-    @Column(name = "street", nullable = false)
+    @Column(name = "street", nullable = false, columnDefinition = "varchar(125) default 'none'")
     private String street;
 
-    @Column(name = "number", nullable = false)
+    @Column(name = "number", nullable = false, columnDefinition = "int default -1")
     private int number;
 
-    @Column(name = "apartment")
+    @Column(name = "apartment", columnDefinition = "int default -1")
     private int apartment;
 
-    @Column(name = "city", nullable = false)
+    @Column(name = "city", nullable = false, columnDefinition = "varchar(125) default 'none'")
     private String city;
 
-    @Column(name = "country", nullable = false)
+    @Column(name = "country", nullable = false, columnDefinition = "varchar(125) default 'none'")
     private String country;
 
-    @Column(name = "zipcode", nullable = false)
+    @Column(name = "zipcode", nullable = false, columnDefinition = "int default -1")
     private int zipcode;
 
     public Address() {}
+
+    public Address(Address address) {
+        this.street = new String(address.getStreet());
+        this.number = address.getNumber();
+        this.apartment = address.getApartment();
+        this.city = new String(address.getCity());
+        this.country = new String(address.getCountry());
+        this.zipcode = address.getZipcode();
+    }
 
     @Override
     public boolean equals(Object o) {

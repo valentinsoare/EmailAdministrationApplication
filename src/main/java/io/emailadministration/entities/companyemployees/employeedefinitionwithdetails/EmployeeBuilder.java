@@ -1,5 +1,6 @@
 package io.emailadministration.entities.companyemployees.employeedefinitionwithdetails;
 
+import io.emailadministration.entities.companyemployees.AccountantBuilder;
 import io.emailadministration.entities.companyemployees.DepartmentType;
 import io.emailadministration.entities.digitalcomponents.UserBuilder;
 
@@ -13,46 +14,50 @@ public class EmployeeBuilder {
         this.employee = employee;
     }
 
+    public EmployeeBuilder() {
+        this.employee = new Employee();
+    }
+
     public EmployeeBuilder setupFirstName(String firstName) {
-        employee.setFirstName(firstName);
+        this.employee.setFirstName(firstName);
         return this;
     }
 
     public EmployeeBuilder setupLastName(String lastName) {
-        employee.setLastName(lastName);
+        this.employee.setLastName(lastName);
         return this;
     }
 
     public EmployeeBuilder setupDateOfBirth(LocalDate dateOfBirth) {
-        employee.setDateOfBirth(dateOfBirth);
+        this.employee.setDateOfBirth(dateOfBirth);
         return this;
     }
 
     public EmployeeBuilder setupPhoneNumber(int phoneNumber) {
-        employee.setPhoneNumber(phoneNumber);
+        this.employee.setPhoneNumber(phoneNumber);
         return this;
     }
 
     public AddressBuilder lives() {
-        return new AddressBuilder(employee);
+        return new AddressBuilder(this.employee);
     }
 
     public EmployeeBuilder setupEmployeeId(String employeeId) {
-        employee.setEmployeeId(employeeId);
+        this.employee.setEmployeeId(employeeId);
         return this;
     }
 
     public EmployeeBuilder setupDepartmentType(DepartmentType departmentType) {
-        employee.setDepartmentWhereIamWorking(departmentType);
+        this.employee.setDepartmentWhereIamWorking(departmentType);
         return this;
     }
 
     public WorkDetailsBuilder work() {
-        return new WorkDetailsBuilder(employee);
+        return new WorkDetailsBuilder(this.employee);
     }
 
-    public TimeAndDateInformationBuilder timeAndDate() {
-        return new TimeAndDateInformationBuilder(employee);
+    public TimeAndDateInformationBuilder when() {
+        return new TimeAndDateInformationBuilder(this.employee);
     }
 
     public UserBuilder setupUser() {
@@ -61,5 +66,13 @@ public class EmployeeBuilder {
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public AccountantBuilder accountant() {
+        return new AccountantBuilder(employee);
     }
 }

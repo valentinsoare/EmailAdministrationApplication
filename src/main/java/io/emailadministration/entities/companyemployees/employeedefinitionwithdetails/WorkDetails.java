@@ -21,10 +21,16 @@ public class WorkDetails implements Comparable<WorkDetails> {
     @Column(name = "seniority_level")
     private SeniorityLevel seniorityLevel;
 
-    @Column(name = "current_salary")
+    @Column(name = "current_salary", columnDefinition = "decimal(38,2) default -1")
     private BigDecimal currentSalary;
 
     public WorkDetails() {}
+
+    public WorkDetails(WorkDetails details) {
+        this.typeOfWorkContract = details.getTypeOfWorkContract();
+        this.seniorityLevel = details.getSeniorityLevel();
+        this.currentSalary = new BigDecimal(String.valueOf(details.getCurrentSalary()));
+    }
 
     @Override
     public boolean equals(Object o) {

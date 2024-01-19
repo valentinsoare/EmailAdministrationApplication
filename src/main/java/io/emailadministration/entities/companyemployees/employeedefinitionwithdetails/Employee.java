@@ -1,5 +1,6 @@
 package io.emailadministration.entities.companyemployees.employeedefinitionwithdetails;
 
+import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.listenerforemployees.TimeAndDateInformationListener;
 import io.emailadministration.entities.digitalcomponents.User;
 import io.emailadministration.entities.companyemployees.DepartmentType;
 import io.emailadministration.printing.CustomPrinting;
@@ -22,28 +23,29 @@ import java.util.Map;
         name = "employee_type"
 )
 @DiscriminatorValue("none")
-public abstract class Employee implements Comparable<Employee> {
+@EntityListeners( {TimeAndDateInformationListener.class} )
+public class Employee implements Comparable<Employee> {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "first_name")
+    @Column(name = "first_name", nullable = false, columnDefinition = "varchar(31) default 'none'")
     private String firstName;
 
-    @Column(name = "last_name")
+    @Column(name = "last_name", nullable = false, columnDefinition = "varchar(31) default 'none'")
     private String lastName;
 
-    @Column(name = "date_of_birth")
+    @Column(name = "date_of_birth", nullable = false)
     private LocalDate dateOfBirth;
 
-    @Column(name = "phone_number")
+    @Column(name = "phone_number", nullable = false, columnDefinition = "int default -1")
     private int phoneNumber;
 
     @Embedded
     private Address address;
 
-    @Column(name = "employee_id")
+    @Column(name = "employee_id", columnDefinition = "varchar(31) default 'none'")
     private String employeeId;
 
     @Enumerated(EnumType.STRING)
@@ -66,6 +68,21 @@ public abstract class Employee implements Comparable<Employee> {
     private Long version;
 
     protected Employee() {}
+
+    protected Employee(Employee employee) {
+        this.id = employee.getId();
+        this.firstName = new String(employee.getFirstName());
+        this.lastName = new String(employee.getLastName());
+        this.dateOfBirth = employee.getDateOfBirth();
+        this.phoneNumber = employee.getPhoneNumber();
+        this.address = new Address(employee.getAddress());
+        this.employeeId = new String(employee.getEmployeeId());
+        this.departmentWhereIamWorking = employee.getDepartmentWhereIamWorking();
+        this.workDetails = new WorkDetails(employee.getWorkDetails());
+        this.timeAndDateInformation = new TimeAndDateInformation(employee.getTimeAndDateInformation());
+        this.user = new User(employee.getUser());
+        this.version = employee.getVersion();
+    }
 
     @Override
     public boolean equals(Object o) {

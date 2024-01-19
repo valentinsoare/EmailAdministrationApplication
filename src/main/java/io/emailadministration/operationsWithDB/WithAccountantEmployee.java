@@ -1,7 +1,12 @@
 package io.emailadministration.operationsWithDB;
 
 import io.emailadministration.dbutils.DBConnection;
+import io.emailadministration.entities.companydepartments.Development;
 import io.emailadministration.entities.companyemployees.Accountant;
+import io.emailadministration.operationsWithDB.execute.ExecQuery;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.ParameterMode;
+import jakarta.persistence.StoredProcedureQuery;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,6 +15,7 @@ import java.util.*;
 @Getter
 @Setter
 public class WithAccountantEmployee implements GeneralDataAccessObject<Accountant> {
+
     private DBConnection connection;
 
     public WithAccountantEmployee() {
@@ -22,7 +28,18 @@ public class WithAccountantEmployee implements GeneralDataAccessObject<Accountan
 
     @Override
     public Accountant get(long id) {
-        return null;
+        EntityManager em = connection.generateEntityManager();
+
+        StoredProcedureQuery q = em.createStoredProcedureQuery("GetAnAccountantById",Accountant.class)
+                .registerStoredProcedureParameter("type_of_employee", String.class, ParameterMode.IN)
+                .registerStoredProcedureParameter("id_number", Long.class, ParameterMode.IN)
+                .setParameter("type_of_employee", "accountant")
+                .setParameter("id_number", id);
+
+        List<Accountant> objects = ExecQuery.ofGet(em, q, Accountant.class);
+
+        if (objects.isEmpty()) return new Accountant();
+        return objects.get(0);
     }
 
     @Override

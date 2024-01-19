@@ -13,7 +13,6 @@ import org.hibernate.annotations.BatchSize;
 @Entity(name = "developer")
 @DiscriminatorValue("developer")
 public class Developer extends Employee {
-
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "department_id")
     private Development department;

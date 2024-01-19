@@ -491,3 +491,11 @@ w
 G.idea/sonarlint/issuestore/e/5/e5c2d4733065e8358053783b2d1c47e71eb3e9c1,7/4/74aa7dd76479a3008c490c2972b0165ffb74a4a1
 
 Osrc/main/java/io/emailadministration/operationsWithDB/WithTypeOfDepartment.java,d/a/dae8a1f6c251865b504d4b0522e8c083b5ec4816
+ù
+msrc/main/java/io/emailadministration/entities/companydepartments/listeners/DevelopmentDepartmentListener.java,7/7/77a94d96f6adad33d79048fc3e4a907430655d9f
+ó
+gsrc/main/java/io/emailadministration/entities/companydepartments/listeners/SalesDepartmentListener.java,5/7/57e2cd2f23175d631a7879e217e4eeaac67ec697
+∆
+ïsrc/main/java/io/emailadministration/entities/companyemployees/employeedefinitionwithdetails/listenerforemployees/TimeAndDateInformationListener.java,7/6/768442439958ed8c2e3c8af76d7ff44bb559ceac
+◊
+¶src/main/java/io/emailadministration/entities/companyemployees/employeedefinitionwithdetails/listenerforemployees/CalculateAttributesRelatedToTimeAndDateListener.java,b/d/bd550c695d3abbd1db778d0e9201c8249a532a65

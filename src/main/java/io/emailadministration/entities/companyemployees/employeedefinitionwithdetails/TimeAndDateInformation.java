@@ -36,8 +36,22 @@ public class TimeAndDateInformation {
     @Transient
     private BigDecimal numberOfDaysFromLastModification;
 
-
     public TimeAndDateInformation() {}
+
+    public TimeAndDateInformation(TimeAndDateInformation timeAndDate) {
+        this.hireDate = LocalDate.from(timeAndDate.getHireDate());
+
+        this.creationProfileDate = LocalDate.from(timeAndDate.getCreationProfileDate());
+        this.lastModificationOnProfileDate = LocalDate.from(timeAndDate.getLastModificationOnProfileDate());
+
+        this.creationProfileTime = LocalTime.from(timeAndDate.getCreationProfileTime());
+        this.lastModificationOnProfileTime = LocalTime.from(timeAndDate.getLastModificationOnProfileTime());
+
+        this.numberOfDaysFromHiring =
+                new BigDecimal(String.valueOf(timeAndDate.getNumberOfDaysFromHiring()));
+        this.numberOfDaysFromLastModification =
+                new BigDecimal(String.valueOf(timeAndDate.getNumberOfDaysFromLastModification()));
+    }
 
     @Override
     public boolean equals(Object o) {

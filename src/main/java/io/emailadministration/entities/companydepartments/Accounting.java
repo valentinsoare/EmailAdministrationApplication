@@ -7,16 +7,18 @@ import io.emailadministration.entities.companyemployees.Accountant;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.BatchSize;
 
 import java.util.*;
 
 
+@BatchSize(size = 16)
 @DiscriminatorValue("accounting")
 @Entity(name = "accounting")
 @EntityListeners( {AccountingDepartmentListener.class} )
 public class Accounting extends Department {
 
-    @OneToMany(orphanRemoval = true)
+    @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
     private Set<Accountant> setEmployeesInTheDepartment = new LinkedHashSet<>();
 
     @Getter
@@ -30,8 +32,6 @@ public class Accounting extends Department {
 
     public Accounting() {
         super();
-
-        this.numberOfEmployeesPerDepartment = -1;
     }
 
     @Override
@@ -71,14 +71,11 @@ public class Accounting extends Department {
 
     public Set<Accountant> getSetOfEmployeesInTheDepartment() {
         EntityManager em = DBConnection.getInstance().generateEntityManager();
-
-        TypedQuery<Accountant> query = em.createQuery("SELECT a.setEmployeesInTheDepartment FROM accounting a",
-                Accountant.class);
+        TypedQuery<Accountant> query = em.createQuery("SELECT a.setEmployeesInTheDepartment FROM accounting a",Accountant.class);
 
         try (em) {
             this.setEmployeesInTheDepartment = new HashSet<>(query.getResultList());
             this.numberOfEmployeesPerDepartment = setEmployeesInTheDepartment.size();
-
             return setEmployeesInTheDepartment;
         } catch (Exception e) {
             System.out.printf("ERROR - [Accounting.getSetOfEmployees] - %s", e.getMessage());
@@ -93,8 +90,6 @@ public class Accounting extends Department {
         result = 31 * result + numberOfEmployeesPerDepartment;
         return result;
     }
-
-
 
     @Override
     public String toString() {

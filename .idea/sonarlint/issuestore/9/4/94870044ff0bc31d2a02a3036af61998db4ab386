@@ -1,6 +1,4 @@
 
 t
-java:S1192"WDefine a constant instead of duplicating this literal "name_of_the_department" 4 times.(ÿ¼¸˜8ĞàöÖÑ1
+java:S1192"WDefine a constant instead of duplicating this literal "name_of_the_department" 4 times.(ÿ¼¸˜8ĞàöÖÑ1
 {	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ç¨œ±øÿÿÿÿ8œ…†ÖÑ1
-r
-java:S1128"URemove this unused import 'io.emailadministration.entities.companydepartments.Sales'.(Äû“º8—Ù÷ÖÑ1

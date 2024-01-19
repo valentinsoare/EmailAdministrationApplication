@@ -1,14 +1,16 @@
 package io.emailadministration.entities.companydepartments;
 
+import io.emailadministration.dbutils.DBConnection;
 import io.emailadministration.entities.companydepartments.departmentstructurewithdetails.Department;
+import io.emailadministration.entities.companydepartments.listeners.SalesDepartmentListener;
 import io.emailadministration.entities.companyemployees.SalesAgent;
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.BatchSize;
 
 import java.math.BigDecimal;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -18,12 +20,15 @@ import java.util.Set;
 @BatchSize(size = 16)
 @Entity(name = "sales")
 @DiscriminatorValue("sales")
+@EntityListeners( {SalesDepartmentListener.class} )
 public class Sales extends Department {
 
     @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
-    private Set<SalesAgent> listOfEmployeesInTheDepartment = new LinkedHashSet<>();
+    private Set<SalesAgent> setEmployeesInTheDepartment = new LinkedHashSet<>();
 
-    @Column(name = "numbers_of_employees_per_department", columnDefinition = "int default -1")
+    @Getter
+    @Setter
+    @Transient
     private int numberOfEmployeesPerDepartment;
 
     @Column(name = "target_for_sales_this_year", columnDefinition = "decimal(38,2) default -1")
@@ -38,11 +43,12 @@ public class Sales extends Department {
     public Sales() {
         super();
 
-        this.numberOfEmployeesPerDepartment = -1;
+        this.targetForSalesThisYear = new BigDecimal("0");
+        this.targetForSalesLastYear = new BigDecimal("0");
     }
 
     public Sales(Sales sales) {
-        this.listOfEmployeesInTheDepartment = new HashSet<>(sales.getListOfEmployeesInTheDepartment());
+        this.setEmployeesInTheDepartment = new HashSet<>(sales.setEmployeesInTheDepartment);
         this.numberOfEmployeesPerDepartment = sales.getNumberOfEmployeesPerDepartment();
         this.lastYearTargetWasReached = sales.isLastYearTargetWasReached();
         this.targetForSalesThisYear = sales.getTargetForSalesThisYear();
@@ -64,6 +70,23 @@ public class Sales extends Department {
         s.setVersion(sales.getVersion());
 
         return s;
+    }
+
+    public Set<SalesAgent> getSetOfEmployeesInTheDepartment() {
+        EntityManager em = DBConnection.getInstance().generateEntityManager();
+
+        TypedQuery<SalesAgent> query = em.createQuery("SELECT s.setEmployeesInTheDepartment FROM sales s",SalesAgent.class);
+
+        try (em) {
+            this.setEmployeesInTheDepartment = new HashSet<>(query.getResultList());
+            this.numberOfEmployeesPerDepartment = setEmployeesInTheDepartment.size();
+
+            return setEmployeesInTheDepartment;
+        } catch (Exception e) {
+            System.out.printf("ERROR - [Sales.getSetOfEmployees] - %s", e.getMessage());
+        }
+
+        return Collections.emptySet();
     }
 
     public String getTypeOfObject() {
