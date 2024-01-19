@@ -48,6 +48,10 @@ public class Sales extends Department implements Component<Sales> {
         this.targetForSalesLastYear = new BigDecimal("0");
     }
 
+    public Sales(Department department) {
+        super(department);
+    }
+
     public Sales(Sales sales) {
         this.setEmployeesInTheDepartment = new HashSet<>(sales.setEmployeesInTheDepartment);
         this.numberOfEmployeesPerDepartment = sales.getNumberOfEmployeesPerDepartment();

@@ -1,6 +1,6 @@
 package io.emailadministration.entities.companydepartments;
 
-import io.emailadministration.entities.companyemployees.DepartmentType;
+import io.emailadministration.entities.companydepartments.departmentstructurewithdetails.Department;
 
 public class DevelopmentBuilder {
 
@@ -10,38 +10,32 @@ public class DevelopmentBuilder {
         this.development = new Development();
     }
 
-    public DevelopmentBuilder setupDepartmentBusinessId(String departmentBusinessId) {
-        development.setDepartmentBusinessID(departmentBusinessId);
-        return this;
+    public DevelopmentBuilder(Department department) {
+        this.development = new Development(department);
     }
 
-    public DevelopmentBuilder setupDepartmentType(DepartmentType type) {
-        development.setWhichDepartmentIsThis(type);
-        return this;
-    }
+    private int checkLessThanZero(int inputValue) {
+        return Math.max(inputValue, 0);
 
-    public DevelopmentBuilder setupLastYearEvaluation(int lastYearEvaluation) {
-        development.setLastYearEvaluationOfTheDepartment(lastYearEvaluation);
-        return this;
     }
 
     public DevelopmentBuilder setupNumberOfEmployeesPerDepartment(int numberOfEmployees) {
-        this.development.setNumberOfEmployeesPerDepartment(numberOfEmployees);
+        this.development.setNumberOfEmployeesPerDepartment(checkLessThanZero(numberOfEmployees));
         return this;
     }
 
     public DevelopmentBuilder setupNumberOfProjectsCompletedThisYear(int numberOfProjects) {
-        this.development.setNumberOfProjectsCompletedThisYear(numberOfProjects);
+        this.development.setNumberOfProjectsCompletedThisYear(checkLessThanZero(numberOfProjects));
         return this;
     }
 
     public DevelopmentBuilder setupNumberOfProjectsCompletedLastYear(int numberOfProjects) {
-        this.development.setNumberOfProjectsCompletedLastYear(numberOfProjects);
+        this.development.setNumberOfProjectsCompletedLastYear(checkLessThanZero(numberOfProjects));
         return this;
     }
 
     public DevelopmentBuilder setupNumberOfProjectsInWorking(int numberOfProjects) {
-        this.development.setNumberOfProjectsInWorking(numberOfProjects);
+        this.development.setNumberOfProjectsInWorking(checkLessThanZero(numberOfProjects));
         return this;
     }
 
@@ -51,5 +45,9 @@ public class DevelopmentBuilder {
 
     public void setDevelopment(Development development) {
         this.development = development;
+    }
+
+    public Development getDevelopment() {
+        return development;
     }
 }

@@ -6,7 +6,7 @@ import io.emailadministration.entities.companyemployees.employeedefinitionwithde
 
 import java.math.BigDecimal;
 
-public class SalesAgentBuilder extends EmployeeBuilder {
+public class SalesAgentBuilder {
     private SalesAgent salesAgent;
 
     public SalesAgentBuilder(Employee employee) {

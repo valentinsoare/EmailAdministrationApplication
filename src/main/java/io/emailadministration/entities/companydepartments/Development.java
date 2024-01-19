@@ -44,6 +44,10 @@ public class Development extends Department implements Component<Development> {
         super();
     }
 
+    public Development(Department department) {
+        super(department);
+    }
+
     public Development(Development development) {
         this.setEmployeesInTheDepartment = new HashSet<>(development.setEmployeesInTheDepartment);
         this.numberOfProjectsCompletedLastYear = development.getNumberOfProjectsCompletedLastYear();

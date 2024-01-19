@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 @Table(name = "password", schema = "password")
 public class Password implements Comparable<Password>, Component<Password> {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 

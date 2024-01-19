@@ -1,5 +1,8 @@
 package io.emailadministration.entities.companydepartments.departmentstructurewithdetails;
 
+import io.emailadministration.entities.companydepartments.AccountingBuilder;
+import io.emailadministration.entities.companydepartments.DevelopmentBuilder;
+import io.emailadministration.entities.companydepartments.SalesBuilder;
 import io.emailadministration.entities.companyemployees.DepartmentType;
 
 public class DepartmentBuilder {
@@ -8,6 +11,10 @@ public class DepartmentBuilder {
 
     public DepartmentBuilder(Department department) {
         this.department = department;
+    }
+
+    public DepartmentBuilder() {
+        this.department = new Department();
     }
 
     public DepartmentBuilder setupDepartmentBusinessId(String departmentBusinessId) {
@@ -27,5 +34,21 @@ public class DepartmentBuilder {
 
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public AccountingBuilder constructAccountingDepartment() {
+        return new AccountingBuilder(department);
+    }
+
+    public DevelopmentBuilder constructDevelopmentDepartment() {
+        return new DevelopmentBuilder(department);
+    }
+
+    public SalesBuilder constructSalesDepartment() {
+        return new SalesBuilder(department);
     }
 }

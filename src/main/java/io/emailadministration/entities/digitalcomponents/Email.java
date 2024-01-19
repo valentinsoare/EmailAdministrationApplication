@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 @Table(name = "email", schema = "email")
 public class Email implements Comparable<Email>, Component<Email> {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 

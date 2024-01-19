@@ -24,7 +24,7 @@ import java.util.Map;
 @DiscriminatorValue("none")
 public class Department implements Comparable<Department> {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 

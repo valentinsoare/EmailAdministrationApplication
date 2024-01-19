@@ -27,7 +27,7 @@ import java.util.Map;
 @EntityListeners( {TimeAndDateInformationListener.class} )
 public class Employee implements Comparable<Employee> {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 

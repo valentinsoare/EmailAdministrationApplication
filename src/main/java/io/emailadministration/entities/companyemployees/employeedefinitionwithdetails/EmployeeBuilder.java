@@ -6,7 +6,6 @@ import io.emailadministration.entities.digitalcomponents.UserBuilder;
 import java.time.LocalDate;
 
 public class EmployeeBuilder {
-
     private Employee employee;
 
     public EmployeeBuilder(Employee employee) {

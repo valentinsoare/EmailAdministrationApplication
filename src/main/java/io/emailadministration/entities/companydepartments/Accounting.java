@@ -31,6 +31,10 @@ public class Accounting extends Department implements Component<Accounting> {
         super();
     }
 
+    public Accounting(Department department) {
+        super(department);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

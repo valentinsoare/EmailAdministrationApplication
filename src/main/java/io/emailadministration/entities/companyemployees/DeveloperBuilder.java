@@ -4,7 +4,7 @@ import io.emailadministration.entities.companydepartments.Development;
 import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.Employee;
 import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.EmployeeBuilder;
 
-public class DeveloperBuilder extends EmployeeBuilder {
+public class DeveloperBuilder {
 
     private Developer developer;
 

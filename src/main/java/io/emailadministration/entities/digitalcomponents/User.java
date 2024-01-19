@@ -18,7 +18,7 @@ import java.util.Map;
 @Table(name = "user", schema = "user")
 public class User implements Comparable<User> {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 

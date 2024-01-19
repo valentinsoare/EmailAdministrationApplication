@@ -1,5 +1,6 @@
 package io.emailadministration.entities.companydepartments;
 
+import io.emailadministration.entities.companydepartments.departmentstructurewithdetails.Department;
 import io.emailadministration.entities.companyemployees.DepartmentType;
 
 import java.math.BigDecimal;
@@ -11,33 +12,22 @@ public class SalesBuilder {
         this.sales = new Sales();
     }
 
-    public SalesBuilder setupDepartmentBusinessId(String departmentBusinessId) {
-        sales.setDepartmentBusinessID(departmentBusinessId);
-        return this;
-    }
-
-    public SalesBuilder setupDepartmentType(DepartmentType type) {
-        sales.setWhichDepartmentIsThis(type);
-        return this;
-    }
-
-    public SalesBuilder setupLastYearEvaluation(int lastYearEvaluation) {
-        sales.setLastYearEvaluationOfTheDepartment(lastYearEvaluation);
-        return this;
+    public SalesBuilder(Department department) {
+        this.sales = new Sales(department);
     }
 
     public SalesBuilder setupNumberOfEmployeesPerDepartment(int numberOfEmployees) {
-        sales.setNumberOfEmployeesPerDepartment(numberOfEmployees);
+        sales.setNumberOfEmployeesPerDepartment(Math.max(numberOfEmployees, 0));
         return this;
     }
 
     public SalesBuilder setupTargetForSalesThisYear(BigDecimal target) {
-        sales.setTargetForSalesThisYear(target);
+        sales.setTargetForSalesThisYear(target.max(new BigDecimal("0")));
         return this;
     }
 
     public SalesBuilder setupTargetForSalesLastYear(BigDecimal target) {
-        sales.setTargetForSalesLastYear(target);
+        sales.setTargetForSalesLastYear(target.max(new BigDecimal("0")));
         return this;
     }
 
@@ -52,5 +42,9 @@ public class SalesBuilder {
 
     public void setSales(Sales sales) {
         this.sales = sales;
+    }
+
+    public Sales getSales() {
+        return sales;
     }
 }
