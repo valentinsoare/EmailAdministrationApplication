@@ -2,6 +2,7 @@ package io.emailadministration.entities.companyemployees.employeedefinitionwithd
 
 import io.emailadministration.entities.companyemployees.AccountantBuilder;
 import io.emailadministration.entities.companyemployees.DepartmentType;
+import io.emailadministration.entities.companyemployees.DeveloperBuilder;
 import io.emailadministration.entities.digitalcomponents.UserBuilder;
 
 import java.time.LocalDate;
@@ -61,7 +62,7 @@ public class EmployeeBuilder {
     }
 
     public UserBuilder setupUser() {
-        return new UserBuilder();
+        return new UserBuilder(this.employee);
     }
 
     public void setEmployee(Employee employee) {
@@ -72,7 +73,11 @@ public class EmployeeBuilder {
         return employee;
     }
 
-    public AccountantBuilder accountant() {
+    public AccountantBuilder constructAccountant() {
         return new AccountantBuilder(employee);
+    }
+
+    public DeveloperBuilder constructDeveloper() {
+        return new DeveloperBuilder(employee);
     }
 }

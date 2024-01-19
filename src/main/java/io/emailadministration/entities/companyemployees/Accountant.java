@@ -1,5 +1,6 @@
 package io.emailadministration.entities.companyemployees;
 
+import io.emailadministration.devcomponents.Component;
 import io.emailadministration.entities.companydepartments.Accounting;
 import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.Employee;
 import jakarta.persistence.*;
@@ -12,9 +13,9 @@ import org.hibernate.annotations.BatchSize;
 @BatchSize(size = 16)
 @DiscriminatorValue("accountant")
 @Entity(name = "accountant")
-public class Accountant extends Employee {
+public class Accountant extends Employee implements Component<Accountant> {
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinColumn(name = "department_id", columnDefinition = "varchar(31) default 'none'")
+    @JoinColumn(name = "department_id")
     private Accounting department;
 
     @Column(name = "is_team_leader", columnDefinition = "boolean default false")
@@ -28,9 +29,25 @@ public class Accountant extends Employee {
         super(employee);
     }
 
+    public Accountant(Accountant accountant) {
+        super(accountant.returnEmployee());
+
+        this.department = new Accounting(accountant.getDepartment());
+        this.isTeamLeader = accountant.isTeamLeader();
+    }
+
+    @Override
+    public String getTypeOfObject() {
+        return this.getClass().getSimpleName();
+    }
+
+    public Accountant getCopyInstance(Accountant object) {
+        return new Accountant(object);
+    }
+
     @Override
     public String toString() {
-        return String.format("Accountant [%s, isTeamLeader: %s",
-                super.toString(), isTeamLeader);
+        return String.format("Accountant [%s, department: %s, isTeamLeader: %s ]",
+                super.toString(), department, isTeamLeader);
     }
 }

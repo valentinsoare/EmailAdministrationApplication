@@ -73,6 +73,11 @@ public class Header implements IHeader {
         return this.getClass().getSimpleName();
     }
 
+    public IHeader getCopyInstance(IHeader object) {
+        Header header = object.headerAttributes();
+        return new Header(header);
+    }
+
     @Override
     public Header headerAttributes() {
         return this;

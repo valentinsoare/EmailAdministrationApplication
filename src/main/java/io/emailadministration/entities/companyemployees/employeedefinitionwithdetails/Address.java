@@ -1,5 +1,6 @@
 package io.emailadministration.entities.companyemployees.employeedefinitionwithdetails;
 
+import io.emailadministration.devcomponents.Component;
 import io.emailadministration.printing.CustomPrinting;
 import io.emailadministration.customdatastructureandoperationsonthem.operationswithdatastructures.OperationsOnMap;
 import jakarta.persistence.*;
@@ -12,7 +13,7 @@ import java.util.Map;
 @Getter
 @Setter
 @Embeddable
-public class Address implements Comparable<Address> {
+public class Address implements Comparable<Address>, Component<Address> {
     @Column(name = "street", nullable = false, columnDefinition = "varchar(125) default 'none'")
     private String street;
 
@@ -40,6 +41,15 @@ public class Address implements Comparable<Address> {
         this.city = new String(address.getCity());
         this.country = new String(address.getCountry());
         this.zipcode = address.getZipcode();
+    }
+
+    public Address getCopyInstance(Address address) {
+        return new Address(address);
+    }
+
+    @Override
+    public String getTypeOfObject() {
+        return this.getClass().getSimpleName();
     }
 
     @Override

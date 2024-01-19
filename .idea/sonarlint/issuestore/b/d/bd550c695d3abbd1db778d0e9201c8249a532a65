@@ -1,0 +1,13 @@
+
+
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¥£ע8םדישׁ1
+‘
+java:S1128"tRemove this unused import 'io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.Employee'.(´®ץַ8ֲ­כשׁ1
+V
+java:S1128"9Remove this unused import 'jakarta.persistence.PostLoad'.(Êײקל8ֲ­כשׁ1
+N
+java:S1128"1Remove this unused import 'java.math.BigDecimal'.(ךך8ֲ­כשׁ1
+R
+java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬ט‎ÿÿÿÿ8ֲ­כשׁ1
+\
+java:S1128	"?Remove this unused import 'java.time.temporal.ChronoUnit.DAYS'.(„׃ֶ8ֲ­כשׁ1

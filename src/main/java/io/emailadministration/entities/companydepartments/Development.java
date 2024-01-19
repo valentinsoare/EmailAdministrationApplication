@@ -1,6 +1,7 @@
 package io.emailadministration.entities.companydepartments;
 
 import io.emailadministration.dbutils.DBConnection;
+import io.emailadministration.devcomponents.Component;
 import io.emailadministration.entities.companydepartments.departmentstructurewithdetails.Department;
 import io.emailadministration.entities.companydepartments.listeners.DevelopmentDepartmentListener;
 import io.emailadministration.entities.companyemployees.Developer;
@@ -20,7 +21,7 @@ import java.util.Set;
 @Entity(name = "development")
 @DiscriminatorValue("development")
 @EntityListeners( {DevelopmentDepartmentListener.class} )
-public class Development extends Department {
+public class Development extends Department implements Component<Development> {
 
     @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
     private Set<Developer> setEmployeesInTheDepartment = new LinkedHashSet<>();
@@ -85,6 +86,7 @@ public class Development extends Department {
         return new Development(development);
     }
 
+    @Override
     public String getTypeOfObject() {
         return this.getClass().getSimpleName();
     }

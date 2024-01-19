@@ -1,5 +1,6 @@
 package io.emailadministration.entities.digitalcomponents;
 
+import io.emailadministration.devcomponents.Component;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +14,7 @@ import java.math.BigDecimal;
 @BatchSize(size = 16)
 @Entity(name = "email")
 @Table(name = "email", schema = "email")
-public class Email implements Comparable<Email> {
+public class Email implements Comparable<Email>, Component<Email> {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
@@ -66,6 +67,15 @@ public class Email implements Comparable<Email> {
     @Override
     public int compareTo(@NotNull Email o) {
         return o.primaryEmailAddress.compareTo(this.primaryEmailAddress);
+    }
+
+    @Override
+    public String getTypeOfObject() {
+        return this.getClass().getSimpleName();
+    }
+
+    public Email getCopyInstance(Email object) {
+        return new Email(object);
     }
 
     @Override

@@ -3,6 +3,7 @@ package io.emailadministration;
 import io.emailadministration.dbutils.DBConnection;
 import io.emailadministration.entities.companydepartments.*;
 import io.emailadministration.entities.companyemployees.DepartmentType;
+import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.EmployeeBuilder;
 import io.emailadministration.operationsWithDB.WithAccountingDepartment;
 import io.emailadministration.operationsWithDB.WithDevelopmentDepartment;
 import io.emailadministration.operationsWithDB.WithSalesDepartment;

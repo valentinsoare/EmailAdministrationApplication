@@ -66,10 +66,6 @@ public class Menu implements IMenu {
         this.additionalMessageAsANote = menu.menuAttributes().getAdditionalMessageAsANote();
     }
 
-    public static IMenu getNewInstance(IMenu menu) {
-        return new Menu(menu);
-    }
-
     public boolean addInputValueFromUser(String key, Object value) {
         return (storingInputValuesFromUser.computeIfAbsent(key, k -> value) != null);
     }
@@ -198,5 +194,10 @@ public class Menu implements IMenu {
     @Override
     public String getTypeOfObject() {
         return this.getClass().getSimpleName();
+    }
+
+    public IMenu getCopyInstance(IMenu object) {
+        Menu menu = object.menuAttributes();
+        return new Menu(menu);
     }
 }

@@ -210,4 +210,14 @@ public class HMessage implements IStylizedMessage {
     public String toString() {
         return completeProcessing;
     }
+
+    @Override
+    public String getTypeOfObject() {
+        return this.getClass().getSimpleName();
+    }
+
+    public IStylizedMessage getCopyInstance(IStylizedMessage object) {
+        HMessage hMessage = object.stylizedMessageAttributes();
+        return new HMessage(hMessage);
+    }
 }

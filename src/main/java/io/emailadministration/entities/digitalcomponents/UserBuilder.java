@@ -1,27 +1,24 @@
 package io.emailadministration.entities.digitalcomponents;
 
-public class UserBuilder {
+import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.Employee;
+import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.EmployeeBuilder;
 
-    private User user;
+public class UserBuilder extends EmployeeBuilder {
 
-    public UserBuilder() {
-        this.user = new User();
+    public UserBuilder(Employee employee) {
+        this.setEmployee(employee);
     }
 
     public UserBuilder setupUserName(String userName) {
-        user.setUserName(userName);
+        this.getEmployee().getUser().setUserName(userName);
         return this;
     }
 
     public PasswordBuilder asPassword () {
-        return new PasswordBuilder(user);
+        return new PasswordBuilder(this.getEmployee());
     }
 
     public EmailBuilder asEmail() {
-        return new EmailBuilder(user);
-    }
-
-    public User build() {
-        return user;
+        return new EmailBuilder(this.getEmployee());
     }
 }

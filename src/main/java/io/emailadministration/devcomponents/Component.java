@@ -1,3 +1,5 @@
 package io.emailadministration.devcomponents;
 
-public interface Component {}
+public interface Component<T> {
+    String getTypeOfObject();
+}

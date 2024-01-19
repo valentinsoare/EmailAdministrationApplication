@@ -1,5 +1,6 @@
 package io.emailadministration.entities.digitalcomponents;
 
+import io.emailadministration.devcomponents.Component;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 @BatchSize(size = 16)
 @Entity(name = "password")
 @Table(name = "password", schema = "password")
-public class Password implements Comparable<Password> {
+public class Password implements Comparable<Password>, Component<Password> {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
@@ -98,5 +99,14 @@ public class Password implements Comparable<Password> {
     public String toString() {
         return String.format("Password [ HashedUserPassword: %s, HashedEmailPassword: %s ]",
                 hashedPasswordForUser, hashedPasswordForEmail);
+    }
+
+    public Password getCopyInstance(Password password) {
+        return new Password(password);
+    }
+
+    @Override
+    public String getTypeOfObject() {
+        return this.getClass().getSimpleName();
     }
 }

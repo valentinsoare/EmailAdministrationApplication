@@ -1,5 +1,6 @@
 package io.emailadministration.entities.companyemployees.employeedefinitionwithdetails;
 
+import io.emailadministration.devcomponents.Component;
 import io.emailadministration.printing.CustomPrinting;
 import io.emailadministration.customdatastructureandoperationsonthem.operationswithdatastructures.OperationsOnMap;
 import jakarta.persistence.*;
@@ -13,7 +14,7 @@ import java.util.Map;
 @Getter
 @Setter
 @Embeddable
-public class WorkDetails implements Comparable<WorkDetails> {
+public class WorkDetails implements Comparable<WorkDetails>, Component<WorkDetails> {
     @Enumerated(EnumType.STRING)
     @Column(name = "type_of_work_contract")
     private TypeOfWorkContract typeOfWorkContract;
@@ -71,5 +72,14 @@ public class WorkDetails implements Comparable<WorkDetails> {
     public String toString() {
         Map<String, ?> characteristics = OperationsOnMap.putObjectAttributes(this);
         return CustomPrinting.of(characteristics, "WorkDetails [");
+    }
+
+    @Override
+    public String getTypeOfObject() {
+        return this.getClass().getSimpleName();
+    }
+
+    public WorkDetails getCopyInstance(WorkDetails object) {
+        return new WorkDetails(object);
     }
 }

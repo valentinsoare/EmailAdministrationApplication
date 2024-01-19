@@ -1,5 +1,6 @@
 package io.emailadministration.entities.companyemployees.employeedefinitionwithdetails;
 
+import io.emailadministration.devcomponents.Component;
 import io.emailadministration.printing.CustomPrinting;
 import io.emailadministration.customdatastructureandoperationsonthem.operationswithdatastructures.OperationsOnMap;
 import jakarta.persistence.*;
@@ -14,7 +15,7 @@ import java.util.Map;
 @Getter
 @Setter
 @Embeddable
-public class TimeAndDateInformation {
+public class TimeAndDateInformation implements Component<TimeAndDateInformation> {
     @Column(name = "hire_date")
     private LocalDate hireDate;
 
@@ -51,6 +52,15 @@ public class TimeAndDateInformation {
                 new BigDecimal(String.valueOf(timeAndDate.getNumberOfDaysFromHiring()));
         this.numberOfDaysFromLastModification =
                 new BigDecimal(String.valueOf(timeAndDate.getNumberOfDaysFromLastModification()));
+    }
+
+    @Override
+    public String getTypeOfObject() {
+        return this.getClass().getSimpleName();
+    }
+
+    public TimeAndDateInformation getCopyInstance(TimeAndDateInformation timeAndDateInformation) {
+        return new TimeAndDateInformation(timeAndDateInformation);
     }
 
     @Override

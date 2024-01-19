@@ -1,6 +1,7 @@
 package io.emailadministration.entities.companydepartments;
 
 import io.emailadministration.dbutils.DBConnection;
+import io.emailadministration.devcomponents.Component;
 import io.emailadministration.entities.companydepartments.departmentstructurewithdetails.Department;
 import io.emailadministration.entities.companydepartments.listeners.AccountingDepartmentListener;
 import io.emailadministration.entities.companyemployees.Accountant;
@@ -12,23 +13,19 @@ import org.hibernate.annotations.BatchSize;
 import java.util.*;
 
 
+@Getter
 @BatchSize(size = 16)
 @DiscriminatorValue("accounting")
 @Entity(name = "accounting")
 @EntityListeners( {AccountingDepartmentListener.class} )
-public class Accounting extends Department {
+public class Accounting extends Department implements Component<Accounting> {
 
     @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
     private Set<Accountant> setEmployeesInTheDepartment = new LinkedHashSet<>();
 
-    @Getter
     @Setter
     @Transient
     private int numberOfEmployeesPerDepartment;
-
-    public Set<Accountant> getSetEmployeesInTheDepartment() {
-        return setEmployeesInTheDepartment;
-    }
 
     public Accounting() {
         super();
@@ -43,6 +40,7 @@ public class Accounting extends Department {
         return numberOfEmployeesPerDepartment == that.numberOfEmployeesPerDepartment;
     }
 
+    @Override
     public String getTypeOfObject() {
         return this.getClass().getSimpleName();
     }

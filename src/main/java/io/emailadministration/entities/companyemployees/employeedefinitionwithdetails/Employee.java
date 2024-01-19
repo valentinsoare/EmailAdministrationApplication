@@ -1,5 +1,6 @@
 package io.emailadministration.entities.companyemployees.employeedefinitionwithdetails;
 
+import io.emailadministration.devcomponents.Component;
 import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.listenerforemployees.TimeAndDateInformationListener;
 import io.emailadministration.entities.digitalcomponents.User;
 import io.emailadministration.entities.companyemployees.DepartmentType;
@@ -106,6 +107,10 @@ public class Employee implements Comparable<Employee> {
     @Override
     public int compareTo(@NotNull Employee o) {
         return o.employeeId.compareTo(this.employeeId);
+    }
+
+    public Employee returnEmployee() {
+        return this;
     }
 
     @Override

@@ -6,7 +6,6 @@ import io.emailadministration.devcomponents.auxiliary.position.CPositionNullObje
 import lombok.Getter;
 import lombok.Setter;
 
-
 @Getter
 @Setter
 public class AuxiliaryMessage implements IAuxMessage {
@@ -35,10 +34,6 @@ public class AuxiliaryMessage implements IAuxMessage {
         this.processedAuxiliaryMessage = new String(auxiliaryMessage.auxiliaryMessageAttributes().getProcessedAuxiliaryMessage());
     }
 
-    public static AuxiliaryMessage getNewInstance(IAuxMessage auxiliaryMessage) {
-        return new AuxiliaryMessage(auxiliaryMessage);
-    }
-
     private AuxiliaryMessage processTheAuxMessageWithPosition() {
         StringBuilder sb = new StringBuilder();
 
@@ -54,6 +49,10 @@ public class AuxiliaryMessage implements IAuxMessage {
     @Override
     public String getTypeOfObject() {
         return this.getClass().getSimpleName();
+    }
+
+    public IAuxMessage getCopyInstance(IAuxMessage object) {
+        return new AuxiliaryMessage(object);
     }
 
     @Override

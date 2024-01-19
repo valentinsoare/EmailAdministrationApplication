@@ -84,6 +84,10 @@ public class User implements Comparable<User> {
         return this.getClass().getSimpleName();
     }
 
+    public User getCopyInstance(User user) {
+        return new User(user);
+    }
+
     @Override
     public String toString() {
         Map<String, ?> characteristics = OperationsOnMap.putObjectAttributes(this);

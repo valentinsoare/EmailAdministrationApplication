@@ -1,27 +1,28 @@
 package io.emailadministration.entities.digitalcomponents;
 
+import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.Employee;
+import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.EmployeeBuilder;
+
 import java.math.BigDecimal;
 
-public class EmailBuilder {
+public class EmailBuilder extends EmployeeBuilder {
 
-    private Email email;
-
-    public EmailBuilder(User user) {
-        this.email = user.getEmail();
+    public EmailBuilder(Employee employee) {
+        this.setEmployee(employee);
     }
 
     public EmailBuilder setupPrimaryEmailAddress(String emailAddress) {
-        email.setPrimaryEmailAddress(emailAddress);
+        this.getEmployee().getUser().getEmail().setPrimaryEmailAddress(emailAddress);
         return this;
     }
 
     public EmailBuilder setupSecondaryEmailAddress(String emailAddress) {
-        email.setSecondaryEmailAddress(emailAddress);
+        this.getEmployee().getUser().getEmail().setSecondaryEmailAddress(emailAddress);
         return this;
     }
 
     public EmailBuilder setupMailboxCapacity(BigDecimal capacity) {
-        email.setMailBoxCapacity(capacity);
+        this.getEmployee().getUser().getEmail().setMailBoxCapacity(capacity);
         return this;
     }
 }

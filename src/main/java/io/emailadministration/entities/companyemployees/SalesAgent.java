@@ -1,5 +1,6 @@
 package io.emailadministration.entities.companyemployees;
 
+import io.emailadministration.devcomponents.Component;
 import io.emailadministration.entities.companydepartments.Sales;
 import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.Employee;
 import jakarta.persistence.*;
@@ -14,7 +15,7 @@ import java.math.BigDecimal;
 @BatchSize(size = 16)
 @Entity(name = "sales_agent")
 @DiscriminatorValue("sales_agent")
-public class SalesAgent extends Employee {
+public class SalesAgent extends Employee implements Component<SalesAgent> {
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "department_id")
     private Sales department;
@@ -33,6 +34,29 @@ public class SalesAgent extends Employee {
 
     public SalesAgent() {
         super();
+    }
+
+    public SalesAgent(Employee employee) {
+        super(employee);
+    }
+
+    public SalesAgent(SalesAgent salesAgent) {
+        super(salesAgent.returnEmployee());
+
+        this.department = new Sales(salesAgent.getDepartment());
+        this.isTeamLeader = salesAgent.isTeamLeader();
+        this.salesVolumeThisYear = salesAgent.getSalesVolumeThisYear();
+        this.averageOfSalesVolumeThisYear = salesAgent.getAverageOfSalesVolumeThisYear();
+        this.numberOfZonesCovered = salesAgent.getNumberOfZonesCovered();
+    }
+
+    @Override
+    public String getTypeOfObject() {
+        return this.getClass().getSimpleName();
+    }
+
+    public SalesAgent getCopyInstance(SalesAgent object) {
+        return new SalesAgent(object);
     }
 
     @Override

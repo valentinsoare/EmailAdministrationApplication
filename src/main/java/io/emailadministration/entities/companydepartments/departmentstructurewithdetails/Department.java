@@ -1,5 +1,6 @@
 package io.emailadministration.entities.companydepartments.departmentstructurewithdetails;
 
+import io.emailadministration.devcomponents.Component;
 import io.emailadministration.entities.companyemployees.DepartmentType;
 import io.emailadministration.printing.CustomPrinting;
 import io.emailadministration.customdatastructureandoperationsonthem.operationswithdatastructures.OperationsOnMap;
@@ -51,7 +52,7 @@ public class Department implements Comparable<Department> {
 
     protected Department(Department department) {
         this.id = department.getId();
-        this.departmentBusinessID = department.getDepartmentBusinessID();
+        this.departmentBusinessID = new String(department.getDepartmentBusinessID());
         this.whichDepartmentIsThis = department.getWhichDepartmentIsThis();
         this.lastYearEvaluationOfTheDepartment = department.getLastYearEvaluationOfTheDepartment();
         this.version = department.getVersion();
