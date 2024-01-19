@@ -1,20 +1,16 @@
 package io.emailadministration.entities.companyemployees;
 
 import io.emailadministration.entities.companydepartments.Sales;
+import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.Employee;
 import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.EmployeeBuilder;
 
 import java.math.BigDecimal;
 
-public class SalesAgentBuilder {
+public class SalesAgentBuilder extends EmployeeBuilder {
     private SalesAgent salesAgent;
 
-    public SalesAgentBuilder() {
-        this.salesAgent = new SalesAgent();
-        this.salesAgent.setDepartmentWhereIamWorking(DepartmentType.SALES);
-    }
-
-    public EmployeeBuilder setupEmployee() {
-        return new EmployeeBuilder(salesAgent);
+    public SalesAgentBuilder(Employee employee) {
+        this.salesAgent = new SalesAgent(employee);
     }
 
     public SalesAgentBuilder setupDepartment(Sales sales) {

@@ -499,3 +499,13 @@ gsrc/main/java/io/emailadministration/entities/companydepartments/listeners/Sale
 ïsrc/main/java/io/emailadministration/entities/companyemployees/employeedefinitionwithdetails/listenerforemployees/TimeAndDateInformationListener.java,7/6/768442439958ed8c2e3c8af76d7ff44bb559ceac
 ◊
 ¶src/main/java/io/emailadministration/entities/companyemployees/employeedefinitionwithdetails/listenerforemployees/CalculateAttributesRelatedToTimeAndDateListener.java,b/d/bd550c695d3abbd1db778d0e9201c8249a532a65
+Å
+Q.idea/sonarlint/securityhotspotstore/7/7/77a94d96f6adad33d79048fc3e4a907430655d9f,8/c/8cc799cc89602b88b40e5d0c7e3d634c2403fde1
+Å
+Q.idea/sonarlint/securityhotspotstore/7/6/768442439958ed8c2e3c8af76d7ff44bb559ceac,7/8/788dda8115584d4c636a6439c83e2e568755f370
+Å
+Q.idea/sonarlint/securityhotspotstore/d/a/dae8a1f6c251865b504d4b0522e8c083b5ec4816,9/f/9f4e89a4497ac7335a36dccb246d41f67f82e513
+Å
+Q.idea/sonarlint/securityhotspotstore/5/7/57e2cd2f23175d631a7879e217e4eeaac67ec697,4/e/4ea359aaada19d79f8a3a38c7f29f7ec1df6c536
+Å
+Q.idea/sonarlint/securityhotspotstore/b/d/bd550c695d3abbd1db778d0e9201c8249a532a65,4/5/45009bf0cd4cd3612413d99b5aaaa816601869a0

@@ -1,8 +1,6 @@
 package io.emailadministration.entities.companyemployees.employeedefinitionwithdetails;
 
-import io.emailadministration.entities.companyemployees.AccountantBuilder;
-import io.emailadministration.entities.companyemployees.DepartmentType;
-import io.emailadministration.entities.companyemployees.DeveloperBuilder;
+import io.emailadministration.entities.companyemployees.*;
 import io.emailadministration.entities.digitalcomponents.UserBuilder;
 
 import java.time.LocalDate;
@@ -79,5 +77,9 @@ public class EmployeeBuilder {
 
     public DeveloperBuilder constructDeveloper() {
         return new DeveloperBuilder(employee);
+    }
+
+    public SalesAgentBuilder constructSalesAgent() {
+        return new SalesAgentBuilder(employee);
     }
 }
