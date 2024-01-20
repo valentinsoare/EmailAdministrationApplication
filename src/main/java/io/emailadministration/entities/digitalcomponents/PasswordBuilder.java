@@ -21,12 +21,12 @@ public class PasswordBuilder extends EmployeeBuilder {
     }
 
     public PasswordBuilder setupPasswordForUser(String passwordForUser) {
-        this.getEmployee().getUser().getPassword().setHashedPasswordForUser(passwordForUser);
+        this.getEmployee().getUser().getPassword().hashedPasswordForUser(passwordForUser);
         return this;
     }
 
     public PasswordBuilder setupPasswordForEmail(String passwordForEmail) {
-        this.getEmployee().getUser().getPassword().setHashedPasswordForEmail(passwordForEmail);
+        this.getEmployee().getUser().getPassword().hashedPasswordForEmail(passwordForEmail);
         return this;
     }
 }

@@ -50,7 +50,12 @@ public class Developer extends Employee implements Component<Developer> {
     }
 
     public Developer getCopyInstance(Developer object) {
-        return new Developer(object);
+        Developer developer = new Developer(object);
+
+        developer.setId(object.getId());
+        developer.setVersion(object.getVersion());
+
+        return developer;
     }
 
     @Override

@@ -39,12 +39,10 @@ public class Email implements Comparable<Email>, Component<Email> {
     public Email() {}
 
     public Email(Email email) {
-        this.id = email.getId();
-        this.user = email.getUser();
+        this.user.getCopyInstance(email.getUser());
         this.primaryEmailAddress = new String(email.getPrimaryEmailAddress());
         this.secondaryEmailAddress = new String(email.getSecondaryEmailAddress());
         this.mailBoxCapacity = new BigDecimal(String.valueOf(email.getMailBoxCapacity()));
-        this.version = email.getVersion();
     }
 
     @Override
@@ -75,7 +73,12 @@ public class Email implements Comparable<Email>, Component<Email> {
     }
 
     public Email getCopyInstance(Email object) {
-        return new Email(object);
+        Email email = new Email(object);
+
+        email.setId(object.getId());
+        email.setVersion(object.getVersion());
+
+        return email;
     }
 
     @Override

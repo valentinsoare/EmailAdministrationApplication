@@ -41,13 +41,11 @@ public class Password implements Comparable<Password>, Component<Password> {
     public Password() {}
 
     public Password(Password passwd) {
-        this.id = passwd.getId();
-        this.user = passwd.getUser();
+        this.user.getCopyInstance(passwd.getUser());
         this.mandatoryPasswordLengthForUser = Pair.of(passwd.getMandatoryPasswordLengthForUser());
         this.hashedPasswordForUser = new String(passwd.getHashedPasswordForUser());
         this.mandatoryPasswordLengthForEmail = Pair.of(passwd.getMandatoryPasswordLengthForEmail());
         this.hashedPasswordForEmail = new String(passwd.getHashedPasswordForEmail());
-        this.version = passwd.getVersion();
     }
 
     public String hashedPasswordForUser(String password) {
@@ -95,18 +93,23 @@ public class Password implements Comparable<Password>, Component<Password> {
         return valueAfterComparison;
     }
 
-    @Override
-    public String toString() {
-        return String.format("Password [ HashedUserPassword: %s, HashedEmailPassword: %s ]",
-                hashedPasswordForUser, hashedPasswordForEmail);
-    }
-
     public Password getCopyInstance(Password password) {
-        return new Password(password);
+        Password passwd = new Password(password);
+
+        passwd.setId(password.getId());
+        passwd.setVersion(password.getVersion());
+
+        return passwd;
     }
 
     @Override
     public String getTypeOfObject() {
         return this.getClass().getSimpleName();
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Password [ HashedUserPassword: %s, HashedEmailPassword: %s ]",
+                hashedPasswordForUser, hashedPasswordForEmail);
     }
 }

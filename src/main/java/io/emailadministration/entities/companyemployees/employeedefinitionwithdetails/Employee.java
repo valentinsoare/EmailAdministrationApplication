@@ -81,7 +81,7 @@ public class Employee implements Comparable<Employee> {
         this.departmentWhereIamWorking = employee.getDepartmentWhereIamWorking();
         this.workDetails = new WorkDetails(employee.getWorkDetails());
         this.timeAndDateInformation = new TimeAndDateInformation(employee.getTimeAndDateInformation());
-        this.user = new User(employee.getUser());
+        this.user.getCopyInstance(employee.getUser());
         this.version = employee.getVersion();
     }
 

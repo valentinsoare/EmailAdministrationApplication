@@ -141,6 +141,7 @@ public class App {
                 .setupNumberOfProjectsCompletedLastYear(10)
                 .setupNumberOfEmployeesPerDepartment(10)
                 .build();
+        .
 
         System.out.printf("%n%s", sales001);
     }

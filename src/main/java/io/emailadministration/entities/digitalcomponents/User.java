@@ -45,12 +45,10 @@ public class User implements Comparable<User> {
     public User() {}
 
     public User(User user) {
-        this.id = user.getId();
         this.employeeProfile = user.getEmployeeProfile();
         this.userName = new String(user.getUserName());
-        this.password = new Password(user.getPassword());
-        this.email = new Email(user.getEmail());
-        this.version = user.getVersion();
+        this.password.getCopyInstance(user.getPassword());
+        this.email.getCopyInstance(user.getEmail());
     }
 
     @Override
@@ -85,7 +83,12 @@ public class User implements Comparable<User> {
     }
 
     public User getCopyInstance(User user) {
-        return new User(user);
+        User usr = new User(user);
+
+        usr.setId(user.getId());
+        usr.setVersion(user.getVersion());
+
+        return usr;
     }
 
     @Override

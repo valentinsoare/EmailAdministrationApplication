@@ -509,3 +509,5 @@ Q.idea/sonarlint/securityhotspotstore/d/a/dae8a1f6c251865b504d4b0522e8c083b5ec48
 Q.idea/sonarlint/securityhotspotstore/5/7/57e2cd2f23175d631a7879e217e4eeaac67ec697,4/e/4ea359aaada19d79f8a3a38c7f29f7ec1df6c536
 Å
 Q.idea/sonarlint/securityhotspotstore/b/d/bd550c695d3abbd1db778d0e9201c8249a532a65,4/5/45009bf0cd4cd3612413d99b5aaaa816601869a0
+á
+Wsrc/main/java/io/emailadministration/entities/digitalcomponents/PasswordNullObject.java,b/2/b29ac0c4ad9931ebab3de97c57bfe12691f2a28c

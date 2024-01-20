@@ -1,7 +1,6 @@
 package io.emailadministration.operationsWithDB;
 
 import io.emailadministration.dbutils.DBConnection;
-import io.emailadministration.entities.companydepartments.Development;
 import io.emailadministration.entities.companyemployees.Accountant;
 import io.emailadministration.operationsWithDB.execute.ExecQuery;
 import jakarta.persistence.EntityManager;

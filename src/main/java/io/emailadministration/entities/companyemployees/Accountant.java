@@ -42,7 +42,12 @@ public class Accountant extends Employee implements Component<Accountant> {
     }
 
     public Accountant getCopyInstance(Accountant object) {
-        return new Accountant(object);
+        Accountant accountant = new Accountant(object);
+
+        accountant.setId(object.getId());
+        accountant.setVersion(object.getVersion());
+
+        return accountant;
     }
 
     @Override
