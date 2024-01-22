@@ -3,6 +3,8 @@ package io.emailadministration;
 import io.emailadministration.configurationmapper.ApplicationConfig;
 import io.emailadministration.configurationmapper.ReadConfiguration;
 import io.emailadministration.dbutils.DBConnection;
+import io.emailadministration.devcomponents.errorsclasification.InputErrors;
+import io.emailadministration.devcomponents.errorsclasification.StructuralErrors;
 import io.emailadministration.entities.companydepartments.*;
 import io.emailadministration.entities.companydepartments.departmentstructurewithdetails.DepartmentBuilder;
 import io.emailadministration.entities.companyemployees.DepartmentType;
@@ -12,6 +14,8 @@ import io.emailadministration.operationsWithDB.WithDevelopmentDepartment;
 import io.emailadministration.operationsWithDB.WithSalesDepartment;
 import io.emailadministration.runningsessionsentireapp.SessionStartingTheApp;
 import io.emailadministration.runningsessionsentireapp.SessionWithLoginSignInStartingTheApp;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.math.BigDecimal;
@@ -20,11 +24,14 @@ import java.nio.file.Paths;
 import java.util.logging.Level;
 
 public class App {
+
+    static Logger LOGGER = LogManager.getLogger(App.class);
+
     public static void main( String[] args ) {
         DBConnection.setLoggingLevel(Level.INFO);
 
-//        SessionStartingTheApp.logoAndProgressBar();
-//        new SessionWithLoginSignInStartingTheApp().execute();
+        SessionStartingTheApp.logoAndProgressBar();
+        new SessionWithLoginSignInStartingTheApp().execute();
 
         //-----------------------------------------------------------
 //        DBInfo dbInfo = new DBInfo();
@@ -155,5 +162,10 @@ public class App {
 //
 //        ApplicationConfig cfg = readConfiguration.loadMainConfig("src/main/resources/app_configuration.yml");
 //        System.out.printf("%n%s", cfg.getOptions());
+
+        //-------------------------------------------------------------------------------
+
+//        LOGGER.error(StructuralErrors.PROGRESS_DOTS_MESSAGE_INVALID);
+//        LOGGER.warn(InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT);
     }
 }
