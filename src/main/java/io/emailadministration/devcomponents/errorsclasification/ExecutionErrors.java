@@ -2,6 +2,8 @@ package io.emailadministration.devcomponents.errorsclasification;
 
 import lombok.Getter;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -9,17 +11,21 @@ import java.util.List;
 @Getter
 public enum ExecutionErrors implements ICustomError {
 
-    LOAD_CONSOLE_ISSUE("load_console_issue", 1,
-            String.format("EXEC_ERROR, SEV: %s - Cannot load the console!", Severities.ONE));
+    LOAD_CONSOLE_ISSUE("load_console_issue", 1,"EXEC: Cannot load the console!",
+            LocalDate.now(), LocalTime.now());
 
     private final String name;
     private final String content;
     private final int severity;
+    private final LocalDate onWhichDate;
+    private final LocalTime onWhichTime;
 
-    ExecutionErrors(String name, int severity, String content) {
+    ExecutionErrors(String name, int severity, String content, LocalDate onWhichDate, LocalTime onWhichTime) {
         this.name = name;
         this.severity = severity;
         this.content = content;
+        this.onWhichDate = onWhichDate;
+        this.onWhichTime = onWhichTime;
     }
 
     @Override
@@ -34,6 +40,6 @@ public enum ExecutionErrors implements ICustomError {
 
     @Override
     public String toString() {
-        return this.content;
+        return String.format("%s [%s - %s]", content, onWhichDate, onWhichTime);
     }
 }

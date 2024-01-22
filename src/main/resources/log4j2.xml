@@ -1,0 +1,18 @@
+<Configuration>
+    <Appenders>
+        <RollingFile name="json-file" fileName="src/main/logs/email-adm.log.json" filePattern="src/main/logs/email-adm-%i.log.json">
+            <JSONLayout
+                    compact="true" eventEol="true" properties="false" stacktraceAsString="false" includeTimeMillis="true">
+            </JSONLayout>
+            <SizeBasedTriggeringPolicy size="10 MB" />
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <AsyncRoot level="WARN">
+            <AppenderRef ref="json-file"/>
+        </AsyncRoot>
+    </Loggers>
+
+</Configuration>

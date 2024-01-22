@@ -1,9 +1,0 @@
-
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ç¨œ±øÿÿÿÿ8¶¡”×Ñ1
-H
-java:S1168"+Return an empty collection instead of null.(¥¹ï8¹¡”×Ñ1
-H
-java:S1168 "+Return an empty collection instead of null.(¥¹ï8º¡”×Ñ1
-P
-java:S1068
-".Remove this unused "connection" private field.(¯ùøâüÿÿÿÿ8»¡”×Ñ1

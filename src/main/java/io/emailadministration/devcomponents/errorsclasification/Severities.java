@@ -2,15 +2,17 @@ package io.emailadministration.devcomponents.errorsclasification;
 
 public enum Severities implements ISeverity {
 
-    ONE(1, "Complete Outage"),
+    ONE(1, "FATAL"),
 
-    TWO(2, "Critical"),
+    TWO(2, "ERROR"),
 
-    THREE(3, "High"),
+    THREE(3, "WARN"),
 
-    FOUR(4, "Medium"),
+    FOUR(4, "INFO"),
 
-    FIVE(5, "Low");
+    FIVE(5, "DEBUG"),
+
+    SIX(6, "TRACE");
 
     private final int sevAsInteger;
     private final String sevAsLiteral;
