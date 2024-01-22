@@ -1,5 +1,7 @@
 package io.emailadministration;
 
+import io.emailadministration.configurationmapper.ApplicationConfig;
+import io.emailadministration.configurationmapper.ReadConfiguration;
 import io.emailadministration.dbutils.DBConnection;
 import io.emailadministration.entities.companydepartments.*;
 import io.emailadministration.entities.companydepartments.departmentstructurewithdetails.DepartmentBuilder;
@@ -11,15 +13,18 @@ import io.emailadministration.operationsWithDB.WithSalesDepartment;
 import io.emailadministration.runningsessionsentireapp.SessionStartingTheApp;
 import io.emailadministration.runningsessionsentireapp.SessionWithLoginSignInStartingTheApp;
 
+import java.io.File;
 import java.math.BigDecimal;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.logging.Level;
 
 public class App {
     public static void main( String[] args ) {
         DBConnection.setLoggingLevel(Level.INFO);
 
-//        SessionStartingTheApp.logoAndProgressBar();
-//        new SessionWithLoginSignInStartingTheApp().execute();
+        SessionStartingTheApp.logoAndProgressBar();
+        new SessionWithLoginSignInStartingTheApp().execute();
 
         //-----------------------------------------------------------
 //        DBInfo dbInfo = new DBInfo();
@@ -131,18 +136,24 @@ public class App {
 //        System.out.printf("%n%s", salesDepartment.get());
 
         //---------------------------------------------------------------------------
+//        Development sales001 = new DepartmentBuilder()
+//                .setupDepartmentBusinessId("SALES001")
+//                .setupDepartmentType(DepartmentType.SALES)
+//                .setupLastYearEvaluationOfTheDepartment(99)
+//                .constructDevelopmentDepartment()
+//                .setupNumberOfProjectsInWorking(2)
+//                .setupNumberOfProjectsCompletedThisYear(5)
+//                .setupNumberOfProjectsCompletedLastYear(10)
+//                .setupNumberOfEmployeesPerDepartment(10)
+//                .build();
+//
+//        System.out.printf("%n%s%n", sales001);
 
-        Development sales001 = new DepartmentBuilder().setupDepartmentBusinessId("SALES001")
-                .setupDepartmentType(DepartmentType.SALES)
-                .setupLastYearEvaluationOfTheDepartment(99)
-                .constructDevelopmentDepartment()
-                .setupNumberOfProjectsInWorking(2)
-                .setupNumberOfProjectsCompletedThisYear(5)
-                .setupNumberOfProjectsCompletedLastYear(10)
-                .setupNumberOfEmployeesPerDepartment(10)
-                .build();
-        .
+        //-----------------------------------------------------------------------------
 
-        System.out.printf("%n%s", sales001);
+//        ReadConfiguration readConfiguration = new ReadConfiguration();
+//
+//        ApplicationConfig cfg = readConfiguration.loadMainConfig("src/main/resources/app_configuration.yml");
+//        System.out.printf("%n%s", cfg.getOptions());
     }
 }

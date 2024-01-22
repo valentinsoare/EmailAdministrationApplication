@@ -20,14 +20,11 @@ import java.util.*;
 
 public class SanityChecks {
     public static int validatePosition(int numberOfWhiteSpaces, AppliedToArea area) {
-        switch (area) {
-            case LEFT, RIGHT -> {
-                return (numberOfWhiteSpaces < 0) ? 5 : numberOfWhiteSpaces;
-            }
-            default -> {
-                return Math.max(numberOfWhiteSpaces, 0);
-            }
+        if (Objects.requireNonNull(area) == AppliedToArea.LEFT || area == AppliedToArea.RIGHT) {
+            return (numberOfWhiteSpaces < 0) ? 5 : numberOfWhiteSpaces;
         }
+
+        return Math.max(numberOfWhiteSpaces, 0);
     }
 
     public static Character validateCharToUse(Character charToUse, Character defaultToBeUsed) {

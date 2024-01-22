@@ -1,6 +1,8 @@
 package io.emailadministration.devcomponents.pages.loginsignuppage;
 
 import io.emailadministration.cache.CachedObjects;
+import io.emailadministration.configurationmapper.ApplicationConfig;
+import io.emailadministration.configurationmapper.ReadConfiguration;
 import io.emailadministration.devcomponents.auxiliary.position.CPosition;
 import io.emailadministration.devcomponents.header.HeaderBuilder;
 import io.emailadministration.devcomponents.header.IHeader;
@@ -16,7 +18,13 @@ import lombok.Getter;
 
 @Getter
 public class LoginSingInPage {
+
     private GenericPage genericPage;
+    private static ApplicationConfig appConfig;
+
+    static {
+        appConfig = ReadConfiguration.getMainConfig();
+    }
 
     public LoginSingInPage() {
         this.genericPage = new GenericPage();
@@ -59,7 +67,7 @@ public class LoginSingInPage {
         IMenu m = new MenuBuilder().setupHeader(h)
                 .setupPosition(new CPosition(2, 10, 12, 12))
                 .setupNumberOfEntriesInTheCurrentMenu(4)
-                .setupEntries("sign in, go to main menu, help, quit")
+                .setupEntries(String.join(", ", appConfig.getOptions().get("starterOptions")))
                 .setupAuxiliaryMessage(
                         new AuxiliaryMessage("please choose an option:",
                                 new CPosition(0, 0, 1, 0)

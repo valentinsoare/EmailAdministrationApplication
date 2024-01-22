@@ -1,5 +1,7 @@
 package io.emailadministration.devcomponents.pages.mainmenupage;
 
+import io.emailadministration.configurationmapper.ApplicationConfig;
+import io.emailadministration.configurationmapper.ReadConfiguration;
 import io.emailadministration.devcomponents.auxiliary.position.CPosition;
 import io.emailadministration.devcomponents.header.HeaderBuilder;
 import io.emailadministration.devcomponents.header.IHeader;
@@ -14,6 +16,11 @@ import io.emailadministration.devcomponents.pages.GenericPage;
 
 public class MainMenuPage {
     private GenericPage genericPage;
+    private static ApplicationConfig appConfig;
+
+    static {
+        appConfig = ReadConfiguration.getMainConfig();
+    }
 
     public MainMenuPage() {
         this.genericPage = new GenericPage();
@@ -52,9 +59,7 @@ public class MainMenuPage {
         IMenu m = new MenuBuilder().setupHeader(h)
                 .setupPosition(new CPosition(2, 10, 12, 0))
                 .setupNumberOfEntriesInTheCurrentMenu(15)
-                .setupEntries("add employee, change employee, add user, change user, get employees, get users, " +
-                        "remove employee, remove user, change password, change email, set user mailbox capacity, " +
-                        "set alternate email address, change current user, help, quit")
+                .setupEntries(String.join(", ", appConfig.getOptions().get("mainMenuOptions")))
                 .setupAuxiliaryMessage(
                             new AuxiliaryMessage("please choose an option:",
                                 new CPosition(0, 0, 1, 1)
