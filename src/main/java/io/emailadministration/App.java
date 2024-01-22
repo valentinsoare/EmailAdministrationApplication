@@ -23,8 +23,8 @@ public class App {
     public static void main( String[] args ) {
         DBConnection.setLoggingLevel(Level.INFO);
 
-        SessionStartingTheApp.logoAndProgressBar();
-        new SessionWithLoginSignInStartingTheApp().execute();
+//        SessionStartingTheApp.logoAndProgressBar();
+//        new SessionWithLoginSignInStartingTheApp().execute();
 
         //-----------------------------------------------------------
 //        DBInfo dbInfo = new DBInfo();
