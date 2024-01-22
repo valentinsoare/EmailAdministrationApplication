@@ -159,7 +159,7 @@ public class SanityChecks {
         String processedValue = "none";
 
         if (inputFromUser.isBlank()) {
-            PrintError.toConsole(error, (spacesFromLeft / 2), 1000,
+            PrintError.toConsole(error, spacesFromLeft, 1000,
                     false, false);
             SanityChecks.clearTheArea();
         } else if ("back".equalsIgnoreCase(inputFromUser)) {

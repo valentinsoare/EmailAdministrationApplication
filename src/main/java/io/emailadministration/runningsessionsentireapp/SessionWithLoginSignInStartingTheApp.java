@@ -60,7 +60,7 @@ public class SessionWithLoginSignInStartingTheApp extends RunningSession impleme
                         );
                     } default -> {
                         PrintError.toConsole(InputErrors.NON_VALID_OPTION_FROM_THOSE_ABOVE,
-                                startingTheApp.menuAttributes().getPosition().getWhiteSpaceLeft() / 2,
+                                startingTheApp.menuAttributes().getPosition().getWhiteSpaceLeft(),
                                 1000, false, false
                         );
                     }

@@ -49,7 +49,6 @@ public class PrintMenu {
             );
 
         } else {
-
             for (int i = 0; i < menu.menuAttributes().getNumberOfEntriesInTheCurrentMenu(); i++) {
                 if (printAdditional && i < howManyWithAddition) {
                     additionalPrinting = (String) menu.menuAttributes().getStoringInputValuesFromUser().get(options.get(i));
@@ -61,7 +60,6 @@ public class PrintMenu {
                             (i + 1), options.get(i));
                 }
             }
-
         }
 
         System.out.printf("%n%s Current user: %s", " ".repeat(menu.menuAttributes().getPosition().getWhiteSpaceLeft()),

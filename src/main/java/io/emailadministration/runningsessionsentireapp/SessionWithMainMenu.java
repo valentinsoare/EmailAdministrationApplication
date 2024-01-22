@@ -39,7 +39,7 @@ public class SessionWithMainMenu extends RunningSession implements Command {
                     );
                     default -> {
                         PrintError.toConsole(InputErrors.NON_VALID_OPTION_FROM_THOSE_ABOVE,
-                                mainMenuPage.menuAttributes().getPosition().getWhiteSpaceLeft() / 2,
+                                mainMenuPage.menuAttributes().getPosition().getWhiteSpaceLeft(),
                                 1000, false, false
                         );
                     }

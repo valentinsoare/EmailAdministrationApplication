@@ -19,7 +19,6 @@ public interface DepartmentDataAccessObject<T> {
 
     default Set<Department> getAll() {
         DBConnection connection = DBConnection.getInstance();
-
         Set<Department> allDepartments = Collections.emptySet();
 
         EntityManager em = connection.generateEntityManager();

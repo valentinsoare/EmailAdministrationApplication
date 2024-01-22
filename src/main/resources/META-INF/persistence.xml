@@ -38,8 +38,6 @@
             <!--        Time zone setup for timestamps in mysql tables-->
             <property name="hibernate.jdbc.time_zone" value="UTC"/>
 
-
-
         </properties>
     </persistence-unit>
 </persistence>

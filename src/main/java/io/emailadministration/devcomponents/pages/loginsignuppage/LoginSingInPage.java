@@ -20,10 +20,10 @@ import lombok.Getter;
 public class LoginSingInPage {
 
     private GenericPage genericPage;
-    private static ReadConfiguration reader;
+    private static ApplicationConfig cfg;
 
     static {
-        reader = ReadConfiguration.getReader();
+        cfg = ReadConfiguration.getMainApplicationConfig();
     }
 
     public LoginSingInPage() {
@@ -67,7 +67,7 @@ public class LoginSingInPage {
         IMenu m = new MenuBuilder().setupHeader(h)
                 .setupPosition(new CPosition(2, 10, 12, 12))
                 .setupNumberOfEntriesInTheCurrentMenu(4)
-                .setupEntries(String.join(", ", reader.loadMainConfig().getOptions().get("starterOptions")))
+                .setupEntries(String.join(", ", cfg.getOptions().get("starterOptions")))
                 .setupAuxiliaryMessage(
                         new AuxiliaryMessage("please choose an option:",
                                 new CPosition(0, 0, 1, 0)

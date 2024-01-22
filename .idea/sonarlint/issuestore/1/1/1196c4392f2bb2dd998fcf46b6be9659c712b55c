@@ -1,0 +1,55 @@
+
+g
+java:S3008"QRename this field "LOGGER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’Øôë
+P	java:S125%"<This block of commented-out lines of code should be removed.(Üàôq
+V	java:S1253"<This block of commented-out lines of code should be removed.(†¨–ñúÿÿÿÿ
+V	java:S125<"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ
+V	java:S125>"<This block of commented-out lines of code should be removed.(Ðš÷ðÿÿÿÿÿ
+Q	java:S125A"<This block of commented-out lines of code should be removed.(¨½ÆÇ
+Q	java:S125F"<This block of commented-out lines of code should be removed.(µ´¬
+V	java:S125R"<This block of commented-out lines of code should be removed.(ø‡–ýÿÿÿÿ
+V	java:S125^"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ
+V	java:S125a"<This block of commented-out lines of code should be removed.(†¨–ñúÿÿÿÿ
+V	java:S125j"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ
+Q	java:S125l"<This block of commented-out lines of code should be removed.(«Ð×’
+Q	java:S125p"<This block of commented-out lines of code should be removed.(´³ëè
+V	java:S125z"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ
+V	java:S125|"<This block of commented-out lines of code should be removed.(¶Æéúýÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(»å„é
+R	java:S125‚"<This block of commented-out lines of code should be removed.(“Øç¸
+W	java:S125Œ"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ
+W	java:S125Ž"<This block of commented-out lines of code should be removed.(äÇå®ûÿÿÿÿ
+W	java:S125›"<This block of commented-out lines of code should be removed.(Â™†úÿÿÿÿ
+W	java:S125¡"<This block of commented-out lines of code should be removed.(¦¡ÓÖþÿÿÿÿ
+Y	java:S125¨"<This block of commented-out lines of code should be removed.(—í–û8‡¥¡‡Ó1
+t
+java:S1128"YRemove this unused import 'io.emailadministration.configurationmapper.ApplicationConfig'.(çó–œûÿÿÿÿ
+o
+java:S1128"YRemove this unused import 'io.emailadministration.configurationmapper.ReadConfiguration'.(ñäºú
+~
+java:S1128"aRemove this unused import 'io.emailadministration.devcomponents.errorsclasification.InputErrors'.(Ü˜üŽ8ˆ¥¡‡Ó1
+ˆ
+java:S1128"fRemove this unused import 'io.emailadministration.devcomponents.errorsclasification.StructuralErrors'.(Â÷šßúÿÿÿÿ8ˆ¥¡‡Ó1
+e
+java:S1128"ORemove this unused import 'io.emailadministration.entities.companydepartments'.(…îÄ
+œ
+java:S1128	"€Remove this unused import 'io.emailadministration.entities.companydepartments.departmentstructurewithdetails.DepartmentBuilder'.(¸ÀÃúýÿÿÿÿ
+w
+java:S1128
+"\Remove this unused import 'io.emailadministration.entities.companyemployees.DepartmentType'.(ï¯éþÿÿÿÿ
+
+java:S1128"{Remove this unused import 'io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.EmployeeBuilder'.(­ˆÆ{
+s
+java:S1128"]Remove this unused import 'io.emailadministration.operationsWithDB.WithAccountingDepartment'.(íÆ¡þ
+t
+java:S1128"^Remove this unused import 'io.emailadministration.operationsWithDB.WithDevelopmentDepartment'.(åðÉÚ
+s
+java:S1128"XRemove this unused import 'io.emailadministration.operationsWithDB.WithSalesDepartment'.(»›²ýýÿÿÿÿ
+?
+java:S1128")Remove this unused import 'java.io.File'.(†Ð¥Å
+G
+java:S1128"1Remove this unused import 'java.math.BigDecimal'.(êêŠ
+F
+java:S1128"0Remove this unused import 'java.nio.file.Files'.(‚ƒü
+F
+java:S1128"0Remove this unused import 'java.nio.file.Paths'.(áè°¯

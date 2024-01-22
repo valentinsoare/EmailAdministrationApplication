@@ -1,8 +1,8 @@
 <Configuration>
     <Appenders>
-        <RollingFile name="json-file" fileName="src/main/logs/email-adm.log.json" filePattern="src/main/logs/email-adm-%i.log.json">
+        <RollingFile name="json-file" fileName="/var/log/messages/email-adm.log.json" filePattern="/var/log/messages/email-adm-%i.log.json">
             <JSONLayout
-                    compact="true" eventEol="true" properties="false" stacktraceAsString="false" includeTimeMillis="true">
+                    compact="true" eventEol="true" properties="false" includeStacktrace="false" stacktraceAsString="false" includeTimeMillis="true">
             </JSONLayout>
             <SizeBasedTriggeringPolicy size="10 MB" />
             <DefaultRolloverStrategy max="10"/>

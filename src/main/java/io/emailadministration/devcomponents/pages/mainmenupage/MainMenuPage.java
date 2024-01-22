@@ -16,11 +16,10 @@ import io.emailadministration.devcomponents.pages.GenericPage;
 
 public class MainMenuPage {
     private GenericPage genericPage;
-    private static ReadConfiguration reader;
-
+    private static ApplicationConfig cfg;
 
     static {
-        reader = ReadConfiguration.getReader();
+        cfg = ReadConfiguration.getMainApplicationConfig();
     }
 
     public MainMenuPage() {
@@ -60,7 +59,7 @@ public class MainMenuPage {
         IMenu m = new MenuBuilder().setupHeader(h)
                 .setupPosition(new CPosition(2, 10, 12, 0))
                 .setupNumberOfEntriesInTheCurrentMenu(15)
-                .setupEntries(String.join(", ", reader.loadMainConfig().getOptions().get("mainMenuOptions")))
+                .setupEntries(String.join(", ", cfg.getOptions().get("mainMenuOptions")))
                 .setupAuxiliaryMessage(
                             new AuxiliaryMessage("please choose an option:",
                                 new CPosition(0, 0, 1, 1)

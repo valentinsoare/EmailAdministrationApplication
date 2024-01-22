@@ -55,7 +55,7 @@ public class SessionWithProvideUserAndPassword extends RunningSession implements
                 ));
             } else {
                 PrintError.toConsole(InputErrors.NON_VALID_OPTION_FROM_THOSE_ABOVE,
-                        (loginMenu.menuAttributes().getPosition().getWhiteSpaceLeft() / 2),
+                        loginMenu.menuAttributes().getPosition().getWhiteSpaceLeft(),
                         1000, false, false);
             }
         }
