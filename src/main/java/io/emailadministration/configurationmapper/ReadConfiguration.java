@@ -38,7 +38,7 @@ public class ReadConfiguration {
                     typeOfReturn);
         } catch (IOException e) {
             System.out.printf("%nERROR - [ReadConfiguration.%s.loadConfig] - %s",
-                    typeOfReturn.getClass().getSimpleName(), e.getMessage());
+                    typeOfReturn.getSimpleName(), e.getMessage());
         }
 
         return config;

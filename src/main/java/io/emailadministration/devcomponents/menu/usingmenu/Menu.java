@@ -15,12 +15,14 @@ import io.emailadministration.entities.digitalcomponents.User;
 import io.emailadministration.entities.digitalcomponents.UserNullObject;
 import io.emailadministration.printing.PrintError;
 import lombok.Getter;
+import lombok.Setter;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 @Getter
+@Setter
 public class Menu implements IMenu {
     private IHeader header;
     private int numberOfEntriesInTheCurrentMenu;
@@ -152,14 +154,6 @@ public class Menu implements IMenu {
         return this;
     }
 
-    public void setHeader(IHeader header) {
-        this.header = header;
-    }
-
-    public void setNumberOfEntriesInTheCurrentMenu(int numberOfEntriesInTheCurrentMenu) {
-        this.numberOfEntriesInTheCurrentMenu = numberOfEntriesInTheCurrentMenu;
-    }
-
     public void setPosition(CPosition position) {
         this.position = SanityChecks.checkPosition(position);
     }
@@ -169,10 +163,6 @@ public class Menu implements IMenu {
                 false, true, StructuralErrors.NO_VALID_AUXILIARY_MENU_MESSAGE);
     }
 
-    public void setCurrentUser(User currentUser) {
-        this.currentUser = currentUser;
-    }
-
     public static IMenu createMenuInstance() {
         return new Menu();
     }
@@ -180,10 +170,6 @@ public class Menu implements IMenu {
     public static IMenu createNewMenuInstance(IHeader header, int numberOfEntriesInTheCurrentMenu,
                                               CPosition position, IAuxMessage auxiliaryMessage) {
         return new Menu(header, numberOfEntriesInTheCurrentMenu, position, auxiliaryMessage);
-    }
-
-    public void setStoringInputValuesFromUser(Map<String, Object> storingInputValuesFromUser) {
-        this.storingInputValuesFromUser = storingInputValuesFromUser;
     }
 
     public void setAdditionalMessageAsANote(String additionalMessageAsANote) {

@@ -17,6 +17,9 @@ import io.emailadministration.runningsessionsentireapp.SessionWithLoginSignInSta
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.swing.*;
+import javax.swing.plaf.PanelUI;
+import java.awt.*;
 import java.io.File;
 import java.math.BigDecimal;
 import java.nio.file.Files;
@@ -30,8 +33,8 @@ public class App {
     public static void main( String[] args ) {
         DBConnection.setLoggingLevel(Level.INFO);
 
-        SessionStartingTheApp.logoAndProgressBar();
-        new SessionWithLoginSignInStartingTheApp().execute();
+//        SessionStartingTheApp.logoAndProgressBar();
+//        new SessionWithLoginSignInStartingTheApp().execute();
 
         //-----------------------------------------------------------
 //        DBInfo dbInfo = new DBInfo();
@@ -167,5 +170,16 @@ public class App {
 
 //        LOGGER.error(StructuralErrors.PROGRESS_DOTS_MESSAGE_INVALID);
 //        LOGGER.warn(InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT);
+
+        //--------------------------------------------------------------------------------
+
+
+//        System.out.printf("%n%s", InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT
+//                .addAdditionalMessage("ERROR my friend, go go go!!")
+//        );
+
+        //--------------------------------------------------------------------------------
+
+
     }
 }

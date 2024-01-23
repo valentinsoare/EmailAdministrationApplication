@@ -14,11 +14,11 @@ public enum ExecutionErrors implements ICustomError {
     LOAD_CONSOLE_ISSUE("load_console_issue", 1,"EXEC: Cannot load the console!",
             LocalDate.now(), LocalTime.now());
 
-    private final String name;
-    private final String content;
-    private final int severity;
-    private final LocalDate onWhichDate;
-    private final LocalTime onWhichTime;
+    private String name;
+    private String content;
+    private int severity;
+    private LocalDate onWhichDate;
+    private LocalTime onWhichTime;
 
     ExecutionErrors(String name, int severity, String content, LocalDate onWhichDate, LocalTime onWhichTime) {
         this.name = name;
@@ -37,6 +37,13 @@ public enum ExecutionErrors implements ICustomError {
     public List<ICustomError> allErrorsWithinCategory() {
         return  new ArrayList<>(Arrays.asList(LOAD_CONSOLE_ISSUE));
     }
+
+    @Override
+    public ICustomError addAdditionalMessage(String additionalMessage) {
+        this.content = String.format("%s, additionalMessage: %s", this.content, additionalMessage);
+        return this;
+    }
+
 
     @Override
     public String toString() {

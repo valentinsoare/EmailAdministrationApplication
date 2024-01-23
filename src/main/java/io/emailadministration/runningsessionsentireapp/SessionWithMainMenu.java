@@ -25,7 +25,7 @@ public class SessionWithMainMenu extends RunningSession implements Command {
         IMenu mainMenuPage = new MainMenuPage().generatePage();
         SanityChecks.clearTheArea();
 
-        String catchValueToReturn = "";
+        String catchValueToReturn = "none";
 
         while (true) {
             try {

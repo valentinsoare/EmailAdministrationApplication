@@ -42,11 +42,11 @@ public enum InputErrors implements ICustomError {
             "INPUT_ERROR: Index for menu option to add it is not valid!",
             LocalDate.now(), LocalTime.now());
 
-    private final String content;
-    private final String name;
-    private final int severity;
-    private final LocalDate onWhichDate;
-    private final LocalTime onWhichTime;
+    private String content;
+    private String name;
+    private int severity;
+    private LocalDate onWhichDate;
+    private LocalTime onWhichTime;
 
     InputErrors(String name, int severity, String content, LocalDate onWhichDate, LocalTime onWhichTime) {
         this.name = name;
@@ -60,6 +60,12 @@ public enum InputErrors implements ICustomError {
     public List<ICustomError> allErrorsWithinCategory() {
         return new ArrayList<>(Arrays.asList(NULL_OR_EMPTY_TEXT, INCORRECT_NUMERICAL_VALUE, NULL_OR_BLANK_USERNAME,
                 NULL_OR_BLANK_MENU_OPTION_GIVEN, INDEX_FOR_MENU_OPTION_NOT_VALID));
+    }
+
+    @Override
+    public ICustomError addAdditionalMessage(String additionalMessage) {
+        this.content = String.format("%s, additionalMessage: %s", this.content, additionalMessage);
+        return this;
     }
 
     @Override

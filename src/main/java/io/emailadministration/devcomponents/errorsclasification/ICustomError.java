@@ -8,4 +8,5 @@ public interface ICustomError {
     int getSeverity();
     int getNumberOfErrorsDefined();
     List<ICustomError> allErrorsWithinCategory();
+    ICustomError addAdditionalMessage(String additionalMessage);
 }

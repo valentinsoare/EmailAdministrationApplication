@@ -8,9 +8,9 @@ import java.util.List;
 public enum FunctionalErrors implements ICustomError {
     ;
 
-    private final String name;
-    private final String content;
-    private final int severity;
+    private String name;
+    private String content;
+    private int severity;
 
     FunctionalErrors(String name, String content, int severity) {
         this.name = name;
@@ -22,6 +22,12 @@ public enum FunctionalErrors implements ICustomError {
     @Override
     public int getNumberOfErrorsDefined() {
         return 0;
+    }
+
+    @Override
+    public ICustomError addAdditionalMessage(String additionalMessage) {
+        this.content = String.format("%s, additionalMessage: %s", this.content, additionalMessage);
+        return this;
     }
 
     @Override

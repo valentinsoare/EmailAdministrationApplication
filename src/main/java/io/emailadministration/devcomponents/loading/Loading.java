@@ -1,12 +1,11 @@
 package io.emailadministration.devcomponents.loading;
 
+import io.emailadministration.devcomponents.auxiliary.checks.AppliedToArea;
 import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
 import io.emailadministration.devcomponents.errorsclasification.ICustomError;
 import io.emailadministration.devcomponents.errorsclasification.StructuralErrors;
 import lombok.Getter;
 import java.util.*;
-
-import static io.emailadministration.devcomponents.auxiliary.checks.AppliedToArea.LEFT;
 
 @Getter
 public final class Loading {
@@ -18,7 +17,7 @@ public final class Loading {
     public Loading() {}
 
     public Loading(Character charToUse, String messageToBeUsed, Character charNotPassed, int emptySpaceFromLeft) throws InterruptedException {
-        this.emptySpaceFromLeft = SanityChecks.validatePosition(emptySpaceFromLeft, LEFT);
+        this.emptySpaceFromLeft = SanityChecks.validatePosition(emptySpaceFromLeft, AppliedToArea.LEFT);
         this.charToUse = SanityChecks.validateCharToUse(charToUse, '#');
         this.charNotPassed = SanityChecks.validateCharToUse(charNotPassed, ' ');
         this.messageToBeUsed = SanityChecks.checkMessage(messageToBeUsed, false, false, emptySpaceFromLeft,
@@ -52,7 +51,7 @@ public final class Loading {
                                                                                 String messageEnd, int emptySpaceFromLeft, ICustomError messageError) throws InterruptedException {
         EnumMap<ValidationKeys, String> mappingOfValuesAfterChecks = new EnumMap<>(ValidationKeys.class);
 
-        int emptySpaces = SanityChecks.validatePosition(emptySpaceFromLeft, LEFT);
+        int emptySpaces = SanityChecks.validatePosition(emptySpaceFromLeft, AppliedToArea.LEFT);
 
         mappingOfValuesAfterChecks.put(ValidationKeys.EMPTY_SPACES, String.valueOf(emptySpaces));
         mappingOfValuesAfterChecks.put(ValidationKeys.MAIN_MESSAGE,SanityChecks.checkMessage(messageToBeUsed, false, false,

@@ -9,7 +9,6 @@ import io.emailadministration.printing.PrintError;
 import io.emailadministration.printing.PrintMenu;
 
 public class SessionWithProvideUserAndPassword extends RunningSession implements Command  {
-
     public SessionWithProvideUserAndPassword() {
         super();
     }
@@ -27,7 +26,7 @@ public class SessionWithProvideUserAndPassword extends RunningSession implements
     public void execute() throws InterruptedException {
         IMenu loginMenu = new ProvideUserAndPasswordPage().generatePage();
         SanityChecks.clearTheArea();
-        String inputFromUser = "";
+        String inputFromUser = "none";
 
         while (!"quit".equals(getInputFromUser()) && !"back".equals(getInputFromUser())) {
             PrintMenu.of(loginMenu, false, true,

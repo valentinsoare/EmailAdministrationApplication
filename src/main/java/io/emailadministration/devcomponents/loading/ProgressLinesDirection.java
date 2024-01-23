@@ -1,6 +1,7 @@
 package io.emailadministration.devcomponents.loading;
 
 public final class ProgressLinesDirection extends LoadingEffect {
+
     private final Loading loading;
 
     public ProgressLinesDirection(Loading loading) {

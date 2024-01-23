@@ -66,11 +66,11 @@ public enum StructuralErrors implements ICustomError {
             "STRUCT_FATAL_ERROR: No available entries in the menu",
             LocalDate.now(), LocalTime.now());
 
-    private final String name;
-    private final String content;
-    private final int severity;
-    private final LocalDate onWhichDate;
-    private final LocalTime onWhichTime;
+    private String name;
+    private String content;
+    private int severity;
+    private LocalDate onWhichDate;
+    private LocalTime onWhichTime;
 
     StructuralErrors(String name, int severity, String content, LocalDate onWhichDate, LocalTime onWhichTime) {
         this.name = name;
@@ -83,6 +83,12 @@ public enum StructuralErrors implements ICustomError {
     @Override
     public int getNumberOfErrorsDefined() {
         return allErrorsWithinCategory().size();
+    }
+
+    @Override
+    public ICustomError addAdditionalMessage(String additionalMessage) {
+        this.content = String.format("%s, additionalMessage: %s", this.content, additionalMessage);
+        return this;
     }
 
     @Override

@@ -7,9 +7,9 @@ import java.util.List;
 @Getter
 public enum IntegrityErrors implements ICustomError {
     ;
-    private final String name;
-    private final String content;
-    private final int severity;
+    private String name;
+    private String content;
+    private int severity;
 
     IntegrityErrors(String name, String content, int severity) {
         this.name = name;
@@ -21,6 +21,12 @@ public enum IntegrityErrors implements ICustomError {
     @Override
     public int getNumberOfErrorsDefined() {
         return 0;
+    }
+
+    @Override
+    public ICustomError addAdditionalMessage(String additionalMessage) {
+        this.content = String.format("%s, additionalMessage: %s", this.content, additionalMessage);
+        return this;
     }
 
     @Override

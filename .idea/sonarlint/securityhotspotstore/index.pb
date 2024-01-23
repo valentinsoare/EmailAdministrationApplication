@@ -251,10 +251,6 @@ m
 =src/main/java/io/emailadministration/printing/PrintError.java,3/5/35308c8d0230961b2819138553af571ab64ea270
 q
 Asrc/main/java/io/emailadministration/printing/CustomPrinting.java,3/9/39dee49173d06a79944df6b162936490e2c3a764
-P
- src/main/logs/email-adm.log.json,2/d/2d90e5ab92d3599282839f3415dca0827e35c5f5
-G
-logs/email-adm.log.json,2/c/2c00c9a5a4aa7097da4f074f042467fcd13c2f46
 Å
 Q.idea/sonarlint/securityhotspotstore/1/1/1196c4392f2bb2dd998fcf46b6be9659c712b55c,3/a/3ac1d924a8a0b2915c15b485d114b1877a7cbc87
 Å
@@ -635,3 +631,5 @@ w
 G.idea/sonarlint/issuestore/2/c/2c00c9a5a4aa7097da4f074f042467fcd13c2f46,9/d/9d0dae175c6fea81230b46ef26457b0055573111
 w
 G.idea/sonarlint/issuestore/2/d/2d90e5ab92d3599282839f3415dca0827e35c5f5,1/4/144dd5fff3b1e6512d86fb4b697ee7e48192d761
+;
+qodana.yaml,8/5/85c3a901608a6b9adf48d245fa84828b66304e51
