@@ -21,15 +21,17 @@
  5. [X] Custom message for header/logo with several different message styles: CLASSIC, MODERN, HACKER, ASCII ART;
  6. [X] Classes/interfaces that can deliver custom header with position, frame and styles designated for specific use;
  7. [X] Error classification along with severity defined in a standalone class hierarchy;
- 8. [X] A separate class that deliver the loading bar and logo for when the app is started;
+ 8. [X] A separate class that delivers the loading bar and logo for when the app is started;
  9. [X] Custom printing of errors to console in a specific text frame;
 10. [X] Following SOLID, DRY, YAGNI and KISS design principles;
-11. [X] CPosition, HFrameWithContent, HMessage, Header Menu, AuxiliaryMessage and PrintMenu classes with associated methods along with builder and null object for each class;
+11. [X] CPosition, HFrameWithContent, HMessage, Header Menu, AuxiliaryMessage and PrintMenu classes with associated methods along-with-builder and null object for each class;
 12. [X] Logo/Loading progress bar, Login Page and Main Menu page completed;
 13. [X] Various loading effects for moving forward, go back and quit;
-14. [X] Using Command along with Builder design pattern to create the menu hierarchy and interactions with this menu;
-15. [X] Faceted builders were made for DB entities in order to clarify the construction of complex objects using fluent interfaces;
-16. [X] To continue....interaction with the DB under development
+14. [X] Using Command along with a Builder design pattern to create the menu hierarchy and interactions with this menu;
+15. [X] Faceted builders were made for DB entities to clarify the construction of complex objects using fluent interfaces;
+16. [X] A configuration file was made as an .yml along with a POJO which reflects that config loaded with a ReadConfiguration class made as a singleton with an inner static class inside it;
+17. [X] Logging was implemented with Log4J2 framework, and we have a FileAppender with JSON layout. Logs are sent in /var/log/messages/email-adm.log.json. Now in case this log will reach 10MB or 10k lines, the log4j2 will rotate the log and a new file will be made. Logs are sent to /var/log/messages to be accessible after the jar file is generated. 
+18. [X] To continue…interaction with the DB under development
 
 <br>
 
@@ -42,7 +44,7 @@
 ✅ A view of these entities and all java classes from this project but from Java Object-Oriented perspective.
 
 
-[![Screenshot-from-2024-01-02-02-49-04.png](https://i.postimg.cc/Sx2bjKmZ/Screenshot-from-2024-01-02-02-49-04.png)](https://postimg.cc/VJ8VVmrM)
+[![Screenshot-from-2024-01-23-02-00-56.png](https://i.postimg.cc/t4q58WdQ/Screenshot-from-2024-01-23-02-00-56.png)](https://postimg.cc/nCWBDsw0)
 
 
 ✅ Logo and loading effect when the application is started.
