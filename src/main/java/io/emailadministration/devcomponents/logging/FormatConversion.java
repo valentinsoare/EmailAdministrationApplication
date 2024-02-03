@@ -18,14 +18,13 @@ public class FormatConversion {
     private static final FormatConversion formatter = new FormatConversion();
 
     static {
-        if (jsonMapper == null && xmlMapper == null && yamlMapper == null)
-            jsonMapper = new ObjectMapper();
-            xmlMapper = new XmlMapper();
-            yamlMapper = new ObjectMapper(new YAMLFactory());
+        jsonMapper = new ObjectMapper();
+        xmlMapper = new XmlMapper();
+        yamlMapper = new ObjectMapper(new YAMLFactory());
 
-            jsonMapper.registerModule(new JavaTimeModule());
-            xmlMapper.registerModule(new JavaTimeModule());
-            yamlMapper.registerModule(new JavaTimeModule());
+        jsonMapper.registerModule(new JavaTimeModule());
+        xmlMapper.registerModule(new JavaTimeModule());
+        yamlMapper.registerModule(new JavaTimeModule());
     }
 
     private FormatConversion() {}
