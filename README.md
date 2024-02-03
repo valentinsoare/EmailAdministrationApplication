@@ -30,8 +30,8 @@
 14. [X] Using Command along with a Builder design pattern to create the menu hierarchy and interactions with this menu;
 15. [X] Faceted builders were made for DB entities to clarify the construction of complex objects using fluent interfaces;
 16. [X] A configuration file was made as an .yml along with a POJO which reflects that config loaded with a ReadConfiguration class made as a singleton with an inner static class inside it;
-17. [X] Logging was implemented with Log4J2 framework, and we have a FileAppender with JSON layout. Logs are sent in /var/log/messages/email-adm.log.json. Now in case this log will reach 10MB or 10k lines, the log4j2 will rotate the log and a new file will be made. Logs are sent to /var/log/messages to be accessible after the jar file is generated. 
-18. [X] To continue…interaction with the DB under development
+17. [X] Logging classes hierarchy was made with LogMessage in various formats (FormatConversion), like JSON, XML YAML and plain text. Now for each format, we have two methods for conversion, classic and pretty using ObjectMapper, YAMLFactory and XmlMapper. In other words we serialize each error/exception into a desired output and put it in a log file. With log4j we define only the file, rotation policies and where to print the errors, file and console. For building the LogMessage object we use a builder and when we define logging for a class we use Logging.class to access the methods and LoggingSettings to se the logger for each class.
+18. [X] To continue…interaction with the DB under development and logging feature.
 
 <br>
 
