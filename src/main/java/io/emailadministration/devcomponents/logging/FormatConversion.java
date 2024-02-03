@@ -18,16 +18,17 @@ public class FormatConversion {
     private static final FormatConversion formatter = new FormatConversion();
 
     static {
-        jsonMapper = new ObjectMapper();
-        xmlMapper = new XmlMapper();
-        yamlMapper = new ObjectMapper(new YAMLFactory());
+        if (jsonMapper == null && xmlMapper == null && yamlMapper == null)
+            jsonMapper = new ObjectMapper();
+            xmlMapper = new XmlMapper();
+            yamlMapper = new ObjectMapper(new YAMLFactory());
 
-        jsonMapper.registerModule(new JavaTimeModule());
-        xmlMapper.registerModule(new JavaTimeModule());
-        yamlMapper.registerModule(new JavaTimeModule());
+            jsonMapper.registerModule(new JavaTimeModule());
+            xmlMapper.registerModule(new JavaTimeModule());
+            yamlMapper.registerModule(new JavaTimeModule());
     }
 
-    public FormatConversion() {}
+    private FormatConversion() {}
 
     public <T> String toXML(T object) throws JsonProcessingException {
         return xmlMapper.writeValueAsString(object);
@@ -46,7 +47,11 @@ public class FormatConversion {
             case "XML" -> xmlMapper.readValue(input, clazz);
             case "JSON" -> jsonMapper.readValue(input, clazz);
             case "YAML" -> yamlMapper.readValue(input, clazz);
-            default -> (T)input.trim();
+            default -> (T) input.trim();
         };
+    }
+
+    public static FormatConversion getFormatter() {
+        return formatter;
     }
 }

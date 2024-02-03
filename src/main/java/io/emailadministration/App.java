@@ -170,7 +170,7 @@ public class App {
 
         //--------------------------------------------------------------------------------
 
-        FormatConversion formatConversion = new FormatConversion();
+        FormatConversion formatter = FormatConversion.getFormatter();
 
         LogMessage build = new LogMessageBuilder().setupMethodName("main")
                 .setupSeverity(Severities.ONE)
@@ -182,10 +182,8 @@ public class App {
                 .setupMessage("ERROR")
                 .build();
 
-        System.out.printf("%n%s", formatConversion.toJSON(build));
-        System.out.printf("%n%s", formatConversion.toXML(build));
-        System.out.printf("%n%s", formatConversion.toYAML(build));
-
-
+        System.out.printf("%n%s", formatter.toJSON(build));
+        System.out.printf("%n%s", formatter.toXML(build));
+        System.out.printf("%n%s", formatter.toYAML(build));
     }
 }
