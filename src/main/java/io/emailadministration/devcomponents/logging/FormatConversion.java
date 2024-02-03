@@ -33,12 +33,24 @@ public class FormatConversion {
         return xmlMapper.writeValueAsString(object);
     }
 
+    public <T> String toPrettyXML(T object) throws JsonProcessingException {
+        return xmlMapper.writerWithDefaultPrettyPrinter().writeValueAsString(object);
+    }
+
     public <T> String toJSON(T object) throws JsonProcessingException {
         return jsonMapper.writeValueAsString(object);
     }
 
+    public <T> String toPrettyJSON(T object) throws JsonProcessingException {
+        return jsonMapper.writerWithDefaultPrettyPrinter().writeValueAsString(object);
+    }
+
     public <T> String toYAML(T object) throws JsonProcessingException {
         return yamlMapper.writeValueAsString(object);
+    }
+
+    public <T> String toPrettyYAML(T object) throws JsonProcessingException {
+        return yamlMapper.writerWithDefaultPrettyPrinter().writeValueAsString(object);
     }
 
     public <T> T toObject(String input, Class<T> clazz, TypeOfFormat inputFormat) throws JsonProcessingException {

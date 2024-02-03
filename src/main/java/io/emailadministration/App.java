@@ -182,8 +182,8 @@ public class App {
                 .setupMessage("ERROR")
                 .build();
 
-        System.out.printf("%n%s", formatter.toJSON(build));
-        System.out.printf("%n%s", formatter.toXML(build));
-        System.out.printf("%n%s", formatter.toYAML(build));
+        System.out.printf("%n%s", formatter.toPrettyJSON(build));
+        System.out.printf("%n%s", formatter.toPrettyXML(build));
+        System.out.printf("%n%s", formatter.toPrettyYAML(build));
     }
 }

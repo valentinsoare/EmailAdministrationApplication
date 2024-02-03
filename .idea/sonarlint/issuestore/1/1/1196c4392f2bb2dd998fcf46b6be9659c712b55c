@@ -1,31 +1,31 @@
 
 n
-java:S3008"QRename this field "LOGGER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’Øôë8´’ç×1
-]	java:S125"<This block of commented-out lines of code should be removed.(èåë°úÿÿÿÿ8¶’ç×1
-W	java:S125"<This block of commented-out lines of code should be removed.(Üàôq8¶’ç×1
-]	java:S125,"<This block of commented-out lines of code should be removed.(†¨–ñúÿÿÿÿ8¶’ç×1
-]	java:S1255"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8¶’ç×1
-]	java:S1257"<This block of commented-out lines of code should be removed.(Ğš÷ğÿÿÿÿÿ8¶’ç×1
-X	java:S125:"<This block of commented-out lines of code should be removed.(¨½ÆÇ8¶’ç×1
-X	java:S125?"<This block of commented-out lines of code should be removed.(µ´¬8¶’ç×1
-]	java:S125K"<This block of commented-out lines of code should be removed.(ø‡–ıÿÿÿÿ8¶’ç×1
-]	java:S125W"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8¶’ç×1
-]	java:S125Z"<This block of commented-out lines of code should be removed.(†¨–ñúÿÿÿÿ8¶’ç×1
-]	java:S125c"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8¶’ç×1
-X	java:S125e"<This block of commented-out lines of code should be removed.(«Ğ×’8¶’ç×1
-X	java:S125i"<This block of commented-out lines of code should be removed.(´³ëè8¶’ç×1
-]	java:S125s"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8¶’ç×1
-]	java:S125u"<This block of commented-out lines of code should be removed.(¶Æéúıÿÿÿÿ8¶’ç×1
-X	java:S125x"<This block of commented-out lines of code should be removed.(»å„é8¶’ç×1
-X	java:S125{"<This block of commented-out lines of code should be removed.(“Øç¸8¶’ç×1
-^	java:S125…"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8¶’ç×1
-^	java:S125‡"<This block of commented-out lines of code should be removed.(äÇå®ûÿÿÿÿ8¶’ç×1
-^	java:S125”"<This block of commented-out lines of code should be removed.(Â™†úÿÿÿÿ8¶’ç×1
-^	java:S125š"<This block of commented-out lines of code should be removed.(¦¡ÓÖşÿÿÿÿ8¶’ç×1
-Y	java:S125¡"<This block of commented-out lines of code should be removed.(—í–û8¶’ç×1
-^	java:S125©"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8¶’ç×1
+java:S3008"QRename this field "LOGGER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’Øôë8Ñ–¹‰×1
+]	java:S125"<This block of commented-out lines of code should be removed.(èåë°úÿÿÿÿ8Õ–¹‰×1
+W	java:S125"<This block of commented-out lines of code should be removed.(Üàôq8Õ–¹‰×1
+]	java:S125,"<This block of commented-out lines of code should be removed.(†¨–ñúÿÿÿÿ8Õ–¹‰×1
+]	java:S1255"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Õ–¹‰×1
+]	java:S1257"<This block of commented-out lines of code should be removed.(Ğš÷ğÿÿÿÿÿ8Õ–¹‰×1
+X	java:S125:"<This block of commented-out lines of code should be removed.(¨½ÆÇ8Õ–¹‰×1
+X	java:S125?"<This block of commented-out lines of code should be removed.(µ´¬8Õ–¹‰×1
+]	java:S125K"<This block of commented-out lines of code should be removed.(ø‡–ıÿÿÿÿ8Ö–¹‰×1
+]	java:S125W"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Ö–¹‰×1
+]	java:S125Z"<This block of commented-out lines of code should be removed.(†¨–ñúÿÿÿÿ8Ö–¹‰×1
+]	java:S125c"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Ö–¹‰×1
+X	java:S125e"<This block of commented-out lines of code should be removed.(«Ğ×’8Ö–¹‰×1
+X	java:S125i"<This block of commented-out lines of code should be removed.(´³ëè8Ö–¹‰×1
+]	java:S125s"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Ö–¹‰×1
+]	java:S125u"<This block of commented-out lines of code should be removed.(¶Æéúıÿÿÿÿ8Ö–¹‰×1
+X	java:S125x"<This block of commented-out lines of code should be removed.(»å„é8Ö–¹‰×1
+X	java:S125{"<This block of commented-out lines of code should be removed.(“Øç¸8Ö–¹‰×1
+^	java:S125…"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Ö–¹‰×1
+^	java:S125‡"<This block of commented-out lines of code should be removed.(äÇå®ûÿÿÿÿ8Ö–¹‰×1
+^	java:S125”"<This block of commented-out lines of code should be removed.(Â™†úÿÿÿÿ8Ö–¹‰×1
+^	java:S125š"<This block of commented-out lines of code should be removed.(¦¡ÓÖşÿÿÿÿ8Ö–¹‰×1
+Y	java:S125¡"<This block of commented-out lines of code should be removed.(—í–û8Ö–¹‰×1
+^	java:S125©"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Ö–¹‰×1
 †
 java:S1128
-"iRemove this unused import 'io.emailadministration.devcomponents.logging.errorsclasification.InputErrors'.(Úğ¸¸8‘ïô×1
+"iRemove this unused import 'io.emailadministration.devcomponents.logging.errorsclasification.InputErrors'.(Úğ¸¸8Ø–¹‰×1
 
-java:S1128"nRemove this unused import 'io.emailadministration.devcomponents.logging.errorsclasification.StructuralErrors'.(‡—Øûÿÿÿÿ8‘ïô×1
+java:S1128"nRemove this unused import 'io.emailadministration.devcomponents.logging.errorsclasification.StructuralErrors'.(‡—Øûÿÿÿÿ8Ø–¹‰×1
