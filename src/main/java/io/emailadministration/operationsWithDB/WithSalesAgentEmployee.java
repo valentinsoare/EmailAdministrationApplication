@@ -4,7 +4,7 @@ import io.emailadministration.entities.companyemployees.SalesAgent;
 
 import java.util.*;
 
-public class WithSalesAgentEmployee implements GeneralDataAccessObject<SalesAgent> {
+public class WithSalesAgentEmployee implements EmployeeDAO<SalesAgent> {
 
     public WithSalesAgentEmployee getNewInstance() {
         return new WithSalesAgentEmployee();
@@ -51,7 +51,7 @@ public class WithSalesAgentEmployee implements GeneralDataAccessObject<SalesAgen
     }
 
     @Override
-    public List<Long> deleteAll(Collection<Long> c) {
+    public List<Long> deleteAll(Collection<SalesAgent> c) {
         return Collections.emptyList();
     }
 

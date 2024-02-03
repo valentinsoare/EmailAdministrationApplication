@@ -12,14 +12,18 @@ import io.emailadministration.devcomponents.menu.auxmessage.AuxiliaryMessage;
 import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
 import io.emailadministration.devcomponents.menu.usingmenu.MenuBuilder;
 import io.emailadministration.devcomponents.pages.GenericPage;
+import io.emailadministration.devcomponents.pages.IPage;
+import org.hibernate.query.Page;
 
-public class ProvideUserAndPasswordPage {
+public class ProvideUserAndPasswordPage implements IPage {
+
     private final GenericPage page;
 
     public ProvideUserAndPasswordPage() {
         this.page = new GenericPage();
     }
 
+    @Override
     public IMenu generatePage() {
         IStylizedMessage withMyEmail = new MessageBuilder()
                 .setupPosition(new CPosition(0, 0,6, 2))
@@ -67,5 +71,15 @@ public class ProvideUserAndPasswordPage {
         CachedObjects.addObjectInCache("menuWithClassicHeader", m);
 
         return m;
+    }
+
+    @Override
+    public String getTypeOfObject() {
+        return this.getClass().getSimpleName();
+    }
+
+    @Override
+    public IPage getPresentObject() {
+        return this;
     }
 }

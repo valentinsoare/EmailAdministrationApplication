@@ -203,6 +203,11 @@ public class HFrameWithContent implements IFrame {
         return this.getClass().getSimpleName();
     }
 
+    @Override
+    public IFrame getPresentObject() {
+        return null;
+    }
+
     public IFrame getCopyInstance(IFrame object) {
         HFrameWithContent hFrameWithContent = object.frameWithContentAttributes();
 

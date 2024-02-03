@@ -5,7 +5,7 @@ import io.emailadministration.entities.companyemployees.Developer;
 
 import java.util.*;
 
-public class WithDeveloperEmployee implements GeneralDataAccessObject<Developer> {
+public class WithDeveloperEmployee implements EmployeeDAO<Developer> {
 
     private DBConnection connection;
 
@@ -58,7 +58,7 @@ public class WithDeveloperEmployee implements GeneralDataAccessObject<Developer>
     }
 
     @Override
-    public List<Long> deleteAll(Collection<Long> c) {
+    public List<Long> deleteAll(Collection<Developer> c) {
         return Collections.emptyList();
     }
 

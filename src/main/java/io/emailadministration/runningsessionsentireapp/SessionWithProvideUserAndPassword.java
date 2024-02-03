@@ -28,11 +28,10 @@ public class SessionWithProvideUserAndPassword extends RunningSession implements
         SanityChecks.clearTheArea();
         String inputFromUser = "none";
 
-        while (!"quit".equals(getInputFromUser()) && !"back".equals(getInputFromUser())) {
+        do {
             PrintMenu.of(loginMenu, false, true,
                          2, true);
             catchInputFromUser(false);
-
             inputFromUser = getInputFromUser();
 
             if ("back".equals(inputFromUser)) {
@@ -48,15 +47,16 @@ public class SessionWithProvideUserAndPassword extends RunningSession implements
                         InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_BACK
                 ));
             } else if ("quit".equals(inputFromUser)) {
-                setInputFromUser(SanityChecks.checkIfQuitOrBack(
+                SanityChecks.checkIfQuitOrBack(
                         loginMenu.menuAttributes().getPosition().getWhiteSpaceLeft(), "quit",
                         InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT
-                ));
+                );
             } else {
                 PrintError.toConsole(InputErrors.NON_VALID_OPTION_FROM_THOSE_ABOVE,
                         loginMenu.menuAttributes().getPosition().getWhiteSpaceLeft(),
                         1000, false, false);
             }
-        }
+
+        } while (!"back".equals(getInputFromUser()));
     }
 }

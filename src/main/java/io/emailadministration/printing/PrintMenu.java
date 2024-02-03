@@ -2,7 +2,6 @@ package io.emailadministration.printing;
 
 import io.emailadministration.devcomponents.errorsclasification.StructuralErrors;
 import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,9 +15,10 @@ public class PrintMenu {
         of(menu, true, false, 0, false);
     }
 
-    public static void of(IMenu menu, boolean toCheckNumberOfOptions,
-                          boolean printAdditional, int howManyWithAddition, boolean onlyAdditionalMessage) {
+    public static void of(IMenu menu, boolean toCheckNumberOfOptions, boolean printAdditional,
+                          int howManyWithAddition, boolean onlyAdditionalMessage) {
         List<String> options = menu.menuAttributes().getOptionsForTheMenu();
+        String additionalPrinting = "none";
 
         try {
             if (toCheckNumberOfOptions && options.size() <= 1) {
@@ -34,8 +34,6 @@ public class PrintMenu {
         System.out.printf("\n".repeat(menu.menuAttributes().getPosition().getWhiteSpaceUp()));
         System.out.printf("%s", menu.menuAttributes().getHeader());
 
-        String additionalPrinting = "";
-
         if (onlyAdditionalMessage) {
             List<String> elements = new ArrayList<>(
                     Arrays.asList(menu.menuAttributes().getAdditionalMessageAsANote().split(" "))
@@ -47,7 +45,6 @@ public class PrintMenu {
                     String.join(" ", elements.subList(0, 9)) + "\n" + " ".repeat(space + 1) +
                     String.join(" ", elements.subList(9, elements.size()))
             );
-
         } else {
             for (int i = 0; i < menu.menuAttributes().getNumberOfEntriesInTheCurrentMenu(); i++) {
                 if (printAdditional && i < howManyWithAddition) {
@@ -64,7 +61,6 @@ public class PrintMenu {
 
         System.out.printf("%n%s Current user: %s", " ".repeat(menu.menuAttributes().getPosition().getWhiteSpaceLeft()),
                 menu.menuAttributes().getCurrentUser().getUserName());
-
         System.out.printf("%n%s%s", " ".repeat(menu.menuAttributes().getPosition().getWhiteSpaceLeft()),
                 "-".repeat(menu.menuAttributes().getHeader().headerAttributes().getFrameWithMessage().getNumberOfChars()));
         System.out.printf("%n%s%s", " ".repeat(menu.menuAttributes().getPosition().getWhiteSpaceLeft()),

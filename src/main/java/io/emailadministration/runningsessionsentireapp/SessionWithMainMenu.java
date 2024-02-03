@@ -2,7 +2,7 @@ package io.emailadministration.runningsessionsentireapp;
 
 import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
 import io.emailadministration.devcomponents.errorsclasification.InputErrors;
-import io.emailadministration.devcomponents.pages.mainmenupage.MainMenuPage;
+import io.emailadministration.devcomponents.pages.mainmenupage.MainMenuIPage;
 import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
 import io.emailadministration.printing.PrintError;
 import io.emailadministration.printing.PrintMenu;
@@ -16,18 +16,18 @@ public class SessionWithMainMenu extends RunningSession implements Command {
     }
 
     public static SessionWithMainMenu getNewMainMenuSession() {
-        IMenu iMenu = new MainMenuPage().generatePage();
+        IMenu iMenu = new MainMenuIPage().generatePage();
         return new SessionWithMainMenu(iMenu);
     }
 
     @Override
     public void execute() throws InterruptedException {
-        IMenu mainMenuPage = new MainMenuPage().generatePage();
+        IMenu mainMenuPage = new MainMenuIPage().generatePage();
         SanityChecks.clearTheArea();
 
         String catchValueToReturn = "none";
 
-        while (true) {
+        do {
             try {
                 PrintMenu.of(mainMenuPage);
                 catchInputFromUser(false);
@@ -47,6 +47,6 @@ public class SessionWithMainMenu extends RunningSession implements Command {
             } catch (InterruptedException e) {
                 System.out.printf("ERROR - [SessionWithMainMenu.execute] - %s", e.getMessage());
             }
-        }
+        } while (true);
     }
 }

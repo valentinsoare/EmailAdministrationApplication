@@ -96,6 +96,11 @@ public class Development extends Department implements Component<Development> {
     }
 
     @Override
+    public Development getPresentObject() {
+        return this;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Development that)) return false;

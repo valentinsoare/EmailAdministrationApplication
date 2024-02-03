@@ -6,4 +6,9 @@ public class MenuNullObject extends Menu {
     public String getTypeOfObject() {
         return this.getClass().getSimpleName();
     }
+
+    @Override
+    public IMenu getPresentObject() {
+        return this;
+    }
 }

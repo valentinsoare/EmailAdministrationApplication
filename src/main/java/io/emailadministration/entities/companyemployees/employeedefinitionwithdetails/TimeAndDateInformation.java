@@ -59,6 +59,11 @@ public class TimeAndDateInformation implements Component<TimeAndDateInformation>
         return this.getClass().getSimpleName();
     }
 
+    @Override
+    public TimeAndDateInformation getPresentObject() {
+        return this;
+    }
+
     public TimeAndDateInformation getCopyInstance(TimeAndDateInformation timeAndDateInformation) {
         return new TimeAndDateInformation(timeAndDateInformation);
     }

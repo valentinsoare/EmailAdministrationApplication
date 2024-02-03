@@ -41,6 +41,11 @@ public class Accountant extends Employee implements Component<Accountant> {
         return this.getClass().getSimpleName();
     }
 
+    @Override
+    public Accountant getPresentObject() {
+        return this;
+    }
+
     public Accountant getCopyInstance(Accountant object) {
         Accountant accountant = new Accountant(object);
 

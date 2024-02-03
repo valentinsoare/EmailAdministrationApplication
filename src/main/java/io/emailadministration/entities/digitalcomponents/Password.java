@@ -108,6 +108,11 @@ public class Password implements Comparable<Password>, Component<Password> {
     }
 
     @Override
+    public Password getPresentObject() {
+        return this;
+    }
+
+    @Override
     public String toString() {
         return String.format("Password [ HashedUserPassword: %s, HashedEmailPassword: %s ]",
                 hashedPasswordForUser, hashedPasswordForEmail);

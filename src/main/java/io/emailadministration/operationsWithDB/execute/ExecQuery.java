@@ -3,11 +3,13 @@ package io.emailadministration.operationsWithDB.execute;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.StoredProcedureQuery;
+import org.hibernate.procedure.ProcedureOutputs;
 
 import java.util.Collections;
 import java.util.List;
 
 public class ExecQuery {
+
     private ExecQuery() {}
 
     public static <T> boolean ofInsert(EntityManager em, T element) {
@@ -50,6 +52,8 @@ public class ExecQuery {
             if (transaction != null) {
                 transaction.rollback();
             }
+        } finally {
+            query.unwrap(ProcedureOutputs.class).release();
         }
 
         return Collections.emptyList();
@@ -62,7 +66,7 @@ public class ExecQuery {
             transaction = em.getTransaction();
             transaction.begin();
 
-            boolean execute = query.execute();
+            query.execute();
 
             transaction.commit();
             return true;
@@ -70,6 +74,9 @@ public class ExecQuery {
             if (transaction != null) {
                 transaction.rollback();
             }
+        } finally {
+            query.unwrap(ProcedureOutputs.class).release();
+
         }
 
         return false;

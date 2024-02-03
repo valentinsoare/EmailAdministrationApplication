@@ -53,6 +53,11 @@ public class Address implements Comparable<Address>, Component<Address> {
     }
 
     @Override
+    public Address getPresentObject() {
+        return this;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Address address)) return false;

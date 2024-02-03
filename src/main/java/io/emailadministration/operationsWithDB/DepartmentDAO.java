@@ -10,11 +10,16 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-public interface DepartmentDataAccessObject<T> {
+public interface DepartmentDAO<T> {
+
     T get();
+
     boolean create(T o);
+
     boolean update(long id, T o);
+
     boolean delete();
+
     boolean checkIfElementExists();
 
     default Set<Department> getAll() {

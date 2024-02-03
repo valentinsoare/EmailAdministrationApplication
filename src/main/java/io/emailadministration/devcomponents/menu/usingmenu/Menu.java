@@ -182,6 +182,11 @@ public class Menu implements IMenu {
         return this.getClass().getSimpleName();
     }
 
+    @Override
+    public IMenu getPresentObject() {
+        return this;
+    }
+
     public IMenu getCopyInstance(IMenu object) {
         Menu menu = object.menuAttributes();
         return new Menu(menu);

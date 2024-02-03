@@ -13,19 +13,23 @@ import io.emailadministration.devcomponents.menu.auxmessage.AuxiliaryMessage;
 import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
 import io.emailadministration.devcomponents.menu.usingmenu.MenuBuilder;
 import io.emailadministration.devcomponents.pages.GenericPage;
+import io.emailadministration.devcomponents.pages.IPage;
 
-public class MainMenuPage {
+public class MainMenuIPage implements IPage {
+
     private GenericPage genericPage;
+
     private static ApplicationConfig cfg;
 
     static {
         cfg = ReadConfiguration.getMainApplicationConfig();
     }
 
-    public MainMenuPage() {
+    public MainMenuIPage() {
         this.genericPage = new GenericPage();
     }
 
+    @Override
     public IMenu generatePage() {
         IStylizedMessage usingMyEmail = new MessageBuilder()
                 .setupPosition(new CPosition(0, 0,6, 4))
@@ -62,12 +66,22 @@ public class MainMenuPage {
                 .setupEntries(String.join(", ", cfg.getOptions().get("mainMenuOptions")))
                 .setupAuxiliaryMessage(
                             new AuxiliaryMessage("please choose an option:",
-                                new CPosition(0, 0, 1, 1)
+                                new CPosition(0, 0, 1, 0)
                             )
                     )
                 .build();
 
         this.genericPage.setMenu(m);
         return m;
+    }
+
+    @Override
+    public String getTypeOfObject() {
+        return this.getClass().getSimpleName();
+    }
+
+    @Override
+    public IPage getPresentObject() {
+        return null;
     }
 }

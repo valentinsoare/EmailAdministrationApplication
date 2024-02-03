@@ -10,4 +10,9 @@ public class AuxiliaryMessageNullObject extends AuxiliaryMessage {
     public AuxiliaryMessage auxiliaryMessageAttributes() {
         return this;
     }
+
+    @Override
+    public AuxiliaryMessageNullObject getPresentObject() {
+        return this;
+    }
 }

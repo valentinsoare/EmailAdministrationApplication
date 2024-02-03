@@ -14,10 +14,11 @@ import io.emailadministration.devcomponents.menu.auxmessage.AuxiliaryMessage;
 import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
 import io.emailadministration.devcomponents.menu.usingmenu.MenuBuilder;
 import io.emailadministration.devcomponents.pages.GenericPage;
+import io.emailadministration.devcomponents.pages.IPage;
 import lombok.Getter;
 
 @Getter
-public class LoginSingInPage {
+public class LoginSingInPage implements IPage {
 
     private GenericPage genericPage;
     private static ApplicationConfig cfg;
@@ -30,6 +31,7 @@ public class LoginSingInPage {
         this.genericPage = new GenericPage();
     }
 
+    @Override
     public IMenu generatePage() {
         IStylizedMessage usingMyEmail = new MessageBuilder()
                 .setupPosition(new CPosition(1, 10,11, 0))
@@ -78,5 +80,15 @@ public class LoginSingInPage {
 
         this.genericPage.setMenu(m);
         return m;
+    }
+
+    @Override
+    public String getTypeOfObject() {
+        return this.getClass().getSimpleName();
+    }
+
+    @Override
+    public IPage getPresentObject() {
+        return this;
     }
 }

@@ -2,14 +2,14 @@ package io.emailadministration.configurationmapper;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import lombok.NoArgsConstructor;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+@NoArgsConstructor
 public class ReadConfiguration {
-
-    public ReadConfiguration() {}
 
     static class Inner {
         private static final ObjectMapper mapper = new ObjectMapper(new YAMLFactory());

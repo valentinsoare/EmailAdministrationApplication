@@ -175,6 +175,11 @@ public class HMessage implements IStylizedMessage {
         return Optional.of(this);
     }
 
+    @Override
+    public IStylizedMessage getPresentObject() {
+        return null;
+    }
+
     public static IStylizedMessage getNewInstance(IStylizedMessage message) {
         return new HMessage(message);
     }

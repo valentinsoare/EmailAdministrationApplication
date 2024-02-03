@@ -28,7 +28,7 @@ public class SessionWithLoginSignInStartingTheApp extends RunningSession impleme
         IMenu startingTheApp = new LoginSingInPage().generatePage();
         SanityChecks.clearTheArea();
 
-        while (true) {
+        do {
             PrintMenu.of(startingTheApp);
             catchInputFromUser(false);
 
@@ -68,6 +68,7 @@ public class SessionWithLoginSignInStartingTheApp extends RunningSession impleme
             } catch (InterruptedException e) {
                 System.out.printf("ERROR - [SessionWithLoginSignInStartingTheApp.execute] - %s", e.getMessage());
             }
-        }
+
+        } while (true);
     }
 }

@@ -10,4 +10,9 @@ public class HeaderNullObject extends Header {
     public Header headerAttributes() {
         return this;
     }
+
+    @Override
+    public IHeader getPresentObject() {
+        return this;
+    }
 }

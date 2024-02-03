@@ -79,6 +79,11 @@ public class WorkDetails implements Comparable<WorkDetails>, Component<WorkDetai
         return this.getClass().getSimpleName();
     }
 
+    @Override
+    public WorkDetails getPresentObject() {
+        return this;
+    }
+
     public WorkDetails getCopyInstance(WorkDetails object) {
         return new WorkDetails(object);
     }

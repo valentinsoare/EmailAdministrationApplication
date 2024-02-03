@@ -4,7 +4,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-public interface GeneralDataAccessObject<T> {
+public interface EmployeeDAO<T> {
+
     T get(long id);
     Set<T> getAll();
     Set<T> getAll(long startId, long endId);
@@ -16,7 +17,7 @@ public interface GeneralDataAccessObject<T> {
     List<Long> updateAll(Collection<? extends T> c);
 
     boolean delete(long id);
-    List<Long> deleteAll(Collection<Long> c);
+    List<Long> deleteAll(Collection<T> c);
 
     boolean checkIfElementExists(long id);
     boolean checkIfElementExists(T t);

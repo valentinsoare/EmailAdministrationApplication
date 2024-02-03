@@ -55,6 +55,11 @@ public class SalesAgent extends Employee implements Component<SalesAgent> {
         return this.getClass().getSimpleName();
     }
 
+    @Override
+    public SalesAgent getPresentObject() {
+        return this;
+    }
+
     public SalesAgent getCopyInstance(SalesAgent object) {
         SalesAgent salesAgent = new SalesAgent(object);
 

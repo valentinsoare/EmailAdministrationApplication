@@ -11,4 +11,9 @@ public class HMessageNullObject extends HMessage {
     public String getTypeOfObject() {
         return this.getClass().getSimpleName();
     }
+
+    @Override
+    public IStylizedMessage getPresentObject() {
+        return this;
+    }
 }

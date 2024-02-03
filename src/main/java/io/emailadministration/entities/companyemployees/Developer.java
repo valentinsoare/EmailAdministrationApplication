@@ -49,6 +49,11 @@ public class Developer extends Employee implements Component<Developer> {
         return this.getClass().getSimpleName();
     }
 
+    @Override
+    public Developer getPresentObject() {
+        return this;
+    }
+
     public Developer getCopyInstance(Developer object) {
         Developer developer = new Developer(object);
 

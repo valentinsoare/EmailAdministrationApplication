@@ -100,6 +100,11 @@ public class Sales extends Department implements Component<Sales> {
     }
 
     @Override
+    public Sales getPresentObject() {
+        return this;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if ((!(o instanceof Sales sales)) || (!super.equals(o)))  return false;

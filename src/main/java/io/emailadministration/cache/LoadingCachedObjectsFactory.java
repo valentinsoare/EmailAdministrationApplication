@@ -9,6 +9,7 @@ import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
 import java.util.Map;
 
 public class LoadingCachedObjectsFactory {
+
     private LoadingCachedObjectsFactory() {}
 
     private static Map<String, Component> objects;

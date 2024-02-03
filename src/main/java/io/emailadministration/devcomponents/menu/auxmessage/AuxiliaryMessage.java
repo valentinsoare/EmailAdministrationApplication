@@ -51,6 +51,11 @@ public class AuxiliaryMessage implements IAuxMessage {
         return this.getClass().getSimpleName();
     }
 
+    @Override
+    public AuxiliaryMessage getPresentObject() {
+        return this;
+    }
+
     public IAuxMessage getCopyInstance(IAuxMessage object) {
         return new AuxiliaryMessage(object);
     }

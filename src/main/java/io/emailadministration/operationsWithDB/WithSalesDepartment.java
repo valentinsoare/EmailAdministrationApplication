@@ -10,7 +10,7 @@ import jakarta.persistence.StoredProcedureQuery;
 
 import java.util.List;
 
-public class WithSalesDepartment implements DepartmentDataAccessObject<Sales> {
+public class WithSalesDepartment implements DepartmentDAO<Sales> {
 
     private DBConnection connection;
 

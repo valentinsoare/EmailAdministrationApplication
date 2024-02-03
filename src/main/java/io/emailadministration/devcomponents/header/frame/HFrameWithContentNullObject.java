@@ -10,4 +10,9 @@ public class HFrameWithContentNullObject extends HFrameWithContent {
     public HFrameWithContent frameWithContentAttributes() {
         return this;
     }
+
+    @Override
+    public IFrame getPresentObject() {
+        return this;
+    }
 }

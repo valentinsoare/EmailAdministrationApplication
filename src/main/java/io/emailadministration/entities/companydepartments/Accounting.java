@@ -49,6 +49,11 @@ public class Accounting extends Department implements Component<Accounting> {
         return this.getClass().getSimpleName();
     }
 
+    @Override
+    public Accounting getPresentObject() {
+        return this;
+    }
+
     public Accounting(Accounting accounting) {
         this.setEmployeesInTheDepartment = new HashSet<>(accounting.setEmployeesInTheDepartment);
         this.numberOfEmployeesPerDepartment = accounting.getNumberOfEmployeesPerDepartment();

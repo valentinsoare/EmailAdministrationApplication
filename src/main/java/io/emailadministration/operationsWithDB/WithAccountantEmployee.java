@@ -2,6 +2,7 @@ package io.emailadministration.operationsWithDB;
 
 import io.emailadministration.dbutils.DBConnection;
 import io.emailadministration.entities.companyemployees.Accountant;
+import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.Employee;
 import io.emailadministration.operationsWithDB.execute.ExecQuery;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.ParameterMode;
@@ -13,7 +14,7 @@ import java.util.*;
 
 @Getter
 @Setter
-public class WithAccountantEmployee implements GeneralDataAccessObject<Accountant> {
+public class WithAccountantEmployee implements EmployeeDAO<Accountant> {
 
     private DBConnection connection;
 
@@ -77,7 +78,7 @@ public class WithAccountantEmployee implements GeneralDataAccessObject<Accountan
     }
 
     @Override
-    public List<Long> deleteAll(Collection<Long> c) {
+    public List<Long> deleteAll(Collection<Accountant> c) {
         return Collections.emptyList();
     }
 

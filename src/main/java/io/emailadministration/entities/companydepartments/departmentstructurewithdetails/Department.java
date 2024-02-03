@@ -1,6 +1,5 @@
 package io.emailadministration.entities.companydepartments.departmentstructurewithdetails;
 
-import io.emailadministration.devcomponents.Component;
 import io.emailadministration.entities.companyemployees.DepartmentType;
 import io.emailadministration.printing.CustomPrinting;
 import io.emailadministration.customdatastructureandoperationsonthem.operationswithdatastructures.OperationsOnMap;

@@ -72,6 +72,11 @@ public class Email implements Comparable<Email>, Component<Email> {
         return this.getClass().getSimpleName();
     }
 
+    @Override
+    public Email getPresentObject() {
+        return this;
+    }
+
     public Email getCopyInstance(Email object) {
         Email email = new Email(object);
 
