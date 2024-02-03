@@ -1,4 +1,4 @@
-package io.emailadministration.devcomponents.errorsclasification;
+package io.emailadministration.devcomponents.logging.errorsclasification;
 
 public interface ISeverity {
     int getSeverityAsInteger();

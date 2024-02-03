@@ -1,22 +1,26 @@
 package io.emailadministration;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import io.emailadministration.dbutils.DBConnection;
 
-import io.emailadministration.devcomponents.errorsclasification.InputErrors;
-import io.emailadministration.devcomponents.errorsclasification.StructuralErrors;
-import io.emailadministration.runningsessionsentireapp.SessionStartingTheApp;
-import io.emailadministration.runningsessionsentireapp.SessionWithLoginSignInStartingTheApp;
+import io.emailadministration.devcomponents.logging.FormatConversion;
+import io.emailadministration.devcomponents.logging.LogMessage;
+import io.emailadministration.devcomponents.logging.LogMessageBuilder;
+import io.emailadministration.devcomponents.logging.errorsclasification.InputErrors;
+import io.emailadministration.devcomponents.logging.errorsclasification.Severities;
+import io.emailadministration.devcomponents.logging.errorsclasification.StructuralErrors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.time.LocalDateTime;
 import java.util.logging.Level;
 
 public class App {
 
     static Logger LOGGER = LogManager.getLogger(App.class);
 
-    public static void main( String[] args ) {
+    public static void main( String[] args ) throws JsonProcessingException {
         DBConnection.setLoggingLevel(Level.INFO);
 
 //        SessionStartingTheApp.logoAndProgressBar();
@@ -154,8 +158,8 @@ public class App {
 
         //-------------------------------------------------------------------------------
 
-        LOGGER.error(StructuralErrors.PROGRESS_DOTS_MESSAGE_INVALID);
-        LOGGER.warn(InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT);
+//        LOGGER.error(StructuralErrors.PROGRESS_DOTS_MESSAGE_INVALID);
+//        LOGGER.warn(InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT);
 
         //--------------------------------------------------------------------------------
 
@@ -165,6 +169,22 @@ public class App {
 //        );
 
         //--------------------------------------------------------------------------------
+
+        FormatConversion formatConversion = new FormatConversion();
+
+        LogMessage build = new LogMessageBuilder().setupMethodName("main")
+                .setupSeverity(Severities.ONE)
+                .setupThreadName("principal")
+                .setupClazz("sexy")
+                .setupLoggerName("toGo")
+                .setupLineNumber(4)
+                .setupTimeStamp(LocalDateTime.now())
+                .setupMessage("ERROR")
+                .build();
+
+        System.out.printf("%n%s", formatConversion.toJSON(build));
+        System.out.printf("%n%s", formatConversion.toXML(build));
+        System.out.printf("%n%s", formatConversion.toYAML(build));
 
 
     }

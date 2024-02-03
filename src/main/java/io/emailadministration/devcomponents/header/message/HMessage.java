@@ -3,7 +3,7 @@ package io.emailadministration.devcomponents.header.message;
 import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
 import io.emailadministration.devcomponents.auxiliary.position.CPosition;
 import io.emailadministration.devcomponents.auxiliary.position.CPositionNullObject;
-import io.emailadministration.devcomponents.errorsclasification.StructuralErrors;
+import io.emailadministration.devcomponents.logging.errorsclasification.StructuralErrors;
 import lombok.Getter;
 
 import java.awt.*;

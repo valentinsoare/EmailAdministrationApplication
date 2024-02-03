@@ -1,7 +1,7 @@
 package io.emailadministration.devcomponents.auxiliary.checks;
 
-import io.emailadministration.devcomponents.errorsclasification.InputErrors;
-import io.emailadministration.devcomponents.errorsclasification.StructuralErrors;
+import io.emailadministration.devcomponents.logging.errorsclasification.InputErrors;
+import io.emailadministration.devcomponents.logging.errorsclasification.StructuralErrors;
 import io.emailadministration.devcomponents.header.HeaderNullObject;
 import io.emailadministration.devcomponents.header.IHeader;
 import io.emailadministration.devcomponents.loading.Loading;
@@ -10,7 +10,7 @@ import io.emailadministration.devcomponents.menu.auxmessage.IAuxMessage;
 import io.emailadministration.printing.PrintError;
 import io.emailadministration.devcomponents.auxiliary.position.CPosition;
 import io.emailadministration.devcomponents.auxiliary.position.CPositionNullObject;
-import io.emailadministration.devcomponents.errorsclasification.ICustomError;
+import io.emailadministration.devcomponents.logging.errorsclasification.ICustomError;
 import io.emailadministration.devcomponents.header.frame.HFrameWithContent;
 import io.emailadministration.devcomponents.header.frame.HFrameWithContentNullObject;
 import org.apache.commons.lang3.StringUtils;

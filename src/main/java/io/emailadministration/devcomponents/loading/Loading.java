@@ -2,8 +2,8 @@ package io.emailadministration.devcomponents.loading;
 
 import io.emailadministration.devcomponents.auxiliary.checks.AppliedToArea;
 import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
-import io.emailadministration.devcomponents.errorsclasification.ICustomError;
-import io.emailadministration.devcomponents.errorsclasification.StructuralErrors;
+import io.emailadministration.devcomponents.logging.errorsclasification.ICustomError;
+import io.emailadministration.devcomponents.logging.errorsclasification.StructuralErrors;
 import lombok.Getter;
 import java.util.*;
 

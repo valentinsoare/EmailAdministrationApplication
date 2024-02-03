@@ -1,6 +1,6 @@
 package io.emailadministration.printing;
 
-import io.emailadministration.devcomponents.errorsclasification.StructuralErrors;
+import io.emailadministration.devcomponents.logging.errorsclasification.StructuralErrors;
 import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
 
 import java.util.ArrayList;

@@ -1,7 +1,7 @@
 package io.emailadministration.runningsessionsentireapp;
 
 import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
-import io.emailadministration.devcomponents.errorsclasification.InputErrors;
+import io.emailadministration.devcomponents.logging.errorsclasification.InputErrors;
 import io.emailadministration.devcomponents.pages.mainmenupage.MainMenuIPage;
 import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
 import io.emailadministration.printing.PrintError;

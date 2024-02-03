@@ -1,34 +1,48 @@
 package io.emailadministration.devcomponents.logging;
 
+import io.emailadministration.devcomponents.logging.errorsclasification.ISeverity;
+import io.emailadministration.devcomponents.logging.errorsclasification.Severities;
 import lombok.Getter;
-import lombok.Setter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.config.Configurator;
 
 @Getter
-@Setter
 public class LoggingSettings {
     private Logger logger;
-    private LogLevel level;
-    private TypeOfLog typeOfLog;
+    private TypeOfFormat typeOfFormat;
+    private ISeverity logLevel;
 
     public LoggingSettings() {}
 
     public LoggingSettings(Class<?> clazz) {
         this.logger = LogManager.getLogger(clazz);
-        this.level = LogLevel.WARN;
-        this.typeOfLog = TypeOfLog.JSON;
+        this.typeOfFormat = TypeOfFormat.JSON;
+        setLogLevel(Severities.THREE);
     }
 
-    public LoggingSettings(Class<?> clazz, LogLevel level, TypeOfLog typeOfLog) {
+    public LoggingSettings(Class<?> clazz, TypeOfFormat typeOfFormat, ISeverity logLevel) {
         this.logger = LogManager.getLogger(clazz);
-        this.level = level;
-        this.typeOfLog = typeOfLog;
+        this.typeOfFormat = typeOfFormat;
+        setLogLevel(logLevel);
     }
 
-    public LoggingSettings(Logger logger, LogLevel level, TypeOfLog typeOfLog) {
+    public void setLogger(Logger logger) {
         this.logger = logger;
-        this.level = level;
-        this.typeOfLog = typeOfLog;
+    }
+
+    public void setTypeOfFormat(TypeOfFormat typeOfFormat) {
+        this.typeOfFormat = typeOfFormat;
+    }
+
+    public void setLogLevel(ISeverity logLevel) {
+        this.logLevel = logLevel;
+        Configurator.setLevel(logger.getName(), logLevel.toString());
+    }
+
+    @Override
+    public String toString() {
+        return String.format("LoggingSettings [ loggerName: %s, format: %s, level: %s ]",
+                logger.getName(), typeOfFormat, logLevel);
     }
 }

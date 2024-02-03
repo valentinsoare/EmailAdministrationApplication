@@ -3,7 +3,7 @@ package io.emailadministration.devcomponents.header;
 import io.emailadministration.devcomponents.header.frame.HFrameWithContentNullObject;
 import io.emailadministration.printing.PrintError;
 import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
-import io.emailadministration.devcomponents.errorsclasification.StructuralErrors;
+import io.emailadministration.devcomponents.logging.errorsclasification.StructuralErrors;
 import io.emailadministration.devcomponents.header.frame.HFrameWithContent;
 import lombok.Getter;
 

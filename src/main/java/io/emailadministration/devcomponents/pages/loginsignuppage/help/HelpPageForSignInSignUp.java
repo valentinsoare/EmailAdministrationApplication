@@ -15,4 +15,9 @@ public class HelpPageForSignInSignUp implements IPage {
     public String getTypeOfObject() {
         return this.getClass().getSimpleName();
     }
+
+    @Override
+    public IPage getPresentObject() {
+        return this;
+    }
 }

@@ -1,5 +1,7 @@
 package io.emailadministration.devcomponents.logging;
 
+import io.emailadministration.devcomponents.logging.errorsclasification.ISeverity;
+
 public class Logging implements ILogging {
 
     private LoggingSettings loggingSettings;
@@ -31,7 +33,8 @@ public class Logging implements ILogging {
     }
 
     @Override
-    public boolean setLogLevel(LogLevel level) {
-        return false;
+    public boolean setLogLevel(ISeverity logLevel) {
+        this.loggingSettings.setLogLevel(logLevel);
+        return true;
     }
 }
