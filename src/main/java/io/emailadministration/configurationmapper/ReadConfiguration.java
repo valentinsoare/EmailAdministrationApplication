@@ -10,9 +10,8 @@ import java.nio.file.Path;
 
 @NoArgsConstructor
 public class ReadConfiguration {
-
-    private static Path mainConfigFile = Path.of("./src/main/resources/configs/app.yml");
-    private static Path loggingConfigFile = Path.of("./src/main/resources/configs/logging.yml");
+    private static Path mainConfigFile = Path.of("configs/app.yml").toAbsolutePath();
+    private static Path loggingConfigFile = Path.of("configs/logging.yml").toAbsolutePath();
 
     static class Inner {
         private static final ObjectMapper mapper = new ObjectMapper(new YAMLFactory());

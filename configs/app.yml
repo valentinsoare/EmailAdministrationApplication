@@ -1,0 +1,30 @@
+#---------------------------------------------#
+#     Email Administration Configuration      #
+#---------------------------------------------#
+applicationName: "EmailAdministration"
+applicationVersion: "0.0.1"
+numberOfOptionsForMainMenu: 15
+
+options:
+  starterOptions:
+    - "sign in"
+    - "go to main menu"
+    - "help"
+    - "quit"
+  mainMenuOptions:
+    - "add employee"
+    - "change employee"
+    - "add user"
+    - "change user"
+    - "get employees"
+    - "get users"
+    - "remove employee"
+    - "remove user"
+    - "change password"
+    - "change email"
+    - "set user mailbox capacity"
+    - "set alternate email address"
+    - "change current user"
+    - "help"
+    - "quit"
+#----------------------------------------------#
