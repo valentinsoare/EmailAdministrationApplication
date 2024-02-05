@@ -25,8 +25,7 @@ public class HFrameWithContent implements IFrame {
 
     private String finalMessageWithFrame;
 
-    public HFrameWithContent() {
-    }
+    public HFrameWithContent() {}
 
     public HFrameWithContent(Character upAndDownFrameChar, int numberOfChars, CPosition position) {
         this.upAndDownFrameChar = SanityChecks.validateCharToUse(upAndDownFrameChar, '-');
@@ -205,7 +204,7 @@ public class HFrameWithContent implements IFrame {
 
     @Override
     public IFrame getPresentObject() {
-        return null;
+        return this;
     }
 
     public IFrame getCopyInstance(IFrame object) {

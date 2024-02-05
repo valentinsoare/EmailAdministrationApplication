@@ -9,4 +9,9 @@ public class CPositionNullObject extends CPosition {
     public String getTypeOfObject() {
         return this.getClass().getSimpleName();
     }
+
+    @Override
+    public CPosition getPresentObject() {
+        return this;
+    }
 }

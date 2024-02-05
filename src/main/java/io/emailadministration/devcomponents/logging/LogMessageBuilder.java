@@ -11,8 +11,8 @@ public class LogMessageBuilder {
         this.logMessage = new LogMessage();
     }
 
-    public LogMessageBuilder setupThreadName(String threadName) {
-        this.logMessage.setThreadName(threadName);
+    public LogMessageBuilder setupThreadName(int threadNumber) {
+        this.logMessage.setThreadNumber(threadNumber);
         return this;
     }
 
@@ -32,7 +32,7 @@ public class LogMessageBuilder {
     }
 
     public LogMessageBuilder setupSeverity(ISeverity severity) {
-        this.logMessage.setSev(severity.getSeverityAsLiteral());
+        this.logMessage.setSeverity(severity.getSeverityAsLiteral());
         return this;
     }
 

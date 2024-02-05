@@ -1,11 +1,12 @@
 package io.emailadministration.devcomponents.auxiliary.position;
 
+import io.emailadministration.devcomponents.Component;
 import io.emailadministration.devcomponents.auxiliary.checks.AppliedToArea;
 import io.emailadministration.devcomponents.auxiliary.checks.SanityChecks;
 import lombok.Getter;
 
 @Getter
-public class CPosition {
+public class CPosition implements Component<CPosition> {
     private int whiteSpaceUp;
     private int whiteSpaceDown;
     private int whiteSpaceLeft;
@@ -62,5 +63,10 @@ public class CPosition {
 
     public String getTypeOfObject() {
         return this.getClass().getSimpleName();
+    }
+
+    @Override
+    public CPosition getPresentObject() {
+        return this;
     }
 }

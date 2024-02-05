@@ -5,7 +5,7 @@ import java.util.List;
 public interface ICustomError {
     String getContent();
     String getName();
-    int getSeverity();
+    ISeverity getSeverity();
     int getNumberOfErrorsDefined();
     List<ICustomError> allErrorsWithinCategory();
     ICustomError addAdditionalMessage(String additionalMessage);

@@ -9,9 +9,9 @@ public enum IntegrityErrors implements ICustomError {
     ;
     private String name;
     private String content;
-    private int severity;
+    private ISeverity severity;
 
-    IntegrityErrors(String name, String content, int severity) {
+    IntegrityErrors(String name, String content, ISeverity severity) {
         this.name = name;
         this.content = content;
         this.severity = severity;

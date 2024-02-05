@@ -124,29 +124,29 @@
 
 
     <!-- ILogging -->
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-core</artifactId>
-      <version>2.20.0</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.apache.logging.log4j</groupId>-->
+<!--      <artifactId>log4j-core</artifactId>-->
+<!--      <version>2.20.0</version>-->
+<!--    </dependency>-->
 
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-api</artifactId>
-      <version>2.20.0</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.apache.logging.log4j</groupId>-->
+<!--      <artifactId>log4j-api</artifactId>-->
+<!--      <version>2.20.0</version>-->
+<!--    </dependency>-->
 
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-layout-template-json</artifactId>
-      <version>2.20.0</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.apache.logging.log4j</groupId>-->
+<!--      <artifactId>log4j-layout-template-json</artifactId>-->
+<!--      <version>2.20.0</version>-->
+<!--    </dependency>-->
 
-    <dependency>
-      <groupId>com.lmax</groupId>
-      <artifactId>disruptor</artifactId>
-      <version>3.4.4</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>com.lmax</groupId>-->
+<!--      <artifactId>disruptor</artifactId>-->
+<!--      <version>3.4.4</version>-->
+<!--    </dependency>-->
 
   </dependencies>
 

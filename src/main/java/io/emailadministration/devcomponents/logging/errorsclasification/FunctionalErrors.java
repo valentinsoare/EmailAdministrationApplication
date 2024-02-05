@@ -10,14 +10,13 @@ public enum FunctionalErrors implements ICustomError {
 
     private String name;
     private String content;
-    private int severity;
+    private ISeverity severity;
 
-    FunctionalErrors(String name, String content, int severity) {
+    FunctionalErrors(String name, String content, ISeverity severity) {
         this.name = name;
         this.content = content;
         this.severity = severity;
     }
-
 
     @Override
     public int getNumberOfErrorsDefined() {

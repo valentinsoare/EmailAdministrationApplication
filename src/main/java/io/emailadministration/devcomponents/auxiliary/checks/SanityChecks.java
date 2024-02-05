@@ -19,6 +19,7 @@ import java.text.BreakIterator;
 import java.util.*;
 
 public class SanityChecks {
+
     public static int validatePosition(int numberOfWhiteSpaces, AppliedToArea area) {
         if (Objects.requireNonNull(area) == AppliedToArea.LEFT || area == AppliedToArea.RIGHT) {
             return (numberOfWhiteSpaces < 0) ? 5 : numberOfWhiteSpaces;

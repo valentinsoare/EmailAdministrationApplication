@@ -1,0 +1,13 @@
+#----------------------------#
+# Logging main configuration #
+#----------------------------#
+loggerName: "EmailAppAdm"
+logFormat: "JSON"
+logLevel: "WARN"
+logDirectory: "/var/log/messages/"
+loggingFile: "emailAdm.log"
+logFileSizeLimit: 10
+logFileSizeMeasurement: "MB"
+logFileTypeOfTimeLimit: "DAYS"
+logFileTimeLimit: 128
+#----------------------------#

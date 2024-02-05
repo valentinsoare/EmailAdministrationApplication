@@ -19,7 +19,7 @@ public class Logging implements ILogging {
 
     @Override
     public ILogging getPresentObject() {
-        return null;
+        return this;
     }
 
     @Override

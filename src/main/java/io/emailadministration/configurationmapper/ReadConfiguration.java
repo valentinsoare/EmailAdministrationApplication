@@ -11,16 +11,21 @@ import java.nio.file.Path;
 @NoArgsConstructor
 public class ReadConfiguration {
 
+    private static Path mainConfigFile = Path.of("./src/main/resources/configs/app.yml");
+    private static Path loggingConfigFile = Path.of("./src/main/resources/configs/logging.yml");
+
     static class Inner {
         private static final ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
         private static final ApplicationConfig appConfig = loadMainConfig();
+        private static final LoggingConfig loggingConfig = loadConfig(loggingConfigFile.toString(),
+                LoggingConfig.class);
         private static final ReadConfiguration reader = new ReadConfiguration();
 
         private static ApplicationConfig loadMainConfig() {
             ApplicationConfig appConfig = null;
 
             try {
-                appConfig = mapper.readValue(Files.newInputStream(Path.of("/home/vsoare/Documents/projectsLongTerm/EmailAdministrationApplication/src/main/resources/app_configuration.yml")),
+                appConfig = mapper.readValue(Files.newInputStream(mainConfigFile),
                         ApplicationConfig.class);
             } catch (IOException e) {
                 System.out.printf("%nERROR - [ReadConfiguration.loadMainConfig] - %s", e.getMessage());
@@ -30,11 +35,11 @@ public class ReadConfiguration {
         }
     }
 
-    public <T> T loadConfig(String configFile, Class<T> typeOfReturn) {
+    public static <T> T loadConfig(String configFileLocation, Class<T> typeOfReturn) {
         T config = null;
 
         try {
-            config = Inner.mapper.readValue(Files.newInputStream(Path.of(configFile)),
+            config = Inner.mapper.readValue(Files.newInputStream(Path.of(configFileLocation)),
                     typeOfReturn);
         } catch (IOException e) {
             System.out.printf("%nERROR - [ReadConfiguration.%s.loadConfig] - %s",
@@ -50,6 +55,9 @@ public class ReadConfiguration {
 
     public static ApplicationConfig getMainApplicationConfig() {
         return Inner.appConfig;
+    }
+    public static LoggingConfig getLoggingApplicationConfig() {
+        return Inner.loggingConfig;
     }
 
     public static ObjectMapper getObjectMapperForConfig() {

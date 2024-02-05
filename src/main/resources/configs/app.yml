@@ -1,6 +1,6 @@
-
-# Email Administration Configuration
-#----------------------------------------------
+#---------------------------------------------#
+#     Email Administration Configuration      #
+#---------------------------------------------#
 applicationName: "EmailAdministration"
 applicationVersion: "0.0.1"
 numberOfOptionsForMainMenu: 15
@@ -27,4 +27,4 @@ options:
     - "change current user"
     - "help"
     - "quit"
-#----------------------------------------------
+#----------------------------------------------#

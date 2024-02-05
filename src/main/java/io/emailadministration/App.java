@@ -2,23 +2,21 @@ package io.emailadministration;
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import io.emailadministration.configurationmapper.LogFileSizeMeasurement;
+import io.emailadministration.configurationmapper.LoggingConfig;
+import io.emailadministration.configurationmapper.ReadConfiguration;
 import io.emailadministration.dbutils.DBConnection;
 
 import io.emailadministration.devcomponents.logging.FormatConversion;
 import io.emailadministration.devcomponents.logging.LogMessage;
 import io.emailadministration.devcomponents.logging.LogMessageBuilder;
-import io.emailadministration.devcomponents.logging.errorsclasification.InputErrors;
 import io.emailadministration.devcomponents.logging.errorsclasification.Severities;
-import io.emailadministration.devcomponents.logging.errorsclasification.StructuralErrors;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 
 import java.time.LocalDateTime;
 import java.util.logging.Level;
 
 public class App {
-
-    static Logger LOGGER = LogManager.getLogger(App.class);
 
     public static void main( String[] args ) throws JsonProcessingException {
         DBConnection.setLoggingLevel(Level.INFO);
@@ -153,7 +151,7 @@ public class App {
 
 //        ReadConfiguration readConfiguration = new ReadConfiguration();
 //
-//        ApplicationConfig cfg = readConfiguration.loadMainConfig("src/main/resources/app_configuration.yml");
+//        ApplicationConfig cfg = readConfiguration.loadMainConfig("src/main/resources/app.yml");
 //        System.out.printf("%n%s", cfg.getOptions());
 
         //-------------------------------------------------------------------------------
@@ -173,8 +171,8 @@ public class App {
         FormatConversion formatter = FormatConversion.getFormatter();
 
         LogMessage build = new LogMessageBuilder().setupMethodName("main")
-                .setupSeverity(Severities.ONE)
-                .setupThreadName("principal")
+                .setupSeverity(Severities.WARN)
+                .setupThreadName(4)
                 .setupClazz("sexy")
                 .setupLoggerName("toGo")
                 .setupLineNumber(4)
@@ -182,8 +180,9 @@ public class App {
                 .setupMessage("ERROR")
                 .build();
 
-        System.out.printf("%n%s", formatter.toPrettyJSON(build));
-        System.out.printf("%n%s", formatter.toPrettyXML(build));
-        System.out.printf("%n%s", formatter.toPrettyYAML(build));
+        LoggingConfig loggingApplicationConfig = ReadConfiguration.getLoggingApplicationConfig();
+
+        System.out.printf("%n%s", loggingApplicationConfig);
+
     }
 }

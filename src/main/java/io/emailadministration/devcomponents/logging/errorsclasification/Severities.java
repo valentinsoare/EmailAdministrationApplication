@@ -3,17 +3,17 @@ package io.emailadministration.devcomponents.logging.errorsclasification;
 public enum Severities implements ISeverity {
 
     OFF(0, "OFF"),
-    ONE(1, "FATAL"),
+    FATAL(1, "FATAL"),
 
-    TWO(2, "ERROR"),
+    ERROR(2, "ERROR"),
 
-    THREE(3, "WARN"),
+    WARN(3, "WARN"),
 
-    FOUR(4, "INFO"),
+    INFO(4, "INFO"),
 
-    FIVE(5, "DEBUG"),
+    DEBUG(5, "DEBUG"),
 
-    SIX(6, "TRACE");
+    TRACE(6, "TRACE");
 
     private final int sevAsInteger;
     private final String sevAsLiteral;
@@ -35,6 +35,6 @@ public enum Severities implements ISeverity {
 
     @Override
     public String toString() {
-        return String.format("%d (%s)", getSeverityAsInteger(), getSeverityAsLiteral());
+        return String.format("%s (%d)", getSeverityAsLiteral(), getSeverityAsInteger());
     }
 }

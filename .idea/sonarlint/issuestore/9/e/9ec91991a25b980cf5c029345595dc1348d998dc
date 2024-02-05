@@ -1,5 +1,7 @@
 
-»
-java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(è×¦Âüÿÿÿÿ8¨•»êÕ1
+\
+java:S1118":Add a private constructor to hide the implicit public one.(è×¦Âüÿÿÿÿ8ˆÚ²¸×1
 W
-java:S1118":Add a private constructor to hide the implicit public one.(‡ë¬¶8›ÉœœÓ1
+java:S1118":Add a private constructor to hide the implicit public one.(‡ë¬¶8‹Ú²¸×1
+N
+java:S2440"1Remove this instantiation of "ReadConfiguration".(‚Ñ¢æ8–Ú²¸×1
