@@ -8,14 +8,13 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
 @Setter
 public class FormatConversion {
-    private static ObjectMapper jsonMapper;
-    private static XmlMapper xmlMapper;
-    private static ObjectMapper yamlMapper;
+    private static final ObjectMapper jsonMapper;
+    private static final XmlMapper xmlMapper;
+    private static final ObjectMapper yamlMapper;
 
-    private static final FormatConversion formatter = new FormatConversion();
+    private static final FormatConversion formatter;
 
     static {
         jsonMapper = new ObjectMapper();
@@ -25,6 +24,8 @@ public class FormatConversion {
         jsonMapper.registerModule(new JavaTimeModule());
         xmlMapper.registerModule(new JavaTimeModule());
         yamlMapper.registerModule(new JavaTimeModule());
+
+        formatter = new FormatConversion();
     }
 
     private FormatConversion() {}
@@ -64,5 +65,17 @@ public class FormatConversion {
 
     public static FormatConversion getFormatter() {
         return formatter;
+    }
+
+    public static ObjectMapper getJsonMapper() {
+        return jsonMapper;
+    }
+
+    public static XmlMapper getXmlMapper() {
+        return xmlMapper;
+    }
+
+    public static ObjectMapper getYamlMapper() {
+        return yamlMapper;
     }
 }

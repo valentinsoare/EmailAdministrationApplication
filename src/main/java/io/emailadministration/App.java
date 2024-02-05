@@ -168,7 +168,7 @@ public class App {
 
         //--------------------------------------------------------------------------------
 
-        FormatConversion formatter = FormatConversion.getFormatter();
+        FormatConversion outputFormatter = FormatConversion.getFormatter();
 
         LogMessage build = new LogMessageBuilder().setupMethodName("main")
                 .setupSeverity(Severities.WARN)
@@ -181,8 +181,11 @@ public class App {
                 .build();
 
         LoggingConfig loggingApplicationConfig = ReadConfiguration.getLoggingApplicationConfig();
-
         System.out.printf("%n%s", loggingApplicationConfig);
+
+        System.out.printf("%n%s", outputFormatter.toPrettyYAML(loggingApplicationConfig));
+
+        System.out.printf("%n%s", outputFormatter.toJSON(build));
 
     }
 }

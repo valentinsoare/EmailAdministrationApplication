@@ -1,28 +1,26 @@
 
-©
-java:S1130"‹Remove the declaration of thrown exception 'com.fasterxml.jackson.core.JsonProcessingException', as it cannot be thrown from method's body.(“û€‹8Œøô¹×1
-]	java:S125"<This block of commented-out lines of code should be removed.(èåë°úÿÿÿÿ8øô¹×1
-W	java:S125"<This block of commented-out lines of code should be removed.(Üàôq8øô¹×1
-]	java:S125*"<This block of commented-out lines of code should be removed.(†¨–ñúÿÿÿÿ8øô¹×1
-]	java:S1253"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8øô¹×1
-]	java:S1255"<This block of commented-out lines of code should be removed.(Ðš÷ðÿÿÿÿÿ8øô¹×1
-X	java:S1258"<This block of commented-out lines of code should be removed.(¨½ÆÇ8øô¹×1
-X	java:S125="<This block of commented-out lines of code should be removed.(µ´¬8Žøô¹×1
-]	java:S125I"<This block of commented-out lines of code should be removed.(ø‡–ýÿÿÿÿ8Žøô¹×1
-]	java:S125U"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Žøô¹×1
-]	java:S125X"<This block of commented-out lines of code should be removed.(†¨–ñúÿÿÿÿ8Žøô¹×1
-]	java:S125a"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Žøô¹×1
-X	java:S125c"<This block of commented-out lines of code should be removed.(«Ð×’8Žøô¹×1
-X	java:S125g"<This block of commented-out lines of code should be removed.(´³ëè8Žøô¹×1
-]	java:S125q"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Žøô¹×1
-]	java:S125s"<This block of commented-out lines of code should be removed.(¶Æéúýÿÿÿÿ8Žøô¹×1
-X	java:S125v"<This block of commented-out lines of code should be removed.(»å„é8Žøô¹×1
-X	java:S125y"<This block of commented-out lines of code should be removed.(“Øç¸8Žøô¹×1
-^	java:S125ƒ"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Žøô¹×1
-^	java:S125…"<This block of commented-out lines of code should be removed.(äÇå®ûÿÿÿÿ8Žøô¹×1
-^	java:S125’"<This block of commented-out lines of code should be removed.(Â™†úÿÿÿÿ8Žøô¹×1
-^	java:S125˜"<This block of commented-out lines of code should be removed.(¦¡ÓÖþÿÿÿÿ8Žøô¹×1
-Y	java:S125Ÿ"<This block of commented-out lines of code should be removed.(—í–û8Žøô¹×1
-^	java:S125§"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Žøô¹×1
+]	java:S125"<This block of commented-out lines of code should be removed.(èåë°úÿÿÿÿ8Éàèº×1
+W	java:S125"<This block of commented-out lines of code should be removed.(Üàôq8Éàèº×1
+]	java:S125*"<This block of commented-out lines of code should be removed.(†¨–ñúÿÿÿÿ8Êàèº×1
+]	java:S1253"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Êàèº×1
+]	java:S1255"<This block of commented-out lines of code should be removed.(Ðš÷ðÿÿÿÿÿ8Êàèº×1
+X	java:S1258"<This block of commented-out lines of code should be removed.(¨½ÆÇ8Êàèº×1
+X	java:S125="<This block of commented-out lines of code should be removed.(µ´¬8Êàèº×1
+]	java:S125I"<This block of commented-out lines of code should be removed.(ø‡–ýÿÿÿÿ8Êàèº×1
+]	java:S125U"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Êàèº×1
+]	java:S125X"<This block of commented-out lines of code should be removed.(†¨–ñúÿÿÿÿ8Êàèº×1
+]	java:S125a"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Ëàèº×1
+X	java:S125c"<This block of commented-out lines of code should be removed.(«Ð×’8Ëàèº×1
+X	java:S125g"<This block of commented-out lines of code should be removed.(´³ëè8Ëàèº×1
+]	java:S125q"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Ëàèº×1
+]	java:S125s"<This block of commented-out lines of code should be removed.(¶Æéúýÿÿÿÿ8Ëàèº×1
+X	java:S125v"<This block of commented-out lines of code should be removed.(»å„é8Ëàèº×1
+X	java:S125y"<This block of commented-out lines of code should be removed.(“Øç¸8Ëàèº×1
+^	java:S125ƒ"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Ëàèº×1
+^	java:S125…"<This block of commented-out lines of code should be removed.(äÇå®ûÿÿÿÿ8Ìàèº×1
+^	java:S125’"<This block of commented-out lines of code should be removed.(Â™†úÿÿÿÿ8Ìàèº×1
+^	java:S125˜"<This block of commented-out lines of code should be removed.(¦¡ÓÖþÿÿÿÿ8Ìàèº×1
+Y	java:S125Ÿ"<This block of commented-out lines of code should be removed.(—í–û8Ìàèº×1
+^	java:S125§"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Ìàèº×1
 {
-java:S1128"^Remove this unused import 'io.emailadministration.configurationmapper.LogFileSizeMeasurement'.(ñð±µ8®·ø¹×1
+java:S1128"^Remove this unused import 'io.emailadministration.configurationmapper.LogFileSizeMeasurement'.(ñð±µ8Ðàèº×1
