@@ -11,6 +11,7 @@ import jakarta.persistence.StoredProcedureQuery;
 import java.util.List;
 
 public class WithAccountingDepartment implements DepartmentDAO<Accounting> {
+
     private final DBConnection connection;
 
     public WithAccountingDepartment() {
@@ -29,7 +30,6 @@ public class WithAccountingDepartment implements DepartmentDAO<Accounting> {
                 .setParameter("name_of_the_department", "accounting");
 
         List<Accounting> objects = ExecQuery.ofGet(em, storedProcedureQuery, Accounting.class);
-
         if (objects.isEmpty()) return new Accounting();
 
         return objects.get(0);

@@ -13,7 +13,6 @@ import io.emailadministration.devcomponents.menu.usingmenu.IMenu;
 import io.emailadministration.devcomponents.menu.usingmenu.MenuBuilder;
 import io.emailadministration.devcomponents.pages.GenericPage;
 import io.emailadministration.devcomponents.pages.IPage;
-import org.hibernate.query.Page;
 
 public class ProvideUserAndPasswordPage implements IPage {
 

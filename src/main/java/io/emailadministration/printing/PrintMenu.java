@@ -8,7 +8,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class PrintMenu {
-
     private PrintMenu() {}
 
     public static void of(IMenu menu) {
@@ -17,8 +16,8 @@ public class PrintMenu {
 
     public static void of(IMenu menu, boolean toCheckNumberOfOptions, boolean printAdditional,
                           int howManyWithAddition, boolean onlyAdditionalMessage) {
-        List<String> options = menu.menuAttributes().getOptionsForTheMenu();
         String additionalPrinting = "none";
+        List<String> options = menu.menuAttributes().getOptionsForTheMenu();
 
         try {
             if (toCheckNumberOfOptions && options.size() <= 1) {

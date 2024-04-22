@@ -12,7 +12,7 @@ import java.util.List;
 
 public class WithSalesDepartment implements DepartmentDAO<Sales> {
 
-    private DBConnection connection;
+    private final DBConnection connection;
 
     public WithSalesDepartment() {
         this.connection = DBConnection.getInstance();

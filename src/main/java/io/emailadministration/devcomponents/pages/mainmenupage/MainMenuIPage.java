@@ -60,7 +60,8 @@ public class MainMenuIPage implements IPage {
                 .build();
         this.genericPage.setHeader(h);
 
-        IMenu m = new MenuBuilder().setupHeader(h)
+        IMenu m = new MenuBuilder()
+                .setupHeader(h)
                 .setupPosition(new CPosition(2, 10, 12, 0))
                 .setupNumberOfEntriesInTheCurrentMenu(15)
                 .setupEntries(String.join(", ", cfg.getOptions().get("mainMenuOptions")))

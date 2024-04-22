@@ -2,7 +2,6 @@ package io.emailadministration.operationsWithDB;
 
 import io.emailadministration.dbutils.DBConnection;
 import io.emailadministration.entities.companyemployees.Accountant;
-import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.Employee;
 import io.emailadministration.operationsWithDB.execute.ExecQuery;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.ParameterMode;
@@ -37,8 +36,8 @@ public class WithAccountantEmployee implements EmployeeDAO<Accountant> {
                 .setParameter("id_number", id);
 
         List<Accountant> objects = ExecQuery.ofGet(em, q, Accountant.class);
-
         if (objects.isEmpty()) return new Accountant();
+
         return objects.get(0);
     }
 

@@ -29,6 +29,9 @@ public enum InputErrors implements ICustomError {
     NULL_OR_BLANK_MENU_OPTION_GIVEN("null_or_blank_menu_option_to_be_added", Severities.ERROR,
             "INPUT_ERROR: Blank or null value for menu option to be added is not accepted"),
 
+    UNAVAILABLE_MAIN_CONFIG_INPUT_FILE("unavailable_main_config_file", Severities.FATAL,
+    "INPUT_ERROR: Issues with main config .yml file from where we load the config."),
+
     INDEX_FOR_MENU_OPTION_NOT_VALID("index_for_adding_a_menu_option_not_valid", Severities.ERROR,
             "INPUT_ERROR: Index for menu option to add it is not valid!");
 

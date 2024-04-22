@@ -1,5 +1,5 @@
 #----------------------------#
-# Logging main configuration #
+#           Logging          #
 #----------------------------#
 loggerName: "EmailAppAdm"
 logFormat: "JSON"

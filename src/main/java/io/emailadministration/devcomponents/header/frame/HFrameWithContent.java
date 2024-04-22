@@ -137,17 +137,13 @@ public class HFrameWithContent implements IFrame {
             numberOfRowsBetweenUpDownBorders += 3;
         }
 
-        int numberOfLeftSpacesOnFrame = position.getWhiteSpaceLeft(),
-
+        int i = 0, numberOfLeftSpacesOnFrame = position.getWhiteSpaceLeft(),
             lengthOfTheMainMessage = (mainMessageFinalWithPosition.stylizedMessageAttributes()
                 .getCompleteProcessing().length()),
-
             whereTextBegins = (numberOfChars / 2) - (lengthOfTheMainMessage / 2);
 
-        sb.append("\n".repeat(position.getWhiteSpaceUp()));
-
-        int i = 0;
-        sb.append(" ".repeat(numberOfLeftSpacesOnFrame))
+        sb.append("\n".repeat(position.getWhiteSpaceUp()))
+                .append(" ".repeat(numberOfLeftSpacesOnFrame))
                 .append(String.valueOf(upAndDownFrameChar).repeat(numberOfChars));
 
         while (++i < numberOfRowsBetweenUpDownBorders) {

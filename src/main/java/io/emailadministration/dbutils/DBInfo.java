@@ -85,10 +85,9 @@ public class DBInfo extends DBConnection implements DatabaseMetaData {
 
     @Override
     public List<NumberOfRecordsPerEachTable> getNumberOfRecordsPerTable() {
-        List<NumberOfRecordsPerEachTable> records = new ArrayList<>();
-
         EntityTransaction transaction = null;
         EntityManager em = generateEntityManager();
+        List<NumberOfRecordsPerEachTable> records = new ArrayList<>();
 
         StoredProcedureQuery c = em.createStoredProcedureQuery("CountRecordsPerEachTable");
 

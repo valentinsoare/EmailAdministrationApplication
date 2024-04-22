@@ -5,6 +5,7 @@ import io.emailadministration.entities.companydepartments.departmentstructurewit
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.StoredProcedureQuery;
+import org.hibernate.procedure.ProcedureOutputs;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -36,13 +37,15 @@ public interface DepartmentDAO<T> {
             transaction = em.getTransaction();
             transaction.begin();
 
-            allDepartments = new HashSet<>();
+            allDepartments = new HashSet<>(queryForAllDepartments.getResultList());
 
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
             }
+        } finally {
+            queryForAllDepartments.unwrap(ProcedureOutputs.class).release();
         }
 
         return allDepartments;

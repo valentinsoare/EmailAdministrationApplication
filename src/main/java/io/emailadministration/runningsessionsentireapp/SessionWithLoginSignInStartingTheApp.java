@@ -9,7 +9,6 @@ import io.emailadministration.printing.PrintError;
 import io.emailadministration.printing.PrintMenu;
 
 public class SessionWithLoginSignInStartingTheApp extends RunningSession implements Command {
-
     public SessionWithLoginSignInStartingTheApp() {
         super();
     }
@@ -54,16 +53,13 @@ public class SessionWithLoginSignInStartingTheApp extends RunningSession impleme
                         SanityChecks.clearTheArea();
 
                         new SessionWithMainMenu().execute();
-                    } case "4" -> {
-                        SanityChecks.checkIfQuitOrBack(startingTheApp.menuAttributes().getPosition().getWhiteSpaceLeft(),
-                                "quit", InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT
-                        );
-                    } default -> {
-                        PrintError.toConsole(InputErrors.NON_VALID_OPTION_FROM_THOSE_ABOVE,
-                                startingTheApp.menuAttributes().getPosition().getWhiteSpaceLeft(),
-                                1000, false, false
-                        );
-                    }
+                    } case "4" -> SanityChecks.checkIfQuitOrBack(startingTheApp.menuAttributes().getPosition().getWhiteSpaceLeft(),
+                            "quit", InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT
+                    );
+                    default -> PrintError.toConsole(InputErrors.NON_VALID_OPTION_FROM_THOSE_ABOVE,
+                            startingTheApp.menuAttributes().getPosition().getWhiteSpaceLeft(),
+                            1000, false, false
+                    );
                 }
             } catch (InterruptedException e) {
                 System.out.printf("ERROR - [SessionWithLoginSignInStartingTheApp.execute] - %s", e.getMessage());

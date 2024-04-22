@@ -2,18 +2,21 @@ package io.emailadministration.configurationmapper;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import lombok.NoArgsConstructor;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-@NoArgsConstructor
 public class ReadConfiguration {
+
+    public ReadConfiguration() {}
+
     private static Path mainConfigFile = Path.of("configs/app.yml").toAbsolutePath();
+
     private static Path loggingConfigFile = Path.of("configs/logging.yml").toAbsolutePath();
 
     static class Inner {
+
         private static final ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
         private static final ApplicationConfig appConfig = loadMainConfig();
         private static final LoggingConfig loggingConfig = loadConfig(loggingConfigFile.toString(),
@@ -55,6 +58,7 @@ public class ReadConfiguration {
     public static ApplicationConfig getMainApplicationConfig() {
         return Inner.appConfig;
     }
+
     public static LoggingConfig getLoggingApplicationConfig() {
         return Inner.loggingConfig;
     }

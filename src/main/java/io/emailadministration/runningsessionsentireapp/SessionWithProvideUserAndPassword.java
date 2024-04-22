@@ -24,9 +24,9 @@ public class SessionWithProvideUserAndPassword extends RunningSession implements
 
     @Override
     public void execute() throws InterruptedException {
+        String inputFromUser;
         IMenu loginMenu = new ProvideUserAndPasswordPage().generatePage();
         SanityChecks.clearTheArea();
-        String inputFromUser = "none";
 
         do {
             PrintMenu.of(loginMenu, false, true,
@@ -44,8 +44,8 @@ public class SessionWithProvideUserAndPassword extends RunningSession implements
 
                 setInputFromUser(SanityChecks.checkIfQuitOrBack(
                         loginMenu.menuAttributes().getPosition().getWhiteSpaceLeft(), "back",
-                        InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_BACK
-                ));
+                        InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_BACK)
+                );
             } else if ("quit".equals(inputFromUser)) {
                 SanityChecks.checkIfQuitOrBack(
                         loginMenu.menuAttributes().getPosition().getWhiteSpaceLeft(), "quit",

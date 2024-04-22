@@ -1,6 +1,8 @@
 package io.emailadministration.configurationmapper;
 
 import io.emailadministration.customdatastructureandoperationsonthem.operationswithdatastructures.OperationsOnMap;
+import io.emailadministration.devcomponents.logging.TypeOfFormat;
+import io.emailadministration.devcomponents.logging.errorsclasification.Severities;
 import io.emailadministration.printing.CustomPrinting;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,8 +13,8 @@ import java.util.Map;
 @Setter
 public class LoggingConfig {
     private String loggerName;
-    private String logFormat;
-    private String logLevel;
+    private TypeOfFormat logFormat;
+    private Severities logLevel;
     private String logDirectory;
     private String loggingFile;
 

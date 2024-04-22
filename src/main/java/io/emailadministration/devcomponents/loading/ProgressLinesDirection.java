@@ -16,14 +16,13 @@ public final class ProgressLinesDirection extends LoadingEffect {
     public void loadProgressIndicator(int barSize, int emptySpaceFromTheLeft, int emptySpaceFromAbove,
                                       int emptySpaceFromBellow, int sleepBetweenChars) throws InterruptedException {
 
-        StringBuilder effect = new StringBuilder()
-                .append(String.valueOf(loading.getCharNotPassed()).repeat(Math.max(0, barSize)));
+        StringBuilder effect = new StringBuilder().append(String.valueOf(loading.getCharNotPassed()).repeat(Math.max(0, barSize)));
 
         System.out.print("\u001B[?25l");
         System.out.printf("%s%s [+] %s [+]%s", "\n".repeat(emptySpaceFromAbove), " ".repeat( emptySpaceFromTheLeft * 2),
                 loading.getMessageToBeUsed().trim(), "\n".repeat(emptySpaceFromBellow));
 
-        String toBePrinted;
+        String toBePrinted = "";
         int status, move, numberOfPasses = 0, j = 1, end = 100;
 
         for (; j <= barSize; j++) {

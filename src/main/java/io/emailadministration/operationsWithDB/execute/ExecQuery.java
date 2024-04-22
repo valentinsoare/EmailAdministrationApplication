@@ -76,7 +76,6 @@ public class ExecQuery {
             }
         } finally {
             query.unwrap(ProcedureOutputs.class).release();
-
         }
 
         return false;

@@ -1,5 +1,7 @@
 
-h
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(“Œ—º
-t
-java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(‰†πÄ
+ï
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(“Œ—º8éÔœë‰1J$353f27d8-492f-48b8-9269-7ac437a46ef6
+â
+java:S1854"FRemove this useless assignment to local variable "additionalPrinting".(îº‘Ó8èÔœë‰1J$a3793a71-cf42-4fc9-bf1f-e96738e42d5a
+°
+java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(‰†πÄ8êÔœë‰1J$eb69b34b-cc1f-48b2-b6c7-7f9fe65f2a86

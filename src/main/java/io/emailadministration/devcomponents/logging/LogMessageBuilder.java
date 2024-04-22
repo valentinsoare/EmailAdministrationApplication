@@ -16,8 +16,8 @@ public class LogMessageBuilder {
         return this;
     }
 
-    public LogMessageBuilder setupClazz(String clazz) {
-        this.logMessage.setClazz(clazz);
+    public LogMessageBuilder setupClazz(Class<?> clazz) {
+        this.logMessage.setClazz(clazz.getSimpleName());
         return this;
     }
 

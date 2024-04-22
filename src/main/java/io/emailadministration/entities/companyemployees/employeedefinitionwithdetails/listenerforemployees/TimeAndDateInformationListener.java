@@ -1,9 +1,7 @@
 package io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.listenerforemployees;
 
 import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.Employee;
-import io.emailadministration.entities.companyemployees.employeedefinitionwithdetails.TimeAndDateInformation;
 import jakarta.persistence.PostLoad;
-import jakarta.persistence.PostPersist;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 

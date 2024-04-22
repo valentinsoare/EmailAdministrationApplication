@@ -20,7 +20,7 @@ public class LoadStartingTheAppEffect {
     private LoadingEffect progressBar;
     private HFrameWithContent frame;
 
-    public LoadStartingTheAppEffect() {
+    private LoadStartingTheAppEffect() {
         loadStylizedMessage();
         loadProgressBar();
         loadFrame();

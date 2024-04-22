@@ -15,7 +15,7 @@ import java.io.InputStreamReader;
 @Setter
 public abstract class RunningSession {
     private String inputFromUser;
-    private final BufferedReader reader;
+    private BufferedReader reader;
     private IMenu menu;
     private User currentUser;
 

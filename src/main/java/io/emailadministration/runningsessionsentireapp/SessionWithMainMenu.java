@@ -8,7 +8,6 @@ import io.emailadministration.printing.PrintError;
 import io.emailadministration.printing.PrintMenu;
 
 public class SessionWithMainMenu extends RunningSession implements Command {
-
     public SessionWithMainMenu() {}
 
     public SessionWithMainMenu(IMenu menu) {
@@ -25,7 +24,7 @@ public class SessionWithMainMenu extends RunningSession implements Command {
         IMenu mainMenuPage = new MainMenuIPage().generatePage();
         SanityChecks.clearTheArea();
 
-        String catchValueToReturn = "none";
+        String catchValueToReturn;
 
         do {
             try {
@@ -33,16 +32,14 @@ public class SessionWithMainMenu extends RunningSession implements Command {
                 catchInputFromUser(false);
 
                 switch (super.getInputFromUser()) {
-                    case "15" -> catchValueToReturn = SanityChecks.checkIfQuitOrBack(
+                    case "15" -> SanityChecks.checkIfQuitOrBack(
                             mainMenuPage.menuAttributes().getPosition().getWhiteSpaceLeft(),
                             "quit",InputErrors.IMPROPER_GIVEN_TEXT_SHOULD_BE_QUIT
                     );
-                    default -> {
-                        PrintError.toConsole(InputErrors.NON_VALID_OPTION_FROM_THOSE_ABOVE,
-                                mainMenuPage.menuAttributes().getPosition().getWhiteSpaceLeft(),
-                                1000, false, false
-                        );
-                    }
+                    default -> PrintError.toConsole(InputErrors.NON_VALID_OPTION_FROM_THOSE_ABOVE,
+                            mainMenuPage.menuAttributes().getPosition().getWhiteSpaceLeft(),
+                            1000, false, false
+                    );
                 }
             } catch (InterruptedException e) {
                 System.out.printf("ERROR - [SessionWithMainMenu.execute] - %s", e.getMessage());

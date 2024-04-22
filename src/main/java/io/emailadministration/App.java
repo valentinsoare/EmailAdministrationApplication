@@ -2,18 +2,14 @@ package io.emailadministration;
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import io.emailadministration.configurationmapper.LogFileSizeMeasurement;
-import io.emailadministration.configurationmapper.LoggingConfig;
-import io.emailadministration.configurationmapper.ReadConfiguration;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.emailadministration.dbutils.DBConnection;
 
 import io.emailadministration.devcomponents.logging.FormatConversion;
-import io.emailadministration.devcomponents.logging.LogMessage;
-import io.emailadministration.devcomponents.logging.LogMessageBuilder;
-import io.emailadministration.devcomponents.logging.errorsclasification.Severities;
+import io.emailadministration.runningsessionsentireapp.SessionStartingTheApp;
+import io.emailadministration.runningsessionsentireapp.SessionWithLoginSignInStartingTheApp;
 
 
-import java.time.LocalDateTime;
 import java.util.logging.Level;
 
 public class App {
@@ -21,8 +17,10 @@ public class App {
     public static void main( String[] args ) throws JsonProcessingException {
         DBConnection.setLoggingLevel(Level.INFO);
 
-//        SessionStartingTheApp.logoAndProgressBar();
-//        new SessionWithLoginSignInStartingTheApp().execute();
+        SessionStartingTheApp.logoAndProgressBar();
+        new SessionWithLoginSignInStartingTheApp().execute();
+
+        FormatConversion formatter = FormatConversion.getFormatter();
 
         //-----------------------------------------------------------
 //        DBInfo dbInfo = new DBInfo();
@@ -117,7 +115,6 @@ public class App {
 
 //        System.out.printf("%n%s", development);
 
-
 //        WithSalesDepartment salesDepartment = WithSalesDepartment.getNewInstance();
 
 //        salesDepartment.create(
@@ -168,24 +165,26 @@ public class App {
 
         //--------------------------------------------------------------------------------
 
-        FormatConversion outputFormatter = FormatConversion.getFormatter();
+//        FormatConversion outputFormatter = FormatConversion.getFormatter();
 
-        LogMessage build = new LogMessageBuilder().setupMethodName("main")
-                .setupSeverity(Severities.WARN)
-                .setupThreadName(4)
-                .setupClazz("sexy")
-                .setupLoggerName("toGo")
-                .setupLineNumber(4)
-                .setupTimeStamp(LocalDateTime.now())
-                .setupMessage("ERROR")
-                .build();
+//        LogMessage build = new LogMessageBuilder().setupMethodName("main")
+//                .setupSeverity(Severities.WARN)
+//                .setupThreadName(4)
+//                .setupClazz("sexy")
+//                .setupLoggerName("toGo")
+//                .setupLineNumber(4)
+//                .setupTimeStamp(LocalDateTime.now())
+//                .setupMessage("ERROR")
+//                .build();
 
-        LoggingConfig loggingApplicationConfig = ReadConfiguration.getLoggingApplicationConfig();
-        System.out.printf("%n%s", loggingApplicationConfig);
+//        LoggingConfig loggingApplicationConfig = ReadConfiguration.getLoggingApplicationConfig();
+//        String logAsJSON = outputFormatter.toPrettyJSON(loggingApplicationConfig);
+//        System.out.println(logAsJSON);
+//
+//        ApplicationConfig mainApplicationConfig = ReadConfiguration.getMainApplicationConfig();
+//        String mainAsJSON = outputFormatter.toPrettyJSON(mainApplicationConfig);
+//        System.out.println(mainAsJSON);
 
-        System.out.printf("%n%s", outputFormatter.toPrettyYAML(loggingApplicationConfig));
-
-        System.out.printf("%n%s", outputFormatter.toJSON(build));
-
+        //----------------------------------------------------------------------------------
     }
 }

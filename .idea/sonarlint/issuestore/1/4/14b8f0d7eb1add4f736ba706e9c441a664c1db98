@@ -1,19 +1,19 @@
 
-’
-java:S1130"|Remove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from constructor's body.(ûŸĞ±
-6
-java:S2129" Remove this "String" constructor(ùšªĞ
-
-java:S1130-"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(á¬ë…
-’
-java:S11303"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(Âæ•Øùÿÿÿÿ
-?
-java:S1659P")Declare "timeToSleep" on a separate line.(ĞŸ‰†
-b
-java:S1659h"LDeclare "customCharsSize" and all following declarations on a separate line.(ÉÄø„
+¸
+java:S1130"|Remove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from constructor's body.(ûŸĞ±J$f37cb40d-3e4c-4b86-b066-b8bd8cb484e5
+\
+java:S2129" Remove this "String" constructor(ùšªĞJ$376ac35b-f3bc-4a72-846e-5fe211419c09
+³
+java:S1130-"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(á¬ë…J$cb6ecfb9-f458-43ad-8fe6-bb1f6b56b817
+¸
+java:S11303"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(Âæ•ØùÿÿÿÿJ$7e3b6a58-de53-470f-9088-e72ac660608c
 e
-java:S1659…"IDeclare "numberOfReps" and all following declarations on a separate line.(®Ñ…Åşÿÿÿÿ
-L
-java:S1144%"1Remove this unused private "setCharToUse" method.(ùÑ¬¬üÿÿÿÿ
-M
-java:S1144-"7Remove this unused private "setMessageToBeUsed" method.(á¬ë…
+java:S1659P")Declare "timeToSleep" on a separate line.(ĞŸ‰†J$559ef5bc-9d5c-4885-940b-e4c0769db9da
+ˆ
+java:S1659h"LDeclare "customCharsSize" and all following declarations on a separate line.(ÉÄø„J$b7442a27-9b0f-428d-90ae-5b068d32d263
+‹
+java:S1659…"IDeclare "numberOfReps" and all following declarations on a separate line.(®Ñ…ÅşÿÿÿÿJ$9d1d5527-ae45-4f15-8c09-03bac8b9e2f7
+r
+java:S1144%"1Remove this unused private "setCharToUse" method.(ùÑ¬¬üÿÿÿÿJ$b7aa9327-0747-42fb-893c-4f8d80cce1d8
+s
+java:S1144-"7Remove this unused private "setMessageToBeUsed" method.(á¬ë…J$a83c7b5c-86bf-49be-b04c-329f74cde77a

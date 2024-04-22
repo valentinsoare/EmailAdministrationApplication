@@ -3,6 +3,7 @@ package io.emailadministration.configurationmapper;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,7 +22,7 @@ public class ApplicationConfig {
         this.applicationName = new String(applicationConfig.getApplicationName());
         this.applicationVersion = new String(applicationConfig.getApplicationVersion());
         this.numberOfOptionsForMainMenu = applicationConfig.getNumberOfOptionsForMainMenu();
-        this.options = applicationConfig.getOptions();
+        this.options = new HashMap<>(applicationConfig.getOptions());
     }
 
     public ApplicationConfig getNewInstance(ApplicationConfig applicationConfig) {

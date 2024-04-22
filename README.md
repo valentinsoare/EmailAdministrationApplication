@@ -79,26 +79,17 @@
 [![Screenshot-from-2023-12-30-01-15-37.png](https://i.postimg.cc/ZYv0g9mM/Screenshot-from-2023-12-30-01-15-37.png)](https://postimg.cc/BtsqPnXT)
 
 
-
-
 <br>
 
-_Statistics_
-
 [![HitCount](https://hits.dwyl.com/valentinsoare/EmailAdministrationApplication.svg?style=flat-square&show=unique)](http://hits.dwyl.com/valentinsoare/EmailAdministrationApplication)
-
-_Social buttons_
 
 [![valentinsoare - EmailAdministrationApplication](https://img.shields.io/static/v1?label=valentinsoare&message=EmailAdministrationApplication&color=green&logo=github)](https://github.com/valentinsoare/EmailAdministrationApplication "Go to GitHub repo")
 [![stars - EmailAdministrationApplication](https://img.shields.io/github/stars/valentinsoare/EmailAdministrationApplication?style=social)](https://github.com/valentinsoare/EmailAdministrationApplication)
 [![forks - EmailAdministrationApplication](https://img.shields.io/github/forks/valentinsoare/EmailAdministrationApplication?style=social)](https://github.com/valentinsoare/EmailAdministrationApplication)
 
-_Repo metadata_
-
 [![GitHub tag](https://img.shields.io/github/tag/valentinsoare/EmailAdministrationApplication?include_prereleases=&sort=semver&color=blue)](https://github.com/valentinsoare/EmailAdministrationApplication/releases/)
 [![License](https://img.shields.io/badge/License-Apache-blue)](#license)
 [![issues - EmailAdministrationApplication](https://img.shields.io/github/issues/valentinsoare/EmailAdministrationApplication)](https://github.com/valentinsoare/EmailAdministrationApplication/issues)
-
 
 ## License
 

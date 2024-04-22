@@ -1,26 +1,34 @@
 
-]	java:S125"<This block of commented-out lines of code should be removed.(èåë°úÿÿÿÿ8Éàèº×1
-W	java:S125"<This block of commented-out lines of code should be removed.(Üàôq8Éàèº×1
-]	java:S125*"<This block of commented-out lines of code should be removed.(†¨–ñúÿÿÿÿ8Êàèº×1
-]	java:S1253"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Êàèº×1
-]	java:S1255"<This block of commented-out lines of code should be removed.(Ğš÷ğÿÿÿÿÿ8Êàèº×1
-X	java:S1258"<This block of commented-out lines of code should be removed.(¨½ÆÇ8Êàèº×1
-X	java:S125="<This block of commented-out lines of code should be removed.(µ´¬8Êàèº×1
-]	java:S125I"<This block of commented-out lines of code should be removed.(ø‡–ıÿÿÿÿ8Êàèº×1
-]	java:S125U"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Êàèº×1
-]	java:S125X"<This block of commented-out lines of code should be removed.(†¨–ñúÿÿÿÿ8Êàèº×1
-]	java:S125a"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Ëàèº×1
-X	java:S125c"<This block of commented-out lines of code should be removed.(«Ğ×’8Ëàèº×1
-X	java:S125g"<This block of commented-out lines of code should be removed.(´³ëè8Ëàèº×1
-]	java:S125q"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Ëàèº×1
-]	java:S125s"<This block of commented-out lines of code should be removed.(¶Æéúıÿÿÿÿ8Ëàèº×1
-X	java:S125v"<This block of commented-out lines of code should be removed.(»å„é8Ëàèº×1
-X	java:S125y"<This block of commented-out lines of code should be removed.(“Øç¸8Ëàèº×1
-^	java:S125ƒ"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Ëàèº×1
-^	java:S125…"<This block of commented-out lines of code should be removed.(äÇå®ûÿÿÿÿ8Ìàèº×1
-^	java:S125’"<This block of commented-out lines of code should be removed.(Â™†úÿÿÿÿ8Ìàèº×1
-^	java:S125˜"<This block of commented-out lines of code should be removed.(¦¡ÓÖşÿÿÿÿ8Ìàèº×1
-Y	java:S125Ÿ"<This block of commented-out lines of code should be removed.(—í–û8Ìàèº×1
-^	java:S125§"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Ìàèº×1
-{
-java:S1128"^Remove this unused import 'io.emailadministration.configurationmapper.LogFileSizeMeasurement'.(ñğ±µ8Ğàèº×1
+…
+java:S1854"=Remove this useless assignment to local variable "formatter".(³ªñııÿÿÿÿ8ÓÕùÕŞ1J$b8b18f28-0188-4176-b54d-01be73989743
+Ï
+java:S1130"‹Remove the declaration of thrown exception 'com.fasterxml.jackson.core.JsonProcessingException', as it cannot be thrown from method's body.(“û€‹8¥šùÕŞ1J$38775a53-eb5b-4c3c-81ab-370ac44659bd
+v
+java:S1481".Remove this unused "formatter" local variable.(³ªñııÿÿÿÿ8ÔÕùÕŞ1J$c9f14700-3cf2-48f3-bf61-11235aca7730
+}	java:S125"<This block of commented-out lines of code should be removed.(Üàôq8¦šùÕŞ1J$6bbc9a2c-23c2-49d9-987d-8ddedd810543
+ƒ	java:S125("<This block of commented-out lines of code should be removed.(†¨–ñúÿÿÿÿ8¦šùÕŞ1J$22a34190-7f9c-49b2-9f14-3ca303f93b16
+ƒ	java:S1251"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8¦šùÕŞ1J$0c234f69-7fd6-41d9-bf7b-bf28d576ec91
+ƒ	java:S1253"<This block of commented-out lines of code should be removed.(Ğš÷ğÿÿÿÿÿ8¦šùÕŞ1J$0a3d2ba7-9d82-4ea5-a308-00d868cafc67
+~	java:S1256"<This block of commented-out lines of code should be removed.(¨½ÆÇ8¦šùÕŞ1J$463052e6-c44b-4605-b1c1-dd4801af3e02
+~	java:S125;"<This block of commented-out lines of code should be removed.(µ´¬8¦šùÕŞ1J$fe8c5069-a021-4853-83fd-00c0f806eaff
+ƒ	java:S125G"<This block of commented-out lines of code should be removed.(ø‡–ıÿÿÿÿ8¦šùÕŞ1J$34bd6fb9-9b1b-444f-988c-ae7a80a0371a
+ƒ	java:S125S"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8¦šùÕŞ1J$e3a63a85-3025-4d10-8d23-697fedd08544
+ƒ	java:S125V"<This block of commented-out lines of code should be removed.(†¨–ñúÿÿÿÿ8¦šùÕŞ1J$61ffc551-2cc6-41e9-b358-e970f3d29d9a
+ƒ	java:S125_"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8¦šùÕŞ1J$410e1e6c-af0e-4aa6-855f-b55094bb2e1b
+~	java:S125a"<This block of commented-out lines of code should be removed.(«Ğ×’8¦šùÕŞ1J$914ad4a4-6c89-456e-8bdb-d2f9feaca0e3
+~	java:S125e"<This block of commented-out lines of code should be removed.(´³ëè8¦šùÕŞ1J$32bc6e13-4768-4ca4-b25c-87243e712362
+ƒ	java:S125o"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8¦šùÕŞ1J$25506b9e-8ef6-4583-82a7-5b9778ea0d48
+ƒ	java:S125q"<This block of commented-out lines of code should be removed.(¶Æéúıÿÿÿÿ8¦šùÕŞ1J$51299c07-9962-4411-9fe8-950c3f16f21a
+~	java:S125t"<This block of commented-out lines of code should be removed.(»å„é8¦šùÕŞ1J$e286b22a-c763-463f-9239-b96b848d645e
+~	java:S125v"<This block of commented-out lines of code should be removed.(“Øç¸8§šùÕŞ1J$13bf48c4-bbfc-4795-91f2-45188c22d5e2
+„	java:S125€"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8§šùÕŞ1J$6b95d57e-f712-4168-b119-056ee4b75b6e
+„	java:S125‚"<This block of commented-out lines of code should be removed.(äÇå®ûÿÿÿÿ8§šùÕŞ1J$bce522f1-8545-41e2-9a39-3c9568b92c72
+„	java:S125"<This block of commented-out lines of code should be removed.(Â™†úÿÿÿÿ8§šùÕŞ1J$e9cb338b-f8f1-4ca3-900f-b3539cfbe937
+„	java:S125•"<This block of commented-out lines of code should be removed.(¦¡ÓÖşÿÿÿÿ8§šùÕŞ1J$4c5b37b7-eb10-4ea5-9260-7c9927de1467
+	java:S125œ"<This block of commented-out lines of code should be removed.(—í–û8§šùÕŞ1J$7fa3d8b5-13aa-4337-bdf1-c58da8ecb1a6
+„	java:S125¤"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8§šùÕŞ1J$4d69e567-d2ac-4d53-a91f-04270ab918d3
+„	java:S125¨"<This block of commented-out lines of code should be removed.(‘Ñ¶ùÿÿÿÿ8§šùÕŞ1J$3ca71591-52f1-4f3c-891e-81d42e8c1e58
+„	java:S125²"<This block of commented-out lines of code should be removed.(Â™†úÿÿÿÿ8§šùÕŞ1J$73b1e1c1-2a82-4f7b-9ea9-5d62854ad739
+„	java:S125´"<This block of commented-out lines of code should be removed.(¶¾óæøÿÿÿÿ8§šùÕŞ1J$6ce89f53-667a-44cf-9f6b-564280b1ceee
+‹
+java:S1128"HRemove this unused import 'com.fasterxml.jackson.databind.ObjectMapper'.(´‘¨™8§šùÕŞ1J$70bfa32c-e8b2-431f-b1cf-6c5effa3164c

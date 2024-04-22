@@ -6,7 +6,6 @@ import io.emailadministration.customdatastructureandoperationsonthem.operationsw
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 
@@ -14,7 +13,7 @@ import java.util.Map;
 @Getter
 @Setter
 @Entity(name = "department")
-@Table(schema = "department")
+@Table(name = "department", schema = "department")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(
         discriminatorType = DiscriminatorType.STRING,
@@ -79,7 +78,7 @@ public class Department implements Comparable<Department> {
     }
 
     @Override
-    public int compareTo(@NotNull Department o) {
+    public int compareTo(Department o) {
         int valueToReturnAfterComparison = o.departmentBusinessID.compareTo(this.departmentBusinessID);
 
         if (valueToReturnAfterComparison == 0) {
