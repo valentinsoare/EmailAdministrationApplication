@@ -21,11 +21,6 @@ public class LogMessageBuilder {
         return this;
     }
 
-    public LogMessageBuilder setupLineNumber(int lineNumber) {
-        this.logMessage.setLineNumber(lineNumber);
-        return this;
-    }
-
     public LogMessageBuilder setupMethodName(String methodName) {
         this.logMessage.setMethod(methodName);
         return this;

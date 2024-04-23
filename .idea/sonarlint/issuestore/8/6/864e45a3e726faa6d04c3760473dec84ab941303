@@ -1,7 +1,7 @@
 
 Œ
-java:S1301""KReplace this "switch" statement by "if" statements to increase readability.(ÜÈ—†ýÿÿÿÿJ$a86390d0-7fb7-4cb4-a3f2-cae19c645a94
+java:S1301""KReplace this "switch" statement by "if" statements to increase readability.(ÜÈ—†ýÿÿÿÿJ$e530d24d-b2bf-455f-8844-e52f0465f7fe
 z
-java:S1481"7Remove this unused "catchValueToReturn" local variable.(äõ¬Ù8ŒƒâöÛ1J$f628b5c7-2529-4667-8531-2ea56e791204
+java:S1481"7Remove this unused "catchValueToReturn" local variable.(äõ¬Ù8ŒƒâöÛ1J$d441d036-848b-420a-9842-a3c6ba341b3d
 š
-java:S2142,"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€J$3be53b4e-b57c-4060-b2c3-7c218e135d81
+java:S2142,"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€J$63317acf-48ae-4802-9aaf-f9b568553203

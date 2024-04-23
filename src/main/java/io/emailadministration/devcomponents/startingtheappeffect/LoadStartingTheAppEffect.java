@@ -29,8 +29,7 @@ public class LoadStartingTheAppEffect {
     private void loadProgressBar() {
         try {
             this.progressBar =
-                    LoadingFactory.getLoadEffect("linesdirection", "loading",
-                            5);
+                    LoadingFactory.getLoadEffect("linesdirection", "loading",5);
         } catch (InterruptedException e) {
             System.out.printf("%nERROR - [loadProgressBarStartingTheAppEffect] - %s", e.getMessage());
         }
@@ -38,8 +37,7 @@ public class LoadStartingTheAppEffect {
 
     private void loadStylizedMessage() {
          Optional<IStylizedMessage> nameOfTheApp = new HMessage("My Email", true, MessageStyle.ASCII,
-                new CPosition(2, 10, 10, 5))
-                .stylizeIt(true, true);
+                new CPosition(2, 10, 10, 5)).stylizeIt(true, true);
 
          if (nameOfTheApp.isPresent()) {
              this.message = nameOfTheApp.get().stylizedMessageAttributes();

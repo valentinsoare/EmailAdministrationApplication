@@ -5,9 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import lombok.Getter;
 
-@Getter
 public class FormatConversion {
 
     private static final ObjectMapper jsonMapper;
@@ -61,5 +59,21 @@ public class FormatConversion {
             case "YAML" -> yamlMapper.readValue(input, clazz);
             default -> (T) input.trim();
         };
+    }
+
+    public static FormatConversion getFormatter() {
+        return formatter;
+    }
+
+    public static ObjectMapper getJsonMapper() {
+        return jsonMapper;
+    }
+
+    public static XmlMapper getXmlMapper() {
+        return xmlMapper;
+    }
+
+    public static ObjectMapper getYamlMapper() {
+        return yamlMapper;
     }
 }

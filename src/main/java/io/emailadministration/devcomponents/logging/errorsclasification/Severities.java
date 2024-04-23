@@ -3,6 +3,7 @@ package io.emailadministration.devcomponents.logging.errorsclasification;
 public enum Severities implements ISeverity {
 
     OFF(0, "OFF"),
+
     FATAL(1, "FATAL"),
 
     ERROR(2, "ERROR"),

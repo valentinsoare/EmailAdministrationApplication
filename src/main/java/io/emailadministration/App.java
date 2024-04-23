@@ -1,27 +1,23 @@
 package io.emailadministration;
 
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.emailadministration.dbutils.DBConnection;
 
 import io.emailadministration.devcomponents.logging.FormatConversion;
 import io.emailadministration.runningsessionsentireapp.SessionStartingTheApp;
 import io.emailadministration.runningsessionsentireapp.SessionWithLoginSignInStartingTheApp;
 
-
 import java.util.logging.Level;
 
 public class App {
 
-    public static void main( String[] args ) throws JsonProcessingException {
+    public static void main( String[] args ) {
         DBConnection.setLoggingLevel(Level.INFO);
 
         SessionStartingTheApp.logoAndProgressBar();
         new SessionWithLoginSignInStartingTheApp().execute();
 
         FormatConversion formatter = FormatConversion.getFormatter();
-
         //-----------------------------------------------------------
 //        DBInfo dbInfo = new DBInfo();
 //

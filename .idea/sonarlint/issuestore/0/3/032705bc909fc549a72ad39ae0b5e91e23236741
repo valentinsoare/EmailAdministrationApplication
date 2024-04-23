@@ -1,19 +1,19 @@
 
 ë
-java:S1192"UDefine a constant instead of duplicating this literal "name_of_the_database" 4 times.(äÚâÀJ$61f17055-0c9f-4908-ba4a-79be4d499f5f
+java:S1192"UDefine a constant instead of duplicating this literal "name_of_the_database" 4 times.(äÚâÀJ$d37e1443-be26-4b73-97f3-493fa24875cd
 ä
-java:S1192"NDefine a constant instead of duplicating this literal "EmailAppAdmin" 3 times.(¶ﬁ…èJ$5a70f505-e72b-4eb3-bfe0-ad93f04817d5
+java:S1192"NDefine a constant instead of duplicating this literal "EmailAppAdmin" 3 times.(¶ﬁ…èJ$5b4a7980-735b-4ba6-9534-7893150ba19e
 Ω
-java:S1186"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(û‹äòJ$0adc0b6a-8a81-4705-a90d-afe01e8092e3
+java:S1186"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(û‹äòJ$f0e47ce7-919c-4b68-a083-db98cd9df59f
 ñ
-java:S1450	"ZRemove the "nameOfTheDB" field and declare it as a local variable in the relevant methods.(ÇöΩ°J$6f9fcebf-d124-4f3c-9e60-ea5c7f317d21
+java:S1450	"ZRemove the "nameOfTheDB" field and declare it as a local variable in the relevant methods.(ÇöΩ°J$b5626b27-8fe1-470b-88a1-077cd9613037
 ö
-java:S1450"^Remove the "numberOfRecords" field and declare it as a local variable in the relevant methods.(”îë‚J$e337eda8-482a-4c12-813c-59aa005ed363
+java:S1450"^Remove the "numberOfRecords" field and declare it as a local variable in the relevant methods.(”îë‚J$5a7f9eb1-ce00-404f-a612-06f002c24d19
 ô
 java:S1450
-"]Remove the "numberOfTables" field and declare it as a local variable in the relevant methods.(§ïπÌJ$5800b1e2-7362-4936-aeae-f13f04d2af9b
+"]Remove the "numberOfTables" field and declare it as a local variable in the relevant methods.(§ïπÌJ$66e082f6-83c1-43a8-9cd5-a4e7e2d691cb
 n
 java:S1068
-"2Remove this unused "numberOfTables" private field.(§ïπÌJ$8f0b4155-1135-4a16-a41e-9cf80582b95b
+"2Remove this unused "numberOfTables" private field.(§ïπÌJ$b506ac4b-8a68-452d-b8c4-fa4a96c23e1c
 o
-java:S1068"3Remove this unused "numberOfRecords" private field.(”îë‚J$e6683c5b-0172-41f4-8324-0b763acfe0ad
+java:S1068"3Remove this unused "numberOfRecords" private field.(”îë‚J$fce480c6-a563-4a88-9e85-7b647ab3fee2

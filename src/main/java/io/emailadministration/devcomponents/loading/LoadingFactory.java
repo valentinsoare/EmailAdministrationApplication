@@ -1,10 +1,10 @@
 package io.emailadministration.devcomponents.loading;
 
 public class LoadingFactory {
+
     private LoadingFactory() {}
 
-    public static LoadingEffect getLoadEffect(String typeOfLoadEffect, String message, int spacesFromTheLeft)
-            throws InterruptedException {
+    public static LoadingEffect getLoadEffect(String typeOfLoadEffect, String message, int spacesFromTheLeft) throws InterruptedException {
         return switch (typeOfLoadEffect.toLowerCase()) {
             case "progresslines" -> new ProgressBar(new Loading('|', message,
                     ' ', spacesFromTheLeft));

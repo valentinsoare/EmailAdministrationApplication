@@ -1,7 +1,5 @@
 
 •
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ÒÎÑ¼8ïÏ‘ä1J$353f27d8-492f-48b8-9269-7ac437a46ef6
-‰
-java:S1854"FRemove this useless assignment to local variable "additionalPrinting".(”¼Ôî8ïÏ‘ä1J$a3793a71-cf42-4fc9-bf1f-e96738e42d5a
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ÒÎÑ¼8ïÏ‘ä1J$5cc58639-95ee-418f-a160-634cb9803227
 ¡
-java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8ïÏ‘ä1J$eb69b34b-cc1f-48b2-b6c7-7f9fe65f2a86
+java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8ïÏ‘ä1J$c6804e86-fbd5-4133-bf0e-4f56798f322d

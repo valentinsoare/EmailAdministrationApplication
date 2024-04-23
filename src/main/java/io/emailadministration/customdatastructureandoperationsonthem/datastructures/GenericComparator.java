@@ -8,6 +8,7 @@ import java.util.Comparator;
 @Getter
 @Setter
 public class GenericComparator<T extends Comparable<T>> implements Comparator<T> {
+
     private boolean isReversed;
 
     public GenericComparator() {

@@ -8,7 +8,6 @@ import lombok.Setter;
 public class LogMessage {
     private int threadNumber;
     private String clazz;
-    private int lineNumber;
     private String method;
     private String severity;
     private String message;
@@ -19,7 +18,7 @@ public class LogMessage {
 
     @Override
     public String toString() {
-        return String.format("threadName: %s, class: %s, lineNumber: %d, method: %s, severity: %s, message: %s, time: %s, loggerName: %s",
-                threadNumber, clazz, lineNumber, method, severity, message, timestamp, loggerName);
+        return String.format("threadName: %s, class: %s, method: %s, severity: %s, message: %s, time: %s, loggerName: %s",
+                threadNumber, clazz, method, severity, message, timestamp, loggerName);
     }
 }
